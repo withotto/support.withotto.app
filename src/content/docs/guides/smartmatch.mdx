@@ -1,0 +1,30 @@
+---
+title: SmartMatch
+description: Intelligent bank reconciliation
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should *and* **should not** reconcile.
+
+Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training and each month add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal.
+
+## Confidence
+One of the key components of SmartMatch is the confidence level. For each possible match Otto sees, he will decide whether the two are a match or a non-match, and decide how confident he is with the decision.
+
+By default we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](../settings). You can be more strict by requiring a higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
+
+<Aside>
+You will not be charged for an incorrect SmartMatch reconciliation where Otto was at least 90% confident.
+</Aside>
+
+## FAQs
+### Is SmartMatch available for all my clients
+Otto will perform better with more data but there is a minimum limit of 100 examples of bills or sales invoices that have been reconciled against a bank transaction in order to train him.
+
+Any clients that don't have enough examples will still be able to use bank rule reconciliations and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto and he'll start to use SmartMatch.
+
+
+<Aside type="tip" title="Related pages">
+
+</Aside>

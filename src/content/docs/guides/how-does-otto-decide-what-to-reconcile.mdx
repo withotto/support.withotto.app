@@ -1,0 +1,55 @@
+---
+title: How does Otto decide what to reconcile?
+description: Otto's process for knowing what should, and should not, be reconciled
+---
+
+Before he starts his reconciliation work for a client, Otto is shown examples of previous reconciliations for that client. We give him direction on what information he should look at so he can understand how to tell *why* that bank transaction matched the bill or invoice.
+
+This initial training only helps Otto understand what makes a correct match, but not how to tell if something is not a match. We create synthetic non-matches so he can make good decisions but he learns better from real examples. This is where feedback comes in: Otto will record his decisions every time he performs bank reconciliation for a client and you can let him know if he was right or wrong.
+
+## Understanding Otto's decisions
+![Example of a reconciliation match](../../../assets/guides/how-does-otto-decide-what-to-reconcile/reconciled.png)
+
+The top part of the summary shows the information from the Xero bank reconciliation page. The bottom left part shows Otto's decision and is made of three parts.
+
+1. The overall action taken. In this case "Reconciled"
+2. Whether he thinks the statement and invoice or bill relate to the same transaction. Either "Match" or "Non-match"
+3. How confident he is: 98% in this case. The value in brackets is how confident Otto must be to reconcile the match.
+
+### What actions can Otto take?
+Otto can currently take the following actions:
+
+#### Reconciled
+There was a single possible match and it matches the bank statement transaction.
+
+There is also "Testing: Would reconcile" where Otto records his decision but doesn't reconcile the transactions because he is in monitoring mode.
+
+#### Reconciled: Multiple possible matches
+There was more than one possible match and one of them matches the bank statement transaction.
+
+There is also "Testing: Would reconcile from multiple possible matches" where Otto records his decision but doesn't reconcile the transactions because he is in monitoring mode.
+
+#### Reconciled: GuidedMatch
+Although Otto wasn't confident enough to match this himself, you told him it was a match in the portal so he reconciled the transaction.
+
+#### Skipped: Confidence too low
+Otto didn't think the bank statement transaction and the bill or invoice were a match.
+
+#### Skipped: Multiple possible matches but confidence too low
+None of the bills or invoices seemed like they matched the bank statement transaction
+
+#### Skipped: Feedback given to not reconcile this transaction
+You told Otto that he incorrectly reconciled this transaction in the past so he is skipping the transaction to avoid making another mistake.
+
+#### Skipped: Bank transaction is not reconciled but match from feedback was not present in Xero
+Otto was told to reconcile this bank statement transaction with a particular bill or invoice but the bill or invoice had been deleted or reconciled against another transaction when he checked next time.
+
+## Giving feedback
+You can tell Otto whether the items are a match or not using the buttons. This is always used to improve his performance when he is next trained but can also cause other things to happen. See [feedback](./feedback) for more information. 
+
+
+## Related
+- [GuidedMatch](../guidedmatch) 
+- [SmartMatch](../smartmatch)
+- [Practice and client settings](../settings)
+- [Feedback](../feedback) - Letting Otto know when he's right or wrong

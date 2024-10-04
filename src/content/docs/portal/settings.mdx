@@ -1,0 +1,56 @@
+---
+title: Settings
+description: Practice and client settings
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import {Image} from "astro:assets";
+import practiceReconciliationSettingsImage from "../../../assets/portal/settings/practice-reconciliation-settings.png"
+import clientReconciliationSettingsImage from "../../../assets/portal/settings/client-reconciliation-settings.png"
+
+We know every practice and client is different so we want you to be able to use Otto in a way that works for you.
+
+There are two levels of settings:
+1. **Practice-wide** The place to set things up that should apply to all (or at least most) of your clients
+2. **Client-level** Anything specific to that client
+
+## Reconciliation settings
+You can configure Otto's reconciliation settings at a practice-wide level and at the client level. There are similarities but also some differences between the two places.
+
+### Practice-wide
+<Image src={practiceReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a practice" />
+
+#### Bank rule reconciliation
+Bank rule reconciliations are enabled practice-wide by default. You would be the first to disable it for all your clients but we won't judge!
+
+#### SmartMatch reconciliation
+SmartMatch is set to monitor mode when your trial starts so you can check Otto's predictions before letting him reconcile green matches for your clients. Some practices are happy with only using bank rule matches so disable SmartMatch. Maybe we're a *little* biased but we think SmartMatch is pretty great so recommend you give it a try.
+
+<Aside type="caution">
+    Otto will only perform GuidedMatches if SmartMatch is enabled.
+</Aside>
+
+#### Minimum SmartMatch confidence
+This determines how confident Otto must be that the match is correct before he will reconcile it. It's only possible to increase the minimum confidence level at this level, which would reduce the chance of incorrect SmartMatch reconciliations but make Otto less likely to reconcile matches generally.
+
+### Client-specific
+<Image src={clientReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a client" />
+
+These settings are very similar to the practice-wide settings. By default clients will inherit the same settings that you apply practice-wide. For any clients that should have different settings, simply make the necessary changes. You can see what setting has been specified practice-wide.
+
+#### Minimum SmartMatch confidence
+You have a bit more flexibility with this setting for individual clients. The minimum confidence level is 70%. We recommend you monitor Otto's confidence for each client for a few weeks before lowering this setting to make sure you're not going to end up with extra work due to incorrect reconciliations.
+
+## Billing settings
+### Billing type
+Each plan comes with a certain number of included credits. These are used up when Otto reconciles matches in Xero. There are two billing types that give you control over your With Otto bill.
+
+#### Overage
+If Otto uses up all the included credits before the month ends, he will continue his work and you'll be billed for the extra credit usage on your next bill. You will just pay the standard per-credit amount in this case.
+
+#### Fixed
+Ensure you never pay more than your monthly subscription price. Otto will stop further reconciliations once the included credits from your plan have been used. He'll start again when the next billing period starts and you get the next batch of included credits.
+
+<Aside type="tip" title="Related pages">
+
+</Aside>
