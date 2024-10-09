@@ -26,6 +26,9 @@ export default defineConfig({
             }, {
                 label: 'Guides',
                 items: [{
+                    label: 'Bank rules',
+                    slug: 'guides/bank-rules'
+                }, {
                     label: 'SmartMatch',
                     slug: 'guides/smartmatch'
                 }, {

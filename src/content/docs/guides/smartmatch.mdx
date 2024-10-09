@@ -5,6 +5,8 @@ description: Intelligent bank reconciliation
 
 import { Aside } from '@astrojs/starlight/components';
 
+Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct, he checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches he'll then run through the same process for each possible match, to ensure he's picking the correct one to reconcile.
+
 SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should *and* **should not** reconcile.
 
 Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training and each month add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal.
@@ -18,13 +20,18 @@ By default we require Otto to be at least 90% sure that the transaction is a mat
 You will not be charged for an incorrect SmartMatch reconciliation where Otto was at least 90% confident.
 </Aside>
 
+## Monitoring mode
+All practices will have SmartMatch set to "monitor" mode when their trial starts. This allows you to see Otto's decisions without him actually clicking the "OK" button. This gives you to opportunity to make sure you are confident he will do the right thing when SmartMatch is enabled.
+
+You have complete control of which clients SmartMatch is enabled for and can make changes across your practice, or for individual clients.
+
 ## FAQs
-### Is SmartMatch available for all my clients
-Otto will perform better with more data but there is a minimum limit of 100 examples of bills or sales invoices that have been reconciled against a bank transaction in order to train him.
+### Is SmartMatch available for all my clients?
+Otto will perform better with more data, but requires a minimum of 100 examples of bill or invoice reconciliations in order to be trained. A reconciliation in this case is a bill or sales invoice that has been reconciled against a bank transaction.
 
 Any clients that don't have enough examples will still be able to use bank rule reconciliations and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto and he'll start to use SmartMatch.
 
-
 <Aside type="tip" title="Related pages">
-
+ - [What can be reconciled?](what-can-be-reconciled) - What Otto can, and can't, reconcile
+ - [Reconciliation settings](../portal/settings#reconciliation-settings) - Choose which reconciliation features you want to use
 </Aside>

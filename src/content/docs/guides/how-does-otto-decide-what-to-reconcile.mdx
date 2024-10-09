@@ -3,6 +3,8 @@ title: How does Otto decide what to reconcile?
 description: Otto's process for knowing what should, and should not, be reconciled
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 Before he starts his reconciliation work for a client, Otto is shown examples of previous reconciliations for that client. We give him direction on what information he should look at so he can understand how to tell *why* that bank transaction matched the bill or invoice.
 
 This initial training only helps Otto understand what makes a correct match, but not how to tell if something is not a match. We create synthetic non-matches so he can make good decisions but he learns better from real examples. This is where feedback comes in: Otto will record his decisions every time he performs bank reconciliation for a client and you can let him know if he was right or wrong.
@@ -48,8 +50,11 @@ Otto was told to reconcile this bank statement transaction with a particular bil
 You can tell Otto whether the items are a match or not using the buttons. This is always used to improve his performance when he is next trained but can also cause other things to happen. See [feedback](./feedback) for more information. 
 
 
-## Related
-- [GuidedMatch](../guidedmatch) 
-- [SmartMatch](../smartmatch)
-- [Practice and client settings](../settings)
-- [Feedback](../feedback) - Letting Otto know when he's right or wrong
+<Aside type="tip" title="Related pages">
+    - [GuidedMatch](./guidedmatch)
+    - [SmartMatch](./smartmatch)
+    - [Practice and client settings](../portal/settings)
+    - [Feedback](./feedback) - Letting Otto know when he's right or wrong
+</Aside>
+
+
