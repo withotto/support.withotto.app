@@ -5,6 +5,10 @@ description: Inviting Otto to your practice and giving him the permissions he ne
 
 import {Aside} from '@astrojs/starlight/components';
 import GuideJar from '../../../components/GuideJar.astro'
+import ClickableImage from '../../../components/ClickableImage.astro'
+import clientListImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-client-list.png';
+import clientDetailImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-client-detail.png';
+import practiceImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-practice.png';
 
 Otto is like another employee (except he doesn't need a computer, a branded notepad, or annual leave) so accesses Xero using a web browser. His access is determined by you by inviting him to Xero HQ and assigning clients to him. You can add or remove clients at any time.
 
@@ -17,11 +21,13 @@ Otto is like another employee (except he doesn't need a computer, a branded note
 ## Checking Otto has the correct access
 Like Goldilocks and her porridge, it is important that Otto has neither too much or too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/clients/) in the portal. Any of your clients where Otto doesn't have the correct access will display a red padlock symbol.
 
-![Client list showing clients where Otto does not have the correct access](../../../assets/guides/giving-otto-access-to-your-clients/role-client-list.png)
+<ClickableImage src={clientListImage}
+                alt="Client list showing clients where Otto does not have the correct access"/>
 
 View the client details page to confirm the role you should give him in Xero HQ.
 
-![Client details with a message that Otto does not have the correct access](../../../assets/guides/giving-otto-access-to-your-clients/role-client-detail.png)
+<ClickableImage src={clientDetailImage}
+                alt="Client details with a message that Otto does not have the correct access"/>
 
 <Aside>
     See [assigning clients](#assigning-clients) for steps to assign Otto the correct Xero role.

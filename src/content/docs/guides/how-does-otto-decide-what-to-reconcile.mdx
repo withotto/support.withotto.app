@@ -4,13 +4,16 @@ description: Otto's process for knowing what should, and should not, be reconcil
 ---
 
 import { Aside } from '@astrojs/starlight/components';
+import ClickableImage from '../../../components/ClickableImage.astro'
+import reconciliationMatchImage from '../../../assets/guides/how-does-otto-decide-what-to-reconcile/reconciled.png';
 
 Before he starts his reconciliation work for a client, Otto is shown examples of previous reconciliations for that client. We give him direction on what information he should look at so he can understand how to tell *why* that bank transaction matched the bill or invoice.
 
 This initial training only helps Otto understand what makes a correct match, but not how to tell if something is not a match. We create synthetic non-matches so he can make good decisions but he learns better from real examples. This is where feedback comes in: Otto will record his decisions every time he performs bank reconciliation for a client and you can let him know if he was right or wrong.
 
 ## Understanding Otto's decisions
-![Example of a reconciliation match](../../../assets/guides/how-does-otto-decide-what-to-reconcile/reconciled.png)
+<ClickableImage src={reconciliationMatchImage}
+                alt="Example of a reconciliation match"/>
 
 The top part of the summary shows the information from the Xero bank reconciliation page. The bottom left part shows Otto's decision and is made of three parts.
 
