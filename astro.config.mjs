@@ -7,6 +7,10 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
     integrations: [
         starlight({
+            components: {
+                // Override the default components
+                Footer: './src/components/Footer.astro',
+            },
             customCss: [
                 "./src/style.css",
             ],
@@ -59,7 +63,7 @@ export default defineConfig({
                     label: 'Billing',
                     slug: 'portal/billing'
                 }]
-            }]
+            }],
         }),
         tailwind({
             applyBaseStyles: false,
