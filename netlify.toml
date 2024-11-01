@@ -3,11 +3,11 @@ command = "npm run build"
 publish = "dist"
 
 [[redirects]]
-from = "insight.js"
+from = "insights.js"
 to = "https://swetrix.org/swetrix.js"
 status = 200
 
 [[redirects]]
-from = "/insight/"
+from = "/insights/"
 to = "https://api.swetrix.com/log"
 status = 200
