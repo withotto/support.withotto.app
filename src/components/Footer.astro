@@ -5,16 +5,4 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 <Default {...Astro.props}>
     <slot/>
 </Default>
-<script src="/insights.js" defer is:inline></script>
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-        swetrix.init('a5hw2nafYI1S', {
-            apiURL: 'https://insights-api.withotto.app/log',
-        })
-        swetrix.trackViews()
-    })
-</script>
-
-<noscript>
-    <img src="/insights/noscript?pid=a5hw2nafYI1S" alt="" referrerpolicy="no-referrer-when-downgrade" />
-</noscript>
+<script src="https://insights.withotto.app/script.js" data-website-id="f430c3cf-aa33-490f-80ba-d27802cfd542" defer is:inline></script>
