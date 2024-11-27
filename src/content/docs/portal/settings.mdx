@@ -4,9 +4,10 @@ description: Practice and client settings
 ---
 
 import { Aside } from '@astrojs/starlight/components';
-import {Image} from "astro:assets";
+import ClickableImage from '../../../components/ClickableImage.astro'
 import practiceReconciliationSettingsImage from "../../../assets/portal/settings/practice-reconciliation-settings.png"
 import clientReconciliationSettingsImage from "../../../assets/portal/settings/client-reconciliation-settings.png"
+import schedulingSettingsImage from "../../../assets/portal/settings/scheduling-settings.png"
 
 We know every practice and client is different so we want you to be able to use Otto in a way that works for you.
 
@@ -18,7 +19,7 @@ There are two levels of settings:
 You can configure Otto's reconciliation settings at a practice-wide level and at the client level. There are similarities but also some differences between the two places.
 
 ### Practice-wide
-<Image src={practiceReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a practice" />
+<ClickableImage src={practiceReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a practice" />
 
 #### Bank rule reconciliation
 Bank rule reconciliations are enabled practice-wide by default. You would be the first to disable it for all your clients but we won't judge!
@@ -34,12 +35,30 @@ SmartMatch is set to monitor mode when your trial starts so you can check Otto's
 This determines how confident Otto must be that the match is correct before he will reconcile it. It's only possible to increase the minimum confidence level at this level, which would reduce the chance of incorrect SmartMatch reconciliations but make Otto less likely to reconcile matches generally.
 
 ### Client-specific
-<Image src={clientReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a client" />
+<ClickableImage src={clientReconciliationSettingsImage} alt="Screenshot of the reconciliation settings for a client" />
 
 These settings are very similar to the practice-wide settings. By default clients will inherit the same settings that you apply practice-wide. For any clients that should have different settings, simply make the necessary changes. You can see what setting has been specified practice-wide.
 
 #### Minimum SmartMatch confidence
 You have a bit more flexibility with this setting for individual clients. The minimum confidence level is 70%. We recommend you monitor Otto's confidence for each client for a few weeks before lowering this setting to make sure you're not going to end up with extra work due to incorrect reconciliations.
+
+## Scheduling
+<ClickableImage src={schedulingSettingsImage} alt="Screenshot of the scheduling settings for a client" />
+
+### Practice timezone
+You might be thinking: *Huh? Why would I need to set this?* Glad you asked!
+
+Otto needs to make sure he's working when you expect him to, and your staff need to know when to expect Otto to have completed the reconciliations. Some practices may have staff in different timezones and everyone needs to be on the same page about when the reconciliations will happen, so we have a default timezone and convert it for anyone who is somewhere else.
+
+### Time
+This is the hour of the day that Otto will perform reconciliations for you. Otto can start any time within the period and should finish before the end. We have monitoring in place to alert us if anything stops him from meeting this commitment so we can put fixes in place.
+
+You can also see when Otto is next due to reconcile.
+
+<Aside type="caution" title="Please note">
+    - Otto will reconcile a maximum of once per day
+    - Make sure you don't reschedule Otto so that he skips a day, unless you want to
+</Aside>
 
 ## Billing settings
 ### Billing type
@@ -52,6 +71,6 @@ If Otto uses up all the included credits before the month ends, he will continue
 Ensure you never pay more than your monthly subscription price. Otto will stop further reconciliations once the included credits from your plan have been used. He'll start again when the next billing period starts and you get the next batch of included credits.
 
 <Aside type="tip" title="Related pages">
-    - [SmartMatch confidence](../guides/smartmatch#confidence] - How confidence determines what Otto will reconcile
-    - [SmartMatch monitoring mode](../guides/smartmatch#monitoring-mode] - See Otto's decisions without allowing him to reconcile
+    - [SmartMatch confidence](../guides/smartmatch#confidence) - How confidence determines what Otto will reconcile
+    - [SmartMatch monitoring mode](../guides/smartmatch#monitoring-mode) - See Otto's decisions without allowing him to reconcile
 </Aside>
