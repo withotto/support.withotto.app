@@ -15,6 +15,47 @@ export default defineConfig({
                 "./src/style.css",
             ],
             title: 'With Otto support',
+            favicon: '/favicons/favicon.svg',
+            head: [
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'icon',
+                        type: 'image/png',
+                        href: '/favicons/favicon-96x96.png',
+                        sizes: '96x96',
+                    },
+                },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'shortcut icon',
+                        href: '/favicons/favicon.ico',
+                    },
+                },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'apple-touch-icon',
+                        href: '/favicons/apple-touch-icon.png',
+                        sizes: '180x180',
+                    },
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'apple-mobile-web-app-title',
+                        content: 'With Otto',
+                    },
+                },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'manifest',
+                        href: '/favicons/site.webmanifest',
+                    },
+                },
+            ],
             sidebar: [{
                 label: 'Getting started',
                 items: [{
