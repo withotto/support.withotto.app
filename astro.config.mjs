@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     output: "static",
-    site: "https://withotto.app",
+    site: "https://support.withotto.app",
     adapter: netlify(),
     integrations: [
         starlight({
