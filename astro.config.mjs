@@ -102,8 +102,11 @@ export default defineConfig({
                     label: 'Clients',
                     slug: 'portal/clients'
                 }, {
-                    label: 'Settings',
+                    label: 'Practice and client settings',
                     slug: 'portal/settings'
+                }, {
+                    label: 'User profile',
+                    slug: 'portal/user-profile'
                 }, {
                     label: 'Billing',
                     slug: 'portal/billing'
