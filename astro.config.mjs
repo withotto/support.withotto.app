@@ -108,6 +108,9 @@ export default defineConfig({
                     label: 'User profile',
                     slug: 'portal/user-profile'
                 }, {
+                    label: 'Securing your account',
+                    slug: 'portal/securing-your-account'
+                }, {
                     label: 'Billing',
                     slug: 'portal/billing'
                 }]

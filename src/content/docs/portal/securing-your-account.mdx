@@ -1,0 +1,85 @@
+---
+title: Securing your account
+description: Learn how to secure your With Otto portal account using two-factor authentication, Passkeys, and recovery codes. Step-by-step setup guide with security best practices for accountants and bookkeepers
+---
+
+
+import {Aside} from '@astrojs/starlight/components';
+import ClickableImage from '../../../components/ClickableImage.astro'
+import activateAuthenticatorImage from "../../../assets/portal/securing-your-account/activate-authenticator.png"
+import addPasskeyImage from "../../../assets/portal/securing-your-account/add-passkey.png"
+import mfaHomeImage from "../../../assets/portal/securing-your-account/mfa-home.png"
+import userMenuImage from "../../../assets/portal/securing-your-account/user-menu.png"
+
+The With Otto portal contains sensitive client information, so we've implemented multiple security features to keep your account safe. This guide explains the available security options and how to set them up.
+
+# Two-Factor Authentication (2FA)
+Two-factor authentication adds an extra layer of security to your account by requiring two different types of verification when you sign in. Even if someone discovers your password, they won't be able to access your account without the second factor.
+
+<ClickableImage src={mfaHomeImage} alt="Two-factor authentication setup page showing options for authenticator app and Passkey, with a green security recommendation banner at the top"/>
+
+## Setting Up an Authenticator App
+An authenticator app generates unique codes that change every 30 seconds. This is one of the most secure ways to protect your account.
+
+1. From the user menu, select "Two-factor authentication"
+2. Click "Enable authenticator app"
+3. Open your authenticator app (such as Google Authenticator or Authy)
+4. Scan the QR code displayed on your screen
+5. Enter the six-digit code shown in your authenticator app
+6. Click "Activate" to complete the setup
+
+<ClickableImage src={activateAuthenticatorImage} alt="Authenticator app setup screen displaying a QR code for scanning and an input field for verification code entry"/>
+
+<Aside type="caution">
+    Save your recovery codes when they appear. These codes will help you regain access to your account if you lose your
+    phone or cannot access your authenticator app.
+</Aside>
+
+## Using Passkeys
+Passkeys offer a modern, password-free way to secure your account using your device's built-in security features, such as fingerprint scanning or facial recognition.
+
+To set up a Passkey:
+1. From the user menu, select "Two-factor authentication"
+2. Click "Add a Passkey"
+3. Give your key a memorable name (e.g., "Work MacBook" or "iPhone 15")
+4. Choose whether to enable "Sign in with key only". This allows you to use _just_ the Passkey to sign in, without having to also enter your email address and password
+5. Follow your device's prompts to register the security key
+6. Click "Activate" to complete the setup
+
+<ClickableImage src={addPasskeyImage} alt="Passkey setup form with a text field to name your key and a checkbox option for key-only sign in"/>
+
+<Aside type="tip">
+    Set up multiple Passkeys on different devices to ensure you always have a backup way to access your account.
+</Aside>
+
+
+# Recovery Options
+## Recovery Codes
+Recovery codes are automatically generated when you set up two-factor authentication. These one-time-use codes help you regain access to your account if you lose access to your authenticator app or Passkey.
+
+<Aside type="tip">
+    - Store recovery codes in a secure location, separate from your main device
+    - Never share your recovery codes with anyone
+    - Consider printing them and storing them in a safe place
+</Aside>
+
+# Managing Your Security Settings
+You can review and update your security settings at any time:
+
+1. Click your profile icon in the top-right corner
+2. Select "Two-factor authentication"
+3. From here you can:
+    - Add additional security methods
+    - Remove existing methods
+    - Generate new recovery codes
+    - View when each security method was last used
+
+<ClickableImage src={userMenuImage} alt="Expanded user menu showing security options including Practice settings, Your settings, email and password changes, and Two-factor authentication"/>
+
+# Need Help?
+If you're having trouble accessing your account or setting up security features, our support team is here to help. Email support@withotto.app
+
+<Aside type="caution">
+    Never share your passwords, recovery codes, or temporary authentication codes with anyone, including With Otto
+    support staff. We will never ask for these details.
+</Aside>
