@@ -105,7 +105,10 @@ export default defineConfig({
                     label: 'Practice and client settings',
                     slug: 'portal/settings'
                 }, {
-                    label: 'User profile',
+                    label: 'User management',
+                    slug: 'portal/user-management'
+                }, {
+                    label: 'Your settings',
                     slug: 'portal/user-profile'
                 }, {
                     label: 'Securing your account',

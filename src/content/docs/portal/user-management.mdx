@@ -1,0 +1,78 @@
+---
+title: User management
+description: Giving your practice staff access to the features they need
+---
+
+import {Aside} from '@astrojs/starlight/components';
+import {Image} from "astro:assets";
+import usersListImage from "../../../assets/portal/user-management/users-list.png"
+import inviteUserImage from "../../../assets/portal/user-management/invite-a-user.png"
+import changeRoleImage from "../../../assets/portal/user-management/change-role.png"
+
+Otto works great as part of a bigger team. You can invite as many of your team, or anyone else who needs to have visibility of what Otto has been doing to your practice, and manage their access.
+
+Each user has a role assigned to them. The table below shows the permissions that are available for each role. These permissions apply to all clients that Otto has been assigned.
+
+|               | Practice administrator | Client manager | Bookkeeper | View only |
+|---------------|:----------------------:|:--------------:|:----------:|:---------:|
+| **User**      |                        |                |            |           |
+| Manage users  |           ✅            |       ✅        |            |           |
+|               |                        |                |            |           |
+| **Practice**  |                        |                |            |           |
+| Settings      |           ✅            |                |            |           |
+| Billing       |           ✅            |                |            |           |
+|               |                        |                |            |           |
+| **Clients**   |                        |                |            |           |
+| Settings      |           ✅            |       ✅        |            |           |
+| Give feedback |           ✅            |       ✅        |     ✅      |           |
+| View          |           ✅            |       ✅        |     ✅      |     ✅     |
+
+
+<Aside type="tip">
+    Client managers can only assign the client manager, bookkeeper, and view only roles to other users.
+</Aside>
+
+<Image src={usersListImage} alt="Screenshot of the users list page"/>
+
+## Inviting someone to your practice
+<Image src={inviteUserImage} alt="Screenshot of the invite user page"/>
+
+1. Select the "Users" link at the top of the portal page
+2. Click the "Invite" button
+3. Enter the person's name and email address, and choose their role
+
+- Users without a portal account will receive an invitation to create one
+- Anyone who already has a portal account will immediately gain access to your practice
+
+<Aside type="tip">
+    A single user can have access to multiple practices in the portal, and the role they are assigned for each practice can be different.
+</Aside>
+
+## Revoking access
+You may need to revoke access if a member of staff leaves. Click the "Revoke access" option in the list of users and they will immediately lose access to your practice and clients in the portal.
+
+<Aside type="tip">
+    Client managers cannot revoke access for a practice administrator.
+</Aside>
+
+## Changing someone's role
+<Image src={changeRoleImage} alt="Screenshot of the change role page"/>
+
+Roles can be changed by practice administrators and client managers. Click the "Change role" option for the user you wish to update.
+
+<Aside type="tip">
+    Client managers cannot assign the practice administrator role.
+</Aside>
+
+## Resending an invitation
+You can resend the invitation for any users who have not yet set up their portal account.
+
+## Changing your plan
+You can up- or downgrade your plan from the next billing cycle. You can also cancel, although we'd be sad to see you go and would love to have the chance to resolve any problems if you aren't happy with Otto.
+
+## Fixed or overage billing
+You can decide whether you want Otto to stop working when your included credits are used, or if you'd prefer him to carry on and be billed for the overage at the end of the month. See [fixed or overage billing](settings/#billing-type) in settings for more details.
+
+<Aside type="tip" title="Related pages">
+    - [Fixed or overage billing](settings/#billing-type) - keep control of your With Otto spending
+</Aside>
