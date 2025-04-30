@@ -3,7 +3,8 @@ title: Practice and client settings
 description: Practice and client settings
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+
+import {Aside} from '@astrojs/starlight/components';
 import ClickableImage from '../../../components/ClickableImage.astro'
 import practiceReconciliationSettingsImage from "../../../assets/portal/settings/practice-reconciliation-settings.png"
 import clientReconciliationSettingsImage from "../../../assets/portal/settings/client-reconciliation-settings.png"
@@ -67,11 +68,13 @@ Let's say at 09:45 you change your daily reconciliation time from late evening (
 ### Billing type
 Each plan comes with a certain number of included credits. These are used up when Otto reconciles matches in Xero. There are two billing types that give you control over your With Otto bill.
 
-#### Overage
+#### Uncapped
 If Otto uses up all the included credits before the month ends, he will continue his work and you'll be billed for the extra credit usage on your next bill. You will just pay the per-credit amount for your plan in this case.
 
 #### Fixed
-Ensure you never pay more than your monthly subscription price. Otto will stop further reconciliations once the included credits from your plan have been used. He'll start again when the next billing period starts and you get the next batch of included credits.
+Ensure you never pay more than you have planned. Otto will stop further reconciliations once he has used the number of credits you have specified. He'll start again when the next billing period starts and you get the next batch of included credits.
+
+You can let Otto reconcile more than your included credits by specifying a extra credits limit. For example, if your plan includes 500 credits and you allow 100 extra credits, Otto will stop until the next billing period if he consumes 600 credits.
 
 <Aside type="tip" title="Related pages">
     - [SmartMatch confidence](../guides/smartmatch#confidence) - How confidence determines what Otto will reconcile
