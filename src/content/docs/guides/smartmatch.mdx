@@ -3,7 +3,11 @@ title: SmartMatch
 description: Intelligent bank reconciliation
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+
+import {Aside} from '@astrojs/starlight/components';
+import ClickableImage from '../../../components/ClickableImage.astro'
+
+import smartMatchDetailsImage from '../../../assets/guides/smartmatch/smartmatch-details.png';
 
 Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct, he checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches he'll then run through the same process for each possible match, to ensure he's picking the correct one to reconcile.
 
@@ -24,6 +28,18 @@ You will not be charged for an incorrect SmartMatch reconciliation where Otto wa
 All practices will have SmartMatch set to "monitor" mode when their trial starts. This allows you to see Otto's decisions without him actually clicking the "OK" button. This gives you to opportunity to make sure you are confident he will do the right thing when SmartMatch is enabled.
 
 You have complete control of which clients SmartMatch is enabled for and can make changes across your practice, or for individual clients.
+
+## Reviewing Otto's predictions and decisions
+Any time Otto makes a SmartMatch prediction, whether or not he reconciles the transaction, you will be able to see more information by clicking the "View" icon from the dashboard or client page. The page shows each potential matching transaction that Otto was presented with and details of his decision, and any action taken.
+
+<ClickableImage src={smartMatchDetailsImage}
+                alt="An example of a SmartMatch decision"/>
+
+- The top part of the card shows a summary of the information you see in Xero when reviewing potential matches
+- The bottom part is where you can see information from Otto and provide feedback
+- The bold text ("Reconciled" in this case) is the action Otto took
+- Underneath that shows whether Otto thought the transaction was a match or non-match, and his confidence. The percentage in brackets is how confident he needed to be to reconcile the match
+- The buttons allow you to provide feedback. Read more about [feedback](../feedback/) in our separate guide
 
 ## FAQs
 ### Is SmartMatch available for all my clients?
