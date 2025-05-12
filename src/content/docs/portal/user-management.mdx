@@ -4,6 +4,7 @@ description: Giving your practice staff access to the features they need
 ---
 
 
+
 import {Aside} from '@astrojs/starlight/components';
 import {Image} from "astro:assets";
 import usersListImage from "../../../assets/portal/user-management/users-list.png"
@@ -15,20 +16,22 @@ The With Otto portal supports team collaboration through flexible user managemen
 
 Each user has a role assigned to them. The table below shows the permissions that are available for each role. These permissions apply to all clients that Otto has been assigned.
 
-|               | Practice administrator | Client manager | Bookkeeper | View only |
-|---------------|:----------------------:|:--------------:|:----------:|:---------:|
-| **User**      |                        |                |            |           |
-| Manage users  |           ✅            |       ✅        |            |           |
-|               |                        |                |            |           |
-| **Practice**  |                        |                |            |           |
-| Settings      |           ✅            |                |            |           |
-| Billing       |           ✅            |                |            |           |
-|               |                        |                |            |           |
-| **Clients**   |                        |                |            |           |
-| Settings      |           ✅            |       ✅        |            |           |
-| Give feedback |           ✅            |       ✅        |     ✅      |           |
-| View          |           ✅            |       ✅        |     ✅      |     ✅     |
+|               | Practice administrator | Client manager | Bookkeeper¹ | View only¹ | Client² |
+|---------------|:----------------------:|:--------------:|:-----------:|:----------:|:-------:|
+| **User**      |                        |                |             |            |         |
+| Manage users  |           ✓            |       ✓        |             |            |         |
+|               |                        |                |             |            |         |
+| **Practice**  |                        |                |             |            |         |
+| Settings      |           ✓            |                |             |            |         |
+| Billing       |           ✓            |                |             |            |         |
+|               |                        |                |             |            |         |
+| **Clients**   |                        |                |             |            |         |
+| Settings      |           ✓            |       ✓        |             |            |    ✓    |
+| Give feedback |           ✓            |       ✓        |      ✓      |            |    ✓    |
+| View          |           ✓            |       ✓        |      ✓      |     ✓      |    ✓    |
 
+¹ Bookkeeper and view only can either be given access to all current and future clients, or only specific ones
+² Client users can only be given access to specific clients
 
 <Aside type="tip">
     Client managers can only assign the client manager, bookkeeper, and view only roles to other users.
