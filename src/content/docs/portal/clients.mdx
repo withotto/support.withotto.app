@@ -3,15 +3,14 @@ title: Clients
 description: Details about all your clients
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-import { Image } from "astro:assets";
+import ClickableImage from '../../../components/ClickableImage.astro'
 import clientsListImage from "../../../assets/portal/clients/clients-list.png"
 import clientDetailsImage from "../../../assets/portal/clients/client-details.png"
 
 ## The list
 The place to go to see all the clients that Otto has seen in your practice and when he last checked them to see if he could reconcile anything.
 
-<Image src={clientsListImage} alt="Screenshot of the clients list page" />
+<ClickableImage src={clientsListImage} alt="Screenshot of the clients list page" />
 
 ## Details
 This is where you can see everything Otto knows about your client.
@@ -20,4 +19,4 @@ The top section is a summary of what Otto has done, the settings that are applie
 
 Underneath is a table showing *every. single. reconciliation. ever.* (for that client at least.) We think it's important to see a full history of what Otto has done in each of your clients accounts so you can check back to see what happened, when, and why.
 
-<Image src={clientDetailsImage} alt="Screenshot of the client details page" />
+<ClickableImage src={clientDetailsImage} alt="Screenshot of the client details page" />

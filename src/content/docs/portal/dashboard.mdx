@@ -3,13 +3,13 @@ title: Portal dashboard
 description: Get an overview of what Otto has been up to
 ---
 
+import ClickableImage from '../../../components/ClickableImage.astro'
 import { Aside } from '@astrojs/starlight/components';
-import { Image } from "astro:assets";
 import dashboardImage from "../../../assets/portal/dashboard/dashboard.png"
 
 The dashboard should be your first stop when checking what Otto's been up to recently.
 
-<Image src={dashboardImage} alt="Screenshot of the dashboard page" />
+<ClickableImage src={dashboardImage} alt="Screenshot of the dashboard page" />
 
 ## Summary
 A quick overview of the number of reconciliations from the last month and how many clients you have assigned to Otto.
