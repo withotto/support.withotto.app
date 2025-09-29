@@ -3,6 +3,7 @@ title: Giving Otto access to your clients
 description: Inviting Otto to your practice and giving him the permissions he needs
 ---
 
+
 import {Aside} from '@astrojs/starlight/components';
 import GuideJar from '../../../components/GuideJar.astro'
 import ClickableImage from '../../../components/ClickableImage.astro'
@@ -34,6 +35,21 @@ View the client details page to confirm the role you should give him in Xero HQ.
 <Aside>
     See [assigning clients](#assigning-clients) for steps to assign Otto the correct Xero role.
 </Aside>
+
+## Assigning clients where you don't have manage users access
+Your clients can invite Otto from their Xero organisation. We will need to accept the invitation before Otto will have access.
+
+Here are the steps for your client to follow:
+
+1. Visit your Xero account
+2. Click the menu on the top left of the page
+3. Select "Settings"
+4. Select "Users"
+5. Click the three dots on Otto's row, and select "Change permissions"
+6. Make sure the permissions match the screenshot
+
+<ClickableImage src={practiceImage}
+                alt="The permissions that Otto should be given when he is invited from your Xero organisation"/>
 
 ## Assigning Otto to your practice
 It's not possible to assign users access to a practice Xero account via Xero HQ. Here's what you need to do instead:
