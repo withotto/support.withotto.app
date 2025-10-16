@@ -4,6 +4,7 @@ description: Inviting Otto to your practice and giving him the permissions he ne
 ---
 
 
+
 import {Aside} from '@astrojs/starlight/components';
 import GuideJar from '../../../components/GuideJar.astro'
 import ClickableImage from '../../../components/ClickableImage.astro'
@@ -45,8 +46,11 @@ Here are the steps for your client to follow:
 2. Click the menu on the top left of the page
 3. Select "Settings"
 4. Select "Users"
-5. Click the three dots on Otto's row, and select "Change permissions"
-6. Make sure the permissions match the screenshot
+5. Click "Invite a user"
+6. Enter your practice's Otto email address. It will be something like practicename@works.withotto.app
+7. Check "Business and accounting" but make sure the others are unchecked
+8. Make sure the permissions match the screenshot
+9. Click "Send invite"
 
 <ClickableImage src={practiceImage}
                 alt="The permissions that Otto should be given when he is invited from your Xero organisation"/>
