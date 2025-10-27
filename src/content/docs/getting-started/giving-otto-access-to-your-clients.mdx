@@ -8,10 +8,11 @@ description: Inviting Otto to your practice and giving him the permissions he ne
 
 import {Aside} from '@astrojs/starlight/components';
 import GuideJar from '../../../components/GuideJar.astro'
+import Trace from '../../../components/Trace.astro'
 import ClickableImage from '../../../components/ClickableImage.astro'
 import clientListImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-client-list.png';
 import clientDetailImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-client-detail.png';
-import practiceImage from '../../../assets/guides/giving-otto-access-to-your-clients/role-practice.png';
+import xeroUserSettings from '../../../assets/guides/giving-otto-access-to-your-clients/role-practice.png';
 
 Otto is like another employee (except he doesn't need a computer, a branded notepad, or annual leave) so accesses Xero using a web browser. His access is determined by you by inviting him to Xero HQ and assigning clients to him. You can add or remove clients at any time.
 
@@ -19,26 +20,27 @@ Otto is like another employee (except he doesn't need a computer, a branded note
 <GuideJar id="c81b6e01-92c0-4c4f-a521-490ea5d610b2"></GuideJar>
 
 ## Assigning clients
-<GuideJar id="95d7ff8c-c019-49e8-be50-559a2942c6f1"></GuideJar>
+### Assigning clients where you have manage users access
+<Trace id="6fbd0c2f-b0fa-4d26-ad78-15843c75b9ae"></Trace>
 
-## Checking Otto has the correct access
-With Xero's recent updates to the staff pages in Xero HQ, Otto now works best with the "Advisor" role. While this provides slightly more access than our previous recommendation of the "Standard" role, it ensures Otto can properly reconcile your accounts without requiring you to manually invite Otto to each client individually.
+### Assigning your practice Xero account
+<Aside type="caution">Your practice transactions (salaries, fees, etc.) will be visible to staff who have access to all clients. To maintain privacy, ensure staff are assigned only to their relevant clients before adding your practice account.</Aside>
 
-If you prefer to set a more restrictive role, you can follow [Xero's documentation](https://central.xero.com/s/article/Change-a-user-s-role-or-permissions?userregion=true) on viewing and changing user roles. You can check your clients' connection status in the portal - any clients where Otto doesn't have the necessary access will display a red padlock symbol.
+It's not possible to assign users access to a practice Xero account via Xero HQ. Here's what you need to do instead:
 
-<ClickableImage src={clientListImage}
-                alt="Client list showing clients where Otto does not have the correct access"/>
+1. Visit your practice Xero account
+2. Click the menu on the top left of the page
+3. Select "Settings"
+4. Select "Users"
+5. Click the three dots on Otto's row, and select "Change permissions"
+6. Make sure the permissions match the screenshot
 
-View the client details page to confirm the role you should give him in Xero HQ.
+<ClickableImage src={xeroUserSettings}
+                alt="The permissions that Otto should be given for your practice"/>
 
-<ClickableImage src={clientDetailImage}
-                alt="Client details with a message that Otto does not have the correct access"/>
+### Assigning clients where you don't have manage users access
+<Aside>When your client hasn't granted you manage users access, you'll need to ask them to invite Otto.</Aside>
 
-<Aside>
-    See [assigning clients](#assigning-clients) for steps to assign Otto the correct Xero role.
-</Aside>
-
-## Assigning clients where you don't have manage users access
 Your clients can invite Otto from their Xero organisation. We will need to accept the invitation before Otto will have access.
 
 Here are the steps for your client to follow:
@@ -53,21 +55,23 @@ Here are the steps for your client to follow:
 8. Make sure the permissions match the screenshot
 9. Click "Send invite"
 
-<ClickableImage src={practiceImage}
-                alt="The permissions that Otto should be given when he is invited from your Xero organisation"/>
+<ClickableImage src={xeroUserSettings}
+                alt="The permissions that Otto should be given when invited by a client"/>
 
-## Assigning Otto to your practice
-It's not possible to assign users access to a practice Xero account via Xero HQ. Here's what you need to do instead:
+## Checking Otto has the correct access
+Like Goldilocks and her porridge, it is important that Otto has neither too much or too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/clients/) in the portal. Any of your clients where Otto doesn't have the correct access will display a red padlock symbol.
 
-1. Visit your practice Xero account
-2. Click the menu on the top left of the page
-3. Select "Settings"
-4. Select "Users"
-5. Click the three dots on Otto's row, and select "Change permissions"
-6. Make sure the permissions match the screenshot
+<ClickableImage src={clientListImage}
+                alt="Client list showing clients where Otto does not have the correct access"/>
 
-<ClickableImage src={practiceImage}
-                alt="The permissions that Otto should be given for your practice"/>
+View the client details page to confirm the role you should give him in Xero HQ.
+
+<ClickableImage src={clientDetailImage}
+                alt="Client details with a message that Otto does not have the correct access"/>
+
+<Aside>
+    See [assigning clients](#assigning-clients) for steps to assign Otto the correct Xero role.
+</Aside>
 
 <Aside type="tip" title="Related pages">
     - [Making the most of your trial](../making-the-most-of-your-trial) - tips to get the most out of your free trial
