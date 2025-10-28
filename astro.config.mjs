@@ -15,7 +15,10 @@ export default defineConfig({
   integrations: [
       starlight({
 
-          customCss: ["./src/style.css"],
+          customCss: [
+              './src/styles/global.css',
+              './src/styles/brand.css',
+          ],
           title: 'With Otto support',
           favicon: '/favicons/favicon.svg',
           head: [{

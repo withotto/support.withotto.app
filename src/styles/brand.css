@@ -1,0 +1,35 @@
+:root {
+    --sl-hue-accent: 168;  /* Teal hue */
+
+    /* Light mode accent scale */
+    --sl-color-accent-low: #E9F8F4;
+    --sl-color-accent: #00AC8A;
+    --sl-color-accent-high: #004D3F;
+
+    /* Full accent scale for granular control */
+    --sl-color-accent-200: #B3F5E3;  /* Very light teal - subtle backgrounds */
+    --sl-color-accent-300: #66EAC9;  /* Light teal - hover states */
+    --sl-color-accent-400: #33DFB8;  /* Medium-light teal */
+    --sl-color-accent-600: #00AC8A;  /* Primary teal - main brand colour */
+    --sl-color-accent-700: #008F73;  /* Medium-dark teal */
+    --sl-color-accent-900: #115E59;  /* Dark teal - strong emphasis */
+    --sl-color-accent-950: #004D3F;  /* Very dark teal - maximum contrast */
+}
+
+/* Dark mode accent adjustments */
+:root[data-theme='dark'] {
+    --sl-color-accent-low: #004D3F;
+    --sl-color-accent: #00AC8A;
+    --sl-color-accent-high: #66EAC9;
+
+    --sl-color-text-invert: var(--sl-color-accent-200);
+
+    /* Adjust for better dark mode visibility */
+    --sl-color-accent-200: #004D3F;
+    --sl-color-accent-300: #115E59;
+    --sl-color-accent-400: #008F73;
+    --sl-color-accent-600: #00AC8A;
+    --sl-color-accent-700: #33DFB8;
+    --sl-color-accent-900: #66EAC9;
+    --sl-color-accent-950: #B3F5E3;
+}
