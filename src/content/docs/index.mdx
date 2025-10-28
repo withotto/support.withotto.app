@@ -4,25 +4,30 @@ description: Help getting started, and making the most of, With Otto
 template: splash
 ---
 
-import { Aside, Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+import {
+  Aside,
+  Card,
+  CardGrid,
+  LinkButton,
+} from "@astrojs/starlight/components";
 
 <CardGrid>
 	<Card title="Getting started" icon="rocket">
 		Signing up for a trial and using Otto for the first time
 
         <LinkButton href="/getting-started/onboarding">Go »</LinkButton>
-	</Card>
-	<Card title="Guides" icon="document">
-		Help using Otto's main features
+    </Card>
+    <Card title="Guides" icon="document">
+    	Help using Otto's main features
 
         <LinkButton href="/guides/bank-rules">Go »</LinkButton>
-	</Card>
-	<Card title="The portal" icon="setting">
-		How to use the portal and make sure Otto is performing at his best
+    </Card>
+    <Card title="The portal" icon="setting">
+    	How to use the portal and make sure Otto is performing at his best
 
         <LinkButton href="/portal/dashboard">Go »</LinkButton>
-	</Card>
-	<Card title="FAQs" icon="open-book">
+    </Card>
+    <Card title="FAQs" icon="open-book">
         Get answers to the most common questions we are asked about Otto
 
         <LinkButton
@@ -31,5 +36,6 @@ import { Aside, Card, CardGrid, LinkButton } from '@astrojs/starlight/components
             icon="external"
             iconPlacement="start"
         >Go »</LinkButton>
-	</Card>
+    </Card>
+
 </CardGrid>

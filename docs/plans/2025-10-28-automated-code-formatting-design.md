@@ -20,24 +20,28 @@ Implement automated code formatting using Prettier with plugins to maintain cons
 **Selected Approach:** Prettier + plugins (ecosystem)
 
 **Rationale:**
+
 - Industry standard with proven Astro/Starlight support
 - Comprehensive plugin ecosystem for all required file types
 - Well-documented, actively maintained
 - Official Astro team recommendation
 
 **Alternatives Considered:**
+
 - Biome (all-in-one): Faster but lacks Markdown and Tailwind support
 - Hybrid Biome + Prettier: Added complexity without clear benefit for solo project
 
 ## Core Dependencies
 
 ### Prettier Stack
+
 - `prettier` (v3.4+) - Main formatting engine
 - `prettier-plugin-astro` - Astro component syntax support
 - `prettier-plugin-tailwindcss` - Automatic Tailwind class sorting
 - `eslint-config-prettier` - Prevent ESLint/Prettier conflicts (future-proofing)
 
 ### Automation Tools
+
 - `husky` (v9+) - Git hooks manager
 - `lint-staged` (v15+) - Format only staged files for fast commits
 
@@ -46,13 +50,12 @@ Implement automated code formatting using Prettier with plugins to maintain cons
 ## Configuration Files
 
 ### 1. `.prettierrc.json`
+
 Main Prettier configuration:
+
 ```json
 {
-  "plugins": [
-    "prettier-plugin-astro",
-    "prettier-plugin-tailwindcss"
-  ]
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -61,7 +64,9 @@ Main Prettier configuration:
 **Configuration philosophy:** Start with Prettier defaults. Add customizations only if needed (e.g., line width, quote style).
 
 ### 2. `.prettierignore`
+
 Exclude from formatting:
+
 ```
 dist/
 .astro/
@@ -71,6 +76,7 @@ pnpm-lock.yaml
 ```
 
 ### 3. `package.json` Scripts
+
 ```json
 {
   "scripts": {
@@ -84,7 +90,9 @@ pnpm-lock.yaml
 - `format:check`: CI/verification mode (non-destructive)
 
 ### 4. `.lintstagedrc.json`
+
 Configure staged file formatting:
+
 ```json
 {
   "*": "prettier --write --ignore-unknown"
@@ -94,7 +102,9 @@ Configure staged file formatting:
 **Flag explanation:** `--ignore-unknown` prevents errors on unsupported file types.
 
 ### 5. `.husky/pre-commit`
+
 Git hook script:
+
 ```bash
 pnpm exec lint-staged
 ```

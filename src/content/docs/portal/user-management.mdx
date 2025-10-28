@@ -3,19 +3,19 @@ title: User management
 description: Giving your practice staff access to the features they need
 ---
 
-import ClickableImage from '../../../components/ClickableImage.astro'
-import {Aside} from '@astrojs/starlight/components';
-import usersListImage from "../../../assets/portal/user-management/users-list.png"
-import inviteUserImage from "../../../assets/portal/user-management/invite-a-user.png"
-import changeRoleImage from "../../../assets/portal/user-management/change-role.png"
-import assignClientsImage from "../../../assets/portal/user-management/assign-clients.png"
+import ClickableImage from "../../../components/ClickableImage.astro";
+import { Aside } from "@astrojs/starlight/components";
+import usersListImage from "../../../assets/portal/user-management/users-list.png";
+import inviteUserImage from "../../../assets/portal/user-management/invite-a-user.png";
+import changeRoleImage from "../../../assets/portal/user-management/change-role.png";
+import assignClientsImage from "../../../assets/portal/user-management/assign-clients.png";
 
 The With Otto portal supports team collaboration through flexible user management. You can invite team members and external stakeholders to your practice and customize their access levels to meet your organizational needs. Each user is assigned a specific role that determines what actions they can perform and what information they can view.
 
 Each user has a role assigned to them. The table below shows the permissions that are available for each role. These permissions apply to all clients that Otto has been assigned.
 
 |               | Practice administrator | Client manager | Bookkeeper¹ | View only¹ | Client² |
-|---------------|:----------------------:|:--------------:|:-----------:|:----------:|:-------:|
+| ------------- | :--------------------: | :------------: | :---------: | :--------: | :-----: |
 | **User**      |                        |                |             |            |         |
 | Manage users  |           ✓            |       ✓        |             |            |         |
 |               |                        |                |             |            |         |
@@ -32,13 +32,18 @@ Each user has a role assigned to them. The table below shows the permissions tha
 ² Client users can only be given access to specific clients
 
 <Aside type="tip">
-    Client managers can only assign the client manager, bookkeeper, and view only roles to other users.
+  Client managers can only assign the client manager, bookkeeper, and view only
+  roles to other users.
 </Aside>
 
-<ClickableImage src={usersListImage} alt="Screenshot of the users list page"/>
+<ClickableImage src={usersListImage} alt="Screenshot of the users list page" />
 
 ## Inviting someone to your practice
-<ClickableImage src={inviteUserImage} alt="Screenshot of the invite user page"/>
+
+<ClickableImage
+  src={inviteUserImage}
+  alt="Screenshot of the invite user page"
+/>
 
 1. Select the "Users" link at the top of the portal page
 2. Click the "Invite" button
@@ -48,53 +53,69 @@ Each user has a role assigned to them. The table below shows the permissions tha
 - Anyone who already has a portal account will immediately gain access to your practice
 
 <Aside type="tip">
-    A single user can have access to multiple practices in the portal, and the role they are assigned for each practice can be different.
+  A single user can have access to multiple practices in the portal, and the
+  role they are assigned for each practice can be different.
 </Aside>
 
 ## Assigning clients
+
 Control which clients each user can access based on their responsibilities and requirements.
 
 ### Default access behaviour
+
 - **Practice Administrators and Client Managers**: Full access to all clients
 - **Bookkeepers and View Only Users**: Access to all clients by default
 - **Client Users**: Access only to specifically assigned clients
 
 ### Bookkeepers and view only users
+
 By default users with either of these roles will have access to all clients in the portal. They will automatically be able to access any clients that Otto is assigned in future.
 
 If they should only have access to specific clients, a practice administrator or client manager can choose from a list of clients that Otto currently has access to, as well as those he was assigned in the past. Any newly assigned clients will need to be manually assigned after Otto first reconciles them.
 
 ### Clients
+
 Users with the client role work in the opposite way to bookkeepers and view only users. They only have access to clients that have been specifically assigned to them.
 
 ### How to assign and unassign clients
+
 Practice administrators and client managers are able to assign specific clients.
 
 1. Select the "Users" link at the top of the portal page
 2. Click the "Assign clients" link next to the user
 3. Check (assign) or uncheck (unassign) the appropriate clients
 
-<ClickableImage src={assignClientsImage} alt="Screenshot of the assign clients page"/>
+<ClickableImage
+  src={assignClientsImage}
+  alt="Screenshot of the assign clients page"
+/>
 
 <Aside type="tip">
-    Clicking "Select all" whilst you have a search in progress will **only** select the visible clients.
+  Clicking "Select all" whilst you have a search in progress will **only**
+  select the visible clients.
 </Aside>
 
 ## Revoking access
+
 You may need to revoke access if a member of staff leaves. Click the "Revoke access" option in the list of users and they will immediately lose access to your practice and clients in the portal.
 
 <Aside type="tip">
-    Client managers cannot revoke access for a practice administrator.
+  Client managers cannot revoke access for a practice administrator.
 </Aside>
 
 ## Changing someone's role
-<ClickableImage src={changeRoleImage} alt="Screenshot of the change role page"/>
+
+<ClickableImage
+  src={changeRoleImage}
+  alt="Screenshot of the change role page"
+/>
 
 Roles can be changed by practice administrators and client managers. Click the "Change role" option for the user you wish to update.
 
 <Aside type="tip">
-    Client managers cannot assign the practice administrator role.
+  Client managers cannot assign the practice administrator role.
 </Aside>
 
 ## Resending an invitation
+
 You can resend the invitation for any users who have not yet set up their portal account.

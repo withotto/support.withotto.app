@@ -50,6 +50,30 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Developer Setup
+
+### Code Formatting (WebStorm)
+
+This project uses Prettier for automated code formatting. To enable format-on-save in WebStorm:
+
+1. Open **Preferences → Languages & Frameworks → JavaScript → Prettier**
+2. Set **Prettier package** to project's `node_modules/prettier` (should auto-detect)
+3. Enable **On save** checkbox
+4. Set **Run for files** pattern to:
+
+```
+{**/*,*}.{js,ts,jsx,tsx,astro,css,md,mdx,json,yaml,yml}
+```
+
+5. Apply and close preferences
+
+**Pre-commit hook:** Formatting runs automatically before each commit via Husky and lint-staged. You don't need to remember to format manually.
+
+**Manual formatting:**
+
+- Format all files: `pnpm format`
+- Check formatting: `pnpm format:check`
+
 ## 👀 Want to learn more?
 
 Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).

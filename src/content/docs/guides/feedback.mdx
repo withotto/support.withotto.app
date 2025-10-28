@@ -3,7 +3,7 @@ title: Feedback
 description: Helping Otto get better and better over time
 ---
 
-import {Aside} from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
 Otto doesn't know your clients as well as you do (and he's naturally very cautious) so it's likely he won't be confident enough to reconcile all the transactions he could, particularly at the start of his time with you.
 
@@ -12,12 +12,15 @@ Our top priority is to avoid Otto making incorrect reconciliations so, by defaul
 Feedback is how you can help him work out what he should and should not reconcile.
 
 ## What happens when you give feedback
+
 The feedback will always be used to make Otto more accurate in future but some other things can happen depending on the action he took and the type of feedback you give.
 
 #### Otto reconciled; you agree it's a match
+
 Perfect, just what we're aiming for! Nothing extra happens in this case. We'll let Otto know he was correct when he is next retrained.
 
 #### Otto reconciled but it was not correct
+
 Sorry. We do what we can to avoid this but Otto isn't infallible. Here's what happens next:
 
 1. Tell Otto he made a mistake by clicking the "This is not a match" button in the portal
@@ -27,19 +30,20 @@ Sorry. We do what we can to avoid this but Otto isn't infallible. Here's what ha
 We don't want to make the situation worse so Otto now won't touch that bank statement transaction, even if another bill or invoice becomes available in future. You will need to reconcile the match yourself in Xero.
 
 <Aside>
-    Incorrect SmartMatch reconciliations are not charged and do not count against your included credits. We only want
-    you to pay when Otto is doing what you want him to.
+  Incorrect SmartMatch reconciliations are not charged and do not count against
+  your included credits. We only want you to pay when Otto is doing what you
+  want him to.
 </Aside>
 
 #### Otto skipped but he should have reconciled
+
 There will always be a few tricky matches that Otto might get tripped up by but your feedback will help him improve over time.
 
 Let Otto know that he should have reconciled the bank transaction and the bill or invoice by clicking the "This is a match" button.
 
 This does two things:
+
 1. Otto will see that you said he should have reconciled this transaction the next time he reconciles that client and will perform a [GuidedMatch](../guidedmatch)
 2. The feedback will be used to improve Otto's decisions when he is next retrained
 
-<Aside>
-    There is no charge for GuidedMatch reconciliations.
-</Aside>
+<Aside>There is no charge for GuidedMatch reconciliations.</Aside>

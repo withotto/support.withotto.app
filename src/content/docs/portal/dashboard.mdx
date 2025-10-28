@@ -3,22 +3,25 @@ title: Portal dashboard
 description: Get an overview of what Otto has been up to
 ---
 
-import ClickableImage from '../../../components/ClickableImage.astro'
-import { Aside } from '@astrojs/starlight/components';
-import dashboardImage from "../../../assets/portal/dashboard/dashboard.png"
+import ClickableImage from "../../../components/ClickableImage.astro";
+import { Aside } from "@astrojs/starlight/components";
+import dashboardImage from "../../../assets/portal/dashboard/dashboard.png";
 
 The dashboard should be your first stop when checking what Otto's been up to recently.
 
 <ClickableImage src={dashboardImage} alt="Screenshot of the dashboard page" />
 
 ## Summary
+
 A quick overview of the number of reconciliations from the last month and how many clients you have assigned to Otto.
 
 ## Recent reconciliations
+
 For each client you will see up to ten rows, relating to the ten most recent days where Otto reconciled at least one item for that client.
 
 The columns show the number of each type of reconciliation that was made. If there have been any SmartMatch or GuidedMatch reconciliations, or skipped reconciliations, for that day you can click on the "View" link to see details of all the possible matches Otto saw that day.
 
 <Aside type="tip" title="Related pages">
-    - [Feedback](../guides/feedback) - Review what Otto did that day for the client and let him know how he did
+  - [Feedback](../guides/feedback) - Review what Otto did that day for the
+  client and let him know how he did
 </Aside>

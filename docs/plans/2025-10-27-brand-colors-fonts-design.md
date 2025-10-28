@@ -19,16 +19,21 @@ Update the support site (built with Astro + Starlight) to use brand colors and t
 ## Design Decisions
 
 ### Customization Level
+
 **Light customization** - Override colors, fonts, and component styling while keeping Starlight's structure intact. Balances brand consistency with documentation best practices.
 
 ### Color Strategy
+
 **Teal primary with strategic terracotta accents:**
+
 - Primary teal (#00AC8A) for links, buttons, active states, key actions
 - Terracotta (#e67d5f) for callouts, secondary elements, warmth
 - Diverse callout palette for different content types
 
 ### Technical Approach
+
 **Hybrid implementation:**
+
 - Tailwind config defines color tokens and font family (consistency with main site)
 - CSS custom properties map tokens to Starlight's theming system (proper integration)
 - Self-hosted fonts via @fontsource-variable npm package
@@ -36,15 +41,18 @@ Update the support site (built with Astro + Starlight) to use brand colors and t
 ## Typography
 
 ### Font Family
+
 **Rethink Sans Variable** - variable font providing full weight range (400-700)
 
 ### Implementation
+
 1. Install `@fontsource-variable/rethink-sans` npm package (matches main site)
 2. Import in `src/style.css` at top of file
 3. Configure Tailwind to use Rethink Sans as default sans-serif family
 4. Starlight inherits typography from Tailwind base configuration
 
 ### Font Loading
+
 ```javascript
 // package.json dependency
 "@fontsource-variable/rethink-sans": "^5.2.6"
@@ -58,11 +66,13 @@ Update the support site (built with Astro + Starlight) to use brand colors and t
 ### Core Brand Colors (from main site)
 
 **Default (Text & Neutrals)**
+
 - DEFAULT: `#2D2D2D` - Primary text
 - soft: `#696969` - Secondary text, muted elements
 - strong: `#000000` - Headings, high emphasis
 
 **Primary (Brand Teal)**
+
 - DEFAULT: `#00AC8A` - Links, buttons, active states
 - soft: `#E9F2E1` - Hover backgrounds, subtle highlights
 - accent: `#CDDDC0` - Alternative light teal
@@ -70,17 +80,20 @@ Update the support site (built with Astro + Starlight) to use brand colors and t
 - strong: `#115E59` - Dark teal, high contrast
 
 **Terracotta (Warm Accent)**
+
 - DEFAULT: `#e67d5f` - Examples, warm callouts
 - soft: `#faf3f0` - Light backgrounds
 - medium: `#f0b8a6` - Mid-range terracotta
 - strong: `#b85a3d` - Dark terracotta
 
 **Muted (Backgrounds)**
+
 - DEFAULT: `#2c3b2a` - Dark muted green
 - soft: `#F9FAFB` - Light gray backgrounds
 - strong: `#E5E7EB` - Borders, dividers
 
 **Semantic Colors**
+
 - success: `#34D399`, soft: `#E3FCEF`, strong: `#047857`
 - warning: `#FBBF24`, soft: `#FFFAEB`, strong: `#A16207`
 - danger: `#EF4444`, soft: `#FEF2F2`, strong: `#7F1D1D`
@@ -100,6 +113,7 @@ Diverse color set for different documentation content types, all WCAG AA accessi
 8. **Reference (Slate)** - `#64748B` - Technical references, API docs
 
 Each callout type includes:
+
 - Soft variant (10-15% opacity) for backgrounds
 - Default for borders and medium emphasis
 - Strong variant for icons and high emphasis
@@ -108,18 +122,21 @@ Each callout type includes:
 ## Component Styling
 
 ### Header & Navigation
+
 - **Active states:** Primary teal background with soft teal highlight
 - **Hover states:** Light teal background (#E9F2E1)
 - **Text colors:** Default (#2D2D2D) for main text, strong (#000000) for emphasis
 - **Search bar:** Teal focus rings using primary color
 
 ### Sidebar
+
 - **Active page:** Primary teal indicator with soft background
 - **Hover:** Light teal background on links
 - **Category headers:** Default strong (#000000) for hierarchy
 - **Icons:** Muted soft (#696969) for visual weight balance
 
 ### Content Area
+
 - **Headings:** Default strong (#000000), Rethink Sans font
 - **Body text:** Default (#2D2D2D)
 - **Links:** Primary teal, terracotta on hover (visual interest)
@@ -127,12 +144,14 @@ Each callout type includes:
 - **Inline code:** Muted soft background (#F9FAFB)
 
 ### Callout Boxes
+
 - **Background:** Soft variant of callout color (subtle)
 - **Border:** 4px left border in main color (visual distinction)
 - **Icon:** Strong variant for clarity
 - **Structure:** Maintain Starlight's callout HTML/CSS structure
 
 ### Footer
+
 - **Custom component:** Already exists at `src/components/Footer.astro`
 - **Links:** Primary teal
 - **Background:** Muted soft (#F9FAFB) or white
@@ -161,11 +180,11 @@ Extend theme with complete brand palette:
 
 ```javascript
 // tailwind.config.mjs
-import starlightPlugin from '@astrojs/starlight-tailwind';
+import starlightPlugin from "@astrojs/starlight-tailwind";
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       fontFamily: {
@@ -239,7 +258,7 @@ Map Tailwind tokens to Starlight's theming system:
 
 ```css
 /* src/style.css */
-@import '@fontsource-variable/rethink-sans';
+@import "@fontsource-variable/rethink-sans";
 
 @tailwind base;
 @tailwind components;
@@ -248,84 +267,88 @@ Map Tailwind tokens to Starlight's theming system:
 
 :root {
   /* Typography */
-  font-family: theme('fontFamily.sans');
+  font-family: theme("fontFamily.sans");
 
   /* Accent colors - Primary Teal */
-  --sl-color-accent: theme('colors.primary.DEFAULT');
-  --sl-color-accent-low: theme('colors.primary.soft');
-  --sl-color-accent-high: theme('colors.primary.strong');
+  --sl-color-accent: theme("colors.primary.DEFAULT");
+  --sl-color-accent-low: theme("colors.primary.soft");
+  --sl-color-accent-high: theme("colors.primary.strong");
 
   /* Text colors */
-  --sl-color-text: theme('colors.default.DEFAULT');
-  --sl-color-text-accent: theme('colors.primary.DEFAULT');
+  --sl-color-text: theme("colors.default.DEFAULT");
+  --sl-color-text-accent: theme("colors.primary.DEFAULT");
 
   /* Background & grays */
   --sl-color-bg: #ffffff;
-  --sl-color-gray-1: theme('colors.muted.soft');
-  --sl-color-gray-2: theme('colors.muted.strong');
-  --sl-color-gray-3: theme('colors.default.soft');
-  --sl-color-gray-4: theme('colors.default.DEFAULT');
-  --sl-color-gray-5: theme('colors.default.strong');
-  --sl-color-gray-6: theme('colors.default.strong');
+  --sl-color-gray-1: theme("colors.muted.soft");
+  --sl-color-gray-2: theme("colors.muted.strong");
+  --sl-color-gray-3: theme("colors.default.soft");
+  --sl-color-gray-4: theme("colors.default.DEFAULT");
+  --sl-color-gray-5: theme("colors.default.strong");
+  --sl-color-gray-6: theme("colors.default.strong");
 
   /* Starlight callout colors */
-  --sl-color-blue: theme('colors.info.DEFAULT');
-  --sl-color-blue-low: theme('colors.info.soft');
-  --sl-color-blue-high: theme('colors.info.strong');
+  --sl-color-blue: theme("colors.info.DEFAULT");
+  --sl-color-blue-low: theme("colors.info.soft");
+  --sl-color-blue-high: theme("colors.info.strong");
 
-  --sl-color-green: theme('colors.success.DEFAULT');
-  --sl-color-green-low: theme('colors.success.soft');
-  --sl-color-green-high: theme('colors.success.strong');
+  --sl-color-green: theme("colors.success.DEFAULT");
+  --sl-color-green-low: theme("colors.success.soft");
+  --sl-color-green-high: theme("colors.success.strong");
 
-  --sl-color-orange: theme('colors.warning.DEFAULT');
-  --sl-color-orange-low: theme('colors.warning.soft');
-  --sl-color-orange-high: theme('colors.warning.strong');
+  --sl-color-orange: theme("colors.warning.DEFAULT");
+  --sl-color-orange-low: theme("colors.warning.soft");
+  --sl-color-orange-high: theme("colors.warning.strong");
 
-  --sl-color-red: theme('colors.danger.DEFAULT');
-  --sl-color-red-low: theme('colors.danger.soft');
-  --sl-color-red-high: theme('colors.danger.strong');
+  --sl-color-red: theme("colors.danger.DEFAULT");
+  --sl-color-red-low: theme("colors.danger.soft");
+  --sl-color-red-high: theme("colors.danger.strong");
 
-  --sl-color-purple: theme('colors.purple.DEFAULT');
-  --sl-color-purple-low: theme('colors.purple.soft');
-  --sl-color-purple-high: theme('colors.purple.strong');
+  --sl-color-purple: theme("colors.purple.DEFAULT");
+  --sl-color-purple-low: theme("colors.purple.soft");
+  --sl-color-purple-high: theme("colors.purple.strong");
 }
 
 /* Custom callout types */
 .starlight-aside--example {
-  border-color: theme('colors.terracotta.DEFAULT');
-  background-color: theme('colors.terracotta.soft');
+  border-color: theme("colors.terracotta.DEFAULT");
+  background-color: theme("colors.terracotta.soft");
 }
 
 .starlight-aside--important {
-  border-color: theme('colors.primary.DEFAULT');
-  background-color: theme('colors.primary.soft');
+  border-color: theme("colors.primary.DEFAULT");
+  background-color: theme("colors.primary.soft");
 }
 
 .starlight-aside--reference {
-  border-color: theme('colors.slate.DEFAULT');
-  background-color: theme('colors.slate.soft');
+  border-color: theme("colors.slate.DEFAULT");
+  background-color: theme("colors.slate.soft");
 }
 ```
 
 ## Testing & Validation
 
 ### Accessibility Checks
+
 - Verify all color combinations meet WCAG AA standards (4.5:1 contrast ratio)
 - Test with screen readers for semantic structure
 - Ensure keyboard navigation works with new focus styles
 
 ### Visual Testing
+
 - Verify callout distinctiveness across all 8 types
 - Check link colors and hover states
 - Test font rendering across browsers (Chrome, Firefox, Safari)
 - Verify mobile responsiveness
 
 ### Cross-browser Testing
+
 - Font loading and fallbacks
 - CSS custom property support
 - Tailwind theme() function compatibility
 
 ### Performance
+
 - Font file sizes (woff2 variable font is efficient)
 - CSS bundle size after Tailwind processing
 - First paint metrics with self-hosted fonts

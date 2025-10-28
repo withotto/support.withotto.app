@@ -2,34 +2,43 @@
 title: What can be reconciled?
 description: What types of transactions can Otto reconcile?
 ---
-import { Aside } from '@astrojs/starlight/components';
-import ClickableImage from '../../../components/ClickableImage.astro'
-import singlePossibleMatchImage from '../../../assets/guides/what-can-be-reconciled/single-possible-match.png'
-import multiplePossibleMatchsImage from '../../../assets/guides/what-can-be-reconciled/multiple-possible-matches.png'
+
+import { Aside } from "@astrojs/starlight/components";
+import ClickableImage from "../../../components/ClickableImage.astro";
+import singlePossibleMatchImage from "../../../assets/guides/what-can-be-reconciled/single-possible-match.png";
+import multiplePossibleMatchsImage from "../../../assets/guides/what-can-be-reconciled/multiple-possible-matches.png";
 
 ## Bank rules
+
 Otto will reconcile any bank rules you have set up, as soon as he starts working in your practice. He isn't able to fill in any details, such as the payee or any references, so will skip any rule he finds that requires information to be added at reconciliation time.
 
 There is no way for Otto to make sure that the rule has been set up correctly so please make sure any rules you create only match the transactions you want him to reconcile.
 
 ## Transactions with a bill or invoice
+
 Otto supports these types of possible matches in Xero
 
 ### A single possible match
-<ClickableImage src={singlePossibleMatchImage}
-                alt="A screenshot showing a single possible match for a bank transaction"/>
+
+<ClickableImage
+  src={singlePossibleMatchImage}
+  alt="A screenshot showing a single possible match for a bank transaction"
+/>
 
 Otto compares the details from the bank statement and the Xero match to decide if they relate to the same transaction.
 
 ### Multiple possible matches
-<ClickableImage src={multiplePossibleMatchsImage}
-                alt="A screenshot showing multiple possible matches for a bank transaction"/>
+
+<ClickableImage
+  src={multiplePossibleMatchsImage}
+  alt="A screenshot showing multiple possible matches for a bank transaction"
+/>
 
 Otto compares the details from the bank statement to each of the possible matches and decides which could relate to the bank transaction. If there is more than one match that looks like it could be correct, he chooses the one which is the best match.
 
 <Aside type="tip" title="Related pages">
-    - [SmartMatch](smartmatch)
-    - [Bank rules](bank-rules)
-    - [How Otto decides what to reconcile](/guides/how-does-otto-decide-what-to-reconcile)
-    - [Bank rules quick guide](https://withotto.app/files/Bank%20rules%20quick%20guide.pdf) - Our one-page guide to getting the most out of bank rules
+  - [SmartMatch](smartmatch) - [Bank rules](bank-rules) - [How Otto decides what
+  to reconcile](/guides/how-does-otto-decide-what-to-reconcile) - [Bank rules
+  quick guide](https://withotto.app/files/Bank%20rules%20quick%20guide.pdf) -
+  Our one-page guide to getting the most out of bank rules
 </Aside>
