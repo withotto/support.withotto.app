@@ -8,17 +8,17 @@ import ClickableImage from "../../../components/ClickableImage.astro";
 
 import smartMatchDetailsImage from "../../../assets/guides/smartmatch/smartmatch-details.png";
 
-Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct, he checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches he'll then run through the same process for each possible match, to ensure he's picking the correct one to reconcile.
+Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct, he checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches, he'll then run through the same process for each possible match to ensure he's picking the correct one to reconcile.
 
 SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile.
 
-Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training and each month add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal.
+Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training, and each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal.
 
 ## Confidence
 
-One of the key components of SmartMatch is the confidence level. For each possible match Otto sees, he will decide whether the two are a match or a non-match, and decide how confident he is with the decision.
+One of the key components of SmartMatch is the confidence level. For each possible match Otto sees, he will decide whether the two are a match or a non-match and decide how confident he is with the decision.
 
-By default we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](../settings). You can be more strict by requiring a higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
+By default, we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](../settings). You can be more strict by requiring higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
 
 <Aside>
   You will not be charged for an incorrect SmartMatch reconciliation where Otto
@@ -27,13 +27,13 @@ By default we require Otto to be at least 90% sure that the transaction is a mat
 
 ## Monitoring mode
 
-All practices will have SmartMatch set to "monitor" mode when their trial starts. This allows you to see Otto's decisions without him actually clicking the "OK" button. This gives you to opportunity to make sure you are confident he will do the right thing when SmartMatch is enabled.
+All practices will have SmartMatch set to "monitor" mode when their trial starts. This allows you to see Otto's decisions without him actually clicking the "OK" button. This gives you the opportunity to make sure you are confident he will do the right thing when SmartMatch is enabled.
 
 You have complete control of which clients SmartMatch is enabled for and can make changes across your practice, or for individual clients.
 
 ## Reviewing Otto's predictions and decisions
 
-Any time Otto makes a SmartMatch prediction, whether or not he reconciles the transaction, you will be able to see more information by clicking the "View" icon from the dashboard or client page. The page shows each potential matching transaction that Otto was presented with and details of his decision, and any action taken.
+Any time Otto makes a SmartMatch prediction, whether he reconciles the transaction, you will be able to see more information by clicking the "View" icon from the dashboard or client page. The page shows each potential matching transaction that Otto was presented with and details of his decision, and any action taken.
 
 <ClickableImage
   src={smartMatchDetailsImage}
@@ -50,9 +50,9 @@ Any time Otto makes a SmartMatch prediction, whether or not he reconciles the tr
 
 ### Is SmartMatch available for all my clients?
 
-Otto will perform better with more data, but requires a minimum of 100 examples of bill or invoice reconciliations in order to be trained. A reconciliation in this case is a bill or sales invoice that has been reconciled against a bank transaction.
+Otto will perform better with more data but requires a minimum of 100 bill or invoice reconciliation examples to be trained. A reconciliation in this case is a bill or sales invoice that has been reconciled against a bank transaction.
 
-Any clients that don't have enough examples will still be able to use bank rule reconciliations and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto and he'll start to use SmartMatch.
+Any clients that don't have enough examples will still be able to use bank rule reconciliations, and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto, and he'll start to use SmartMatch.
 
 <Aside type="tip" title="Related pages">
   - [What can be reconciled?](what-can-be-reconciled) - What Otto can, and

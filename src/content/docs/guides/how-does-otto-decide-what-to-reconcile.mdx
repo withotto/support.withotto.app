@@ -7,9 +7,9 @@ import { Aside } from "@astrojs/starlight/components";
 import ClickableImage from "../../../components/ClickableImage.astro";
 import reconciliationMatchImage from "../../../assets/guides/how-does-otto-decide-what-to-reconcile/reconciled.png";
 
-Before he starts his reconciliation work for a client, Otto is shown examples of previous reconciliations for that client. We give him direction on what information he should look at so he can understand how to tell _why_ that bank transaction matched the bill or invoice.
+Before he starts his reconciliation work for a client, Otto is shown examples of previous reconciliations for that client. We give him the direction on what information he should look at so he can understand how to tell _why_ that bank transaction matched the bill or invoice.
 
-This initial training only helps Otto understand what makes a correct match, but not how to tell if something is not a match. We create synthetic non-matches so he can make good decisions but he learns better from real examples. This is where feedback comes in: Otto will record his decisions every time he performs bank reconciliation for a client and you can let him know if he was right or wrong.
+This initial training only helps Otto understand what makes a correct match, but not how to tell if something is not a match. We create synthetic non-matches so he can make good decisions, but he learns better from real examples. This is where feedback comes in: Otto will record his decisions every time he performs bank reconciliation for a client, and you can let him know if he was right or wrong.
 
 ## Understanding Otto's decisions
 
@@ -18,7 +18,7 @@ This initial training only helps Otto understand what makes a correct match, but
   alt="Example of a reconciliation match"
 />
 
-The top part of the summary shows the information from the Xero bank reconciliation page. The bottom left part shows Otto's decision and is made of three parts.
+The top part of the summary shows the information from the Xero bank reconciliation page. The bottom-left part shows Otto's decision and is made of three parts.
 
 1. The overall action taken. In this case "Reconciled"
 2. Whether he thinks the statement and invoice or bill relate to the same transaction. Either "Match" or "Non-match"
@@ -36,13 +36,13 @@ There is also "Testing: Would reconcile" where Otto records his decision but doe
 
 #### Reconciled: Multiple possible matches
 
-There was more than one possible match and one of them matches the bank statement transaction.
+There was more than one possible match, and one of them matches the bank statement transaction.
 
 There is also "Testing: Would reconcile from multiple possible matches" where Otto records his decision but doesn't reconcile the transactions because he is in monitoring mode.
 
 #### Reconciled: GuidedMatch
 
-Although Otto wasn't confident enough to match this himself, you told him it was a match in the portal so he reconciled the transaction.
+Although Otto wasn't confident enough to match this himself, you told him it was a match in the portal, so he reconciled the transaction.
 
 #### Skipped: Confidence too low
 
@@ -54,11 +54,11 @@ None of the bills or invoices seemed like they matched the bank statement transa
 
 #### Skipped: Feedback given to not reconcile this transaction
 
-You told Otto that he incorrectly reconciled this transaction in the past so he is skipping the transaction to avoid making another mistake.
+You told Otto that he incorrectly reconciled this transaction in the past, so he is skipping the transaction to avoid making another mistake.
 
 #### Skipped: Bank transaction is not reconciled but match from feedback was not present in Xero
 
-Otto was told to reconcile this bank statement transaction with a particular bill or invoice but the bill or invoice had been deleted or reconciled against another transaction when he checked next time.
+Otto was told to reconcile this bank statement transaction with a particular bill or invoice, but the bill or invoice had been deleted or reconciled against another transaction when he checked next time.
 
 ## Giving feedback
 
