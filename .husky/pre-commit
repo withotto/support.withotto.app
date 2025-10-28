@@ -1,1 +1,5 @@
+#!/bin/sh
+# Initialize mise to make pnpm available
+eval "$(mise activate bash --shims)"
+
 pnpm exec lint-staged
