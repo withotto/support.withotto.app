@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.5
-        version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
+        version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@2.8.7)(typescript@5.9.3)
       '@astrojs/netlify':
         specifier: ^6.6.0
         version: 6.6.0(@types/node@24.9.1)(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1))(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(yaml@2.8.1)
@@ -52,14 +52,14 @@ importers:
         specifier: ^16.2.6
         version: 16.2.6
       prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
+        specifier: ^2.8.7
+        version: 2.8.7
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
       prettier-plugin-tailwindcss:
         specifier: ^0.7.1
-        version: 0.7.1(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
+        version: 0.7.1(prettier-plugin-astro@0.14.1)(prettier@2.8.7)
 
 packages:
 
@@ -4349,9 +4349,9 @@ packages:
 
 snapshots:
 
-  '@astrojs/check@0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)':
+  '@astrojs/check@0.9.5(prettier-plugin-astro@0.14.1)(prettier@2.8.7)(typescript@5.9.3)':
     dependencies:
-      '@astrojs/language-server': 2.15.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
+      '@astrojs/language-server': 2.15.5(prettier-plugin-astro@0.14.1)(prettier@2.8.7)(typescript@5.9.3)
       chokidar: 4.0.3
       kleur: 4.1.5
       typescript: 5.9.3
@@ -4364,7 +4364,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.7.4': {}
 
-  '@astrojs/language-server@2.15.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)':
+  '@astrojs/language-server@2.15.5(prettier-plugin-astro@0.14.1)(prettier@2.8.7)(typescript@5.9.3)':
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/yaml2ts': 0.2.2
@@ -4378,14 +4378,14 @@ snapshots:
       volar-service-css: 0.0.65(@volar/language-service@2.4.23)
       volar-service-emmet: 0.0.65(@volar/language-service@2.4.23)
       volar-service-html: 0.0.65(@volar/language-service@2.4.23)
-      volar-service-prettier: 0.0.65(@volar/language-service@2.4.23)(prettier@3.6.2)
+      volar-service-prettier: 0.0.65(@volar/language-service@2.4.23)(prettier@2.8.7)
       volar-service-typescript: 0.0.65(@volar/language-service@2.4.23)
       volar-service-typescript-twoslash-queries: 0.0.65(@volar/language-service@2.4.23)
       volar-service-yaml: 0.0.65(@volar/language-service@2.4.23)
       vscode-html-languageservice: 5.6.0
       vscode-uri: 3.1.0
     optionalDependencies:
-      prettier: 3.6.2
+      prettier: 2.8.7
       prettier-plugin-astro: 0.14.1
     transitivePeerDependencies:
       - typescript
@@ -8339,14 +8339,13 @@ snapshots:
       prettier: 3.6.2
       sass-formatter: 0.7.9
 
-  prettier-plugin-tailwindcss@0.7.1(prettier-plugin-astro@0.14.1)(prettier@3.6.2):
+  prettier-plugin-tailwindcss@0.7.1(prettier-plugin-astro@0.14.1)(prettier@2.8.7):
     dependencies:
-      prettier: 3.6.2
+      prettier: 2.8.7
     optionalDependencies:
       prettier-plugin-astro: 0.14.1
 
-  prettier@2.8.7:
-    optional: true
+  prettier@2.8.7: {}
 
   prettier@3.6.2: {}
 
@@ -9158,12 +9157,12 @@ snapshots:
     optionalDependencies:
       '@volar/language-service': 2.4.23
 
-  volar-service-prettier@0.0.65(@volar/language-service@2.4.23)(prettier@3.6.2):
+  volar-service-prettier@0.0.65(@volar/language-service@2.4.23)(prettier@2.8.7):
     dependencies:
       vscode-uri: 3.1.0
     optionalDependencies:
       '@volar/language-service': 2.4.23
-      prettier: 3.6.2
+      prettier: 2.8.7
 
   volar-service-typescript-twoslash-queries@0.0.65(@volar/language-service@2.4.23):
     dependencies:
