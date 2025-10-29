@@ -4,7 +4,7 @@ description: Intelligent bank reconciliation
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import ClickableImage from "../../../components/ClickableImage.astro";
+import Image from "../../../components/ZoomableImage.astro";
 
 import smartMatchDetailsImage from "../../../assets/guides/smartmatch/smartmatch-details.png";
 
@@ -35,10 +35,7 @@ You have complete control of which clients SmartMatch is enabled for and can mak
 
 Any time Otto makes a SmartMatch prediction, whether he reconciles the transaction, you will be able to see more information by clicking the "View" icon from the dashboard or client page. The page shows each potential matching transaction that Otto was presented with and details of his decision, and any action taken.
 
-<ClickableImage
-  src={smartMatchDetailsImage}
-  alt="An example of a SmartMatch decision"
-/>
+<Image src={smartMatchDetailsImage} alt="An example of a SmartMatch decision" />
 
 - The top part of the card shows a summary of the information you see in Xero when reviewing potential matches
 - The bottom part is where you can see information from Otto and provide feedback

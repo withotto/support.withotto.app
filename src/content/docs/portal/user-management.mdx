@@ -3,7 +3,7 @@ title: User management
 description: Giving your practice staff access to the features they need
 ---
 
-import ClickableImage from "../../../components/ClickableImage.astro";
+import Image from "../../../components/ZoomableImage.astro";
 import { Aside } from "@astrojs/starlight/components";
 import usersListImage from "../../../assets/portal/user-management/users-list.png";
 import inviteUserImage from "../../../assets/portal/user-management/invite-a-user.png";
@@ -39,14 +39,11 @@ Each user has a role assigned to them. The table below shows the permissions tha
   roles to other users.
 </Aside>
 
-<ClickableImage src={usersListImage} alt="Screenshot of the users list page" />
+<Image src={usersListImage} alt="Screenshot of the users list page" />
 
 ## Inviting someone to your practice
 
-<ClickableImage
-  src={inviteUserImage}
-  alt="Screenshot of the invite user page"
-/>
+<Image src={inviteUserImage} alt="Screenshot of the invite user page" />
 
 1. Select the "Users" link at the top of the portal page
 2. Click the "Invite" button
@@ -88,10 +85,7 @@ Practice administrators and client managers are able to assign specific clients.
 2. Click the "Assign clients" link next to the user
 3. Check (assign) or uncheck (unassign) the appropriate clients
 
-<ClickableImage
-  src={assignClientsImage}
-  alt="Screenshot of the assign clients page"
-/>
+<Image src={assignClientsImage} alt="Screenshot of the assign clients page" />
 
 <Aside type="tip">
   Clicking "Select all" whilst you have a search in progress will **only**
@@ -108,10 +102,7 @@ You may need to revoke access if a member of staff leaves. Click the "Revoke acc
 
 ## Changing someone's role
 
-<ClickableImage
-  src={changeRoleImage}
-  alt="Screenshot of the change role page"
-/>
+<Image src={changeRoleImage} alt="Screenshot of the change role page" />
 
 Roles can be changed by practice administrators and client managers. Click the "Change role" option for the user you wish to update.
 

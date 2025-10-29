@@ -4,8 +4,8 @@ description: What you need to know about reconciling bank rules
 ---
 
 import { Aside } from "@astrojs/starlight/components";
+import Image from "../../../components/ZoomableImage.astro";
 import bankRuleActivity from "../../../assets/portal/report/bank-rule-activity.png";
-import ClickableImage from "../../../components/ClickableImage.astro";
 
 Otto will reconcile any bank rules that you create. It's a great way to save time reconciling transactions that don't need the bill or invoice to be saved in Xero.
 
@@ -21,7 +21,7 @@ He isn't able to fill in any details, such as the payee or any references, so wi
 
 You'll be able to see which bank rules Otto has reconciled each day. The daily report shows the bank rule name, the bank account the reconciliation was made against, and the total for that rule.
 
-<ClickableImage
+<Image
   src={bankRuleActivity}
   alt="A list of bank rules that Otto has reconciled on the chosen day"
 />

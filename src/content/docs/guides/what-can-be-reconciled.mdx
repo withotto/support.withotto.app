@@ -4,7 +4,7 @@ description: What types of transactions can Otto reconcile?
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import ClickableImage from "../../../components/ClickableImage.astro";
+import Image from "../../../components/ZoomableImage.astro";
 import singlePossibleMatchImage from "../../../assets/guides/what-can-be-reconciled/single-possible-match.png";
 import multiplePossibleMatchsImage from "../../../assets/guides/what-can-be-reconciled/multiple-possible-matches.png";
 
@@ -20,7 +20,7 @@ Otto supports these types of possible matches in Xero
 
 ### A single possible match
 
-<ClickableImage
+<Image
   src={singlePossibleMatchImage}
   alt="A screenshot showing a single possible match for a bank transaction"
 />
@@ -29,7 +29,7 @@ Otto compares the details from the bank statement and the Xero match to decide i
 
 ### Multiple possible matches
 
-<ClickableImage
+<Image
   src={multiplePossibleMatchsImage}
   alt="A screenshot showing multiple possible matches for a bank transaction"
 />

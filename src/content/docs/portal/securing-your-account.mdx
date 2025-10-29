@@ -4,7 +4,7 @@ description: Learn how to secure your With Otto portal account using two-factor 
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import ClickableImage from "../../../components/ClickableImage.astro";
+import Image from "../../../components/ZoomableImage.astro";
 import activateAuthenticatorImage from "../../../assets/portal/securing-your-account/activate-authenticator.png";
 import addPasskeyImage from "../../../assets/portal/securing-your-account/add-passkey.png";
 import mfaHomeImage from "../../../assets/portal/securing-your-account/mfa-home.png";
@@ -16,7 +16,7 @@ The With Otto portal contains sensitive client information, so we've implemented
 
 Two-factor authentication adds an extra layer of security to your account by requiring two different types of verification when you sign in. Even if someone discovers your password, they won't be able to access your account without the second factor.
 
-<ClickableImage
+<Image
   src={mfaHomeImage}
   alt="Two-factor authentication setup page showing options for authenticator app and Passkey, with a green security recommendation banner at the top"
 />
@@ -32,7 +32,7 @@ An authenticator app generates unique codes that change every 30 seconds. This i
 5. Enter the six-digit code shown in your authenticator app
 6. Click "Activate" to complete the setup
 
-<ClickableImage
+<Image
   src={activateAuthenticatorImage}
   alt="Authenticator app setup screen displaying a QR code for scanning and an input field for verification code entry"
 />
@@ -56,7 +56,7 @@ To set up a Passkey:
 5. Follow your device's prompts to register the security key
 6. Click "Activate" to complete the setup
 
-<ClickableImage
+<Image
   src={addPasskeyImage}
   alt="Passkey setup form with a text field to name your key and a checkbox option for key-only sign in"
 />
@@ -90,7 +90,7 @@ You can review and update your security settings at any time:
    - Generate new recovery codes
    - View when each security method was last used
 
-<ClickableImage
+<Image
   src={userMenuImage}
   alt="Expanded user menu showing security options including Practice settings, Your settings, email and password changes, and Two-factor authentication"
 />

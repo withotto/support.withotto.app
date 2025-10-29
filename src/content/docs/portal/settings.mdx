@@ -4,7 +4,7 @@ description: Practice and client settings
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import ClickableImage from "../../../components/ClickableImage.astro";
+import Image from "../../../components/ZoomableImage.astro";
 import practiceReconciliationSettingsImage from "../../../assets/portal/settings/practice-reconciliation-settings.png";
 import clientReconciliationSettingsImage from "../../../assets/portal/settings/client-reconciliation-settings.png";
 import schedulingSettingsImage from "../../../assets/portal/settings/scheduling-settings.png";
@@ -22,7 +22,7 @@ You can configure Otto's reconciliation settings at a practice-wide level and at
 
 ### Practice-wide
 
-<ClickableImage
+<Image
   src={practiceReconciliationSettingsImage}
   alt="Screenshot of the reconciliation settings for a practice"
 />
@@ -45,7 +45,7 @@ This determines how confident Otto must be that the match is correct before he w
 
 ### Client-specific
 
-<ClickableImage
+<Image
   src={clientReconciliationSettingsImage}
   alt="Screenshot of the reconciliation settings for a client"
 />
@@ -58,7 +58,7 @@ You have a bit more flexibility with this setting for individual clients. The mi
 
 ## Scheduling
 
-<ClickableImage
+<Image
   src={schedulingSettingsImage}
   alt="Screenshot of the scheduling settings for a client"
 />

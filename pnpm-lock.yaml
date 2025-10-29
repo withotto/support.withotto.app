@@ -35,6 +35,9 @@ importers:
       sharp:
         specifier: ^0.34.4
         version: 0.34.4
+      starlight-image-zoom:
+        specifier: ^0.13.2
+        version: 0.13.2(@astrojs/starlight@0.36.1(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1)))
       tailwindcss:
         specifier: ^4.1.16
         version: 4.1.16
@@ -3712,6 +3715,12 @@ packages:
 
   stack-trace@0.0.10:
     resolution: {integrity: sha512-KGzahc7puUKkzyMt+IqAep+TVNbKP+k2Lmwhub39m1AsTSkaDutx56aDCo+HLDzf/D26BIHTJWNiTG1KAJiQCg==}
+
+  starlight-image-zoom@0.13.2:
+    resolution: {integrity: sha512-fDJrx+UZXhkbhEeXKoRogTKAYtrYVJPw6wmSUI3nHUTA0vuRM6EI//2Z8bzv3Ecvz0pHKD1vAxtS01mLyessBA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.32.0'
 
   std-env@3.10.0:
     resolution: {integrity: sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==}
@@ -8778,6 +8787,16 @@ snapshots:
   spdx-license-ids@3.0.22: {}
 
   stack-trace@0.0.10: {}
+
+  starlight-image-zoom@0.13.2(@astrojs/starlight@0.36.1(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1))):
+    dependencies:
+      '@astrojs/starlight': 0.36.1(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1))
+      mdast-util-mdx-jsx: 3.2.0
+      rehype-raw: 7.0.0
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.2
+    transitivePeerDependencies:
+      - supports-color
 
   std-env@3.10.0: {}
 

@@ -4,9 +4,9 @@ description: Inviting Otto to your practice and giving him the permissions he ne
 ---
 
 import { Aside } from "@astrojs/starlight/components";
+import Image from "../../../components/ZoomableImage.astro";
 import GuideJar from "../../../components/GuideJar.astro";
 import Trace from "../../../components/Trace.astro";
-import ClickableImage from "../../../components/ClickableImage.astro";
 import clientListImage from "../../../assets/guides/giving-otto-access-to-your-clients/role-client-list.png";
 import clientDetailImage from "../../../assets/guides/giving-otto-access-to-your-clients/role-client-detail.png";
 import xeroUserSettings from "../../../assets/guides/giving-otto-access-to-your-clients/role-practice.png";
@@ -40,7 +40,7 @@ It's not possible to assign users access to a practice Xero account via Xero HQ.
 5. Click the three dots on Otto's row, and select "Change permissions"
 6. Make sure the permissions match the screenshot
 
-<ClickableImage
+<Image
   src={xeroUserSettings}
   alt="The permissions that Otto should be given for your practice"
 />
@@ -66,23 +66,23 @@ Here are the steps for your client to follow:
 8. Make sure the permissions match the screenshot
 9. Click "Send invite"
 
-<ClickableImage
+<Image
   src={xeroUserSettings}
   alt="The permissions that Otto should be given when invited by a client"
 />
 
 ## Checking Otto has the correct access
 
-Like Goldilocks and her porridge, it is important that Otto has neither too much or too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/clients/) in the portal. Any of your clients where Otto doesn't have the correct access will display a red padlock symbol.
+Like Goldilocks and her porridge, it is important that Otto has neither too much nor too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/clients/) in the portal. Any of your clients where Otto doesn't have the correct access will display a red padlock symbol.
 
-<ClickableImage
+<Image
   src={clientListImage}
   alt="Client list showing clients where Otto does not have the correct access"
 />
 
 View the client details page to confirm the role you should give him in Xero HQ.
 
-<ClickableImage
+<Image
   src={clientDetailImage}
   alt="Client details with a message that Otto does not have the correct access"
 />

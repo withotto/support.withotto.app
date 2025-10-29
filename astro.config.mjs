@@ -3,7 +3,7 @@ import starlight from "@astrojs/starlight";
 
 import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
-
+import starlightImageZoom from "starlight-image-zoom";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -14,6 +14,7 @@ export default defineConfig({
 
   integrations: [
     starlight({
+      plugins: [starlightImageZoom()],
       customCss: ["./src/styles/global.css", "./src/styles/brand.css"],
       title: "With Otto support",
       logo: {
