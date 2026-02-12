@@ -60,7 +60,7 @@ You have a bit more flexibility with this setting for individual clients. The mi
 
 <Image
   src={schedulingSettingsImage}
-  alt="Screenshot of the scheduling settings for a client"
+  alt="Screenshot of the scheduling settings for the practice"
 />
 
 ### Practice timezone
@@ -81,6 +81,26 @@ Let's say at 09:45 you change your daily reconciliation time from late evening (
 
 <Aside type="caution" title="Please note">
   Otto will reconcile a maximum of once per day
+</Aside>
+
+### Schedule days
+
+By default, Otto works every day of the week. However, you can choose which days Otto should perform reconciliations.
+
+#### Practice-wide schedule
+
+Set a default schedule for your whole practice, and Otto will follow this for all your clients. For example, if you only want Otto to work Monday to Friday, simply select those days in your practice settings.
+
+#### Client-specific schedules
+
+Need different timing for particular clients? You can override the practice schedule with a custom schedule for individual clients. This is useful when clients have specific expectations about when their books should be reconciled or when they typically forward receipts.
+
+<Aside type="tip" title="Why use a custom schedule?">
+  Some practices have bank rules set up as a fallback for when clients don't
+  provide receipts. Rather than Otto immediately reconciling those bank rules,
+  you can configure him to wait a few days, giving your clients time to submit
+  their receipts first. Once the receipts are published in Xero, Otto can then
+  reconcile them properly.
 </Aside>
 
 ## Billing settings
