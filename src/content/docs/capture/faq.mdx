@@ -1,0 +1,125 @@
+---
+title: Frequently asked questions
+description: Common questions about Otto Capture
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Connecting and disconnecting
+
+### How do I disconnect a client?
+
+Go to the client settings and click **Disconnect**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+
+### What happens to my data if I disconnect?
+
+- Documents already in Capture stay in Capture. Nothing is deleted
+- Bills and invoices already published stay in your accounting platform
+- Synced reference data (contacts, accounts, tax rates) is no longer refreshed
+- You can reconnect at any time to resume
+
+### Can I reconnect after disconnecting?
+
+Yes. Reconnecting triggers a fresh data sync and you can resume processing and publishing documents.
+
+## Data sync
+
+### What data does Capture sync from my accounting platform?
+
+Contacts, chart of accounts, tax rates, currencies, tracking categories, and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
+
+### How often does data sync?
+
+A full sync runs when you first connect a client. After that, you can trigger a manual sync from the client configuration page at any time.
+
+### I added a new account but it's not showing in Capture
+
+Trigger a manual refresh from the client configuration page. The new account will be available once the sync completes.
+
+### Does Capture modify anything in my accounting platform?
+
+Capture only **creates** new bills, invoices, contacts, and attachments. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow#what-capture-does-not-modify) for details.
+
+## Processing and extraction
+
+### How long does processing take?
+
+Most documents are processed within a few minutes. Processing time depends on document complexity, image quality, and current queue volume.
+
+### What document types can Capture process?
+
+Bills (accounts payable) and sales invoices (accounts receivable). The AI classifies each document automatically during processing.
+
+### What file formats are supported?
+
+PDF, JPEG, PNG, TIFF, WebP, and HTML. More will be added in future.
+
+### What if the AI extracts the wrong data?
+
+All extracted data is editable during review. You can correct any field before publishing.
+
+### What if the AI can't determine the document type?
+
+The document is marked as **Needs classification**. You can set the type (bill or sales invoice) manually, and processing continues from there.
+
+### What if there are multiple receipts in one image?
+
+Capture detects when multiple documents appear in a single image and marks it as **Needs manual split**. You'll need to submit the documents separately.
+
+## Multi-organisation
+
+### Can one account manage multiple organisations?
+
+Yes. Each accounting platform organisation is represented as a separate client in Capture. You can have as many clients as you need within your practice.
+
+### Do clients share any data?
+
+No. Each client's data (documents, contacts, accounting configuration) is completely separate. Changes to one client don't affect any others.
+
+## Security
+
+### How are documents stored?
+
+Documents are stored in encrypted cloud storage (Amazon S3). Each file is organised by organisation and client, with access controlled through signed URLs that expire after a short period.
+
+### Are documents scanned for malware?
+
+Yes. Every uploaded document is scanned for malware before processing. If a threat is detected, the document is quarantined and won't be processed.
+
+### How are accounting platform credentials stored?
+
+Access tokens are encrypted at rest using symmetric encryption with support for key rotation. Capture never stores your accounting platform username or password.
+
+### Who can access my data?
+
+Only users in your organisation can access your documents and client data. Your data is kept completely separate from other organisations, and we enforce this separation at multiple layers — from the application through to the database — so data can never be accidentally exposed to the wrong organisation.
+
+## Errors and troubleshooting
+
+### A document failed to publish. What should I do?
+
+Check the error message on the document. Common causes include:
+
+- **Invalid account code:** The account may have been deactivated in your accounting platform. Refresh your synced data and update the line item.
+- **Invalid tax rate:** The tax rate may no longer be valid. Refresh your synced data and select a different rate.
+- **Authentication error:** Your connection may have expired. Reconnect your accounting platform and retry.
+
+After fixing the issue, click **Publish** again to retry.
+
+### A document is stuck in "Processing"
+
+Documents occasionally take longer to process if the queue is busy. If a document has been processing for more than 15 minutes, please contact support.
+
+### Why was my document quarantined?
+
+The malware scan detected a potential threat in the file. Quarantined files cannot be processed. We recommend notifying the sender so they can perform a full security scan of their device. They should then re-send the document once confirmed that any viruses or malware are removed. Please contact support if you believe the scanner has incorrectly marked the document as having a virus and we will investigate.
+
+## Billing
+
+### What counts as a processed document?
+
+A document counts as processed when it successfully completes the extraction stage. Documents that fail during triage (not a financial document) or are quarantined (malware detected) do not count.
+
+### Do discarded documents count?
+
+Documents that are discarded after extraction count as processed, since the AI extraction work has already been completed.

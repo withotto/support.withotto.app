@@ -1,0 +1,115 @@
+---
+title: Reviewing and publishing
+description: The review workflow before publishing documents to your accounting platform
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import reviewInterface from "@assets/capture/guides/reviewing/review-interface.png";
+
+After Capture processes a document, it lands in your review queue. This guide covers the review interface, editing extracted data, and publishing to your accounting platform.
+
+## The review interface
+
+The review screen shows the original document alongside the extracted data. You can view the document and edit any field before publishing.
+
+<Image
+  src={reviewInterface}
+  alt="The review interface. Showing the original document and the automatically extracted data"
+/>
+
+**What you'll see:**
+
+- The original document (zoomable)
+- Extracted header fields (supplier, invoice number, dates, currency, amounts)
+- The matched contact (with match method and confidence score)
+- Line items with description, quantity, amounts, tax rate, and account code
+- The bill state that will be used when publishing
+- An edit history to show which fields have been changed and by whom
+- An event timeline showing processing history
+
+## Editing extracted data
+
+All extracted fields are editable. You can make any changes you need before publishing.
+
+**Header fields:**
+
+- Supplier name
+- Invoice number
+- Issue date and due date
+- Currency
+- Net amount, tax amount, and total amount
+
+**Line items:**
+
+- Description
+- Quantity and unit amount
+- Tax rate (from your client's synced tax rates)
+- Account code (from your client's chart of accounts)
+- Tracking categories
+
+**Contact:**
+
+- Select a different contact from your synced contacts
+- Create a new contact if the supplier doesn't exist yet
+
+**Bill state:**
+
+- Override the default bill state (Draft, Submitted, or Authorised) for this specific document
+
+<Aside type="tip">
+  If you need to change the default bill state for all future documents, update
+  it in the [client configuration](/capture/getting-started/configuring-clients)
+  instead.
+</Aside>
+
+Changes are saved automatically and tracked in the edit history with before/after values. If you come back to the same document within 30 minutes, your changes are merged into the same edit rather than creating a new revision.
+
+## Creating contacts during review
+
+If the extracted supplier or customer doesn't match any existing contact, you can create a new one directly from the review screen. The new contact is saved locally and will be created in your accounting platform when you publish the document.
+
+## Publishing
+
+When you're satisfied with the extracted data, click **Publish** to send the document to your accounting platform.
+
+Before publishing, Capture validates the data:
+
+**Errors (must be fixed before publishing):**
+
+- Missing required fields (supplier name, invoice number, issue date, currency, total amount)
+- No contact selected
+- No line items
+- Invalid account codes (not in your chart of accounts)
+- Invalid tax rates (not applicable to this document type)
+- Currency not configured in your accounting platform
+
+**Warnings (can be acknowledged and published anyway):**
+
+- Missing due date
+- Line item amounts don't match header totals
+
+### What gets created
+
+When you publish a document, Capture creates the following in your accounting platform:
+
+1. **A bill or invoice:** With all the header fields, line items, and tax information
+2. **A contact:** (if needed) If you created a new contact during review, it's created first
+3. **An attachment:** The original document file is attached to the bill or invoice
+
+The bill is created in the state you selected (Draft, Submitted, or Authorised).
+
+## Handling publish errors
+
+If publishing fails, the document is marked as **Publish failed** and an error message explains what went wrong. Common causes:
+
+- **Invalid account code:** An account code was removed or deactivated in your accounting platform since the data was synced. Refresh the synced data and update the line item.
+- **Invalid tax rate:** A tax rate is no longer valid. Refresh the synced data and select a different rate.
+- **Authentication error:** The connection to your accounting platform has expired or been revoked. Reconnect and retry.
+- **Rate limited:** Too many requests in a short time. Wait a moment and retry.
+
+After fixing the issue, you can retry publishing from the review screen.
+
+## Discarding documents
+
+If a document shouldn't be published (duplicate, irrelevant, or too poor quality), you can discard it. Discarded documents are kept in Capture for reference but won't be published.

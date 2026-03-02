@@ -1,0 +1,77 @@
+---
+title: Custom email domain
+description: Use your own domain for receiving documents by email
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+
+By default, each client receives documents at an address like `{prefix}@{your-organisation}.ottocapture.email`. You can configure a custom domain so clients receive documents at addresses on your own domain instead. For example, `acme@docs.smithaccounting.com`. This gives you complete control of the branding your clients see, and helps them tell they are forwarding their documents to a legitimate service.
+
+<Aside type="tip">
+  The default `ottocapture.email` address continues to work even after you set
+  up a custom domain. Both addresses deliver to the same client.
+</Aside>
+
+## Setting up a custom domain
+
+<Steps>
+    1. **Add your domain:** Go to **Settings → Email** and enter your custom domain
+
+    2. **Configure DNS records:** Add the required DNS records to your domain (see below)
+
+    3. **Verify:** Return to the email settings page and click **Verify**. Capture checks that your DNS records are correctly configured
+
+    4. **Start receiving documents:** Once verified, your custom domain is active and ready to receive emails
+
+</Steps>
+
+## Required DNS records
+
+You need to add the following records to your domain's DNS configuration. The exact values are shown on the email settings page after you add your domain.
+
+### MX record
+
+The MX record tells email servers where to deliver mail for your domain. Point it to the Capture mail server:
+
+| Type | Name          | Value                                  | Priority |
+| ---- | ------------- | -------------------------------------- | -------- |
+| MX   | `your-domain` | `inbound-smtp.eu-west-2.amazonaws.com` | 10       |
+
+The specific region and hostname are shown on your email settings page.
+
+### TXT record (domain verification)
+
+This record proves you own the domain:
+
+| Type | Name                     | Value                     |
+| ---- | ------------------------ | ------------------------- |
+| TXT  | `_amazonses.your-domain` | Provided on settings page |
+
+## Recommended DNS records
+
+These records are not required for verification, but are strongly recommended to prevent others from sending email that appears to come from your custom Otto Capture domain.
+
+### SPF record
+
+An SPF record declares that no mail servers are authorised to send email from your custom Otto Capture domain (since it's only used for receiving):
+
+| Type | Name          | Value         |
+| ---- | ------------- | ------------- |
+| TXT  | `your-domain` | `v=spf1 -all` |
+
+### DMARC record
+
+A DMARC record tells receiving servers to reject any email claiming to come from your custom Otto Capture domain:
+
+| Type | Name                 | Value                           |
+| ---- | -------------------- | ------------------------------- |
+| TXT  | `_dmarc.your-domain` | `v=DMARC1; p=reject; sp=reject` |
+
+## Verification
+
+When you click **Verify**, Capture checks:
+
+1. **MX record:** Your domain's MX record points to the correct mail server
+2. **Domain ownership:** The TXT verification record is present
+
+Both checks must pass for the domain to become active. DNS changes can take up to 48 hours to propagate, though most providers update within minutes.

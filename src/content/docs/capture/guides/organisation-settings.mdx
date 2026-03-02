@@ -1,0 +1,52 @@
+---
+title: Organisation settings
+description: Managing your organisation's name, team, and email configuration
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+Organisation settings control how your Capture organisation appears, who has access, and how email is configured. Access these from **Settings** in the navigation.
+
+## Organisation name
+
+Your organisation name is displayed throughout the Capture interface. You can change it at any time from **Settings**.
+
+## Organisation slug
+
+The slug is used in your default email addresses:
+
+```
+{prefix}@{slug}.ottocapture.email
+```
+
+You can change the slug from **Settings**. Changing the slug updates all default email addresses for your clients.
+
+<Aside type="caution">
+  If you change your slug, the previous email addresses will stop working. Make
+  sure to update any email forwarding rules that use the old addresses.
+</Aside>
+
+## Team management
+
+You can invite team members to your organisation and manage their access from **Settings → Users**.
+
+### Roles
+
+| Role       | Description                                                                               |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| **Admin**  | Full access to all settings, clients, and team management                                 |
+| **Member** | Can review and publish documents, but cannot manage organisation settings or team members |
+
+### Inviting team members
+
+Invite new team members by entering their email address from the users settings page. Invitations expire if not accepted.
+
+### Removing team members
+
+Admins can remove team members from the organisation at any time. Removing a team member revokes their access immediately.
+
+## Email settings
+
+From **Settings → Email**, you can configure a custom email domain for your organisation. This lets clients receive documents at addresses on your own domain instead of the default `ottocapture.email` addresses.
+
+See [Custom email domain](/capture/guides/custom-email-domain) for setup instructions.

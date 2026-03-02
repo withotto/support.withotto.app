@@ -1,0 +1,78 @@
+---
+title: Submitting documents
+description: How to get documents into Otto Capture for processing
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import documentInbox from "@assets/capture/getting-started/submitting-documents/document-inbox.png";
+
+There are two ways to submit documents to Capture: uploading through the web interface, or forwarding them by email.
+
+## Upload via the web
+
+From your client's document list, you can upload files by dragging and dropping them onto the page, or by clicking the upload button and selecting files.
+
+<Image
+  src={documentInbox}
+  alt="Document inbox page showing a bill that is in the process of being uploaded by the user"
+/>
+
+After uploading:
+
+1. The file is scanned for malware
+2. Once the scan passes, the document enters the processing queue
+3. The AI processes the document (typically within a few minutes)
+4. The document appears in your review queue
+
+## Email submission
+
+Each client has a unique email address (set up in [client configuration](/capture/getting-started/configuring-clients)). Forward receipts and invoices to this address, and Capture will automatically extract and process the attachments.
+
+How email submission works:
+
+- Capture processes all supported file attachments from the email
+- For emails without attachments, Capture will use the email contents
+- The email body will be used by the AI to understand special cases, such as where the client has provided details of what the purchase was for
+- Duplicate emails are automatically detected and skipped
+- Each attachment becomes a separate document in Capture
+
+<Aside type="tip">
+  Email submission is particularly useful when your clients can forward receipts
+  directly from their inbox. Set up an email forwarding rule to automate this
+  completely.
+</Aside>
+
+## What happens after submission
+
+Every document goes through the same processing pipeline:
+
+1. **Malware scan:** Checked for security threats. Infected files are quarantined and won't be processed
+2. **Triage:** The AI classifies the document type (bill or sales invoice) and verifies it's a genuine financial document. Documents that can't be classified need manual classification
+3. **Extraction:** The AI extracts structured data: supplier name, invoice number, dates, amounts, line items, tax, and currency
+4. **Validation:** Line item amounts are checked against totals for arithmetic consistency. Mismatches are flagged for review but don't prevent processing
+5. **Contact matching:** The extracted supplier or customer name is matched against your existing contacts (exact match first, then fuzzy matching)
+6. **Ready for review:** The document appears in your review queue with its extracted data
+
+<Aside>
+  If the AI detects multiple documents in a single image (for example, two
+  receipts photographed together), the document will be flagged for manual
+  splitting
+</Aside>
+
+## Document statuses
+
+| Status                   | Meaning                                            |
+| ------------------------ | -------------------------------------------------- |
+| **Pending scan**         | Waiting for malware scan to complete               |
+| **Queued**               | In the processing queue                            |
+| **Processing**           | Currently being processed by the AI                |
+| **Needs review**         | Extraction complete, ready for you to check        |
+| **Needs classification** | The AI couldn't determine the document type        |
+| **Needs manual split**   | Multiple documents detected in one image           |
+| **Reviewed**             | You've reviewed and confirmed the data             |
+| **Publishing**           | Being sent to your accounting platform             |
+| **Published**            | Successfully published to your accounting platform |
+| **Publish failed**       | Failed to publish. Check the error and retry       |
+| **Quarantined**          | Malware detected, file has been quarantined        |
+| **Discarded**            | Manually discarded by a user                       |

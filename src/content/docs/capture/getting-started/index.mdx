@@ -1,0 +1,51 @@
+---
+title: Getting started with Capture
+description: What Otto Capture does, who it's for, and how to get up and running
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+
+Otto Capture uses AI to extract structured data from receipts, bills, and invoices. Once extracted, you review the data and publish it to your accounting platform.
+
+## Setup steps
+
+<Steps>
+    1. **Connect your accounting platform:** Authorise Capture to access your client's accounting data. This syncs contacts, chart of accounts, tax rates, and currencies.
+
+    2. **Configure your client:** Set an email prefix for email submissions, choose a default bill state, and review the synced accounting data.
+
+    3. **Submit documents:** Upload files through the web interface or forward emails to your client's unique email address.
+
+    4. **Review and publish:** Check the AI-extracted data, make corrections if needed, and publish to your accounting platform.
+
+</Steps>
+
+## Submission methods
+
+- **Web upload:** Drag and drop files or use the file picker in the Capture interface
+- **Email:** Forward receipts and invoices to your client's dedicated email address
+
+## Supported file types
+
+Capture accepts the following file formats:
+
+| Category  | Formats               |
+| --------- | --------------------- |
+| Documents | PDF                   |
+| Images    | JPEG, PNG, TIFF, WebP |
+| Web pages | HTML                  |
+
+<Aside type="tip">
+  For best results, submit clear, high-resolution images or native PDFs rather
+  than scanned documents.
+</Aside>
+
+## What happens after submission
+
+See [Submitting documents](/capture/getting-started/submitting-documents) for full details on the processing pipeline and document statuses. In summary, every document goes through a malware scan, AI classification and extraction, validation, and contact matching before appearing in your [review queue](/capture/guides/reviewing).
+
+## Next steps
+
+- [Connecting Xero](/capture/getting-started/connecting-xero): Set up your accounting platform integration
+- [Configuring clients](/capture/getting-started/configuring-clients): Customise how each client works
+- [Submitting documents](/capture/getting-started/submitting-documents): Start sending documents to Capture

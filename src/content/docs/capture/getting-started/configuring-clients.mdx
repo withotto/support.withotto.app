@@ -1,0 +1,86 @@
+---
+title: Configuring clients
+description: Setting up clients and their accounting platform preferences
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import generalSettings from "@assets/capture/getting-started/configuring-clients/client-settings-general.png";
+import accountingPlatformSettings from "@assets/capture/getting-started/configuring-clients/client-settings-accounting-platform.png";
+
+Each client in Capture represents a single accounting platform organisation. After connecting your accounting platform, you can configure how documents are processed and published for that client.
+
+## Email prefix
+
+Each client has a unique email address for receiving documents by email. The address follows the format:
+
+```
+{prefix}@{your-organisation}.ottocapture.email
+```
+
+For example, if your organisation is "smith-accounting" and you set the prefix to "acme", the email address would be `acme@smith-accounting.ottocapture.email`.
+
+Email prefixes:
+
+- Must start with a letter or number
+- Can contain lowercase letters, numbers, hyphens, dots, and underscores
+- Must be unique within your organisation
+
+<Aside>
+  If your organisation has a [custom email
+  domain](/capture/guides/custom-email-domain) configured, documents can be sent
+  to `{prefix}@{your - custom - domain}`. Your `ottocapture.email` address
+  continues to work alongside the custom domain.
+</Aside>
+
+<Image src={generalSettings} alt="Cient settings" />
+
+## Default bill state
+
+When Capture publishes a bill, it creates it in one of three states. You choose which state works best for each client's workflow:
+
+| State          | Description                           | When to use                                                                                      |
+| -------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Draft**      | Bill is saved but not yet submitted   | When you want to review bills in your accounting platform before they enter the approval process |
+| **Submitted**  | Bill is awaiting approval             | When you use an approval workflow and want bills to go straight to the approval queue            |
+| **Authorised** | Bill is approved and awaiting payment | When you don't use an approval workflow and want bills ready for payment immediately             |
+
+<Aside type="tip">
+  If you're not sure which to choose, start with **Draft**. You can always
+  change this later, and it gives you the most control over the approval
+  process.
+</Aside>
+
+## Synced accounting data
+
+Capture syncs the following from your client's accounting platform. This data is used during extraction and review to ensure documents are published with valid accounting data.
+
+<Image
+  src={accountingPlatformSettings}
+  alt="Client accounting platform settings and information"
+/>
+
+### Chart of accounts
+
+The chart of accounts is synced from your accounting platform and used to assign account codes to line items. During extraction, the AI suggests account codes based on the document content. During review, you can change the account code from a list of valid accounts.
+
+Accounts are filtered by type based on the document:
+
+- **Bills** show expense accounts (Direct Costs, Overheads)
+- **Sales invoices** show revenue accounts
+
+### Tax rates
+
+Tax rates are synced from your accounting platform and applied to line items. The AI suggests tax rates during extraction, and you can adjust them during review. Tax rates are filtered to show only those applicable to the document type.
+
+### Currencies
+
+If your client's accounting platform supports multiple currencies, Capture syncs the available currencies. The AI detects the document currency during extraction.
+
+### Tracking categories
+
+Tracking categories and their options are synced from your accounting platform. You can assign tracking categories to line items during review.
+
+## Refreshing synced data
+
+If you've made changes in your accounting platform (added new accounts, updated tax rates, etc.), you can trigger a manual sync from the client configuration page.

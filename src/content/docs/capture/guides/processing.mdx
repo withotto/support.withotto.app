@@ -1,0 +1,101 @@
+---
+title: How Capture processes documents
+description: Understanding the AI extraction pipeline
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+When you submit a document to Capture, it passes through a multi-stage pipeline before landing in your review queue. This guide explains each stage and what the AI extracts.
+
+## Pipeline stages
+
+### 1. Triage
+
+The first stage classifies the document and checks it's suitable for processing.
+
+The AI determines:
+
+- **Document type:** Is this a bill (accounts payable) or a sales invoice (accounts receivable)?
+- **Document validity:** Is this a genuine financial document?
+- **Rotation:** Is the document upside down or rotated?
+- **Multiple documents:** Does the image contain more than one document?
+
+If the document can't be classified, it's marked as **Needs classification** for you to set the type manually. If multiple documents are detected, it's marked as **Needs manual split**.
+
+### 2. Extraction
+
+The AI reads the document and extracts structured data. This is the core of the pipeline.
+
+**Header fields:**
+
+- Supplier or customer name
+- Invoice number
+- Issue date and due date
+- Currency
+
+**Financial data:**
+
+- Net amount, tax amount, and total amount
+- Line items with description, quantity, unit amount, and line amount
+- Tax rate and account code for each line item
+
+The AI provides reasoning for each extracted field, explaining where it found the data on the document and why it chose specific values. This reasoning is preserved and available during review.
+
+<Aside>
+  Account codes and tax rates are suggested based on your client's chart of
+  accounts and tax rates synced from their accounting platform. The AI filters
+  these based on the document type: expense accounts for bills, revenue accounts
+  for sales invoices.
+</Aside>
+
+### 3. Validation
+
+Extracted amounts are checked for arithmetic consistency:
+
+- Do line item amounts add up correctly?
+- Does the sum of line items match the header totals (net, tax, total)?
+
+Validation uses a small tolerance to account for rounding differences. Mismatches are flagged for your attention during review but don't prevent the document from being processed.
+
+### 4. Contact matching
+
+The extracted supplier or customer name is matched against your existing contacts:
+
+1. **Exact match:** A case-insensitive comparison against existing contact names
+2. **Fuzzy match:** Capture will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
+
+### 5. Finalise
+
+The final stage sets the document's review status based on the processing outcome:
+
+- **Needs review:** Everything processed successfully, ready for you to check
+- **Needs classification:** Document type couldn't be determined
+- **Needs manual split:** Multiple documents detected in one image
+- **Triage failed:** Document was rejected during triage (not a financial document)
+- **Extraction failed:** AI couldn't extract data from the document
+
+If any stage encounters a temporary error (such as a service being briefly unavailable), the error is translated into a clear message explaining what happened.
+
+## What the AI extracts
+
+Here's a complete list of the data Capture extracts from each document:
+
+| Field                      | Description                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Supplier/customer name** | The name of the company or individual on the document                                             |
+| **Invoice number**         | The invoice or receipt reference number                                                           |
+| **Issue date**             | When the document was issued                                                                      |
+| **Due date**               | When payment is due                                                                               |
+| **Currency**               | The currency code (e.g., GBP, USD, EUR)                                                           |
+| **Net amount**             | Total before tax                                                                                  |
+| **Tax amount**             | Total tax                                                                                         |
+| **Total amount**           | Grand total including tax                                                                         |
+| **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code |
+
+## Processing time
+
+Most documents are processed within a few minutes of submission. Processing time can vary depending on:
+
+- Document complexity (number of line items)
+- Image quality and clarity
+- Current queue volume

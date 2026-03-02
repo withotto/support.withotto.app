@@ -1,0 +1,20 @@
+# Bank Rec redirects. Existing URLs to new /bank-rec/ structure
+
+/getting-started/onboarding                          /bank-rec/getting-started/onboarding                          301
+/getting-started/making-the-most-of-your-trial       /bank-rec/getting-started/making-the-most-of-your-trial       301
+/getting-started/giving-otto-access-to-your-clients  /bank-rec/getting-started/giving-otto-access-to-your-clients  301
+
+/guides/bank-rules                                   /bank-rec/guides/bank-rules                                   301
+/guides/smartmatch                                   /bank-rec/guides/smartmatch                                   301
+/guides/guidedmatch                                  /bank-rec/guides/guidedmatch                                  301
+/guides/feedback                                     /bank-rec/guides/feedback                                     301
+/guides/what-can-be-reconciled                       /bank-rec/guides/what-can-be-reconciled                       301
+/guides/how-does-otto-decide-what-to-reconcile       /bank-rec/guides/how-does-otto-decide-what-to-reconcile       301
+
+/portal/dashboard                                    /bank-rec/portal/dashboard                                    301
+/portal/clients                                      /bank-rec/portal/clients                                      301
+/portal/settings                                     /bank-rec/portal/settings                                     301
+/portal/user-management                              /bank-rec/portal/user-management                              301
+/portal/user-profile                                 /bank-rec/portal/user-profile                                 301
+/portal/securing-your-account                        /bank-rec/portal/securing-your-account                        301
+/portal/billing                                      /bank-rec/portal/billing                                      301
