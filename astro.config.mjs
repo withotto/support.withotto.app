@@ -72,7 +72,67 @@ export default defineConfig({
       ],
       sidebar: [
         {
+          label: "Capture",
+          items: [
+            {
+              label: "Overview",
+              slug: "capture",
+            },
+            {
+              label: "Getting started",
+              items: [
+                {
+                  label: "Overview",
+                  slug: "capture/getting-started",
+                },
+                {
+                  label: "Connecting Xero",
+                  slug: "capture/getting-started/connecting-xero",
+                },
+                {
+                  label: "Configuring clients",
+                  slug: "capture/getting-started/configuring-clients",
+                },
+                {
+                  label: "Submitting documents",
+                  slug: "capture/getting-started/submitting-documents",
+                },
+              ],
+            },
+            {
+              label: "Guides",
+              items: [
+                {
+                  label: "How Capture processes documents",
+                  slug: "capture/guides/processing",
+                },
+                {
+                  label: "Reviewing and publishing",
+                  slug: "capture/guides/reviewing",
+                },
+                {
+                  label: "Data flow",
+                  slug: "capture/guides/data-flow",
+                },
+                {
+                  label: "Organisation settings",
+                  slug: "capture/guides/organisation-settings",
+                },
+                {
+                  label: "Custom email domain",
+                  slug: "capture/guides/custom-email-domain",
+                },
+              ],
+            },
+            {
+              label: "FAQ",
+              slug: "capture/faq",
+            },
+          ],
+        },
+        {
           label: "Bank Rec",
+          collapsed: true,
           items: [
             {
               label: "Getting started",
@@ -152,65 +212,6 @@ export default defineConfig({
                   slug: "bank-rec/portal/billing",
                 },
               ],
-            },
-          ],
-        },
-        {
-          label: "Capture",
-          items: [
-            {
-              label: "Overview",
-              slug: "capture",
-            },
-            {
-              label: "Getting started",
-              items: [
-                {
-                  label: "Overview",
-                  slug: "capture/getting-started",
-                },
-                {
-                  label: "Connecting Xero",
-                  slug: "capture/getting-started/connecting-xero",
-                },
-                {
-                  label: "Configuring clients",
-                  slug: "capture/getting-started/configuring-clients",
-                },
-                {
-                  label: "Submitting documents",
-                  slug: "capture/getting-started/submitting-documents",
-                },
-              ],
-            },
-            {
-              label: "Guides",
-              items: [
-                {
-                  label: "How Capture processes documents",
-                  slug: "capture/guides/processing",
-                },
-                {
-                  label: "Reviewing and publishing",
-                  slug: "capture/guides/reviewing",
-                },
-                {
-                  label: "Data flow",
-                  slug: "capture/guides/data-flow",
-                },
-                {
-                  label: "Organisation settings",
-                  slug: "capture/guides/organisation-settings",
-                },
-                {
-                  label: "Custom email domain",
-                  slug: "capture/guides/custom-email-domain",
-                },
-              ],
-            },
-            {
-              label: "FAQ",
-              slug: "capture/faq",
             },
           ],
         },
