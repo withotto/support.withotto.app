@@ -7,11 +7,13 @@ import { Aside } from "@astrojs/starlight/components";
 
 Organisation settings control how your Capture organisation appears, who has access, and how email is configured. Access these from **Settings** in the navigation.
 
-## Organisation name
+## General
 
-Your organisation name is displayed throughout the Capture interface. You can change it at any time from **Settings**.
+### Organisation name
 
-## Organisation slug
+Your organisation name is displayed throughout the Capture interface.
+
+### Organisation slug
 
 The slug is used in your default email addresses:
 
@@ -19,14 +21,14 @@ The slug is used in your default email addresses:
 {prefix}@{slug}.ottocapture.email
 ```
 
-You can change the slug from **Settings**. Changing the slug updates all default email addresses for your clients.
+Changing the slug updates all default email addresses for your clients.
 
 <Aside type="caution">
   If you change your slug, the previous email addresses will stop working. Make
   sure to update any email forwarding rules that use the old addresses.
 </Aside>
 
-## Team management
+## Team
 
 You can invite team members to your organisation and manage their access from **Settings → Team**.
 
@@ -45,8 +47,8 @@ Invite new team members by entering their email address from the **Settings → 
 
 Admins can remove team members from the organisation at any time. Removing a team member revokes their access immediately.
 
-## Email settings
+## Email
 
-From **Settings → Email**, you can configure a custom email domain for your organisation. This lets clients receive documents at addresses on your own domain instead of the default `ottocapture.email` addresses.
+You can configure a custom email domain for your organisation. This lets clients receive documents at addresses on your own domain instead of the default `ottocapture.email` addresses.
 
 See [Custom email domain](/capture/guides/custom-email-domain) for setup instructions.
