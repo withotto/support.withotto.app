@@ -23,16 +23,16 @@
     "@astrojs/starlight": "^0.37.6",
     "@astrojs/starlight-tailwind": "^4.0.2",
     "@astrojs/tailwind": "^6.0.2",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.18.0",
     "sharp": "^0.34.5",
     "starlight-image-zoom": "^0.13.2",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.3.2",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2"
