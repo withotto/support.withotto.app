@@ -1,0 +1,41 @@
+---
+title: Otto Capture
+description: AI-powered receipt and bill capture for accountants
+---
+
+import { Card, CardGrid, LinkButton } from "@astrojs/starlight/components";
+
+Otto Capture takes the manual work out of bookkeeping by extracting data from receipts, bills, and invoices using AI, then publishing them directly to your accounting platform.
+
+## How it works
+
+1. **Submit:** Upload documents through the web interface or forward them by email
+2. **Extract:** AI reads each document and extracts supplier details, amounts, line items, and tax information
+3. **Review:** Check the extracted data, make corrections if needed, and approve
+4. **Publish:** Send the completed bill or invoice to your accounting platform with the original document attached
+
+## Supported document types
+
+- **Bills** (accounts payable) — supplier invoices, utility bills, receipts
+- **Sales invoices** (accounts receivable) — coming soon
+
+## Get started
+
+<CardGrid>
+    <Card title="Getting started" icon="rocket">
+        Connect your accounting platform, set up your clients, and start submitting documents
+
+        <LinkButton href="/capture/getting-started/">Go »</LinkButton>
+    </Card>
+    <Card title="Guides" icon="document">
+        Learn how document processing, review, and publishing work
+
+        <LinkButton href="/capture/guides/processing/">Go »</LinkButton>
+    </Card>
+    <Card title="FAQ" icon="open-book">
+        Answers to common questions about Capture
+
+        <LinkButton href="/capture/faq/">Go »</LinkButton>
+    </Card>
+
+</CardGrid>

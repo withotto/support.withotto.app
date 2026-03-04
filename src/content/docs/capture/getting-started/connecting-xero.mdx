@@ -1,0 +1,69 @@
+---
+title: Connecting Xero
+description: How to connect your client's Xero organisation to Otto Capture
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import oauthConsent from "@assets/capture/getting-started/connecting-xero/oauth-consent.png";
+import clientDashboard from "@assets/capture/getting-started/connecting-xero/client-dashboard.png";
+
+Each client in Capture connects to a single Xero organisation. Once connected, Capture syncs the data it needs to process and publish documents.
+
+## Connecting a client
+
+<Steps>
+    1. Navigate to your client dashboard in Capture and click **Add client**
+
+    2. You'll be redirected to Xero's authorisation screen, and may need to log in
+
+    3. Select the client you want to connect and click **Allow access**
+
+    4. You'll be redirected back to Capture. The connection is now active and data sync begins automatically
+
+</Steps>
+
+<Image src={oauthConsent} alt="Xero connect organisation permission page" />
+
+<Image src={clientDashboard} alt="Client dashboard for the connected client" />
+
+## What permissions does Capture request?
+
+Capture requests access to:
+
+- **Contacts:** To match suppliers and customers on your documents, and create new contacts that are not yet in Xero
+- **Accounting:** To read your chart of accounts, tax rates, and currencies, and to create bills and invoices
+- **Files:** To attach original documents to bills and invoices
+
+Capture does not request access to data outside of what's needed for document processing.
+
+## What syncs after connecting?
+
+Once connected, Capture syncs the following data from Xero:
+
+| Data                     | Purpose                                                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Contacts**             | Match suppliers and customers to extracted document data                                                                          |
+| **Chart of accounts**    | Assign account codes to line items                                                                                                |
+| **Tax rates**            | Apply the correct tax treatment to line items                                                                                     |
+| **Currencies**           | Set the document currency                                                                                                         |
+| **Tracking categories**  | Assign tracking categories to line items                                                                                          |
+| **Organisation details** | Determine base currency, multi-currency support, tax registration status, and other details needed to process documents correctly |
+
+## Verifying the connection
+
+A connected client shows its Xero organisation name and a **Connected** status. You can verify the synced data is up to date by checking the last sync time on the client configuration page.
+
+<Aside type="tip">
+  If synced data looks outdated, you can trigger a manual refresh from the
+  client configuration page.
+</Aside>
+
+## Disconnecting
+
+You can disconnect a client from Xero at any time from the client settings. Disconnecting:
+
+- Stops all data syncing between Capture and Xero
+- Prevents new documents from being published to Xero
+- Does **not** delete any documents already in Capture
+- Does **not** remove any bills or invoices already published to Xero

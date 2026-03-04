@@ -72,81 +72,146 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "Getting started",
+          label: "Capture",
           items: [
             {
-              label: "Onboarding",
-              slug: "getting-started/onboarding",
+              label: "Overview",
+              slug: "capture",
             },
             {
-              label: "Making the most of your trial",
-              slug: "getting-started/making-the-most-of-your-trial",
+              label: "Getting started",
+              items: [
+                {
+                  label: "Overview",
+                  slug: "capture/getting-started",
+                },
+                {
+                  label: "Connecting Xero",
+                  slug: "capture/getting-started/connecting-xero",
+                },
+                {
+                  label: "Configuring clients",
+                  slug: "capture/getting-started/configuring-clients",
+                },
+                {
+                  label: "Submitting documents",
+                  slug: "capture/getting-started/submitting-documents",
+                },
+              ],
             },
             {
-              label: "Giving Otto access to your clients",
-              slug: "getting-started/giving-otto-access-to-your-clients",
+              label: "Guides",
+              items: [
+                {
+                  label: "How Capture processes documents",
+                  slug: "capture/guides/processing",
+                },
+                {
+                  label: "Reviewing and publishing",
+                  slug: "capture/guides/reviewing",
+                },
+                {
+                  label: "Data flow",
+                  slug: "capture/guides/data-flow",
+                },
+                {
+                  label: "Organisation settings",
+                  slug: "capture/guides/organisation-settings",
+                },
+                {
+                  label: "Custom email domain",
+                  slug: "capture/guides/custom-email-domain",
+                },
+              ],
+            },
+            {
+              label: "FAQ",
+              slug: "capture/faq",
             },
           ],
         },
         {
-          label: "Guides",
+          label: "Bank Rec",
+          collapsed: true,
           items: [
             {
-              label: "Bank rules",
-              slug: "guides/bank-rules",
+              label: "Getting started",
+              items: [
+                {
+                  label: "Onboarding",
+                  slug: "bank-rec/getting-started/onboarding",
+                },
+                {
+                  label: "Making the most of your trial",
+                  slug: "bank-rec/getting-started/making-the-most-of-your-trial",
+                },
+                {
+                  label: "Giving Otto access to your clients",
+                  slug: "bank-rec/getting-started/giving-otto-access-to-your-clients",
+                },
+              ],
             },
             {
-              label: "SmartMatch",
-              slug: "guides/smartmatch",
+              label: "Guides",
+              items: [
+                {
+                  label: "Bank rules",
+                  slug: "bank-rec/guides/bank-rules",
+                },
+                {
+                  label: "SmartMatch",
+                  slug: "bank-rec/guides/smartmatch",
+                },
+                {
+                  label: "GuidedMatch",
+                  slug: "bank-rec/guides/guidedmatch",
+                },
+                {
+                  label: "Feedback",
+                  slug: "bank-rec/guides/feedback",
+                },
+                {
+                  label: "What can be reconciled?",
+                  slug: "bank-rec/guides/what-can-be-reconciled",
+                },
+                {
+                  label: "How does Otto decide what to reconcile?",
+                  slug: "bank-rec/guides/how-does-otto-decide-what-to-reconcile",
+                },
+              ],
             },
             {
-              label: "GuidedMatch",
-              slug: "guides/guidedmatch",
-            },
-            {
-              label: "Feedback",
-              slug: "guides/feedback",
-            },
-            {
-              label: "What can be reconciled?",
-              slug: "guides/what-can-be-reconciled",
-            },
-            {
-              label: "How does Otto decide what to reconcile?",
-              slug: "guides/how-does-otto-decide-what-to-reconcile",
-            },
-          ],
-        },
-        {
-          label: "The portal",
-          items: [
-            {
-              label: "Dashboard",
-              slug: "portal/dashboard",
-            },
-            {
-              label: "Clients",
-              slug: "portal/clients",
-            },
-            {
-              label: "Practice and client settings",
-              slug: "portal/settings",
-            },
-            {
-              label: "User management",
-              slug: "portal/user-management",
-            },
-            {
-              label: "Your settings",
-              slug: "portal/user-profile",
-            },
-            {
-              label: "Securing your account",
-              slug: "portal/securing-your-account",
-            },
-            {
-              label: "Billing",
-              slug: "portal/billing",
+              label: "The portal",
+              items: [
+                {
+                  label: "Dashboard",
+                  slug: "bank-rec/portal/dashboard",
+                },
+                {
+                  label: "Clients",
+                  slug: "bank-rec/portal/clients",
+                },
+                {
+                  label: "Practice and client settings",
+                  slug: "bank-rec/portal/settings",
+                },
+                {
+                  label: "User management",
+                  slug: "bank-rec/portal/user-management",
+                },
+                {
+                  label: "Your settings",
+                  slug: "bank-rec/portal/user-profile",
+                },
+                {
+                  label: "Securing your account",
+                  slug: "bank-rec/portal/securing-your-account",
+                },
+                {
+                  label: "Billing",
+                  slug: "bank-rec/portal/billing",
+                },
+              ],
             },
           ],
         },
