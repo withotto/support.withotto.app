@@ -6,7 +6,7 @@ description: Practice and client settings
 import { Aside } from "@astrojs/starlight/components";
 import Image from "@components/ZoomableImage.astro";
 import practiceReconciliationSettingsImage from "@assets/bank-rec/portal/settings/practice-reconciliation-settings.png";
-import clientReconciliationSettingsImage from "@assets/bank-rec/portal/settings/client-reconciliation-settings.png";
+import clientSettingsImage from "@assets/bank-rec/portal/settings/client-settings.png";
 import schedulingSettingsImage from "@assets/bank-rec/portal/settings/scheduling-settings.png";
 
 We know every practice and client is different, so we want you to be able to use Otto in a way that works for you.
@@ -46,7 +46,7 @@ This determines how confident Otto must be that the match is correct before he w
 ### Client-specific
 
 <Image
-  src={clientReconciliationSettingsImage}
+  src={clientSettingsImage}
   alt="Screenshot of the reconciliation settings for a client"
 />
 
@@ -55,6 +55,36 @@ These settings are very similar to the practice-wide settings. By default, clien
 #### Minimum SmartMatch confidence
 
 You have a bit more flexibility with this setting for individual clients. The minimum confidence level is 70%. We recommend you monitor Otto's confidence for each client for a few weeks before lowering this setting to make sure you're not going to end up with extra work due to incorrect reconciliations.
+
+### Bank account filtering
+
+<Aside>
+  Bank account filtering is available on request. Start a chat in the With Otto
+  portal and we'll enable it for you.
+</Aside>
+
+There may be bank accounts for some clients that you want Otto to skip. Perhaps you already have a process for cash coding certain accounts, a member of staff needs to handle specific reconciliations, or you give clients a window to send documents before reconciling as spend money.
+
+Bank account filtering gives you per-account control over what Otto does. For each bank account, you can:
+
+- Uncheck any accounts Otto should completely ignore
+- Enable or disable bank rule reconciliations
+- Enable or disable SmartMatch reconciliations
+
+Each dropdown has three options:
+
+- **Default** follows whatever you've set for the client and will automatically follow any future changes. If you change the client or practice setting later, accounts set to Default will follow the change automatically.
+- **Enabled** turns reconciliation on for this account, regardless of the setting above.
+- **Disabled** turns reconciliation off for this account, regardless of the setting above.
+
+<Aside type="caution">
+    Otto only finds out which bank accounts are present when he logs in each day. Any new accounts will be reconciled by
+    default and you can change your preferences afterwards.
+
+    Otto will recognise when a bank account is renamed and will be able to tell it is the same underlying account,
+    keeping any rules you have already set.
+
+</Aside>
 
 ## Scheduling
 
