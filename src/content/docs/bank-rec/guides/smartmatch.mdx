@@ -18,7 +18,7 @@ Otto requires lots of examples of correct and incorrect bill and invoice reconci
 
 One of the key components of SmartMatch is the confidence level. For each possible match Otto sees, he will decide whether the two are a match or a non-match and decide how confident he is with the decision.
 
-By default, we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](../../portal/settings). You can be more strict by requiring higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
+By default, we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](/bank-rec/portal/settings). You can be more strict by requiring higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
 
 <Aside>
   You will not be charged for an incorrect SmartMatch reconciliation where Otto
@@ -41,7 +41,7 @@ Any time Otto makes a SmartMatch prediction, whether he reconciles the transacti
 - The bottom part is where you can see information from Otto and provide feedback
 - The bold text ("Reconciled" in this case) is the action Otto took
 - Underneath that shows whether Otto thought the transaction was a match or non-match, and his confidence. The percentage in brackets is how confident he needed to be to reconcile the match
-- The buttons allow you to provide feedback. Read more about [feedback](../feedback/) in our separate guide
+- The buttons allow you to provide feedback. Read more about [feedback](/bank-rec/guides/feedback) in our separate guide
 
 ## FAQs
 
@@ -52,8 +52,8 @@ Otto will perform better with more data but requires a minimum of 100 bill or in
 Any clients that don't have enough examples will still be able to use bank rule reconciliations, and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto, and he'll start to use SmartMatch.
 
 <Aside type="tip" title="Related pages">
-  - [What can be reconciled?](../what-can-be-reconciled) - What Otto can, and
-  can't, reconcile - [Reconciliation
-  settings](../../portal/settings#reconciliation-settings) - Choose which
+  - [What can be reconciled?](/bank-rec/guides/what-can-be-reconciled) - What
+  Otto can, and can't, reconcile - [Reconciliation
+  settings](/bank-rec/portal/settings#reconciliation-settings) - Choose which
   reconciliation features you want to use
 </Aside>
