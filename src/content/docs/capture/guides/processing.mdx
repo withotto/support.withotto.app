@@ -5,7 +5,7 @@ description: Understanding the AI extraction pipeline
 
 import { Aside } from "@astrojs/starlight/components";
 
-When you submit a document to Capture, it passes through a multi-stage pipeline before landing in your review queue. This guide explains each stage and what the AI extracts.
+When you submit a document to Capture, it passes through a multi-stage pipeline before landing in your review queue. This guide explains each stage and what Otto extracts.
 
 ## Pipeline stages
 
@@ -13,7 +13,7 @@ When you submit a document to Capture, it passes through a multi-stage pipeline 
 
 The first stage classifies the document and checks it's suitable for processing.
 
-The AI determines:
+Otto determines:
 
 - **Document type:** Is this a bill (accounts payable) or a sales invoice (accounts receivable)?
 - **Document validity:** Is this a genuine financial document?
@@ -24,7 +24,7 @@ If the document can't be classified, it's marked as **Needs classification** for
 
 ### 2. Extraction
 
-The AI reads the document and extracts structured data. This is the core of the pipeline.
+Otto reads the document and extracts structured data. This is where he does most of his thinking.
 
 **Header fields:**
 
@@ -39,11 +39,11 @@ The AI reads the document and extracts structured data. This is the core of the 
 - Line items with description, quantity, unit amount, and line amount
 - Tax rate and account code for each line item
 
-The AI provides reasoning for each extracted field, explaining where it found the data on the document and why it chose specific values. This reasoning is preserved and available during review.
+Otto provides reasoning for each extracted field, explaining where he found the data on the document and why he chose specific values. This reasoning is preserved and available during review.
 
 <Aside>
   Account codes and tax rates are suggested based on your client's chart of
-  accounts and tax rates synced from their accounting platform. The AI filters
+  accounts and tax rates synced from their accounting platform. Otto filters
   these based on the document type: expense accounts for bills, revenue accounts
   for sales invoices.
 </Aside>
@@ -62,7 +62,7 @@ Validation uses a small tolerance to account for rounding differences. Mismatche
 The extracted supplier or customer name is matched against your existing contacts:
 
 1. **Exact match:** A case-insensitive comparison against existing contact names
-2. **Fuzzy match:** Capture will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
+2. **Fuzzy match:** Otto will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
 
 ### 5. Finalise
 
@@ -72,13 +72,13 @@ The final stage sets the document's review status based on the processing outcom
 - **Needs classification:** Document type couldn't be determined
 - **Needs manual split:** Multiple documents detected in one image
 - **Triage failed:** Document was rejected during triage (not a financial document)
-- **Extraction failed:** AI couldn't extract data from the document
+- **Extraction failed:** Otto couldn't extract data from the document
 
 If any stage encounters a temporary error (such as a service being briefly unavailable), the error is translated into a clear message explaining what happened.
 
-## What the AI extracts
+## What Otto extracts
 
-Here's a complete list of the data Capture extracts from each document:
+Here's a complete list of the data Otto extracts from each document:
 
 | Field                      | Description                                                                                       |
 | -------------------------- | ------------------------------------------------------------------------------------------------- |
