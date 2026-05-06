@@ -1,0 +1,95 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "timezone": "Europe/London",
+  "schedule": ["before 7am every weekday"],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "dependencyDashboard": true,
+  "configMigration": true,
+  "rangeStrategy": "replace",
+  "postUpdateOptions": ["pnpmDedupe"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 7am on sunday"]
+  },
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "minimumReleaseAge": "1 day",
+    "schedule": ["at any time"],
+    "labels": ["security"]
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Track Node.js version in .mise.toml",
+      "managerFilePatterns": ["/^\\.mise\\.toml$/"],
+      "matchStrings": ["(^|\\n)node\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
+      "datasourceTemplate": "node-version",
+      "depNameTemplate": "node"
+    },
+    {
+      "customType": "regex",
+      "description": "Track pnpm version in .mise.toml (capture's reference config does not include this; pattern follows the Node one)",
+      "managerFilePatterns": ["/^\\.mise\\.toml$/"],
+      "matchStrings": ["(^|\\n)pnpm\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "pnpm"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Label every Renovate PR for filtering",
+      "matchPackageNames": ["*"],
+      "labels": ["dependencies"]
+    },
+    {
+      "description": "Tag major updates for triage (no automerge anywhere; default automerge is false)",
+      "matchUpdateTypes": ["major"],
+      "labels": ["major-update"]
+    },
+    {
+      "description": "Group Astro core + integrations (excludes Starlight packages, which group separately)",
+      "matchPackageNames": ["astro", "@astrojs/**", "!@astrojs/starlight*"],
+      "groupName": "Astro"
+    },
+    {
+      "description": "Group Starlight theme + plugins",
+      "matchPackageNames": ["@astrojs/starlight*", "starlight-*"],
+      "groupName": "Starlight"
+    },
+    {
+      "description": "Group Tailwind CSS core + Vite plugin",
+      "matchPackageNames": ["tailwindcss", "@tailwindcss/**"],
+      "groupName": "Tailwind CSS"
+    },
+    {
+      "description": "Group Prettier and its plugins (plugin versions are tied to Prettier's API)",
+      "matchPackageNames": ["prettier", "prettier-plugin-*"],
+      "groupName": "Prettier"
+    },
+    {
+      "description": "Cross-file: collapse Node bumps from .nvmrc, .mise.toml customManager, and engines.node into one PR; apply 5-day supply-chain floor (manager-specific dep types bypass the matchDepTypes rules below)",
+      "matchPackageNames": ["node"],
+      "groupName": "node",
+      "minimumReleaseAge": "5 days"
+    },
+    {
+      "description": "Cross-file: collapse pnpm bumps from .mise.toml customManager, packageManager field, and engines.pnpm into one PR; apply 5-day supply-chain floor (manager-specific dep types bypass the matchDepTypes rules below)",
+      "matchPackageNames": ["pnpm"],
+      "groupName": "pnpm",
+      "minimumReleaseAge": "5 days"
+    },
+    {
+      "description": "5-day minimum age for production dependencies (supply-chain protection)",
+      "matchDepTypes": ["dependencies"],
+      "minimumReleaseAge": "5 days"
+    },
+    {
+      "description": "2-day minimum age for dev dependencies",
+      "matchDepTypes": ["devDependencies"],
+      "minimumReleaseAge": "2 days"
+    }
+  ]
+}
