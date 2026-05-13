@@ -3,3 +3,9 @@
 @import "@astrojs/starlight-tailwind";
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
+
+/* Opt out of Starlight 0.39's reserved scrollbar gutter to keep the sidebar
+   wide enough for long entries like "Giving Otto access to your clients". */
+.sidebar-pane {
+  scrollbar-gutter: auto;
+}
