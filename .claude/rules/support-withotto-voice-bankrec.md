@@ -42,13 +42,13 @@ Bank Rec pages commonly close with a "Related pages" aside. Preserve this conven
 </Aside>
 ```
 
-## Wind-down context
+## Availability and tone
 
-Bank Rec is no longer accepting new customers and is expected to sunset by end of 2026. For pages that touch trial signup, pricing, or growth:
+Bank Rec is available and supported, and trials are open. For pages that touch trial signup, pricing, or onboarding:
 
-- **Prefer existing-customer framing.** "You can up or downgrade your plan" rather than "sign up today".
-- **Trial and onboarding content** stays for existing trial customers but is not a marketing surface. `onboarding.mdx` already notes trials are paused.
-- **Gratitude and clarity about timelines** over sales language. The broader transition messaging lives on withotto.app, not here.
+- **Trial and onboarding content is live.** `onboarding.mdx` introduces the onboarding session; `making-the-most-of-your-trial.mdx` helps trial customers get value from the trial period.
+- **Informative, not a sales surface.** These are support docs, so keep the tone helpful and matter-of-fact. Marketing and trial sign-up live on withotto.app.
+- **Honest warmth over sales language.** The same voice as the rest of the docs.
 
 ## Bank Rec-flavoured before and after
 
