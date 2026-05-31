@@ -29,3 +29,4 @@ pnpm-debug.log*
 /docs
 /docs-template/
 /.idea/
+/.claude/skills/review-upgrades
