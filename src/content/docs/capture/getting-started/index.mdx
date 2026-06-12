@@ -7,18 +7,32 @@ import { Steps, Aside } from "@astrojs/starlight/components";
 
 Otto Capture uses AI to extract structured data from receipts, bills, and invoices. Once extracted, you review the data and publish it to your accounting platform.
 
+## Creating your account
+
+You can sign up for Otto Capture directly, or install it from the Xero App Store. If you start from the Xero App Store, Capture signs you in with your Xero login and prefills what it can. During sign-up you name your organisation and choose the email address your clients will use to send in documents.
+
 ## Setup steps
 
 <Steps>
     1. **Connect your accounting platform:** Authorise Capture to access your client's accounting data. This syncs contacts, chart of accounts, tax rates, and currencies.
 
-    2. **Configure your client:** Set an email prefix for email submissions, choose a default bill state, and review the synced accounting data.
+    2. **Configure your client:** Set an email prefix for email submissions, choose default states for bills and sales invoices, and review the synced accounting data.
 
     3. **Submit documents:** Upload files through the web interface or forward emails to your client's unique email address.
 
     4. **Review and publish:** Check the extracted data, make corrections if needed, and publish to your accounting platform.
 
 </Steps>
+
+## Your dashboard
+
+When you sign in, Otto shows you what to do next. A new organisation sees a short setup checklist:
+
+- **Link a Xero client:** connect a client's Xero organisation so Otto can publish to it.
+- **Invite a teammate:** give a colleague access to review and publish documents.
+- **Set up a custom email domain:** let clients submit to an address on your own domain instead of `ottocapture.email`.
+
+Once you've linked a client and documents start arriving, the dashboard switches to a **Needs attention** list showing the clients with documents waiting on you. When nothing is outstanding, Otto lets you know you're all caught up.
 
 ## Submission methods
 

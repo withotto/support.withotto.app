@@ -62,17 +62,19 @@ Every document goes through the same processing pipeline:
 
 ## Document statuses
 
-| Status                   | Meaning                                            |
-| ------------------------ | -------------------------------------------------- |
-| **Pending scan**         | Waiting for malware scan to complete               |
-| **Queued**               | In the processing queue                            |
-| **Processing**           | Otto is working on it                              |
-| **Needs review**         | Extraction complete, ready for you to check        |
-| **Needs classification** | Otto couldn't determine the document type          |
-| **Needs manual split**   | Multiple documents detected in one image           |
-| **Reviewed**             | You've reviewed and confirmed the data             |
-| **Publishing**           | Being sent to your accounting platform             |
-| **Published**            | Successfully published to your accounting platform |
-| **Publish failed**       | Failed to publish. Check the error and retry       |
-| **Quarantined**          | Malware detected, file has been quarantined        |
-| **Discarded**            | Manually discarded by a user                       |
+| Status                   | Meaning                                                 |
+| ------------------------ | ------------------------------------------------------- |
+| **Pending scan**         | Waiting for malware scan to complete                    |
+| **Queued**               | In the processing queue                                 |
+| **Processing**           | Otto is working on it                                   |
+| **Triage failed**        | Otto couldn't confirm it's a genuine financial document |
+| **Extraction failed**    | Otto couldn't extract data from the document            |
+| **Needs review**         | Extraction complete, ready for you to check             |
+| **Needs classification** | Otto couldn't determine the document type               |
+| **Needs manual split**   | Multiple documents detected in one image                |
+| **Reviewed**             | You've reviewed and confirmed the data                  |
+| **Publishing**           | Being sent to your accounting platform                  |
+| **Published**            | Successfully published to your accounting platform      |
+| **Publish failed**       | Failed to publish. Check the error and retry            |
+| **Quarantined**          | Malware detected, file has been quarantined             |
+| **Discarded**            | Manually discarded by a user                            |

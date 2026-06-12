@@ -7,7 +7,7 @@ description: Common questions about Otto Capture
 
 ### How do I disconnect a client?
 
-Go to the client settings and click **Disconnect**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+Go to the client settings and click **Disconnect from Xero**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
 
 ### What happens to my data if I disconnect?
 
@@ -18,7 +18,11 @@ Go to the client settings and click **Disconnect**. This stops all syncing and p
 
 ### Can I reconnect after disconnecting?
 
-Yes. Reconnecting triggers a fresh data sync, and you can resume processing and publishing documents.
+Yes. Open the client settings and click **Reconnect to Xero**. Reconnecting triggers a fresh data sync, and you can resume processing and publishing documents.
+
+### A client shows "Disconnected" or "Connection failed". What happened?
+
+Capture's access to that Xero organisation has been removed, usually because someone revoked it from inside Xero. Otto checks each client against Xero once a day and updates the status, so a Xero-side disconnect shows as **Disconnected**. If a sync or publish reaches the revoked connection first, you'll see **Connection failed** instead. Either way, organisation admins get a notification. To fix it, open the client settings and click **Reconnect to Xero**, or use the **Reconnect** action in the **Needs setup** list on the **Clients** page.
 
 ## Data sync
 
@@ -100,7 +104,7 @@ Check the error message on the document. Common causes include:
 
 - **Invalid account code:** The account may have been deactivated in your accounting platform. Refresh your synced data and update the line item.
 - **Invalid tax rate:** The tax rate may no longer be valid. Refresh your synced data and select a different rate.
-- **Authentication error:** Your connection may have expired. Reconnect your accounting platform and retry.
+- **Authentication error:** The connection has been lost, usually because access was revoked. Reconnect your accounting platform and retry.
 
 After fixing the issue, click **Publish** again to retry.
 

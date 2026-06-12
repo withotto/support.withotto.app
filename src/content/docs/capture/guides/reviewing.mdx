@@ -55,7 +55,7 @@ All extracted fields are editable. You can make any changes you need before publ
 
 **Bill state:**
 
-- Override the default bill state (Draft, Submitted, or Authorised) for this specific document
+- Override the default state (Draft, Awaiting approval, or Awaiting payment) for this specific document
 
 <Aside type="tip">
   If you need to change the default bill state for all future documents, update
@@ -97,7 +97,7 @@ When you publish a document, Capture creates the following in your accounting pl
 2. **A contact:** If you created a new contact during review, it's created first
 3. **An attachment:** The original document file is attached to the bill or invoice
 
-The bill is created in the state you selected (Draft, Submitted, or Authorised).
+The bill is created in the state you selected (Draft, Awaiting approval, or Awaiting payment).
 
 ## Handling publish errors
 
@@ -105,7 +105,7 @@ If publishing fails, the document is marked as **Publish failed** and an error m
 
 - **Invalid account code:** An account code was removed or deactivated in your accounting platform since the data was synced. Refresh the synced data and update the line item.
 - **Invalid tax rate:** A tax rate is no longer valid. Refresh the synced data and select a different rate.
-- **Authentication error:** The connection to your accounting platform has expired or been revoked. Reconnect and retry.
+- **Authentication error:** The connection to your accounting platform has been lost, usually because access was revoked. Reconnect and retry.
 - **Rate limited:** Too many requests in a short time. Wait a moment and retry.
 
 After fixing the issue, you can retry publishing from the review screen.
@@ -113,3 +113,5 @@ After fixing the issue, you can retry publishing from the review screen.
 ## Discarding documents
 
 If a document shouldn't be published (duplicate, irrelevant, or too poor quality), you can discard it. Discarded documents are kept in Capture for reference but won't be published.
+
+A client's documents are split across tabs: **Needs attention**, **Ready**, **Processing**, **Published**, **Discarded**, and **Sales invoices**. On the **Needs attention** and **Ready** tabs you can discard in bulk: select the documents with their checkboxes, click **Discard selected**, then confirm. This clears a batch of duplicates or test uploads in one go.

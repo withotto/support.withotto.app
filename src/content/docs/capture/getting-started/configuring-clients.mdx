@@ -29,7 +29,7 @@ Email prefixes:
 <Aside>
   If your organisation has a [custom email
   domain](/capture/guides/custom-email-domain) configured, documents can be sent
-  to `\{prefix\}@\{your-custom-domain\}`. Your `ottocapture.email` address
+  to `{prefix}@{your - custom - domain}`. Your `ottocapture.email` address
   continues to work alongside the custom domain.
 </Aside>
 
@@ -39,16 +39,26 @@ Email prefixes:
 
 When Otto publishes a bill, he creates it in one of three states. You choose which state works best for each client's workflow:
 
-| State          | Description                           | When to use                                                                                      |
-| -------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| **Draft**      | Bill is saved but not yet submitted   | When you want to review bills in your accounting platform before they enter the approval process |
-| **Submitted**  | Bill is awaiting approval             | When you use an approval workflow and want bills to go straight to the approval queue            |
-| **Authorised** | Bill is approved and awaiting payment | When you don't use an approval workflow and want bills ready for payment immediately             |
+| State                 | Description                       | When to use                                                                           |
+| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------- |
+| **Draft**             | Saved in Xero as a draft          | When you want to review bills in Xero before they enter the approval process          |
+| **Awaiting approval** | Waiting to be approved in Xero    | When you use an approval workflow and want bills to go straight to the approval queue |
+| **Awaiting payment**  | Approved in Xero and ready to pay | When you don't use an approval workflow and want bills ready for payment immediately  |
+
+## Default sales invoice state
+
+Sales invoices have their own default, set the same way and using the same three states:
+
+| State                 | Description                           | When to use                                                       |
+| --------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| **Draft**             | Saved in Xero as a draft              | When you want to review invoices in Xero before they're sent      |
+| **Awaiting approval** | Waiting to be approved in Xero        | When invoices go through an approval step before they're sent     |
+| **Awaiting payment**  | Approved in Xero and awaiting payment | When you want invoices ready to send and collect on straight away |
 
 <Aside type="tip">
   If you're not sure which to choose, start with **Draft**. You can always
-  change this later, and it gives you the most control over the approval
-  process.
+  change this later, and it gives you the most control before anything is sent
+  or paid.
 </Aside>
 
 ## Synced accounting data
@@ -62,7 +72,7 @@ Capture syncs the following from your client's accounting platform. This data is
 
 ### Chart of accounts
 
-The chart of accounts is synced from your accounting platform and used to assign account codes to line items. During extraction, Otto suggests account codes based on the document content. During review, you can change the account code from a list of valid accounts.
+The chart of accounts is synced from your accounting platform and used to assign account codes to line items. During extraction, Otto suggests account codes based on the document content and how you've coded similar documents for this client before. During review, you can change the account code from a list of valid accounts.
 
 Accounts are filtered by type based on the document:
 
