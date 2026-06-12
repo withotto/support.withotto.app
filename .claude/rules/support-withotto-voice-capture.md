@@ -17,7 +17,17 @@ Capture's extraction is powered by a third-party LLM, but the reader rarely need
 
 Avoid "our AI", "the AI", "Otto's AI", "the machine learning model", and "Otto Capture's AI" in running prose. Don't split the persona; Otto does the work.
 
-**Narrow exception: transparency pages.** Security and privacy pages may name the AI provider as a fact about how Otto works, e.g. "Otto uses Google's Gemini API for extraction, with a no-training agreement that keeps your documents out of the training set". Otto stays the subject; the provider name is a disclosure, not a replacement.
+**Narrow exception: transparency pages.** Security and privacy pages may name the AI provider or routing layer as a fact about how Otto works, e.g. "Otto's extraction runs under a zero-data-retention policy, so your documents are not stored by the provider or used to train a model". Otto stays the subject; any provider name is a disclosure, not a replacement.
+
+## What Capture does and does not do
+
+Capture extracts document data and suggests coding. It is not a compliance tool, and docs should not imply otherwise.
+
+- Otto does not validate or verify VAT numbers, and does not check them against HMRC.
+- Otto does not reason about VAT law or ground tax rates in legislation. He extracts the figures shown on the document; the practice remains responsible for VAT treatment.
+- Account-code suggestions draw on the client's own past coding, not a fixed rulebook, and they are suggestions Otto offers for review, not decisions. Keep the "Otto doesn't always get it right, every field is editable during review" framing.
+
+Don't put internal extraction-accuracy or eval figures in the docs. The honest framing is that Otto is not infallible and the reader reviews before publishing, which the voice already supports. Where docs describe the evaluation work itself (transparency, security, and data pages), state the opt-in basis: by default no client documents are used, and a document is included only when the practice has specifically given permission for it.
 
 ## Capture-specific terminology
 
