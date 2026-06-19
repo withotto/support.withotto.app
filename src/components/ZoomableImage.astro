@@ -5,9 +5,10 @@ import { Zoom } from "starlight-image-zoom/components";
 interface Props {
   src: ImageMetadata;
   alt: string;
+  caption?: string;
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, caption } = Astro.props;
 ---
 
 <style>
@@ -46,5 +47,5 @@ const { src, alt } = Astro.props;
   <Zoom label={alt}>
     <Image src={src} alt={alt} />
   </Zoom>
-  <figcaption set:text={alt} />
+  <figcaption set:text={caption ?? alt} />
 </figure>

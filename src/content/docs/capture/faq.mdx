@@ -3,11 +3,13 @@ title: Frequently asked questions
 description: Common questions about Otto Capture
 ---
 
+import { Aside } from "@astrojs/starlight/components";
+
 ## Connecting and disconnecting
 
 ### How do I disconnect a client?
 
-Go to the client settings and click **Disconnect from Xero**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+Go to the client settings and click **Disconnect**. The button names the connected platform, for example **Disconnect from Xero** or **Disconnect from FreeAgent**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
 
 ### What happens to my data if I disconnect?
 
@@ -18,23 +20,25 @@ Go to the client settings and click **Disconnect from Xero**. This stops all syn
 
 ### Can I reconnect after disconnecting?
 
-Yes. Open the client settings and click **Reconnect to Xero**. Reconnecting triggers a fresh data sync, and you can resume processing and publishing documents.
+Yes. Open the client settings and click **Reconnect**. Reconnecting triggers a fresh data sync, and you can resume processing and publishing documents.
 
 ### A client shows "Disconnected" or "Connection failed". What happened?
 
-Capture's access to that Xero organisation has been removed, usually because someone revoked it from inside Xero. Otto checks each client against Xero once a day and updates the status, so a Xero-side disconnect shows as **Disconnected**. If a sync or publish reaches the revoked connection first, you'll see **Connection failed** instead. Either way, organisation admins get a notification. To fix it, open the client settings and click **Reconnect to Xero**, or use the **Reconnect** action in the **Needs setup** list on the **Clients** page.
+Capture's access to the connected organisation has been removed. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
+
+How a platform-side disconnect reaches Capture differs by platform. On Xero, Otto checks each client once a day and mirrors a revocation made inside Xero. FreeAgent has no such check, so a FreeAgent connection only changes when you disconnect it in Capture, and to revoke Capture's access entirely you remove it inside FreeAgent. See [Xero](/capture/platforms/xero#connection-status-disconnecting-and-reconnecting) and [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting).
 
 ## Data sync
 
 ### What data does Capture sync from my accounting platform?
 
-Contacts, chart of accounts, tax rates, currencies, tracking categories, and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
+Contacts, account codes or categories, tax rates, currencies, tracking categories (Xero), and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
 
 ### How often does data sync?
 
 A full sync runs when you first connect a client. After that, you can trigger a manual sync from the client configuration page at any time.
 
-### I added a new account in the chart of accounts, but it's not showing in Capture
+### I added a new account or category, but it's not showing in Capture
 
 Trigger a manual refresh from the client configuration page. The new account will be available once the sync completes.
 
@@ -118,10 +122,39 @@ The malware scan detected a potential threat in the file. Quarantined files cann
 
 ## Billing
 
-### What counts as a processed document?
+<Aside type="note">
+  Otto Capture is free to use during the beta. The pricing below applies from
+  general availability.
+</Aside>
 
-A document counts as processed when it successfully completes the extraction stage. Documents that fail during triage (not a financial document) or are quarantined (malware detected) do not count.
+### How does Otto Capture pricing work?
 
-### Do discarded documents count?
+Capture is priced per client, per month, across three tiers. You don't choose a plan: each client sits automatically on whichever tier is cheapest for the number of documents it published that month, so you never overpay or move clients between tiers to find the best deal.
 
-Documents that are discarded after extraction count as processed, since Otto's extraction work has already been completed.
+| Tier   | Monthly price | Included documents |
+| ------ | ------------- | ------------------ |
+| Small  | £9            | 50                 |
+| Medium | £15           | 125                |
+| Large  | £29           | 350                |
+
+All prices exclude VAT. You receive one monthly bill covering every connected client, each charged on its own cheapest tier.
+
+### What sets a client's tier each month?
+
+A client's tier is set by how many documents are published to your accounting platform that month. Published documents are what's counted, and Capture always lands the client on the cheapest tier for that volume. A document published as a draft in Xero still counts, since it has been published. Documents that are never published, including any you discard, don't add to the count.
+
+### Are discarded documents charged?
+
+Discarding a document doesn't publish it, so it doesn't add to a client's published volume or move the client to a higher tier. The same is true of documents that fail during processing or are quarantined by the malware scan.
+
+### Is a client charged if it has no documents?
+
+A client that receives no documents in a given month is not charged. A connected client sitting idle for a month costs you nothing.
+
+### What happens if a client publishes more than its tier's included documents?
+
+There's no price cliff. As a client's published volume grows, it simply moves to whichever tier is cheapest for that volume, so rising usage is smooth rather than a sudden jump between prices.
+
+### How am I billed, and is there a minimum commitment?
+
+You're billed monthly in arrears for actual usage, in a single bill covering all your connected clients. There's no minimum term and no minimum number of clients, and you can stop at any time. If you do, you only pay for the usage in your final billing period.

@@ -18,3 +18,6 @@
 /portal/user-profile                                 /bank-rec/portal/user-profile                                 301
 /portal/securing-your-account                        /bank-rec/portal/securing-your-account                        301
 /portal/billing                                      /bank-rec/portal/billing                                      301
+
+# Capture: Xero connect page moved into the Accounting platforms section
+/capture/getting-started/connecting-xero             /capture/platforms/xero                                       301

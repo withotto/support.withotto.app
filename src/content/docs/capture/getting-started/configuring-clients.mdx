@@ -35,30 +35,15 @@ Email prefixes:
 
 <Image src={generalSettings} alt="Client settings" />
 
-## Default bill state
+## Default publish state
 
-When Otto publishes a bill, he creates it in one of three states. You choose which state works best for each client's workflow:
+On platforms that support settable publish states, you choose the state Otto creates new bills and sales invoices in, and you can override it for a single document during review. Today that's Xero, which has three states: **Draft**, **Awaiting approval**, and **Awaiting payment**. See [Xero publish states](/capture/platforms/xero#publish-states) for what each one means. If you're not sure which to choose, start with **Draft**: you can change it later, and it gives you the most control before anything is sent or paid.
 
-| State                 | Description                       | When to use                                                                           |
-| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------- |
-| **Draft**             | Saved in Xero as a draft          | When you want to review bills in Xero before they enter the approval process          |
-| **Awaiting approval** | Waiting to be approved in Xero    | When you use an approval workflow and want bills to go straight to the approval queue |
-| **Awaiting payment**  | Approved in Xero and ready to pay | When you don't use an approval workflow and want bills ready for payment immediately  |
-
-## Default sales invoice state
-
-Sales invoices have their own default, set the same way and using the same three states:
-
-| State                 | Description                           | When to use                                                       |
-| --------------------- | ------------------------------------- | ----------------------------------------------------------------- |
-| **Draft**             | Saved in Xero as a draft              | When you want to review invoices in Xero before they're sent      |
-| **Awaiting approval** | Waiting to be approved in Xero        | When invoices go through an approval step before they're sent     |
-| **Awaiting payment**  | Approved in Xero and awaiting payment | When you want invoices ready to send and collect on straight away |
-
-<Aside type="tip">
-  If you're not sure which to choose, start with **Draft**. You can always
-  change this later, and it gives you the most control before anything is sent
-  or paid.
+<Aside type="caution" title="Please note">
+  FreeAgent has no settable publish state, so this option doesn't appear for
+  FreeAgent clients. Bills enter the ledger as soon as they're published, and
+  sales invoices are created as Draft. See [publishing to
+  FreeAgent](/capture/platforms/freeagent#publishing).
 </Aside>
 
 ## Synced accounting data
@@ -70,13 +55,13 @@ Capture syncs the following from your client's accounting platform. This data is
   alt="Client accounting platform settings and information"
 />
 
-### Chart of accounts
+### Account codes
 
-The chart of accounts is synced from your accounting platform and used to assign account codes to line items. During extraction, Otto suggests account codes based on the document content and how you've coded similar documents for this client before. During review, you can change the account code from a list of valid accounts.
+The list of accounts you code line items to is synced from your accounting platform: Xero calls it the chart of accounts, FreeAgent calls them categories. During extraction, Otto suggests account codes (nominal codes on FreeAgent) based on the document content and how you've coded similar documents for this client before. During review, you can change the code from a list of valid accounts. See [Xero](/capture/platforms/xero#terminology) and [FreeAgent](/capture/platforms/freeagent#what-syncs-after-connecting) for the exact terms.
 
 Accounts are filtered by type based on the document:
 
-- **Bills** show expense accounts (Direct Costs, Overheads)
+- **Bills** show expense accounts (Direct Costs and Overheads in Xero)
 - **Sales invoices** show revenue accounts
 
 ### Tax rates
@@ -89,8 +74,8 @@ If your client's accounting platform supports multiple currencies, Capture syncs
 
 ### Tracking categories
 
-Tracking categories and their options are synced from your accounting platform. You can assign tracking categories to line items during review.
+Tracking categories apply to platforms that support them. Xero tracking categories and their options are synced, and you can assign them to line items during review. FreeAgent has no tracking categories. See [Xero tracking categories](/capture/platforms/xero#tracking-categories).
 
 ## Refreshing synced data
 
-If you've made changes in your accounting platform (added new accounts, updated tax rates, etc.), you can trigger a manual sync from the client configuration page. You can sync individual categories, or all of them.
+If you've made changes in your accounting platform (added new accounts, updated tax rates, etc.), you can trigger a manual sync from the client configuration page. You can sync individual data types, or all of them.

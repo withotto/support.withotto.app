@@ -1,0 +1,103 @@
+---
+title: Xero
+description: Connecting Xero to Otto Capture, what it syncs, and Xero-specific publishing details
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import oauthConsent from "@assets/capture/platforms/xero/oauth-consent.png";
+
+Each client in Capture connects to a single Xero organisation. Once connected, Capture syncs the data it needs to process and publish documents. This page covers the Xero-specific parts of connecting and publishing. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
+
+## Connecting a client
+
+<Steps>
+    1. Navigate to the **Clients** page in Capture and click **Add client**, then choose **Xero**
+
+    2. You'll be redirected to Xero's authorisation screen, and may need to log in
+
+    3. Select the organisation you want to connect and click **Allow access**
+
+    4. You'll be redirected back to Capture. The connection is now active and data sync begins automatically
+
+</Steps>
+
+<Image
+  src={oauthConsent}
+  alt="Screenshot of Xero's authorisation screen, where Otto Capture requests access to organisation data, with an Allow access button"
+  caption="Xero asks you to approve the access Capture needs. Click Allow access and Xero returns you to Capture."
+/>
+
+One authorisation can reach several Xero organisations, so you pick the specific organisation to connect on Xero's consent screen.
+
+## Signing up through the Xero App Store
+
+You can sign up for Otto Capture directly, or install it from the Xero App Store. If you start from the Xero App Store, Capture signs you in with your Xero login and prefills what it can. During sign-up you name your organisation and choose the email address your clients will use to send in documents.
+
+## What permissions does Capture request?
+
+Capture requests access to:
+
+- **Contacts:** To match suppliers and customers on your documents, and create new contacts that are not yet in Xero
+- **Accounting:** To read your chart of accounts, tax rates, and currencies, and to create bills and invoices
+- **Files:** To attach original documents to bills and invoices
+
+Capture does not request access to data outside of what's needed for document processing.
+
+## What syncs after connecting?
+
+Once connected, Capture syncs the following data from Xero:
+
+| Data                     | Purpose                                                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Contacts**             | Match suppliers and customers to extracted document data                                                                          |
+| **Chart of accounts**    | Assign account codes to line items                                                                                                |
+| **Tax rates**            | Apply the correct tax treatment to line items                                                                                     |
+| **Currencies**           | Set the document currency                                                                                                         |
+| **Tracking categories**  | Assign tracking categories to line items                                                                                          |
+| **Organisation details** | Determine base currency, multi-currency support, tax registration status, and other details needed to process documents correctly |
+
+## Terminology
+
+Xero calls the list of codes you assign to line items the **Chart of Accounts**. Each entry is an **Account** with an **Account Code**. Otto uses these terms throughout the review screen for Xero clients.
+
+## Publish states
+
+When Otto publishes a bill or sales invoice to Xero, he creates it in one of three states. You choose the default for each client (see [Configuring clients](/capture/getting-started/configuring-clients)), and you can override it for a single document during review.
+
+| State                 | Description               | When to use                                                                           |
+| --------------------- | ------------------------- | ------------------------------------------------------------------------------------- |
+| **Draft**             | Saved as a draft          | When you want to review bills in Xero before they enter the approval process          |
+| **Awaiting approval** | Waiting to be approved    | When you use an approval workflow and want bills to go straight to the approval queue |
+| **Awaiting payment**  | Approved and ready to pay | When you don't use an approval workflow and want bills ready for payment immediately  |
+
+Sales invoices use the same three states: **Draft** holds the invoice for review, **Awaiting approval** routes it through an approval step, and **Awaiting payment** makes it ready to send and collect on.
+
+## Currencies
+
+Xero supports multiple currencies. Capture syncs the currencies the organisation has enabled, and Otto detects the document currency during extraction. If a document is in a currency the organisation hasn't enabled yet, you can add it during review.
+
+## Tracking categories
+
+Xero tracking categories and their options are synced, and you can assign them to line items during review.
+
+## Attachments
+
+Otto attaches the original document file to both bills and sales invoices in Xero, up to 10 MB. Capture imposes no file-type restriction on attachments; any limits come from Xero itself.
+
+## Connection status, disconnecting and reconnecting
+
+The four connection statuses are described on [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform#connection-status). Two things are specific to Xero:
+
+- **Disconnecting works from either side.** You can disconnect a client from Xero in Capture, or revoke Capture's access from inside Xero.
+- **Otto mirrors a Xero-side revocation.** Otto checks each client against Xero once a day, so if access is revoked inside Xero the client moves to **Disconnected**. If a sync or publish reaches the revoked connection before that daily check, the client shows **Connection failed** instead.
+
+Either way, organisation admins get a notification with a reconnect link. To reconnect, open the client settings and click **Reconnect to Xero**, or use the **Reconnect** action in the **Needs setup** list on the **Clients** page. Reconnecting triggers a fresh data sync, and Otto resumes publishing. Your existing documents and synced data are kept throughout.
+
+<Aside type="tip" title="Related pages">
+
+- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform): The parts of connecting that are the same on every platform
+- [Configuring clients](/capture/getting-started/configuring-clients): Set defaults and review synced data for each client
+- [Reviewing and publishing](/capture/guides/reviewing): Check extracted data and publish documents
+
+</Aside>

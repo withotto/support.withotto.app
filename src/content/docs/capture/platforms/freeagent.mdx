@@ -1,0 +1,110 @@
+---
+title: FreeAgent
+description: Connecting FreeAgent to Otto Capture, what it syncs, and FreeAgent-specific publishing details
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import practiceClients from "@assets/capture/platforms/freeagent/freeagent-practice-clients.png";
+
+Otto Capture connects to FreeAgent so you can publish bills and sales invoices straight into your client's FreeAgent company. For the connection basics, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
+
+## Connecting
+
+There are two ways to connect FreeAgent: a **Company** connection for a single business you run, or a **Practice** connection for adding clients from your FreeAgent practice.
+
+### Company
+
+A Company connection maps one FreeAgent company to one client in Capture. The person who authorises the connection needs permission to manage Bills in that company.
+
+<Steps>
+    1. From the **Clients** page in Capture, click **Add client**, then choose the FreeAgent option described as **I run my own business**
+
+    2. Sign in to FreeAgent and authorise Capture for the company
+
+    3. You'll be redirected back to Capture, and the company is connected as a single client
+
+</Steps>
+
+{/* SCREENSHOT (to add): FreeAgent Company OAuth consent screen. Save to src/assets/capture/platforms/freeagent/freeagent-company-consent.png, import via @assets, render with <Image> */}
+
+### Practice
+
+If you're a FreeAgent practice, you connect once and then add any of your managed clients. You don't authorise each client separately.
+
+<Steps>
+    1. From the **Clients** page in Capture, click **Add client**, then choose the FreeAgent option described as **Add a FreeAgent client from your practice**
+
+    2. Capture shows the **Add FreeAgent clients** page, listing your practice's FreeAgent clients with their entity type
+
+    3. Tick the clients you want and click **Add selected clients**. Capture creates a client for each, with its own inbox and setup
+
+</Steps>
+
+Every client you add this way shares the one practice connection, so there's a single sign-in to keep healthy. Adding more later needs no new authorisation, just another visit to the **Add FreeAgent clients** page, where clients you've already added are marked **Connected** and only the rest can be selected.
+
+<Image
+  src={practiceClients}
+  alt="Screenshot of the Add FreeAgent clients page, listing practice clients by entity type with selection checkboxes"
+  caption="Tick the practice clients to onboard, then click Add selected clients. Clients you've already added show a Connected label and can't be selected again."
+/>
+
+<Aside type="caution">
+  FreeAgent's Company and Practice connections use separate sign-ins. If you
+  sign in with the wrong one, FreeAgent sends you back to Otto Capture so you
+  can start again.
+</Aside>
+
+## Permissions
+
+The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs and to publish bills and invoices, nothing else. If Capture's access isn't high enough, the client moves to **Connection failed**, and someone with the right permission needs to reconnect it before Otto can sync or publish.
+
+## What syncs after connecting?
+
+Once connected, Capture syncs the following from FreeAgent:
+
+| Data                     | Purpose                                                               |
+| ------------------------ | --------------------------------------------------------------------- |
+| **Contacts**             | Match suppliers and customers to extracted document data              |
+| **Categories**           | Assign nominal codes to line items                                    |
+| **Tax rates**            | Apply the correct tax treatment to line items                         |
+| **Currencies**           | Set the document currency                                             |
+| **Organisation details** | Base currency and other details needed to process documents correctly |
+
+## Publishing
+
+When Otto publishes to FreeAgent:
+
+- **Bills** enter the ledger as soon as they're published.
+- **Sales invoices** are created as **Draft**.
+
+### VAT reporting status
+
+FreeAgent records a VAT reporting status on each document. Otto supports two:
+
+| Status             | When to use                                      |
+| ------------------ | ------------------------------------------------ |
+| **UK VAT rates**   | The default, for standard UK VAT treatment       |
+| **Reverse charge** | When the document falls under the reverse charge |
+
+Whether a company accepts a non-default status depends on its own FreeAgent VAT settings, which FreeAgent checks when Otto publishes.
+
+## Currencies
+
+FreeAgent supports a fixed set of currencies and applies its own exchange rate, so a document in any supported currency, base or not, publishes without extra confirmation. If a document is in a currency FreeAgent doesn't support, convert the amounts before publishing.
+
+## Attachments
+
+Otto attaches the original document to **bills** in FreeAgent, up to 5 MB, in PDF, PNG, JPEG, or GIF format. Sales invoices are published without an attached file. Either way, the original document stays in Capture.
+
+## Disconnecting and reconnecting
+
+Disconnecting a client in Capture stops syncing and publishing on Capture's side. To fully revoke Capture's access to FreeAgent, remove it from inside FreeAgent's own settings. Reconnecting from the client settings triggers a fresh data sync and resumes publishing.
+
+<Aside type="tip" title="Related pages">
+
+- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform): The parts of connecting that are the same on every platform
+- [Configuring clients](/capture/getting-started/configuring-clients): Set defaults and review synced data for each client
+- [Reviewing and publishing](/capture/guides/reviewing): Check extracted data and publish documents
+
+</Aside>

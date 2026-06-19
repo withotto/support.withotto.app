@@ -86,16 +86,29 @@ export default defineConfig({
                   slug: "capture/getting-started",
                 },
                 {
-                  label: "Connecting Xero",
-                  slug: "capture/getting-started/connecting-xero",
-                },
-                {
                   label: "Configuring clients",
                   slug: "capture/getting-started/configuring-clients",
                 },
                 {
                   label: "Submitting documents",
                   slug: "capture/getting-started/submitting-documents",
+                },
+              ],
+            },
+            {
+              label: "Accounting platforms",
+              items: [
+                {
+                  label: "Connecting your accounting platform",
+                  slug: "capture/platforms/connecting-your-accounting-platform",
+                },
+                {
+                  label: "Xero",
+                  slug: "capture/platforms/xero",
+                },
+                {
+                  label: "FreeAgent",
+                  slug: "capture/platforms/freeagent",
                 },
               ],
             },

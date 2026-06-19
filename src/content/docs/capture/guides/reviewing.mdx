@@ -24,7 +24,7 @@ The review screen shows the original document alongside the extracted data. You 
 - Extracted header fields (supplier, invoice number, dates, currency, amounts)
 - The matched contact (with match method and confidence score)
 - Line items with description, quantity, amounts, tax rate, and account code
-- The bill state that will be used when publishing
+- The publish state that will be used, where your platform supports one
 - An edit history to show which fields have been changed and by whom
 - An event timeline showing processing history
 
@@ -45,22 +45,22 @@ All extracted fields are editable. You can make any changes you need before publ
 - Description
 - Quantity and unit amount
 - Tax rate (from your client's synced tax rates)
-- Account code (from your client's chart of accounts)
-- Tracking categories
+- Account code, or nominal code on FreeAgent (from your client's synced accounts or categories)
+- Tracking categories (Xero only)
 
 **Contact:**
 
 - Select a different contact from your synced contacts
 - Create a new contact if the supplier doesn't exist yet
 
-**Bill state:**
+**Publish state:**
 
-- Override the default state (Draft, Awaiting approval, or Awaiting payment) for this specific document
+- On platforms that support settable states (Xero), override the default state for this document (see [Xero publish states](/capture/platforms/xero#publish-states))
 
 <Aside type="tip">
-  If you need to change the default bill state for all future documents, update
-  it in the [client configuration](/capture/getting-started/configuring-clients)
-  instead.
+  If you need to change the default publish state for all future documents,
+  update it in the [client
+  configuration](/capture/getting-started/configuring-clients) instead.
 </Aside>
 
 Changes are saved automatically and tracked in the edit history with before/after values. If you come back to the same document within 30 minutes, your changes are merged into the same edit rather than creating a new revision.
@@ -80,9 +80,9 @@ Before publishing, Capture validates the data:
 - Missing required fields (contact name, invoice number, issue date, currency, total amount)
 - No contact selected
 - No line items
-- Invalid account codes (not in your chart of accounts)
+- Invalid account codes (not in your chart of accounts or categories)
 - Invalid tax rates (not applicable to this document type)
-- Currency not configured in your accounting platform
+- Currency not available in your accounting platform (not enabled on Xero, or not supported by FreeAgent)
 
 **Warnings (can be acknowledged and published anyway):**
 
@@ -95,9 +95,9 @@ When you publish a document, Capture creates the following in your accounting pl
 
 1. **A bill or invoice:** With all the header fields, line items, and tax information
 2. **A contact:** If you created a new contact during review, it's created first
-3. **An attachment:** The original document file is attached to the bill or invoice
+3. **An attachment:** The original document file is attached to bills on both platforms. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero#attachments) and [FreeAgent](/capture/platforms/freeagent#attachments))
 
-The bill is created in the state you selected (Draft, Awaiting approval, or Awaiting payment).
+On Xero, the bill or invoice is created in the state you selected. FreeAgent has no settable state (see [publishing to FreeAgent](/capture/platforms/freeagent#publishing)).
 
 ## Handling publish errors
 

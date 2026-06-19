@@ -3,7 +3,7 @@ title: "Data flow: Capture and your accounting platform"
 description: How data moves between Otto Capture and your accounting platform
 ---
 
-This page documents the data that flows between Otto Capture and your accounting platform, and what Capture does and doesn't modify.
+This page gives a high-level picture of the data that moves between Otto Capture and your accounting platform, and sets out what Capture does and doesn't change. The exact data read and written, and the names each platform uses, differ by platform, so for the precise lists see the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages.
 
 ## Data flow diagram
 
@@ -35,13 +35,13 @@ This page documents the data that flows between Otto Capture and your accounting
 
 <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
   <div style="flex: 1; background: var(--sl-color-blue-low); color: var(--sl-color-blue-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
-    Chart of accounts
+    Accounts / categories
   </div>
   <div style="flex-shrink: 0; font-size: 1.25rem; color: var(--sl-color-gray-3);">
     &#x2190;
   </div>
   <div style="flex: 1; background: var(--sl-color-blue-low); color: var(--sl-color-blue-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
-    Chart of accounts
+    Accounts / categories
   </div>
 </div>
 
@@ -66,18 +66,6 @@ This page documents the data that flows between Otto Capture and your accounting
   </div>
   <div style="flex: 1; background: var(--sl-color-blue-low); color: var(--sl-color-blue-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
     Currencies
-  </div>
-</div>
-
-<div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-  <div style="flex: 1; background: var(--sl-color-blue-low); color: var(--sl-color-blue-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
-    Tracking categories
-  </div>
-  <div style="flex-shrink: 0; font-size: 1.25rem; color: var(--sl-color-gray-3);">
-    &#x2190;
-  </div>
-  <div style="flex: 1; background: var(--sl-color-blue-low); color: var(--sl-color-blue-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
-    Tracking categories
   </div>
 </div>
 
@@ -116,33 +104,20 @@ This page documents the data that flows between Otto Capture and your accounting
   </div>
 </div>
 
-## Data synced from your accounting platform
+The diagram shows the shape that's common to every platform. The detail varies: Xero's chart of accounts is FreeAgent's categories, tracking categories are read on Xero only, and attachment support differs. See the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages for the exact lists.
 
-Capture reads the following data from your accounting platform to support document processing and review.
+## What Capture reads
 
-| Data                     | Fields synced                                       | Purpose                                                                       |
-| ------------------------ | --------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Contacts**             | Name, email, supplier/customer flag, status         | Match extracted suppliers and customers to existing contacts                  |
-| **Chart of accounts**    | Code, name, type, class, status, tax type           | Suggest and validate account codes on line items                              |
-| **Tax rates**            | Code, name, rate, applicable types                  | Suggest and validate tax rates on line items                                  |
-| **Currencies**           | Code, description                                   | Set and validate document currency                                            |
-| **Tracking categories**  | Category name, options                              | Assign tracking categories to line items during review                        |
-| **Organisation details** | Base currency, multi-currency flag, tax information | Configure client defaults, validate currency support, apply correct tax rates |
+To process and publish documents, Capture reads reference data from your client's accounting platform: contacts, the accounts or categories you code line items to, tax rates, currencies, and basic organisation details such as base currency and tax registration. Xero clients also sync tracking categories, which FreeAgent doesn't have. This data is used only to suggest and validate values during extraction and review. For the exact fields and the names each platform uses, see what syncs on the [Xero](/capture/platforms/xero#what-syncs-after-connecting) and [FreeAgent](/capture/platforms/freeagent#what-syncs-after-connecting) pages.
 
 ### Sync timing
 
 - **On connection:** A full sync runs immediately when you connect a client
 - **Manual refresh:** You can trigger a sync from the client configuration page at any time
 
-## Data published from Capture
+## What Capture publishes
 
-When you publish a document, Capture creates the following in your accounting platform.
-
-| Data                 | Fields published                                                                                                                 | Notes                                                                          |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **Bill or invoice**  | Contact, line items (description, quantity, amount, account code, tax rate, tracking categories), due date, currency, bill state | Created as Draft, Awaiting approval, or Awaiting payment based on your setting |
-| **Attachment**       | Original document file (PDF, image, etc.)                                                                                        | Attached to the created bill or invoice                                        |
-| **Contact** (if new) | Name                                                                                                                             | Only created when a new contact was added during review                        |
+When you publish a document, Capture creates a bill or sales invoice on your platform, carrying the line items, tax, currency, due date, and the matched contact. If you added a new contact during review, that contact is created first. The original document is attached where the platform supports it. Publish states and attachment limits differ by platform: see publishing to [Xero](/capture/platforms/xero#publish-states) and [FreeAgent](/capture/platforms/freeagent#publishing).
 
 ## What Capture does NOT modify
 
@@ -150,7 +125,7 @@ Capture has a limited scope within your accounting platform. It does **not**:
 
 - Modify or delete existing bills, invoices, or contacts
 - Access payroll or employee data
-- Modify your chart of accounts, tax rates, or any settings
+- Modify your chart of accounts or categories, tax rates, or any settings
 - Access reports or financial statements
 - Delete any data
 

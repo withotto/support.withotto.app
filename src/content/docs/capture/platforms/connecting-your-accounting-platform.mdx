@@ -1,0 +1,84 @@
+---
+title: Connecting your accounting platform
+description: How Capture connects to your client's accounting platform, what it syncs, and how connection status works
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import platformPicker from "@assets/capture/platforms/connecting-your-accounting-platform/platform-picker.png";
+
+Otto Capture publishes finished bills and invoices to your client's accounting platform. Capture supports Xero and FreeAgent, and each client connects to a single accounting platform organisation. This page covers the parts of connecting that work the same way on every platform. The exact authorisation steps, the terms you'll see, and a few behaviours differ by platform, so for the specifics head to the [Xero](/capture/platforms/xero) or [FreeAgent](/capture/platforms/freeagent) page.
+
+## Adding a client
+
+<Steps>
+    1. From the **Clients** page in Capture, click **Add client**
+
+    2. Choose the accounting platform you want to connect
+
+    3. Authorise Capture on the platform's sign-in screen
+
+    4. You'll be redirected back to Capture, and data sync begins automatically
+
+</Steps>
+
+<Image
+  src={platformPicker}
+  alt="Screenshot of the Connect an accounting platform dialog, listing Xero and two FreeAgent connection options"
+  caption="The Add client dialog lists Xero and both FreeAgent connection types together; the FreeAgent rows are told apart by their descriptions."
+/>
+
+The platform you pick changes what happens at step 3. See [Connecting Xero](/capture/platforms/xero) or [Connecting FreeAgent](/capture/platforms/freeagent) for the steps, the permissions Capture asks for, and how each platform handles things like publish states and currencies.
+
+## What Capture syncs
+
+Once a client is connected, Capture reads the reference data it needs to process and publish documents:
+
+- **Contacts:** to match suppliers and customers on your documents, and to create new ones during review.
+- **Account codes:** the list of accounts or categories you code line items to.
+- **Tax rates:** the rates Otto suggests and validates against.
+- **Currencies:** the currencies the organisation can use.
+- **Organisation details:** base currency, tax registration, and other settings Otto needs to process documents correctly.
+
+The names of some of these differ by platform (Xero's "chart of accounts" is FreeAgent's "categories", for example), and a few are platform-specific. Your platform page lists exactly what syncs.
+
+## Connection status
+
+Each client shows one of four connection statuses on the **Clients** page and on the client settings page:
+
+| Status                | Meaning                                                                                                  |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Active**            | Connected and syncing. Otto can publish bills and invoices.                                              |
+| **Pending setup**     | Connected, but setup isn't finished. Finish setup before submitting documents.                           |
+| **Disconnected**      | The connection has been removed, either by you in Capture or, on some platforms, on the platform's side. |
+| **Connection failed** | Capture tried to sync or publish and the platform rejected the connection. Reconnect to resume.          |
+
+An **Active** client shows its connected organisation name on the client settings page, along with the last sync time.
+
+A **Pending setup** client shows a **Complete setup** action in the **Needs setup** list on the **Clients** page, so you can finish connecting it before submitting documents.
+
+<Aside type="tip">
+  If synced data looks outdated, you can trigger a manual refresh from the
+  client configuration page.
+</Aside>
+
+## Disconnecting and reconnecting
+
+You can disconnect a client at any time from the client settings. Disconnecting:
+
+- Stops all data syncing between Capture and the platform
+- Prevents new documents from being published
+- Does **not** delete any documents already in Capture
+- Does **not** remove any bills or invoices already published to the platform
+
+To reconnect, open the client settings and click **Reconnect**. Clients that need attention also show a **Reconnect** action in the **Needs setup** list on the **Clients** page. Reconnecting triggers a fresh data sync, and Otto resumes publishing. Your existing documents and synced data are kept throughout.
+
+How a connection comes to be revoked, and whether revoking it inside the platform is mirrored back into Capture, depends on the platform. See the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages for the details.
+
+<Aside type="tip" title="Related pages">
+
+- [Connecting Xero](/capture/platforms/xero): Xero-specific connection and publishing details
+- [Connecting FreeAgent](/capture/platforms/freeagent): FreeAgent Company and Practice connections and specifics
+- [Configuring clients](/capture/getting-started/configuring-clients): Set defaults and review synced data for each client
+
+</Aside>

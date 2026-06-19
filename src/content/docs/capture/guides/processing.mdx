@@ -44,10 +44,10 @@ Otto provides reasoning for each extracted field, explaining where he found the 
 For suppliers Otto has seen before, he also draws on how this client coded similar documents in the past, so his account-code suggestions get sharper over time.
 
 <Aside>
-  Account codes and tax rates are suggested based on your client's chart of
-  accounts and tax rates synced from their accounting platform. Otto filters
-  these based on the document type: expense accounts for bills, revenue accounts
-  for sales invoices.
+  Account codes and tax rates are suggested based on your client's accounts (the
+  chart of accounts on Xero, or categories on FreeAgent) and tax rates synced
+  from their accounting platform. Otto filters these based on the document type:
+  expense accounts for bills, revenue accounts for sales invoices.
 </Aside>
 
 ### 3. Validation
@@ -82,17 +82,17 @@ If any stage encounters a temporary error (such as a service being briefly unava
 
 Here's a complete list of the data Otto extracts from each document:
 
-| Field                      | Description                                                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Supplier/customer name** | The name of the company or individual on the document                                             |
-| **Invoice number**         | The invoice or receipt reference number                                                           |
-| **Issue date**             | When the document was issued                                                                      |
-| **Due date**               | When payment is due                                                                               |
-| **Currency**               | The currency code (e.g., GBP, USD, EUR)                                                           |
-| **Net amount**             | Total before tax                                                                                  |
-| **Tax amount**             | Total tax                                                                                         |
-| **Total amount**           | Grand total including tax                                                                         |
-| **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code |
+| Field                      | Description                                                                                                                                     |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier/customer name** | The name of the company or individual on the document                                                                                           |
+| **Invoice number**         | The invoice or receipt reference number                                                                                                         |
+| **Issue date**             | When the document was issued                                                                                                                    |
+| **Due date**               | When payment is due                                                                                                                             |
+| **Currency**               | The currency code (e.g., GBP, USD, EUR)                                                                                                         |
+| **Net amount**             | Total before tax                                                                                                                                |
+| **Tax amount**             | Total tax                                                                                                                                       |
+| **Total amount**           | Grand total including tax                                                                                                                       |
+| **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code (or nominal code, depending on your platform) |
 
 ## Processing time
 
