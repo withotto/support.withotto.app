@@ -2,3 +2,14 @@ allowBuilds:
   "@parcel/watcher": true
   esbuild: true
   sharp: true
+
+# Packages exempted from the global `trustPolicy: no-downgrade` supply-chain
+# check. These are trusted build-time transitive deps (Netlify adapter tooling)
+# and ubiquitous utilities that Renovate bumps regularly, which trips the
+# no-downgrade trust baseline. Remove an entry to re-enable the check for it.
+trustPolicyExclude:
+  - "@netlify/edge-bundler"
+  - "@netlify/serverless-functions-api"
+  - "@netlify/zip-it-and-ship-it"
+  - chokidar
+  - semver
