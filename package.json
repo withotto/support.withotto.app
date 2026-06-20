@@ -26,7 +26,7 @@
     "@tailwindcss/vite": "4.3.0",
     "astro": "6.4.7",
     "sharp": "0.35.1",
-    "starlight-image-zoom": "0.14.1",
+    "starlight-image-zoom": "0.14.2",
     "tailwindcss": "4.3.0",
     "typescript": "6.0.3"
   },
