@@ -33,8 +33,8 @@ importers:
         specifier: 0.35.1
         version: 0.35.1
       starlight-image-zoom:
-        specifier: 0.14.1
-        version: 0.14.1(@astrojs/starlight@0.40.0(astro@6.4.7(@netlify/blobs@10.7.9)(@types/node@26.0.0)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(typescript@6.0.3))
+        specifier: 0.14.2
+        version: 0.14.2(@astrojs/starlight@0.40.0(astro@6.4.7(@netlify/blobs@10.7.9)(@types/node@26.0.0)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(typescript@6.0.3))
       tailwindcss:
         specifier: 4.3.0
         version: 4.3.0
@@ -4200,8 +4200,8 @@ packages:
   stack-trace@0.0.10:
     resolution: {integrity: sha512-KGzahc7puUKkzyMt+IqAep+TVNbKP+k2Lmwhub39m1AsTSkaDutx56aDCo+HLDzf/D26BIHTJWNiTG1KAJiQCg==}
 
-  starlight-image-zoom@0.14.1:
-    resolution: {integrity: sha512-HFY+/779bq65tiEgiQVk8XIH6HPP34PTxWDmdlIo9pwidLyJUUrSH030/1Iu/r+KjAD7W/jpPWjC8Nkn7+uPhw==}
+  starlight-image-zoom@0.14.2:
+    resolution: {integrity: sha512-YBvE724gFMiVjObGtXmfIDi3zAxVBsvGukeRXOiWLNnESFOBZFfO9DpC/reHohrCxFrO+5ot0XR8EimbE0LpsA==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       '@astrojs/starlight': '>=0.38.0'
@@ -9818,7 +9818,7 @@ snapshots:
 
   stack-trace@0.0.10: {}
 
-  starlight-image-zoom@0.14.1(@astrojs/starlight@0.40.0(astro@6.4.7(@netlify/blobs@10.7.9)(@types/node@26.0.0)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(typescript@6.0.3)):
+  starlight-image-zoom@0.14.2(@astrojs/starlight@0.40.0(astro@6.4.7(@netlify/blobs@10.7.9)(@types/node@26.0.0)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(typescript@6.0.3)):
     dependencies:
       '@astrojs/starlight': 0.40.0(astro@6.4.7(@netlify/blobs@10.7.9)(@types/node@26.0.0)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(typescript@6.0.3)
       mdast-util-mdx-jsx: 3.2.0
