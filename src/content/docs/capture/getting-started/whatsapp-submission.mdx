@@ -1,0 +1,83 @@
+---
+title: WhatsApp submission
+description: Let the people who hold a client's receipts send them in over WhatsApp, with no app to download and nothing to sign in to
+---
+
+import { Aside, Steps } from "@astrojs/starlight/components";
+import Image from "@components/ZoomableImage.astro";
+import whatsappSettings from "@assets/capture/getting-started/whatsapp-submission/whatsapp-settings.png";
+import phoneRegistration from "@assets/capture/getting-started/whatsapp-submission/whatsapp-phone-registration.png";
+
+Alongside web upload and email, clients can send receipts and invoices to Capture over WhatsApp. It's aimed at the people who actually hold the receipts and rarely deal with the practice directly, so there's nothing for them to download and no account to create. They tap a link once to connect, then send a document whenever they have one.
+
+## How it works
+
+<Steps>
+  1. You share a client's WhatsApp invite link with whoever sends in their
+  receipts and invoices. 2. They tap the link, which opens a chat with the Otto
+  Capture number, and send the pre-filled message to connect. 3. From then on,
+  they send a photo or PDF straight into that client's review queue.
+</Steps>
+
+Documents submitted over WhatsApp go through the same processing pipeline as any other submission, and appear in your [review queue](/capture/guides/reviewing) alongside documents from every other source.
+
+## Sharing the invite
+
+Open the client's settings. In the General section you'll find the **WhatsApp** area. The invite link there is unique to that client, and the same link works for everyone, so you can pass it to more than one person.
+
+<Image
+  src={whatsappSettings}
+  alt="The WhatsApp area in a client's settings, showing the invite link with buttons to copy the link or preview and copy the invite message"
+/>
+
+You have two ways to hand it over:
+
+- **Copy link** copies the raw invite link, ready to paste wherever you like.
+- **Preview and copy message** shows a short, ready-to-send message with the link already in it, written as if it comes from you. Copy the whole message or just the link.
+
+However you share it, the person receiving it doesn't need an Otto Capture account, and you don't need to know or register their phone number in advance.
+
+## What the person sending documents sees
+
+When they tap the invite link, WhatsApp opens a chat with the Otto Capture number and pre-fills a short registration message. They send it, and a reply confirms they're connected, naming the client so they can see it worked. If they'd rather type the code by hand, sending the registration code on its own connects them too.
+
+<Image
+  src={phoneRegistration}
+  alt="A client's WhatsApp chat showing the registration message being sent and the reply confirming the connection"
+/>
+
+Once connected, they send a document whenever they have a receipt or invoice, and each one is confirmed as received.
+
+### Adding a note
+
+If there's something you should know about a document, the sender can add a note when they send it, for example "client entertainment". The note is captured with the document, so that context is there when you review it.
+
+## One number, one client for now
+
+In this first phase, a WhatsApp number can be connected to one client at a time. If someone who's already connected to one client sends a different client's code, they're told that each number connects to one business for now and asked to contact you. To move them across, remove their number from the first client, after which they can register with the second client's code.
+
+<Aside>
+  Support for submitting to more than one business from the same number is on
+  the way.
+</Aside>
+
+## Managing who's connected
+
+The **WhatsApp** area lists everyone currently connected to the client under **Linked WhatsApp senders**, showing each person's name and number.
+
+- **Remove** disconnects a sender's number. They stop being able to submit until they register again.
+- **Rotate link** creates a new invite link and code for the client. The old one stops working, so anyone who hasn't already connected can no longer join with it. People who are already connected stay connected.
+
+<Aside type="caution" title="Removing someone for good">
+  Removing a sender doesn't invalidate the code. If they still have the current
+  invite link or code, they can reconnect. To keep someone out for good, remove
+  them and then rotate the link.
+</Aside>
+
+Rotating the link and removing senders are admin-only. Anyone in your organisation can view and share the invite link and message.
+
+## What you can send over WhatsApp
+
+WhatsApp submission accepts the same file types as web upload and email. A photo or a PDF is what most people send from a phone, which is why the confirmation messages mention those, but other supported formats work too. For the full list, see [supported file types](/capture/getting-started/#supported-file-types).
+
+Content that isn't a document, such as a voice note, video, or shared location, won't be processed.

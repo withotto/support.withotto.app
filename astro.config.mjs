@@ -93,6 +93,11 @@ export default defineConfig({
                   label: "Submitting documents",
                   slug: "capture/getting-started/submitting-documents",
                 },
+                {
+                  label: "WhatsApp submission",
+                  slug: "capture/getting-started/whatsapp-submission",
+                  badge: "New",
+                },
               ],
             },
             {
