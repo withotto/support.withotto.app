@@ -5,12 +5,21 @@ import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
 import starlightImageZoom from "starlight-image-zoom";
 import tailwindcss from "@tailwindcss/vite";
+import { unified } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
   output: "static",
   site: "https://support.withotto.app",
   adapter: netlify(),
+
+  // starlight-image-zoom does not yet support Astro 7's default Sätteri
+  // Markdown processor, so pin the classic unified() (remark/rehype) pipeline.
+  // Revert to Astro's default once the plugin adds Sätteri support:
+  // https://github.com/HiDeoo/starlight-image-zoom/issues/63
+  markdown: {
+    processor: unified(),
+  },
 
   integrations: [
     starlight({

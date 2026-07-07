@@ -1,6 +1,6 @@
 # Project: support.withotto.app
 
-**Last Updated:** 2026-04-24
+**Last Updated:** 2026-07-07
 
 ## Overview
 
@@ -13,7 +13,7 @@ Deployed at https://support.withotto.app (Netlify, static output).
 
 ## Technology Stack
 
-- **Framework:** Astro 5 + Starlight 0.37 (docs theme)
+- **Framework:** Astro 7 + Starlight 0.41 (docs theme)
 - **Styling:** Tailwind CSS 4 via `@tailwindcss/vite` plugin (configured in `astro.config.mjs` → `vite.plugins`)
 - **Content:** MDX files under `src/content/docs/` using Starlight's `docsSchema`
 - **Adapter:** `@astrojs/netlify` (static site, `output: "static"`)
