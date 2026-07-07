@@ -243,6 +243,9 @@ export default defineConfig({
           ],
         },
       ],
+      components: {
+        Footer: "./src/components/Footer.astro",
+      },
     }),
     sitemap({
       lastmod: new Date(),

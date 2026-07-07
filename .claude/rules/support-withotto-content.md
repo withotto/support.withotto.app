@@ -63,12 +63,12 @@ Do NOT use relative paths (`../guides/smartmatch`, `./feedback`). Absolute paths
 
 All in `src/components/`:
 
-| Component             | Purpose                                          | Usage                                   |
-| --------------------- | ------------------------------------------------ | --------------------------------------- |
-| `ZoomableImage.astro` | Zoomable screenshot (wraps `astro:assets` Image) | `<Image src={img} alt="..." />`         |
-| `GuideJar.astro`      | Embed interactive guide from guidejar.com        | `<GuideJar id="<guide-id>" />`          |
-| `Trace.astro`         | Embed interactive guide from app.tracework.ai    | `<Trace id="<guide-id>" />`             |
-| `Footer.astro`        | Starlight footer override (extends the default)  | Wired via Starlight component overrides |
+| Component             | Purpose                                          | Usage                                                                      |
+| --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
+| `ZoomableImage.astro` | Zoomable screenshot (wraps `astro:assets` Image) | `<Image src={img} alt="..." />`                                            |
+| `GuideJar.astro`      | Embed interactive guide from guidejar.com        | `<GuideJar id="<guide-id>" />`                                             |
+| `Trace.astro`         | Embed interactive guide from app.tracework.ai    | `<Trace id="<guide-id>" />`                                                |
+| `Footer.astro`        | Default footer + company/legal info block        | Registered in `astro.config.mjs` → `starlight({ components: { Footer } })` |
 
 **Iframe URLs embedded by these components:**
 

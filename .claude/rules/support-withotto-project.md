@@ -39,7 +39,7 @@ Deployed at https://support.withotto.app (Netlify, static output).
 │   │   ├── bank-rec/
 │   │   └── logo-{light,dark}.svg
 │   ├── components/          # Astro components referenced via @components/*
-│   │   ├── Footer.astro        # Extends Starlight's default footer
+│   │   ├── Footer.astro        # Footer override: default footer + company/legal info
 │   │   ├── GuideJar.astro      # guidejar.com interactive-guide embed
 │   │   ├── Trace.astro         # tracework.ai interactive-guide embed
 │   │   └── ZoomableImage.astro # Wraps starlight-image-zoom + astro:assets Image

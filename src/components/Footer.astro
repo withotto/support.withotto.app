@@ -1,7 +1,40 @@
 ---
 import Default from "@astrojs/starlight/components/Footer.astro";
+
+const year = new Date().getFullYear();
 ---
 
 <Default>
   <slot />
 </Default>
+
+<div class="company-footer">
+  <div class="company-legal">
+    <p>Copyright © {year} With Otto Limited</p>
+    <p>Registered in England and Wales, company number 15923965</p>
+    <p>Registered office: 27 Old Gloucester Street, London, WC1N 3AX</p>
+    <p>VAT number: 476382654</p>
+  </div>
+  <p class="company-made">Made with ☕ and 🐕 in Ely, Cambridgeshire</p>
+</div>
+
+<style>
+  .company-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    font-size: var(--sl-text-xs);
+    line-height: 1.6;
+    color: var(--sl-color-gray-3);
+  }
+
+  .company-legal p,
+  .company-made {
+    margin: 0;
+  }
+</style>
