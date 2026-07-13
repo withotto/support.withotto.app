@@ -78,6 +78,10 @@ When Otto publishes to FreeAgent:
 - **Bills** enter the ledger as soon as they're published.
 - **Sales invoices** are created as **Draft**.
 
+### Credit notes
+
+A sales credit note is published as a FreeAgent credit note, mirroring how sales invoices publish, so it carries no attached file. A purchase credit note is recorded on the bill side as a supplier credit, because FreeAgent has no separate purchase credit note record, and the original document is attached as it is for a bill.
+
 ### VAT reporting status
 
 FreeAgent records a VAT reporting status on each document. Otto supports two:

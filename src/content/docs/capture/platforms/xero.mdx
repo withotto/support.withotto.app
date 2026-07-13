@@ -73,6 +73,10 @@ When Otto publishes a bill or sales invoice to Xero, he creates it in one of thr
 
 Sales invoices use the same three states: **Draft** holds the invoice for review, **Awaiting approval** routes it through an approval step, and **Awaiting payment** makes it ready to send and collect on.
 
+## Credit notes
+
+Otto publishes credit notes to Xero as Xero credit notes: a purchase credit note as a credit against accounts payable, and a sales credit note as a credit against accounts receivable. They use the same three publish states as bills and invoices, and the original document is attached in the same way. Amounts are recorded as positive values, with the credit carried by the credit note itself.
+
 ## Currencies
 
 Xero supports multiple currencies. Capture syncs the currencies the organisation has enabled, and Otto detects the document currency during extraction. If a document is in a currency the organisation hasn't enabled yet, you can add it during review.
