@@ -79,7 +79,32 @@ Otto publishes credit notes to Xero as Xero credit notes: a purchase credit note
 
 ## Currencies
 
-Xero supports multiple currencies. Capture syncs the currencies the organisation has enabled, and Otto detects the document currency during extraction. If a document is in a currency the organisation hasn't enabled yet, you can add it during review.
+Otto detects the document currency during extraction, and Capture syncs the currencies the connected organisation has enabled. What you can do with a foreign currency document then depends on whether that organisation can use multiple currencies at all.
+
+### Multi-currency depends on the Xero plan
+
+Multi-currency is not part of every Xero plan, and which plans include it changes over time. Check [Xero's pricing plans](https://www.xero.com/uk/pricing-plans/) for the current position.
+
+You don't have to work it out from the plan name. Otto asks Xero directly whether the organisation is permitted to use multiple currencies, and the review screen offers only what that organisation can actually do.
+
+### What you'll see during review
+
+| The organisation                | What Otto offers on a foreign document                                                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Can use multiple currencies** | Publish in the document currency. If that currency isn't enabled in Xero yet, you can add it during review, or convert the amounts instead |
+| **Is limited to base currency** | Xero keeps everything in the base currency, so the amounts need converting before the document can be published                            |
+
+A currency you add during review takes effect in Xero straight away and stays available to that organisation afterwards. See [Currency and conversion](/capture/guides/reviewing#currency-and-conversion) for how the converter works.
+
+### Why you might convert rather than add the currency
+
+Adding the currency isn't always the answer, even where the plan allows it. Practices convert for reasons like these:
+
+- **The payment cleared in the base currency.** A card or bank payment taken in sterling reaches the statement as a single sterling figure. Recording the document at the rate actually charged means it agrees with the bank line, rather than leaving an exchange difference to deal with at reconciliation
+- **The upgrade isn't worth it.** Multi-currency isn't on every plan, so a client with the occasional foreign currency receipt may not justify moving to one that includes it
+- **The practice prefers a single-currency ledger.** Foreign currency balances bring revaluation and exchange movements with them, which some practices would rather not introduce even where the plan allows it
+
+Which approach suits a client is a decision for the practice. Otto offers both, and records what was done either way.
 
 ## Tracking categories
 

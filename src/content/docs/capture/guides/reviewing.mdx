@@ -3,9 +3,10 @@ title: Reviewing and publishing
 description: The review workflow before publishing documents to your accounting platform
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Steps } from "@astrojs/starlight/components";
 import Image from "@components/ZoomableImage.astro";
 import reviewInterface from "@assets/capture/guides/reviewing/review-interface.png";
+import currencyConverter from "@assets/capture/guides/reviewing/currency-converter.png";
 
 After Otto processes a document, it lands in your review queue. This guide covers the review interface, editing extracted data, and publishing to your accounting platform.
 
@@ -64,6 +65,67 @@ All extracted fields are editable. You can make any changes you need before publ
 </Aside>
 
 Changes are saved automatically and tracked in the edit history with before/after values. If you come back to the same document within 30 minutes, your changes are merged into the same edit rather than creating a new revision.
+
+## Currency and conversion
+
+Otto detects the document currency during extraction and sets it on the **Currency** field. Where the amounts are in a currency your client's platform can't record, or you'd rather post the document in the currency the bank actually charged, you can restate every amount without leaving the review screen.
+
+### When the currency isn't available
+
+If the currency isn't one the connected organisation can use, a warning appears under the **Currency** field. What it offers depends on the platform and, on Xero, on the organisation's plan.
+
+- **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the Xero case where multi-currency is available (see [Xero currencies](/capture/platforms/xero#currencies))
+- **The platform's supported list is fixed.** FreeAgent supports a set list that can't be extended, so converting is the only route for a currency outside it
+- **The organisation is limited to its base currency.** The warning names the base currency and converting is the only route
+
+### Converting the amounts
+
+The **Convert currency** button sits under the **Currency** field. It appears whenever the amounts are in a currency other than the client's base currency, and it stays available after a conversion so you can run it again.
+
+Otto doesn't look up an exchange rate. You enter the total you were actually charged in the destination currency, taken from the bank or card statement, and Otto works backwards from it: the rate is whatever restates the document total as that figure. The effective rate is shown to four decimal places so you can check it against the statement.
+
+Converting isn't only for currencies a platform can't record. Where a payment cleared in the client's base currency, some practices prefer to record the document at the rate actually charged so it agrees with the bank line. The converter is available for that too.
+
+<Image
+  src={currencyConverter}
+  alt="The convert currency dialog, showing the total charged in GBP, the effective rate, and a per-line preview of the converted amounts"
+  caption="Enter the total you were charged. Otto derives the rate and previews every line before anything changes."
+/>
+
+<Steps>
+
+1. Set **Currency** to the currency you want the document published in. It has to be one the platform supports. If the current selection can't be used, opening the converter switches it to the client's base currency for you
+
+2. Click **Convert currency**
+
+3. Enter the total charged in that currency
+
+4. Check the preview. Each line shows its original unit price struck through alongside the converted one, with the converted tax on the right
+
+5. Click **Apply conversion**
+
+</Steps>
+
+Cancelling leaves the document exactly as it was, including any currency the converter selected for you when it opened.
+
+### How rounding is handled
+
+Converting line by line at a four decimal place rate rarely adds up to the total you entered, so Otto reconciles the difference rather than leaving the document out of balance.
+
+The residual is spread across the line net amounts, largest lines first, so it lands where the proportional effect is smallest. Tax amounts are never adjusted for rounding. Any line that has been adjusted carries an amber marker showing the amount moved onto it, and a note under the preview says how many lines were touched and by how much.
+
+Tax follows the line it belongs to. Where a line has a tax rate, tax is recalculated from the converted net so the rate still holds. Where the tax amount was entered by hand, left to the platform, or is zero, it's scaled by the same rate so the figure you set is preserved in proportion.
+
+On a line with a quantity above one, the converted unit price is shown to two decimal places while the line total is the figure that publishes, so the two can differ by a penny.
+
+### After converting
+
+The **Currency** field keeps a short record of what happened, for example "Converted from USD at 0.7406.", so anyone picking the document up later can see the amounts were restated and at what rate. The conversion is also written to the document's event timeline with both currencies and the rate.
+
+Two actions stay available:
+
+- **Change conversion** reopens the converter. A repeat run always starts from the original extracted amounts rather than the last conversion's output, so correcting a mistyped total puts things right instead of compounding
+- **Restore original amounts** puts the original figures, line items, and currency back, and the document reads as though it was never converted
 
 ## Creating contacts during review
 
