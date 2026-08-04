@@ -21,11 +21,19 @@ The slug is used in your default email addresses:
 {prefix}@{slug}.ottocapture.email
 ```
 
-Changing the slug updates all default email addresses for your clients.
+It's also the first part of the web address of every [client submission page](/capture/getting-started/client-submission-page):
+
+```
+{slug}.capture.withotto.app/{prefix}/{code}
+```
+
+Changing the slug updates all default email addresses and all client submission page addresses.
 
 <Aside type="caution">
-  If you change your slug, the previous email addresses will stop working. Make
-  sure to update any email forwarding rules that use the old addresses.
+  If you change your slug, the previous email addresses and submission page
+  links stop working, and there's no redirect from the old ones. Update any
+  email forwarding rules that use the old addresses, and share the new link with
+  anyone using a client submission page.
 </Aside>
 
 ## Team

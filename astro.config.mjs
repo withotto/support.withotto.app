@@ -105,6 +105,10 @@ export default defineConfig({
                 {
                   label: "WhatsApp submission",
                   slug: "capture/getting-started/whatsapp-submission",
+                },
+                {
+                  label: "Client submission page",
+                  slug: "capture/getting-started/client-submission-page",
                   badge: "New",
                 },
               ],

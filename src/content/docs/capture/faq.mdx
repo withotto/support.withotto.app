@@ -46,6 +46,30 @@ Trigger a manual refresh from the client configuration page. The new account wil
 
 Capture only **creates** new bills, invoices, contacts, and attachments. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow#what-capture-does-not-modify) for details.
 
+## Submitting documents
+
+### How can client documents be submitted?
+
+Four ways: you upload files yourself in Capture, clients forward or send email to the client's own address, they send photos and PDFs over [WhatsApp](/capture/getting-started/whatsapp-submission), or they use their unique [client submission page](/capture/getting-started/client-submission-page). Everything arrives in the same review queue whichever route it takes.
+
+### Do the people sending documents need an Otto Capture account?
+
+No. WhatsApp submission and the client submission page both work without an account, a download, or a password. You share a link, and that's all anyone needs.
+
+### Can I stop a submission link working?
+
+Yes, and organisation admins can do it at any time, though the two routes work differently.
+
+For WhatsApp, you remove a connected sender to stop that person submitting, and you rotate the invite link to stop anyone new joining with it. Removing someone doesn't invalidate the code, so if they still have the current invite they could reconnect. To keep someone out for good, remove them and then rotate the link.
+
+For a client submission page, the link is used on every send rather than only to connect, so rotating it stops it working for everyone holding it. You can also turn the page off, which switches the route off for that client rather than replacing the link.
+
+Documents already submitted aren't affected in any of these cases. See [Client submission page](/capture/getting-started/client-submission-page) and [WhatsApp submission](/capture/getting-started/whatsapp-submission).
+
+### A client says their submission link isn't working
+
+Usually the link has been rotated or the page turned off, in which case share the current one from the client's **Client Submission** settings. A link also stops working while the client is disconnected from its accounting platform, and every submission page link changes if you change your organisation prefix.
+
 ## Processing and extraction
 
 ### How long does processing take?
@@ -107,6 +131,10 @@ Yes. Every uploaded document is scanned for malware before processing. If a thre
 ### How are accounting platform credentials stored?
 
 Access tokens are encrypted at rest using symmetric encryption with support for key rotation. Capture never stores your accounting platform username or password.
+
+### Anyone with a submission link can send documents. Is that safe?
+
+The link is the credential, so treat it like a key and share it with the people who need it rather than posting it somewhere open. Sending a document is all it allows: there's no way to see anything already in Capture, no way to reach any other client, and nothing reaches your accounting platform until someone in your organisation has reviewed it. Every file is scanned for malware like any other submission, and measures are in place to stop a link being used to flood your queue. Admins can rotate the link at any time, which replaces it for everyone using it.
 
 ### Who can access my data?
 
