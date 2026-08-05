@@ -7,6 +7,7 @@ import { Aside, Steps } from "@astrojs/starlight/components";
 import Image from "@components/ZoomableImage.astro";
 import reviewInterface from "@assets/capture/guides/reviewing/review-interface.png";
 import currencyConverter from "@assets/capture/guides/reviewing/currency-converter.png";
+import currencyRateWarning from "@assets/capture/guides/reviewing/currency-rate-warning.png";
 
 After Otto processes a document, it lands in your review queue. This guide covers the review interface, editing extracted data, and publishing to your accounting platform.
 
@@ -82,14 +83,14 @@ If the currency isn't one the connected organisation can use, a warning appears 
 
 The **Convert currency** button sits under the **Currency** field. It appears whenever the amounts are in a currency other than the client's base currency, and it stays available after a conversion so you can run it again.
 
-Otto doesn't look up an exchange rate. You enter the total you were actually charged in the destination currency, taken from the bank or card statement, and Otto works backwards from it: the rate is whatever restates the document total as that figure. The effective rate is shown to four decimal places so you can check it against the statement.
+Otto doesn't set the rate. You enter the total you were actually charged in the destination currency, taken from the bank or card statement, and Otto works backwards from it: the applied rate is whatever restates the document total as that figure. The effective rate is shown to four decimal places so you can check it against the statement.
 
 Converting isn't only for currencies a platform can't record. Where a payment cleared in the client's base currency, some practices prefer to record the document at the rate actually charged so it agrees with the bank line. The converter is available for that too.
 
 <Image
   src={currencyConverter}
   alt="The convert currency dialog, showing the total charged in GBP, the effective rate, and a per-line preview of the converted amounts"
-  caption="Enter the total you were charged. Otto derives the rate and previews every line before anything changes."
+  caption="Enter the total you were charged. The market rate for the issue date is shown as a reference, and you can see what each line will become before anything changes."
 />
 
 <Steps>
@@ -108,6 +109,24 @@ Converting isn't only for currencies a platform can't record. Where a payment cl
 
 Cancelling leaves the document exactly as it was, including any currency the converter selected for you when it opened.
 
+### Checking the total against the market rate
+
+A total that has been mistyped, or taken from the wrong line on the statement, still looks like a perfectly ordinary number once it is in the field. So Otto gives you something to check it against.
+
+When the converter opens, the market rate for the document's issue date is shown under the amount field, along with roughly what the converted total should come to at that rate. The rate is a published reference rate from central banks and other official sources, so it is the mid-market figure rather than anything your client was quoted. It is there before you type anything, and it is only a reference: the total you enter is still what sets the applied rate.
+
+If the total you enter implies a rate well outside the usual range, applying pauses. A message replaces the market rate line saying how far out the figure is and in which direction, and the button changes to **Apply anyway**. Pressing it again converts as normal. Editing the amount clears the message, so the next attempt is checked against the new figure rather than waved through.
+
+<Image
+  src={currencyRateWarning}
+  alt="The convert currency dialog showing a warning that the entered total is 15% above the market rate, with the button relabelled to Apply anyway"
+  caption="A total well outside the usual range is challenged once. Check it against the statement, and press again if it's right."
+/>
+
+It asks rather than refuses, because a total can sit outside the range for good reasons. Card markup and fixed non-sterling fees both push the effective rate away from the market one, and a document paid well after its issue date can drift on a volatile currency pair. The range widens as the total falls, since a fixed fee or a rounding penny is a far larger share of a small receipt than a large one.
+
+Where there is no published rate for a currency pair on that date, no market rate is shown and no check is made. The converter works exactly as it does otherwise.
+
 ### How rounding is handled
 
 Converting line by line at a four decimal place rate rarely adds up to the total you entered, so Otto reconciles the difference rather than leaving the document out of balance.
@@ -120,7 +139,7 @@ On a line with a quantity above one, the converted unit price is shown to two de
 
 ### After converting
 
-The **Currency** field keeps a short record of what happened, for example "Converted from USD at 0.7406.", so anyone picking the document up later can see the amounts were restated and at what rate. The conversion is also written to the document's event timeline with both currencies and the rate.
+The **Currency** field keeps a short record of what happened, for example "Converted from USD at 0.7406.", so anyone picking the document up later can see the amounts were restated and at what rate. The conversion is also written to the document's event timeline with both currencies and the rate, and records whether the rate was applied over a warning.
 
 Two actions stay available:
 

@@ -110,6 +110,8 @@ The diagram shows the shape that's common to every platform. The detail varies: 
 
 To process and publish documents, Capture reads reference data from your client's accounting platform: contacts, the accounts or categories you code line items to, tax rates, currencies, and basic organisation details such as base currency and tax registration. Xero clients also sync tracking categories, which FreeAgent doesn't have. This data is used only to suggest and validate values during extraction and review. For the exact fields and the names each platform uses, see what syncs on the [Xero](/capture/platforms/xero#what-syncs-after-connecting) and [FreeAgent](/capture/platforms/freeagent#what-syncs-after-connecting) pages.
 
+Opening the currency converter also fetches a published reference exchange rate from an external rates service, which draws on rates published by central banks and other official sources, to show the rate that applied on the document's issue date. Only the two currency codes and the date are sent. No client, document, or organisation data is included.
+
 ### Sync timing
 
 - **On connection:** A full sync runs immediately when you connect a client
