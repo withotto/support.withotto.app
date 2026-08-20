@@ -21,11 +21,11 @@ importers:
         specifier: 3.7.3
         version: 3.7.3
       '@astrojs/starlight':
-        specifier: 0.41.6
-        version: 0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
+        specifier: 0.41.7
+        version: 0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
       '@astrojs/starlight-tailwind':
         specifier: 5.0.0
-        version: 5.0.0(@astrojs/starlight@0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(tailwindcss@4.3.3)
+        version: 5.0.0(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(tailwindcss@4.3.3)
       '@tailwindcss/vite':
         specifier: 4.3.3
         version: 4.3.3(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
@@ -37,7 +37,7 @@ importers:
         version: 0.35.3(@types/node@26.1.2)
       starlight-image-zoom:
         specifier: 0.15.0
-        version: 0.15.0(@astrojs/starlight@0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
+        version: 0.15.0(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
       tailwindcss:
         specifier: 4.3.3
         version: 4.3.3
@@ -186,8 +186,8 @@ packages:
       '@astrojs/starlight': '>=0.38.0'
       tailwindcss: ^4.0.0
 
-  '@astrojs/starlight@0.41.6':
-    resolution: {integrity: sha512-Dt0/wY2JbFGUpxMgclw1j2Iqks2GG0LHYKgP7TfBXsFrs4LIbKvQ596lzyhXLz6nFcnPdIB9ZRFyDJeuVcx3Ug==}
+  '@astrojs/starlight@0.41.7':
+    resolution: {integrity: sha512-579VJuZgo20UpNQPm9EIez5W3DFSrD16uiV2YX6rUlpLtjgKSdnc69TxVTZXn4AtI2B731TI2qhW1O3K+vwtrQ==}
     peerDependencies:
       '@astrojs/markdown-remark': ^7.2.0
       astro: ^7.0.2
@@ -4979,12 +4979,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  '@astrojs/starlight-tailwind@5.0.0(@astrojs/starlight@0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(tailwindcss@4.3.3)':
+  '@astrojs/starlight-tailwind@5.0.0(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(tailwindcss@4.3.3)':
     dependencies:
-      '@astrojs/starlight': 0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
+      '@astrojs/starlight': 0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
       tailwindcss: 4.3.3
 
-  '@astrojs/starlight@0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)':
+  '@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)':
     dependencies:
       '@astrojs/markdown-satteri': 0.3.5
       '@astrojs/mdx': 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)
@@ -9654,9 +9654,9 @@ snapshots:
 
   stack-trace@0.0.10: {}
 
-  starlight-image-zoom@0.15.0(@astrojs/starlight@0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0):
+  starlight-image-zoom@0.15.0(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0):
     dependencies:
-      '@astrojs/starlight': 0.41.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
+      '@astrojs/starlight': 0.41.7(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(astro@7.1.6(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.12(supports-color@7.2.0))(@types/node@26.1.2)(jiti@2.7.0)(yaml@2.9.0))(supports-color@7.2.0)(typescript@6.0.3)
       mdast-util-mdx-jsx: 3.2.0(supports-color@7.2.0)
       rehype-raw: 7.0.0
       unist-util-visit: 5.1.0
