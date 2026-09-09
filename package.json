@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/markdown-remark": "7.2.4",
-    "@astrojs/netlify": "8.2.4",
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/markdown-remark": "7.3.0",
+    "@astrojs/netlify": "8.2.5",
+    "@astrojs/sitemap": "3.7.4",
     "@astrojs/starlight": "0.41.9",
     "@astrojs/starlight-tailwind": "5.0.0",
     "@tailwindcss/vite": "4.3.3",
