@@ -109,7 +109,6 @@ export default defineConfig({
                 {
                   label: "Client submission page",
                   slug: "capture/getting-started/client-submission-page",
-                  badge: "New",
                 },
               ],
             },
