@@ -103,7 +103,9 @@ Otto attaches the original document to **bills** in FreeAgent, up to 5 MB, in PD
 
 ## Disconnecting and reconnecting
 
-Disconnecting a client in Capture stops syncing and publishing on Capture's side. FreeAgent gives Capture no way to revoke its own access, so to remove it completely, do that inside FreeAgent's own settings. Reconnecting from the client settings triggers a fresh data sync and resumes publishing.
+Disconnecting a client in Capture stops syncing and publishing on Capture's side, and deletes the data synced from FreeAgent along with the supplier matches Otto has learned for the client (see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting)). FreeAgent gives Capture no way to revoke its own access, so to remove it completely, do that inside FreeAgent's own settings.
+
+Capture checks each FreeAgent connection once a day, so if access is removed inside FreeAgent the client moves to **Disconnected**. Reconnecting from the client settings syncs the data again and resumes publishing.
 
 <Aside type="tip" title="Related pages">
 

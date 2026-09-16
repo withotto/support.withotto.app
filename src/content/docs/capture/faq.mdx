@@ -9,24 +9,27 @@ import { Aside } from "@astrojs/starlight/components";
 
 ### How do I disconnect a client?
 
-Go to the client settings and click **Disconnect**. The button names the connected platform, for example **Disconnect from Xero** or **Disconnect from FreeAgent**. This stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+Go to the client settings and click **Disconnect**. The button names the connected platform, for example **Disconnect from Xero** or **Disconnect from FreeAgent**. Capture shows what will be deleted and what stays, and asks you to confirm. Disconnecting stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
 
 ### What happens to my data if I disconnect?
 
-- Documents already in Capture stay in Capture. Nothing is deleted
+- Documents already in Capture stay in Capture, whether published or not
 - Bills and invoices already published stay in your accounting platform
-- Synced reference data (contacts, accounts, tax rates) is no longer refreshed
-- You can reconnect at any time to resume
+- The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories) is deleted from Capture
+- The supplier matches Otto has learned for the client are deleted, and reconnecting doesn't bring them back
+- You can reconnect at any time to sync the data again and resume publishing
+
+See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting) for when synced data is kept instead.
 
 ### Can I reconnect after disconnecting?
 
-Yes. Open the client settings and click **Reconnect**. Reconnecting triggers a fresh data sync, and you can resume processing and publishing documents.
+Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the platform's data again, and you can resume processing and publishing documents. Otto builds up his supplier matches for the client again as you publish.
 
 ### A client shows "Disconnected" or "Connection failed". What happened?
 
 Capture's access to the connected organisation has been removed. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
 
-How a platform-side disconnect reaches Capture differs by platform. On Xero, Otto checks each client once a day and mirrors a revocation made inside Xero. FreeAgent has no such check, so a FreeAgent connection only changes when you disconnect it in Capture, and to revoke Capture's access entirely you remove it inside FreeAgent. See [Xero](/capture/platforms/xero#disconnecting-and-reconnecting) and [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting).
+Otto checks each connection once a day, so access revoked from inside Xero or FreeAgent is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero#disconnecting-and-reconnecting) and [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting).
 
 ## Data sync
 

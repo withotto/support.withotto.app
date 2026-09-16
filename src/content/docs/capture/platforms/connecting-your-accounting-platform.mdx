@@ -64,14 +64,18 @@ A **Pending setup** client shows a **Complete setup** action in the **Needs setu
 
 ## Disconnecting and reconnecting
 
-You can disconnect a client at any time from the client settings. Disconnecting:
+You can disconnect a client at any time from the client settings. Before you confirm, Capture shows what will be deleted and what stays. Disconnecting:
 
-- Stops all data syncing between Capture and the platform
-- Prevents new documents from being published
-- Does **not** delete any documents already in Capture
+- Stops all data syncing between Capture and the platform, and prevents new documents from being published
+- **Deletes** the data synced from the platform: contacts, accounts or categories, tax rates, currencies, and tracking categories
+- **Deletes** the supplier matches Otto has learned for the client
+- Does **not** delete any documents already in Capture, whether published or not
 - Does **not** remove any bills or invoices already published to the platform
+- Stops the client's [submission page](/capture/getting-started/client-submission-page) working until you reconnect. Documents sent by email and WhatsApp are still accepted
 
-To reconnect, open the client settings and click **Reconnect**. Clients that need attention also show a **Reconnect** action in the **Needs setup** list on the **Clients** page. Reconnecting triggers a fresh data sync, and Otto resumes publishing. Your existing documents and synced data are kept throughout.
+The same data is deleted when access is revoked from inside the platform and Capture picks that up. A connection that ends without anyone disconnecting it, for example because your subscription lapses, keeps its synced data, so the client is as you left it if you come back. Once such a client is disconnected, an organisation admin can remove that data from the client settings with **Delete synced data**.
+
+To reconnect, open the client settings and click **Reconnect**. Clients that need attention also show a **Reconnect** action in the **Needs setup** list on the **Clients** page. Reconnecting syncs the platform's data again, and Otto resumes publishing. It doesn't bring back the supplier matches Otto had learned, so he builds those up again as you publish.
 
 How a connection comes to be revoked, and whether revoking it inside the platform is mirrored back into Capture, depends on the platform. See the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages for the details.
 
