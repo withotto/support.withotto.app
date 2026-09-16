@@ -4,6 +4,7 @@ import starlight from "@astrojs/starlight";
 import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
 import starlightImageZoom from "starlight-image-zoom";
+import starlightLinksValidator from "starlight-links-validator";
 import tailwindcss from "@tailwindcss/vite";
 import { unified } from "@astrojs/markdown-remark";
 
@@ -23,7 +24,10 @@ export default defineConfig({
 
   integrations: [
     starlight({
-      plugins: [starlightImageZoom()],
+      // Astro's own checker validates the page a link points at, but not the
+      // #fragment, so a heading rename leaves links that fail silently for the
+      // reader. This fails the build instead.
+      plugins: [starlightImageZoom(), starlightLinksValidator()],
       customCss: ["./src/styles/global.css", "./src/styles/brand.css"],
       title: "With Otto support",
       logo: {
