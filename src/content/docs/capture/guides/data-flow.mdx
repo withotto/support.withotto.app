@@ -3,7 +3,7 @@ title: "Data flow: Capture and your accounting platform"
 description: How data moves between Otto Capture and your accounting platform
 ---
 
-This page gives a high-level picture of the data that moves between Otto Capture and your accounting platform, and sets out what Capture does and doesn't change. The exact data read and written, and the names each platform uses, differ by platform, so for the precise lists see the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages.
+This page gives a high-level picture of the data that moves between Otto Capture and your accounting platform, and sets out what Capture does and doesn't change. The exact data read and written, and the names each platform uses, differ by platform, so for the precise lists see the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), and [QuickBooks Online](/capture/platforms/quickbooks) pages.
 
 ## Data flow diagram
 
@@ -104,11 +104,11 @@ This page gives a high-level picture of the data that moves between Otto Capture
   </div>
 </div>
 
-The diagram shows the shape that's common to every platform. The detail varies: Xero's chart of accounts is FreeAgent's categories, tracking categories are read on Xero only, and attachment support differs. See the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages for the exact lists.
+The diagram shows the shape that's common to every platform. The detail varies: Xero's chart of accounts is FreeAgent's categories, Xero's tracking categories are classes on QuickBooks Online and don't exist on FreeAgent, attachment support differs, and on QuickBooks Online Otto publishes bills and purchase credit notes only. See the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), and [QuickBooks Online](/capture/platforms/quickbooks) pages for the exact lists.
 
 ## What Capture reads
 
-To process and publish documents, Capture reads reference data from your client's accounting platform: contacts, the accounts or categories you code line items to, tax rates, currencies, and basic organisation details such as base currency and tax registration. Xero clients also sync tracking categories, which FreeAgent doesn't have. This data is used only to suggest and validate values during extraction and review. For the exact fields and the names each platform uses, see what syncs on the [Xero](/capture/platforms/xero#synced-data) and [FreeAgent](/capture/platforms/freeagent#synced-data) pages.
+To process and publish documents, Capture reads reference data from your client's accounting platform: contacts, the accounts or categories you code line items to, tax rates, currencies, and basic organisation details such as base currency and tax registration. Xero clients also sync tracking categories, and QuickBooks Online clients sync classes where the company tracks them on each line. FreeAgent has neither. This data is used only to suggest and validate values during extraction and review. For the exact fields and the names each platform uses, see what syncs on the [Xero](/capture/platforms/xero#synced-data), [FreeAgent](/capture/platforms/freeagent#synced-data), and [QuickBooks Online](/capture/platforms/quickbooks#synced-data) pages.
 
 Opening the currency converter also fetches a published reference exchange rate from an external rates service, which draws on rates published by central banks and other official sources, to show the rate that applied on the document's issue date. Only the two currency codes and the date are sent. No client, document, or organisation data is included.
 
@@ -119,7 +119,7 @@ Opening the currency converter also fetches a published reference exchange rate 
 
 ## What Capture publishes
 
-When you publish a document, Capture creates a bill or sales invoice on your platform, carrying the line items, tax, currency, due date, and the matched contact. If you added a new contact during review, that contact is created first. The original document is attached where the platform supports it. Publish states and attachment limits differ by platform: see publishing to [Xero](/capture/platforms/xero#publish-states) and [FreeAgent](/capture/platforms/freeagent#publishing).
+When you publish a document, Capture creates a bill or sales invoice on your platform, carrying the line items, tax, currency, due date, and the matched contact. If you added a new contact during review, that contact is created first. The original document is attached where the platform supports it. Publish states and attachment limits differ by platform: see publishing to [Xero](/capture/platforms/xero#publish-states), [FreeAgent](/capture/platforms/freeagent#publishing), and [QuickBooks Online](/capture/platforms/quickbooks#publishing).
 
 ## What Capture does NOT modify
 

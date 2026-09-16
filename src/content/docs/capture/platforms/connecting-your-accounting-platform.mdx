@@ -7,7 +7,7 @@ import { Steps, Aside } from "@astrojs/starlight/components";
 import Image from "@components/ZoomableImage.astro";
 import platformPicker from "@assets/capture/platforms/connecting-your-accounting-platform/platform-picker.png";
 
-Otto Capture publishes finished bills and invoices to your client's accounting platform. Capture supports Xero and FreeAgent, and each client connects to a single accounting platform organisation. This page covers the parts of connecting that work the same way on every platform. The exact authorisation steps, the terms you'll see, and a few behaviours differ by platform, so for the specifics head to the [Xero](/capture/platforms/xero) or [FreeAgent](/capture/platforms/freeagent) page.
+Otto Capture publishes finished bills and invoices to your client's accounting platform. Capture supports Xero, FreeAgent, and QuickBooks Online, and each client connects to a single accounting platform organisation. On QuickBooks Online, Otto publishes bills and purchase credit notes only. This page covers the parts of connecting that work the same way on every platform. The exact authorisation steps, the terms you'll see, and a few behaviours differ by platform, so for the specifics head to the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), or [QuickBooks Online](/capture/platforms/quickbooks) page.
 
 ## Adding a client
 
@@ -24,11 +24,11 @@ Otto Capture publishes finished bills and invoices to your client's accounting p
 
 <Image
   src={platformPicker}
-  alt="Screenshot of the Connect an accounting platform dialog, listing Xero and two FreeAgent connection options"
-  caption="The Add client dialog lists Xero and both FreeAgent connection types together; the FreeAgent rows are told apart by their descriptions."
+  alt="Screenshot of the Connect an accounting platform dialog, listing Xero, QuickBooks, and two FreeAgent connection options"
+  caption="The Add client dialog lists every platform together. The two FreeAgent rows are told apart by their descriptions, and the QuickBooks row says what Otto publishes there."
 />
 
-The platform you pick changes what happens at step 3. See [Connecting Xero](/capture/platforms/xero) or [Connecting FreeAgent](/capture/platforms/freeagent) for the steps, the permissions Capture asks for, and how each platform handles things like publish states and currencies.
+The platform you pick changes what happens at step 3. See [Connecting Xero](/capture/platforms/xero), [Connecting FreeAgent](/capture/platforms/freeagent), or [Connecting QuickBooks Online](/capture/platforms/quickbooks) for the steps, the permissions Capture asks for, and how each platform handles things like publish states and currencies.
 
 ## What Capture syncs
 
@@ -67,7 +67,7 @@ A **Pending setup** client shows a **Complete setup** action in the **Needs setu
 You can disconnect a client at any time from the client settings. Before you confirm, Capture shows what will be deleted and what stays. Disconnecting:
 
 - Stops all data syncing between Capture and the platform, and prevents new documents from being published
-- **Deletes** the data synced from the platform: contacts, accounts or categories, tax rates, currencies, and tracking categories
+- **Deletes** the data synced from the platform: contacts, accounts or categories, tax rates, currencies, and tracking categories or classes
 - **Deletes** the supplier matches Otto has learned for the client
 - Does **not** delete any documents already in Capture, whether published or not
 - Does **not** remove any bills or invoices already published to the platform
@@ -77,12 +77,13 @@ The same data is deleted when access is revoked from inside the platform and Cap
 
 To reconnect, open the client settings and click **Reconnect**. Clients that need attention also show a **Reconnect** action in the **Needs setup** list on the **Clients** page. Reconnecting syncs the platform's data again, and Otto resumes publishing. It doesn't bring back the supplier matches Otto had learned, so he builds those up again as you publish.
 
-How a connection comes to be revoked, and whether revoking it inside the platform is mirrored back into Capture, depends on the platform. See the [Xero](/capture/platforms/xero) and [FreeAgent](/capture/platforms/freeagent) pages for the details.
+How a connection comes to be revoked, and whether revoking it inside the platform is mirrored back into Capture, depends on the platform. See the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), and [QuickBooks Online](/capture/platforms/quickbooks) pages for the details.
 
 <Aside type="tip" title="Related pages">
 
 - [Connecting Xero](/capture/platforms/xero): Xero-specific connection and publishing details
 - [Connecting FreeAgent](/capture/platforms/freeagent): FreeAgent Company and Practice connections and specifics
+- [Connecting QuickBooks Online](/capture/platforms/quickbooks): QuickBooks Online connection, publishing scope, and specifics
 - [Configuring clients](/capture/getting-started/configuring-clients): Set defaults and review synced data for each client
 
 </Aside>

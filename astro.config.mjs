@@ -124,6 +124,11 @@ export default defineConfig({
                   slug: "capture/platforms/xero",
                 },
                 {
+                  label: "QuickBooks Online",
+                  slug: "capture/platforms/quickbooks",
+                  badge: "New",
+                },
+                {
                   label: "FreeAgent",
                   slug: "capture/platforms/freeagent",
                 },

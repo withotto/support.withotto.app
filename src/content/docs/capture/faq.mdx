@@ -9,13 +9,13 @@ import { Aside } from "@astrojs/starlight/components";
 
 ### How do I disconnect a client?
 
-Go to the client settings and click **Disconnect**. The button names the connected platform, for example **Disconnect from Xero** or **Disconnect from FreeAgent**. Capture shows what will be deleted and what stays, and asks you to confirm. Disconnecting stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+Go to the client settings and click **Disconnect**. The button names the connected platform, for example **Disconnect from Xero** or **Disconnect from QuickBooks**. Capture shows what will be deleted and what stays, and asks you to confirm. Disconnecting stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
 
 ### What happens to my data if I disconnect?
 
 - Documents already in Capture stay in Capture, whether published or not
 - Bills and invoices already published stay in your accounting platform
-- The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories) is deleted from Capture
+- The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories or classes) is deleted from Capture
 - The supplier matches Otto has learned for the client are deleted, and reconnecting doesn't bring them back
 - You can reconnect at any time to sync the data again and resume publishing
 
@@ -29,13 +29,13 @@ Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the pl
 
 Capture's access to the connected organisation has been removed. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
 
-Otto checks each connection once a day, so access revoked from inside Xero or FreeAgent is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero#disconnecting-and-reconnecting) and [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting).
+Otto checks each connection once a day, so access revoked from inside Xero, FreeAgent, or QuickBooks Online is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero#disconnecting-and-reconnecting), [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting), and [QuickBooks Online](/capture/platforms/quickbooks#disconnecting-and-reconnecting).
 
 ## Data sync
 
 ### What data does Capture sync from my accounting platform?
 
-Contacts, account codes or categories, tax rates, currencies, tracking categories (Xero), and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
+Contacts, account codes or categories, tax rates, currencies, tracking categories (Xero) or classes (QuickBooks Online), and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
 
 ### How often does data sync?
 
@@ -82,6 +82,8 @@ Most documents are processed within a few minutes. Processing time depends on do
 ### What document types can Capture process?
 
 Bills and purchase credit notes (accounts payable), and sales invoices and sales credit notes (accounts receivable). Otto classifies each document automatically during processing.
+
+For QuickBooks Online clients, Otto publishes bills and purchase credit notes only. Sales invoices and sales credit notes are not supported there at present. See [QuickBooks Online](/capture/platforms/quickbooks#publishing).
 
 ### What file formats are supported?
 

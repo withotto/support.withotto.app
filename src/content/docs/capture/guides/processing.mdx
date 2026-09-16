@@ -24,6 +24,8 @@ Otto determines:
 - **Rotation:** Is the document upside down or rotated?
 - **Multiple documents:** Does the image contain more than one document?
 
+For a QuickBooks Online client, Otto publishes bills and purchase credit notes only, so a document read as a sales invoice or sales credit note is marked **Triage failed** with a message saying why. If the type is wrong, change it on the review screen (see [QuickBooks Online](/capture/platforms/quickbooks#publishing)).
+
 If the document can't be classified, it's marked as **Needs classification** for you to set the type manually. If multiple documents are detected, it's marked as **Needs manual split**. Where they really are separate documents, split the file and submit each one. Where the pages all belong to one bill, such as an invoice with the supplier's own expenses attached, click **Process as one document** on the review screen and Otto carries on with the whole file as a single document.
 
 ### 2. Extraction
@@ -49,9 +51,10 @@ For suppliers Otto has seen before, he also draws on how this client coded simil
 
 <Aside>
   Account codes and tax rates are suggested based on your client's accounts (the
-  chart of accounts on Xero, or categories on FreeAgent) and tax rates synced
-  from their accounting platform. Otto filters these based on the document type:
-  expense accounts for bills, revenue accounts for sales invoices.
+  chart of accounts on Xero and QuickBooks Online, or categories on FreeAgent)
+  and tax rates synced from their accounting platform. Otto filters these based
+  on the document type: expense accounts for bills, revenue accounts for sales
+  invoices.
 </Aside>
 
 ### 3. Validation

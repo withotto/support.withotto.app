@@ -48,7 +48,7 @@ All extracted fields are editable. You can make any changes you need before publ
 - Quantity and unit amount
 - Tax rate (from your client's synced tax rates)
 - Account code, or nominal code on FreeAgent (from your client's synced accounts or categories)
-- Tracking categories (Xero only)
+- Tracking categories on Xero, or classes on QuickBooks Online
 
 **Contact:**
 
@@ -75,7 +75,7 @@ Otto detects the document currency during extraction and sets it on the **Curren
 
 If the currency isn't one the connected organisation can use, a warning appears under the **Currency** field. What it offers depends on the platform and, on Xero, on the organisation's plan.
 
-- **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the Xero case where multi-currency is available (see [Xero currencies](/capture/platforms/xero#currencies))
+- **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the case on Xero where the plan includes multi-currency, and on QuickBooks Online where multi-currency is turned on (see [Xero currencies](/capture/platforms/xero#currencies) and [QuickBooks Online currencies](/capture/platforms/quickbooks#currencies))
 - **The platform's supported list is fixed.** FreeAgent supports a set list that can't be extended, so converting is the only route for a currency outside it
 - **The organisation is limited to its base currency.** The warning names the base currency and converting is the only route
 
@@ -163,7 +163,7 @@ Before publishing, Capture validates the data:
 - No line items
 - Invalid account codes (not in your chart of accounts or categories)
 - Invalid tax rates (not applicable to this document type)
-- Currency not available in your accounting platform (not enabled on Xero, or not supported by FreeAgent)
+- Currency not available in your accounting platform (not enabled on Xero or QuickBooks Online, or not supported by FreeAgent)
 
 **Warnings (can be acknowledged and published anyway):**
 
@@ -176,9 +176,9 @@ When you publish a document, Capture creates the following in your accounting pl
 
 1. **A bill or invoice:** With all the header fields, line items, and tax information
 2. **A contact:** If you created a new contact during review, it's created first
-3. **An attachment:** The original document file is attached to bills on both platforms. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero#attachments) and [FreeAgent](/capture/platforms/freeagent#attachments))
+3. **An attachment:** The original document file is attached to bills on every platform. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero#attachments), [FreeAgent](/capture/platforms/freeagent#attachments), and [QuickBooks Online](/capture/platforms/quickbooks#attachments))
 
-On Xero, the bill or invoice is created in the state you selected. FreeAgent has no settable state (see [publishing to FreeAgent](/capture/platforms/freeagent#publishing)).
+On Xero, the bill or invoice is created in the state you selected. FreeAgent and QuickBooks Online have no settable state (see publishing to [FreeAgent](/capture/platforms/freeagent#publishing) and [QuickBooks Online](/capture/platforms/quickbooks#publishing)).
 
 ## Handling publish errors
 
