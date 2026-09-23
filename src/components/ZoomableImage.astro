@@ -5,10 +5,38 @@ import { Zoom } from "starlight-image-zoom/components";
 interface Props {
   src: ImageMetadata;
   alt: string;
+  /** Shown under the image. Say something the alt text doesn't. */
   caption?: string;
+  /** Overrides what the zoom button is called. Keep it to a few words. */
+  label?: string;
+  /** The same view on a phone. Supplying it adds a Desktop / Mobile toggle. */
+  phoneSrc?: ImageMetadata;
+  phoneAlt?: string;
+  phoneCaption?: string;
 }
 
-const { src, alt, caption } = Astro.props;
+const { src, alt, caption, label, phoneSrc, phoneAlt, phoneCaption } =
+  Astro.props;
+
+// With no caption, the alt is shown under the image so every figure has a
+// line of text. That line repeats what a screen reader has already read from
+// the image, so it is hidden from assistive technology: sighted readers keep
+// the caption, and nobody hears the same sentence twice. A real caption adds
+// something the alt doesn't, so it stays exposed.
+const captionIsAlt = caption === undefined;
+const captionText = caption ?? alt;
+
+// The zoom button is named "Zoom image: {label}". Left as the alt, it read the
+// whole description out a second time, which on a detailed screenshot is a
+// paragraph. The caption is short and distinguishes one figure from the next;
+// with neither, the button is just "Zoom image".
+const zoomLabel = label ?? caption ?? "";
+
+// Each toggle is its own radio group, so two figures on a page don't fight
+// over which view is showing.
+const group = `view-${crypto.randomUUID().slice(0, 8)}`;
+const phoneCaptionText = phoneCaption ?? phoneAlt ?? captionText;
+const phoneCaptionIsAlt = phoneCaption === undefined;
 ---
 
 <style>
@@ -41,11 +69,122 @@ const { src, alt, caption } = Astro.props;
     font-size: var(--sl-text-sm);
     line-height: 1.4;
   }
+
+  /* The toggle: two radios styled as one segmented control. No script, so it
+     works in a docs page that has not hydrated (and in none that never will). */
+  .views {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .views input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .views label {
+    cursor: pointer;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-2);
+    /* A tap target that stays comfortable on the device this toggle is about. */
+    min-height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .views input:checked + label {
+    background-color: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    border-color: var(--sl-color-gray-4);
+  }
+
+  .views input:focus-visible + label {
+    outline: 2px solid var(--sl-color-accent-high);
+    outline-offset: 2px;
+  }
+
+  /* A phone screenshot at its own width, rather than stretched to the column,
+     and centred: left-aligned it sits under a centred caption looking adrift. */
+  .view-phone {
+    text-align: center;
+  }
+
+  .view-phone :global(img) {
+    max-width: min(320px, 100%);
+  }
+
+  /* Both views are visible by default and :has() hides the one not chosen, so
+     a browser without :has() shows both rather than hiding both. */
+  figure:has(.pick-phone:checked) .view-desktop,
+  figure:has(.pick-phone:checked) .caption-desktop,
+  figure:has(.pick-desktop:checked) .view-phone,
+  figure:has(.pick-desktop:checked) .caption-phone {
+    display: none;
+  }
 </style>
 
 <figure>
-  <Zoom label={alt}>
-    <Image src={src} alt={alt} />
-  </Zoom>
-  <figcaption set:text={caption ?? alt} />
+  {
+    phoneSrc && (
+      <fieldset class="views">
+        <legend class="sr-only">Choose the view to show</legend>
+        <input
+          type="radio"
+          class="pick-desktop"
+          name={group}
+          id={`${group}-desktop`}
+          checked
+        />
+        <label for={`${group}-desktop`}>Desktop</label>
+        <input
+          type="radio"
+          class="pick-phone"
+          name={group}
+          id={`${group}-phone`}
+        />
+        <label for={`${group}-phone`}>Mobile</label>
+      </fieldset>
+    )
+  }
+  <div class="view-desktop">
+    <Zoom label={zoomLabel}>
+      <Image src={src} alt={alt} />
+    </Zoom>
+  </div>
+  {
+    phoneSrc && (
+      <div class="view-phone">
+        <Zoom label={phoneCaption ?? zoomLabel}>
+          <Image src={phoneSrc} alt={phoneAlt ?? alt} />
+        </Zoom>
+      </div>
+    )
+  }
+  <figcaption>
+    <span
+      class="caption-desktop"
+      aria-hidden={captionIsAlt ? "true" : undefined}
+      set:text={captionText}
+    />
+    {
+      phoneSrc && (
+        <span
+          class="caption-phone"
+          aria-hidden={phoneCaptionIsAlt ? "true" : undefined}
+          set:text={phoneCaptionText}
+        />
+      )
+    }
+  </figcaption>
 </figure>

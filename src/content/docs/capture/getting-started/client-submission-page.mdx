@@ -7,6 +7,7 @@ import { Aside, Steps } from "@astrojs/starlight/components";
 import Image from "@components/ZoomableImage.astro";
 import clientSubmissionSettings from "@assets/capture/getting-started/client-submission-page/client-settings-client-submission.png";
 import submissionPage from "@assets/capture/getting-started/client-submission-page/submission-page.png";
+import submissionPagePhone from "@assets/capture/getting-started/client-submission-page/submission-page-phone.png";
 
 Alongside web upload, email, and WhatsApp, each client can have its own submission page: a web address you share with whoever sends their receipts and invoices. They open it, take a photo or choose files they already have, and the documents arrive in that client's review queue. There's nothing to download, no account to create, and nothing for you to set up beyond sharing the link.
 
@@ -33,6 +34,7 @@ Open the client's settings and go to **Client Submission**. The **Client submiss
 <Image
   src={clientSubmissionSettings}
   alt="The client submission page area of a client's settings, showing the link with buttons to copy it or preview and copy a message, and the options to rotate the link or turn the page off"
+  caption="Anyone in your organisation can copy the link; rotating it and turning the page off are admin-only."
 />
 
 You have two ways to hand it over:
@@ -48,7 +50,11 @@ The page is titled with your organisation's name and the client's, so whoever op
 
 <Image
   src={submissionPage}
-  alt="The client submission page as the sender sees it, headed 'Send documents to The Number Ninja', with a file picker and a note explaining what happens after a document is sent. Here The Number Ninja is the practice and With Otto is the client"
+  alt="The client submission page as the sender sees it, headed Send documents to Willowbrook Accountants, naming the client it sends for, with a Choose files area and a What happens next section"
+  caption="The page names your organisation and the client, so whoever opens it can see it's the right one."
+  phoneSrc={submissionPagePhone}
+  phoneAlt="The same page on a phone, with the heading, the Choose files area and the What happens next section stacked down the screen"
+  phoneCaption="Most senders open this on a phone, where the picker takes the full width."
 />
 
 Photos, PDFs, and Word and Excel files are all accepted, up to 25 MB each. For the full list, see [supported file types](/capture/getting-started/#supported-file-types).
