@@ -166,7 +166,15 @@ const phoneCaptionIsAlt = phoneCaption === undefined;
     phoneSrc && (
       <div class="view-phone">
         <Zoom label={phoneCaption ?? zoomLabel}>
-          <Image src={phoneSrc} alt={phoneAlt ?? alt} />
+          {/* Hidden until Mobile is picked, and a lazy image that is hidden
+              never loads, so the switch would show a blank frame. Eager with
+              low priority fetches it up front, behind the visible images. */}
+          <Image
+            src={phoneSrc}
+            alt={phoneAlt ?? alt}
+            loading="eager"
+            fetchpriority="low"
+          />
         </Zoom>
       </div>
     )
