@@ -4,7 +4,7 @@ description: Practice and client settings
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import practiceReconciliationSettingsImage from "@assets/bank-rec/portal/settings/practice-reconciliation-settings.png";
 import clientSettingsImage from "@assets/bank-rec/portal/settings/client-settings.png";
 import schedulingSettingsImage from "@assets/bank-rec/portal/settings/scheduling-settings.png";
@@ -22,9 +22,9 @@ You can configure Otto's reconciliation settings at a practice-wide level and at
 
 ### Practice-wide
 
-<Image
+<ZoomableImage
   src={practiceReconciliationSettingsImage}
-  alt="Screenshot of the reconciliation settings for a practice"
+  alt="The reconciliation settings for a practice"
 />
 
 #### Bank rule reconciliation
@@ -45,9 +45,9 @@ This determines how confident Otto must be that the match is correct before he w
 
 ### Client-specific
 
-<Image
+<ZoomableImage
   src={clientSettingsImage}
-  alt="Screenshot of the reconciliation settings for a client"
+  alt="The reconciliation settings for a client"
 />
 
 These settings are very similar to the practice-wide settings. By default, clients will inherit the same settings that you apply practice-wide. For any clients that should have different settings, simply make the necessary changes. You can see what setting has been specified practice-wide.
@@ -88,9 +88,9 @@ Each dropdown has three options:
 
 ## Scheduling
 
-<Image
+<ZoomableImage
   src={schedulingSettingsImage}
-  alt="Screenshot of the scheduling settings for the practice"
+  alt="The scheduling settings for the practice"
 />
 
 ### Practice timezone

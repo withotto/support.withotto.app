@@ -4,7 +4,7 @@ description: Connecting QuickBooks Online to Otto Capture, what it syncs, and wh
 ---
 
 import { Steps, Aside } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import oauthConsent from "@assets/capture/platforms/quickbooks/oauth-consent.png";
 
 Otto Capture connects to QuickBooks Online so you can publish bills and supplier credits straight into your client's QuickBooks Online company. This page covers the QuickBooks Online specifics. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
@@ -24,9 +24,10 @@ Each client in Capture connects to a single QuickBooks Online company. There's n
 
 </Steps>
 
-<Image
+<ZoomableImage
   src={oauthConsent}
-  alt="Screenshot of the QuickBooks Online authorisation screen, headed Connecting Otto Capture to the company being connected, with No thanks and Connect buttons"
+  alt="The QuickBooks Online authorisation screen, headed Connecting Otto Capture to the company being connected, with No thanks and Connect buttons"
+  label="QuickBooks authorisation screen"
   caption="QuickBooks Online names the company you're about to connect. Check it's the right one, then click Connect."
 />
 

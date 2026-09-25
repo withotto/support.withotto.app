@@ -4,7 +4,7 @@ description: The review workflow before publishing documents to your accounting 
 ---
 
 import { Aside, Steps } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import reviewInterface from "@assets/capture/guides/reviewing/review-interface.png";
 import currencyConverter from "@assets/capture/guides/reviewing/currency-converter.png";
 import currencyRateWarning from "@assets/capture/guides/reviewing/currency-rate-warning.png";
@@ -15,9 +15,10 @@ After Otto processes a document, it lands in your review queue. This guide cover
 
 The review screen shows the original document alongside the extracted data. You can view the document and edit any field before publishing.
 
-<Image
+<ZoomableImage
   src={reviewInterface}
-  alt="The review interface. Showing the original document and the automatically extracted data"
+  alt="The review screen, with the original document on one side and the extracted fields on the other: supplier, dates, amounts, and the line items with their nominal codes and tax rates. Above them, arrows and the position in the queue, reading 5 of 6"
+  label="Review screen"
 />
 
 **What you'll see:**
@@ -87,9 +88,10 @@ Otto doesn't set the rate. You enter the total you were actually charged in the 
 
 Converting isn't only for currencies a platform can't record. Where a payment cleared in the client's base currency, some practices prefer to record the document at the rate actually charged so it agrees with the bank line. The converter is available for that too.
 
-<Image
+<ZoomableImage
   src={currencyConverter}
   alt="The convert currency dialog, showing the total charged in GBP, the effective rate, and a per-line preview of the converted amounts"
+  label="Convert currency dialog"
   caption="Enter the total you were charged. The market rate for the issue date is shown as a reference, and you can see what each line will become before anything changes."
 />
 
@@ -117,9 +119,10 @@ When the converter opens, the market rate for the document's issue date is shown
 
 If the total you enter implies a rate well outside the usual range, applying pauses. A message replaces the market rate line saying how far out the figure is and in which direction, and the button changes to **Apply anyway**. Pressing it again converts as normal. Editing the amount clears the message, so the next attempt is checked against the new figure rather than waved through.
 
-<Image
+<ZoomableImage
   src={currencyRateWarning}
   alt="The convert currency dialog showing a warning that the entered total is 15% above the market rate, with the button relabelled to Apply anyway"
+  label="Currency rate warning"
   caption="A total well outside the usual range is challenged once. Check it against the statement, and press again if it's right."
 />
 
