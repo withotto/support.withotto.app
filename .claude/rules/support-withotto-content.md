@@ -43,7 +43,7 @@ import mySettings from "@assets/capture/getting-started/configuring-clients/clie
 
 ### Alt text
 
-- Describe what the screen shows, naming the view and the parts the text refers to (e.g. `alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting"`). No "Screenshot of" prefix: a screen reader already announces an image. Older Bank Rec alts still carry it; drop it when you next touch them.
+- Describe what the screen shows, naming the view and the parts the text refers to (e.g. `alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting"`). No "Screenshot of" prefix: a screen reader already announces an image.
 - Conceptual/explanatory images use a descriptive sentence (e.g. `alt="Example of a reconciliation match"`).
 - The alt also names the zoom button ("Zoom image: {alt}"). When it runs past 90 characters, add a `label` of a few words (e.g. `label="General tab"`); the build fails until you do. Don't reuse the caption as the label: it is read out under the image already.
 - A `caption` says something the alt doesn't. Without one, the alt is shown as the caption and hidden from screen readers.
