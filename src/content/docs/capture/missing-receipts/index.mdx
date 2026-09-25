@@ -1,0 +1,183 @@
+---
+title: Missing receipts
+description: Import a Xero client's unreconciled bank transactions, choose which ones to ask about, and collect receipts and notes from the client
+---
+
+import { Aside, Steps } from "@astrojs/starlight/components";
+import ZoomableImage from "@components/ZoomableImage.astro";
+import missingReceiptsTab from "@assets/capture/missing-receipts/index/missing-receipts-tab.png";
+import importPreview from "@assets/capture/missing-receipts/index/import-preview.png";
+import prepareList from "@assets/capture/missing-receipts/index/prepare-list.png";
+import updateListDialog from "@assets/capture/missing-receipts/index/update-list-dialog.png";
+import answers from "@assets/capture/missing-receipts/index/answers.png";
+import askAgainConfirm from "@assets/capture/missing-receipts/index/ask-again-confirm.png";
+
+Chasing a client for receipts usually means a list pasted into an email and a trickle of replies. Missing receipts in Otto Capture puts that list on one page, where the client answers each payment with a receipt, a note, or both. You import the transactions Xero shows as unreconciled, choose which ones to ask about, and share the link.
+
+It's available for clients connected to Xero. Capture doesn't import bank transactions for FreeAgent or QuickBooks Online clients.
+
+## How it works
+
+<Steps>
+
+1. An admin turns on the client's missing receipts page, which adds a **Missing receipts** tab to that client.
+
+2. You export the client's uncoded statement lines from Xero and import the file into Capture.
+
+3. You prepare the client's list: exclude anything the client doesn't need to explain, and create the list from the rest.
+
+4. You share the client's link. The client opens it, sends a file or writes a note against each payment, and you see their answers as they arrive.
+
+</Steps>
+
+<ZoomableImage
+  src={missingReceiptsTab}
+  alt="The Missing receipts tab for a client, with the steps for exporting from Xero and a file picker on the left, and two cards on the right: Stored transactions showing 12, and The client's current list showing 10 with six not answered yet"
+  label="Missing receipts tab"
+  caption="The tab sits next to Documents on the client, and only appears once the client's missing receipts page is on."
+/>
+
+Files the client sends go through the same [processing pipeline](/capture/guides/processing) as any other document, and appear in the client's review queue alongside everything else.
+
+## Turning it on for a client
+
+Open the client's settings and go to **Client Submission**. In the **Client missing receipts page** area, click **Turn on client missing receipts page**. Only admins can do this.
+
+Turning the page on creates the client's link and adds the **Missing receipts** tab next to **Documents** on the client's page. The two go together: while the page is off, there's no tab, and nobody can import or prepare a list for that client. See [Client missing receipts page](/capture/missing-receipts/client-page) for the link itself, and for rotating it or turning the page off.
+
+## Importing bank transactions
+
+Capture doesn't read bank transactions from Xero directly. You export them from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet, and upload the file on the **Missing receipts** tab.
+
+<Steps>
+
+1. On the client's **Missing receipts** tab, click **Open Uncoded statement lines in Xero**. It opens the report for this client's organisation in a new tab, after you sign in to Xero if you need to.
+
+   If the link doesn't open the report, go to **Accounting**, then **Bank accounts** in Xero, open the ⋮ menu at the top of the page, and choose **Uncoded statement lines**.
+
+2. Check the bank accounts and the date range. Xero reapplies whatever filters were last used on the report, so they may not cover every account.
+
+3. Choose **Export**, then **CSV**.
+
+4. Back in Capture, choose the file or drop it on the box, and click **Check file**. Upload it without opening or editing it first: a spreadsheet program can change the dates and amounts when it saves.
+
+</Steps>
+
+If you can't see **Uncoded statement lines** in Xero, check your access to that organisation in Xero.
+
+### Checking the import
+
+Capture checks the file before anything is stored, and shows you what it found on the **Check this import** screen:
+
+- **Newest transaction:** with how many days ago it was, so an old export picked up from a downloads folder stands out
+- **Date range** and **Transactions to import**
+- **Bank accounts in this file:** each account in the file, marked **Recognised** when it matches one of the client's bank accounts in Xero, or **Not imported** when it doesn't
+- **Newest transactions in this file:** a sample, so you can see it's the client you meant
+
+<ZoomableImage
+  src={importPreview}
+  alt="The Check this import screen, listing the newest transaction as 14 September 2026 (yesterday), a date range, 4 of 6 transactions to import, and two bank accounts: Business Current Account marked Recognised, and Deposit Account marked Not imported: no matching bank account in Xero"
+  label="Check this import screen"
+  caption="Transactions on an account Capture can't match are shown greyed out and aren't imported."
+/>
+
+The file doesn't name the organisation it came from, so the bank accounts are how you tell it's the right client's. Capture refreshes the client's bank accounts from Xero before it checks, and a section for an account it can't match exactly isn't imported. A file exported from Xero's bulk export, across several organisations, carries the organisation's name in its filename, and Capture shows **Check the organisation** if that name isn't this client's.
+
+Click **Store transactions** to keep them, or **Discard import** to throw the file away. Nothing is added to the client's transactions until you store them.
+
+### Importing again
+
+Import a fresh export whenever you want to bring the list up to date. Capture recognises transactions it already holds, so importing an overlapping date range doesn't create duplicates. Anything you've excluded stays excluded, and anything the client has already answered keeps its answer.
+
+When you next prepare the list, only the transactions in your newest import are candidates. A transaction that has dropped out of the export since the last import has usually been reconciled in Xero, so the client isn't asked about it again.
+
+Capture refuses a file it can't read with confidence, rather than guessing, and tells you which line is at fault where one line is. Export it again from Xero and upload it without opening it.
+
+## Preparing the client's list
+
+Click **Prepare list** to choose what the client is asked about. Every transaction in the newest import is included unless you exclude it, so the job here is taking out what the client doesn't need to explain, such as salaries, transfers between their own accounts, or payments you already have paperwork for.
+
+<ZoomableImage
+  src={prepareList}
+  alt="The Prepare the client's list screen, with filters across the top, a table of transactions each marked On the client's list or Excluded, three selected, and a bar offering Exclude 2, 2 shown to your client now and Ask about 1"
+  label="Prepare the client's list screen"
+  caption="The selection bar names what each action will do and how much of it the client can already see."
+/>
+
+- **Filters:** search the description, and narrow by direction, amount, or bank account. **Show** switches between **To ask about**, **Excluded**, and **All**.
+- **Excluding:** tick transactions and click **Exclude**, or **Select all N matching** to act on everything the filters match. To put an excluded transaction back, show **Excluded**, tick it, and click **Ask about**.
+- **Creating the list:** click **Create client's list**, or **Update client's list** if the client already has one. Capture shows how many transactions will be on it, and warns you if transactions on the current list aren't in the newest export, with their dates, so you can check you exported the date range you meant to. Confirm with **Create list** or **Update list**.
+
+<ZoomableImage
+  src={updateListDialog}
+  alt="The Update this client's list dialog, saying 11 transactions will be on this client's list and that you've excluded one, above a panel headed What your client will be able to see, with Cancel and Update list buttons"
+  label="Update list dialog"
+  caption="The dialog repeats what a link holder can see, at the moment you update the list."
+/>
+
+Creating or updating the list puts those transactions on the client's page straight away. Capture doesn't notify the client, so let them know yourself when there's something new to answer.
+
+<Aside type="caution">
+  Adding transactions waits until you update the list, but excluding doesn't. If
+  you exclude a transaction that's already on the client's current list, it
+  comes off the client's page immediately, and any file they sent for it moves
+  to **Not linked to a payment**. The message after you exclude says how many
+  were on the list.
+</Aside>
+
+A client has one current list. Updating it replaces the previous one, and a transaction the client answered keeps its answer if it's still on the new list.
+
+## Seeing the client's answers
+
+The **Missing receipts** tab shows how many transactions are on the client's current list and how many aren't answered yet. Click **See answers** to open **The client's answers**:
+
+- Each transaction on the list, split into **Money out** and **Money in**, with the note the client wrote and the files they sent. Each file shows its status and links to its review screen.
+- Which transactions aren't answered yet. A transaction counts as answered once it has a note or a file.
+- **Not linked to a payment:** files the client has sent that aren't on any payment they're being asked about. A file leaves this list once it's published, discarded, or detected as a duplicate.
+- **The client's link**, with **Copy link**, so anyone in your organisation can share it.
+
+<ZoomableImage
+  src={answers}
+  alt="The client's answers page, listing payments under Money out and Money in, each answered one showing the client's note and the file they sent with its status and an Ask again button, and a Not linked to a payment section at the foot"
+  label="Client's answers page"
+  caption="Each file links through to its review screen, so you can open what the client sent without leaving the list."
+/>
+
+A note the client writes against a payment reaches Otto with the file, so he reads it when he extracts the document, the same way he reads a note sent over WhatsApp. On the review screen it appears as **Note from sender**. The client can change their note after sending the file. If they do, the review screen tells you Otto read the document before the note changed, and shows what it said before.
+
+### Correcting an answer
+
+Two actions let you put a payment back in front of the client. Anyone in your organisation can use them.
+
+- **Remove from this payment** takes one file off a payment, for example when the client sent the wrong receipt. The file stays in Capture.
+- **Ask again** clears the client's note and takes every file off the payment, so it's unanswered again. Click **Confirm?** to go ahead.
+
+<ZoomableImage
+  src={askAgainConfirm}
+  alt="A payment on the answers page after Ask again has been clicked, with the button replaced by Confirm?, among other payments still showing their Ask again buttons"
+  label="Ask again confirmation"
+  caption="Ask again asks for a second click before it clears the answer."
+/>
+
+Neither action deletes anything. The files stay in Capture, keep going through processing, and move to **Not linked to a payment** on the client's page, where the client can put them back on a payment. Capture keeps the note's old wording as history. The client isn't told that you asked again, so let them know.
+
+If the client changes their answer after you open the page, Capture refuses **Ask again** rather than clear an answer you haven't seen.
+
+## Billing
+
+Files sent from the client's page are documents like any other, and count towards the client's tier only when you publish them. Importing transactions and preparing lists are not charged. See [Billing](/capture/faq#billing).
+
+## What Missing receipts does not do
+
+- It doesn't import bank transactions for FreeAgent or QuickBooks Online clients.
+- It doesn't read bank transactions from Xero. The file you export is the only way transactions reach Capture.
+- It doesn't reconcile anything or change anything in Xero. A receipt the client sends is published like any other document once you've reviewed it.
+- It doesn't contact the client. You share the link and tell them when there's something to answer.
+
+<Aside type="tip" title="Related pages">
+
+- [Client missing receipts page](/capture/missing-receipts/client-page): The page your client answers on, and how to share, rotate, or turn off its link
+- [Xero](/capture/platforms/xero): Connecting Xero and what Capture syncs from it
+- [Reviewing and publishing](/capture/guides/reviewing): Check the documents clients send before publishing them
+
+</Aside>

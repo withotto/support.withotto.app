@@ -17,6 +17,7 @@ Go to the client settings and click **Disconnect**. The button names the connect
 - Bills and invoices already published stay in your accounting platform
 - The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories or classes) is deleted from Capture
 - The supplier matches Otto has learned for the client are deleted, and reconnecting doesn't bring them back
+- Bank transactions you imported for [Missing receipts](/capture/missing-receipts) are kept, but the client's missing receipts link stops working until you reconnect
 - You can reconnect at any time to sync the data again and resume publishing
 
 See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting) for when synced data is kept instead.
@@ -55,9 +56,11 @@ Capture only **creates** new bills, invoices, contacts, and attachments. It neve
 
 Four ways: you upload files yourself in Capture, clients forward or send email to the client's own address, they send photos and PDFs over [WhatsApp](/capture/getting-started/whatsapp-submission), or they use their unique [client submission page](/capture/getting-started/client-submission-page). Everything arrives in the same review queue whichever route it takes.
 
+Xero clients can also send documents in answer to your questions about their bank payments, on their [client missing receipts page](/capture/missing-receipts/client-page).
+
 ### Do the people sending documents need an Otto Capture account?
 
-No. WhatsApp submission and the client submission page both work without an account, a download, or a password. You share a link, and that's all anyone needs.
+No. WhatsApp submission, the client submission page, and the client missing receipts page all work without an account, a download, or a password. You share a link, and that's all anyone needs.
 
 ### Can I stop a submission link working?
 
@@ -72,6 +75,20 @@ Documents already submitted aren't affected in any of these cases. See [Client s
 ### A client says their submission link isn't working
 
 Usually the link has been rotated or the page turned off, in which case share the current one from the client's **Client Submission** settings. A link also stops working while the client is disconnected from its accounting platform, and every submission page link changes if you change your organisation prefix.
+
+## Missing receipts
+
+### Which clients can I use Missing receipts for?
+
+Clients connected to Xero. Capture imports bank transactions from Xero's Uncoded statement lines export, and doesn't import them for FreeAgent or QuickBooks Online clients. See [Missing receipts](/capture/missing-receipts).
+
+### Does Capture read my client's bank transactions from Xero?
+
+No. You export the Uncoded statement lines report from Xero and upload the file, and that file is the only way transactions reach Capture. Capture checks the bank accounts in it against the client's accounts in Xero, and you confirm the import before anything is stored.
+
+### Anyone with a missing receipts link can see the client's transactions. Is that safe?
+
+The link shows the date, amount, description, and bank account of each transaction on the client's current list, to anyone holding it, with no login. That's more than a submission link exposes, so share it with the people who need it, and exclude anything the client doesn't need to be asked about before you create the list. The page shows nothing else about the client's books. Admins can rotate the link or turn the page off at any time. See [What anyone with the link can see](/capture/missing-receipts/client-page#what-anyone-with-the-link-can-see).
 
 ## Processing and extraction
 

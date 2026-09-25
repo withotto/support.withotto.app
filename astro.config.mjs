@@ -117,6 +117,21 @@ export default defineConfig({
               ],
             },
             {
+              label: "Missing receipts",
+              items: [
+                {
+                  label: "Overview",
+                  slug: "capture/missing-receipts",
+                  badge: "New",
+                },
+                {
+                  label: "Client missing receipts page",
+                  slug: "capture/missing-receipts/client-page",
+                  badge: "New",
+                },
+              ],
+            },
+            {
               label: "Accounting platforms",
               items: [
                 {

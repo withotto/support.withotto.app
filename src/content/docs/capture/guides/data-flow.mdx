@@ -112,6 +112,8 @@ To process and publish documents, Capture reads reference data from your client'
 
 Opening the currency converter also fetches a published reference exchange rate from an external rates service, which draws on rates published by central banks and other official sources, to show the rate that applied on the document's issue date. Only the two currency codes and the date are sent. No client, document, or organisation data is included.
 
+For Xero clients using [Missing receipts](/capture/missing-receipts), bank transactions reach Capture only in a file you export from Xero and upload yourself. Capture doesn't read them through the connection. It refreshes the client's bank accounts from Xero to check the file belongs to that client.
+
 ### Sync timing
 
 - **On connection:** A full sync runs immediately when you connect a client

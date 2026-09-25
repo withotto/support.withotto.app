@@ -52,7 +52,7 @@ Once connected, Capture syncs the following data from Xero:
 | Data                     | Purpose                                                                                                                           |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | **Contacts**             | Match suppliers and customers to extracted document data                                                                          |
-| **Chart of accounts**    | Assign account codes to line items                                                                                                |
+| **Chart of accounts**    | Assign account codes to line items, and recognise the client's bank accounts in a [Missing receipts](/capture/missing-receipts) import |
 | **Tax rates**            | Apply the correct tax treatment to line items                                                                                     |
 | **Currencies**           | Set the document currency                                                                                                         |
 | **Tracking categories**  | Assign tracking categories to line items                                                                                          |
@@ -108,6 +108,10 @@ Which approach suits a client is a decision for the practice. Otto offers both, 
 ## Attachments
 
 Otto attaches the original document file to both bills and sales invoices in Xero, up to 10 MB. Capture imposes no file-type restriction on attachments; any limits come from Xero itself.
+
+## Missing receipts
+
+For Xero clients, you can import the statement lines Xero hasn't matched yet and ask the client about the payments you have no paperwork for. You export the **Uncoded statement lines** report from Xero as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the connection, and needs no extra access in Xero for this. See [Missing receipts](/capture/missing-receipts).
 
 ## Disconnecting and reconnecting
 
