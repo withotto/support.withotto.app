@@ -30,7 +30,7 @@ Use TypeScript path aliases (defined in `tsconfig.json`):
 
 ```mdx
 import { Aside, Steps, Card, CardGrid } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import mySettings from "@assets/capture/getting-started/configuring-clients/client-settings-general.png";
 ```
 
@@ -38,13 +38,15 @@ import mySettings from "@assets/capture/getting-started/configuring-clients/clie
 
 - **Image paths mirror the content path exactly.** A doc at `src/content/docs/<area>/<section>/<page>.mdx` stores its images under `src/assets/<area>/<section>/<page>/*.png`. This is a firm convention; follow it when adding new screenshots.
 - Always import via `@assets/*` (not relative paths), so `astro:assets` can optimise them.
-- **Use `ZoomableImage` (aliased as `Image`) for screenshots**, not the bare `astro:assets` `Image`. It wraps `starlight-image-zoom` so users can click to zoom.
+- **Use `ZoomableImage` for screenshots**, not the bare `astro:assets` `Image`. It wraps `starlight-image-zoom` so users can click to zoom. **Import it as `ZoomableImage`, never as `Image`:** the plugin wraps any MDX element named `Image` in a second zoom control, which gives the figure a duplicate zoom button named from the full alt.
 - Image import identifiers are camelCase; Bank Rec pages conventionally suffix them with `Image` (e.g. `dashboardImage`, `usersListImage`). Capture pages use bare camelCase (e.g. `oauthConsent`, `generalSettings`). Match the neighbouring pages' style.
 
 ### Alt text
 
-- Portal / screenshot-heavy pages use **"Screenshot of the X page"** (e.g. `alt="Screenshot of the dashboard page"`).
+- Describe what the screen shows, naming the view and the parts the text refers to (e.g. `alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting"`). No "Screenshot of" prefix: a screen reader already announces an image. Older Bank Rec alts still carry it; drop it when you next touch them.
 - Conceptual/explanatory images use a descriptive sentence (e.g. `alt="Example of a reconciliation match"`).
+- The alt also names the zoom button ("Zoom image: {alt}"). When it runs past 90 characters, add a `label` of a few words (e.g. `label="General tab"`); the build fails until you do. Don't reuse the caption as the label: it is read out under the image already.
+- A `caption` says something the alt doesn't. Without one, the alt is shown as the caption and hidden from screen readers.
 
 ## Internal Links
 
@@ -63,12 +65,12 @@ Do NOT use relative paths (`../guides/smartmatch`, `./feedback`). Absolute paths
 
 All in `src/components/`:
 
-| Component             | Purpose                                          | Usage                                                                      |
-| --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
-| `ZoomableImage.astro` | Zoomable screenshot (wraps `astro:assets` Image) | `<Image src={img} alt="..." />`                                            |
-| `GuideJar.astro`      | Embed interactive guide from guidejar.com        | `<GuideJar id="<guide-id>" />`                                             |
-| `Trace.astro`         | Embed interactive guide from app.tracework.ai    | `<Trace id="<guide-id>" />`                                                |
-| `Footer.astro`        | Default footer + company/legal info block        | Registered in `astro.config.mjs` → `starlight({ components: { Footer } })` |
+| Component             | Purpose                                                                                                                                               | Usage                                                                      |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ZoomableImage.astro` | Zoomable screenshot (wraps `astro:assets` Image); optional `caption`, `label`, and `phoneSrc`/`phoneAlt`/`phoneCaption` for a Desktop / Mobile toggle | `<ZoomableImage src={img} alt="..." label="..." />`                        |
+| `GuideJar.astro`      | Embed interactive guide from guidejar.com                                                                                                             | `<GuideJar id="<guide-id>" />`                                             |
+| `Trace.astro`         | Embed interactive guide from app.tracework.ai                                                                                                         | `<Trace id="<guide-id>" />`                                                |
+| `Footer.astro`        | Default footer + company/legal info block                                                                                                             | Registered in `astro.config.mjs` → `starlight({ components: { Footer } })` |
 
 **Iframe URLs embedded by these components:**
 

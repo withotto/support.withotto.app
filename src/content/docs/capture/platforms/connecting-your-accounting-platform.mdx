@@ -4,7 +4,7 @@ description: How Capture connects to your client's accounting platform, what it 
 ---
 
 import { Steps, Aside } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import platformPicker from "@assets/capture/platforms/connecting-your-accounting-platform/platform-picker.png";
 
 Otto Capture publishes finished bills and invoices to your client's accounting platform. Capture supports Xero, FreeAgent, and QuickBooks Online, and each client connects to a single accounting platform organisation. On QuickBooks Online, Otto publishes bills and purchase credit notes only. This page covers the parts of connecting that work the same way on every platform. The exact authorisation steps, the terms you'll see, and a few behaviours differ by platform, so for the specifics head to the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), or [QuickBooks Online](/capture/platforms/quickbooks) page.
@@ -22,9 +22,10 @@ Otto Capture publishes finished bills and invoices to your client's accounting p
 
 </Steps>
 
-<Image
+<ZoomableImage
   src={platformPicker}
   alt="The Connect an accounting platform dialog, listing Xero, QuickBooks Online, and two FreeAgent connection options"
+  label="Platform picker"
   caption="The Add client dialog lists every platform together. The two FreeAgent rows are told apart by their descriptions, and the QuickBooks Online row says what Otto publishes there."
 />
 

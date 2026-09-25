@@ -4,7 +4,7 @@ description: Give a client a link they can open on any device to send receipts a
 ---
 
 import { Aside, Steps } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import clientSubmissionSettings from "@assets/capture/getting-started/client-submission-page/client-settings-client-submission.png";
 import submissionPage from "@assets/capture/getting-started/client-submission-page/submission-page.png";
 import submissionPagePhone from "@assets/capture/getting-started/client-submission-page/submission-page-phone.png";
@@ -31,9 +31,10 @@ Documents submitted this way go through the same processing pipeline as any othe
 
 Open the client's settings and go to **Client Submission**. The **Client submission page** area holds the link, which is unique to that client.
 
-<Image
+<ZoomableImage
   src={clientSubmissionSettings}
   alt="The client submission page area of a client's settings, showing the link with buttons to copy it or preview and copy a message, and the options to rotate the link or turn the page off"
+  label="Client submission settings"
   caption="Anyone in your organisation can copy the link; rotating it and turning the page off are admin-only."
 />
 
@@ -48,9 +49,10 @@ However you share it, the person receiving it doesn't need an Otto Capture accou
 
 The page is titled with your organisation's name and the client's, so whoever opens it can see it's the right one. They choose files or take a photo, and can send several at once. Each file is confirmed on the page once it has been sent, and the same link works every time they have more.
 
-<Image
+<ZoomableImage
   src={submissionPage}
   alt="The client submission page as the sender sees it, headed Send documents to Willowbrook Accountants, naming the client it sends for, with a Choose files area and a What happens next section"
+  label="Client submission page"
   caption="The page names your organisation and the client, so whoever opens it can see it's the right one."
   phoneSrc={submissionPagePhone}
   phoneAlt="The same page on a phone, with the heading, the Choose files area and the What happens next section stacked down the screen"

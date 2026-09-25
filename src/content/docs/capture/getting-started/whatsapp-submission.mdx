@@ -4,7 +4,7 @@ description: Let the people who hold a client's receipts send them in over Whats
 ---
 
 import { Aside, Steps } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import whatsappSettings from "@assets/capture/getting-started/whatsapp-submission/client-settings-client-submission.png";
 import phoneRegistration from "@assets/capture/getting-started/whatsapp-submission/whatsapp-phone-registration.png";
 
@@ -25,9 +25,10 @@ Documents submitted over WhatsApp go through the same processing pipeline as any
 
 Open the client's settings and go to **Client Submission**. The **WhatsApp** area is there, alongside the client's email address and submission page. The invite link is unique to that client, and the same link works for everyone, so you can pass it to more than one person.
 
-<Image
+<ZoomableImage
   src={whatsappSettings}
   alt="The WhatsApp area of a client's settings, showing the invite link with buttons to copy it or preview and copy the invite message, and the linked WhatsApp senders listed below"
+  label="WhatsApp settings"
 />
 
 You have two ways to hand it over:
@@ -41,9 +42,10 @@ However you share it, the person receiving it doesn't need an Otto Capture accou
 
 When they tap the invite link, WhatsApp opens a chat with the Otto Capture number and pre-fills a short registration message. They send it, and a reply confirms they're connected, naming the client so they can see it worked. If they'd rather type the code by hand, sending the registration code on its own connects them too.
 
-<Image
+<ZoomableImage
   src={phoneRegistration}
   alt="A client's WhatsApp chat showing the registration message being sent and the reply confirming the connection"
+  label="WhatsApp registration chat"
 />
 
 Once connected, they send a document whenever they have a receipt or invoice, and each one is confirmed as received.

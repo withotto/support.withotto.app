@@ -7,7 +7,7 @@ interface Props {
   alt: string;
   /** Shown under the image. Say something the alt text doesn't. */
   caption?: string;
-  /** Overrides what the zoom button is called. Keep it to a few words. */
+  /** Names the zoom button, in a few words. Needed when the alt is long. */
   label?: string;
   /** The same view on a phone. Supplying it adds a Desktop / Mobile toggle. */
   phoneSrc?: ImageMetadata;
@@ -22,21 +22,39 @@ const { src, alt, caption, label, phoneSrc, phoneAlt, phoneCaption } =
 // line of text. That line repeats what a screen reader has already read from
 // the image, so it is hidden from assistive technology: sighted readers keep
 // the caption, and nobody hears the same sentence twice. A real caption adds
-// something the alt doesn't, so it stays exposed.
-const captionIsAlt = caption === undefined;
-const captionText = caption ?? alt;
+// something the alt doesn't, so it stays exposed. The text and the flag come
+// from one decision, so a caption can't be shown as one thing and announced
+// as the other.
+function figureCaption(caption: string | undefined, alt: string) {
+  return caption === undefined
+    ? { text: alt, isAlt: true }
+    : { text: caption, isAlt: false };
+}
+const desktopCaption = figureCaption(caption, alt);
 
-// The zoom button is named "Zoom image: {label}". Left as the alt, it read the
-// whole description out a second time, which on a detailed screenshot is a
-// paragraph. The caption is short and distinguishes one figure from the next;
-// with neither, the button is just "Zoom image".
-const zoomLabel = label ?? caption ?? "";
+// The zoom button is named "Zoom image: {label}", and the name is what tells
+// one figure's button from the next. A short alt makes a good name. A detailed
+// one would be read out as a paragraph, so past a length the figure needs a
+// `label`, and the build stops until it has one. The caption is never used: it
+// is already read out under the image, and would be heard twice.
+const MAX_ZOOM_NAME = 90;
+const zoomLabel = label ?? alt;
+const phoneZoomLabel = label ?? phoneAlt ?? alt;
+for (const name of phoneSrc ? [zoomLabel, phoneZoomLabel] : [zoomLabel]) {
+  if (name.length > MAX_ZOOM_NAME) {
+    throw new Error(
+      `ZoomableImage: "${name.slice(0, 40)}..." is too long to name the zoom button. Give the figure a label of a few words.`,
+    );
+  }
+}
 
 // Each toggle is its own radio group, so two figures on a page don't fight
 // over which view is showing.
 const group = `view-${crypto.randomUUID().slice(0, 8)}`;
-const phoneCaptionText = phoneCaption ?? phoneAlt ?? captionText;
-const phoneCaptionIsAlt = phoneCaption === undefined;
+// Without its own caption, the phone view keeps the figure's caption, which
+// still says something the phone alt doesn't; only with neither does it fall
+// back to an alt.
+const mobileCaption = figureCaption(phoneCaption ?? caption, phoneAlt ?? alt);
 ---
 
 <style>
@@ -165,7 +183,7 @@ const phoneCaptionIsAlt = phoneCaption === undefined;
   {
     phoneSrc && (
       <div class="view-phone">
-        <Zoom label={phoneCaption ?? zoomLabel}>
+        <Zoom label={phoneZoomLabel}>
           {/* Hidden until Mobile is picked, and a lazy image that is hidden
               never loads, so the switch would show a blank frame. Eager with
               low priority fetches it up front, behind the visible images. */}
@@ -182,15 +200,15 @@ const phoneCaptionIsAlt = phoneCaption === undefined;
   <figcaption>
     <span
       class="caption-desktop"
-      aria-hidden={captionIsAlt ? "true" : undefined}
-      set:text={captionText}
+      aria-hidden={desktopCaption.isAlt ? "true" : undefined}
+      set:text={desktopCaption.text}
     />
     {
       phoneSrc && (
         <span
           class="caption-phone"
-          aria-hidden={phoneCaptionIsAlt ? "true" : undefined}
-          set:text={phoneCaptionText}
+          aria-hidden={mobileCaption.isAlt ? "true" : undefined}
+          set:text={mobileCaption.text}
         />
       )
     }

@@ -4,7 +4,7 @@ description: Setting up clients and their accounting platform preferences
 ---
 
 import { Aside } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import generalSettings from "@assets/capture/getting-started/configuring-clients/client-settings-general.png";
 import accountingPlatformSettings from "@assets/capture/getting-started/configuring-clients/client-settings-accounting-platform.png";
 import submissionAddresses from "@assets/capture/getting-started/configuring-clients/client-settings-client-submission-addresses.png";
@@ -34,15 +34,20 @@ Email prefixes:
   continues to work alongside the custom domain.
 </Aside>
 
-<Image src={generalSettings} alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting" />
+<ZoomableImage
+  src={generalSettings}
+  alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting"
+  label="General tab"
+/>
 
 The prefix also forms part of the address of the [client submission page](/capture/getting-started/client-submission-page) for this client. Changing it doesn't break a link you've already shared: the page redirects to the new address on its own.
 
 The **Client Submission** tab lists both prefixes and the addresses they produce, with a link through to wherever each prefix is edited.
 
-<Image
+<ZoomableImage
   src={submissionAddresses}
   alt="The Addresses section of the Client Submission tab, listing the organisation prefix, the client prefix, the client's email address, and the submission page link"
+  label="Submission addresses"
 />
 
 ## Default publish state
@@ -61,9 +66,10 @@ On platforms that support settable publish states, you choose the state Otto cre
 
 Capture syncs the following from your client's accounting platform. This data is used during extraction and review to ensure documents are published with valid accounting data.
 
-<Image
+<ZoomableImage
   src={accountingPlatformSettings}
   alt="The Accounting platform tab of a client's settings, showing the connected platform and organisation, the default publish state, and when each kind of synced data was last refreshed"
+  label="Accounting platform tab"
 />
 
 ### Account codes

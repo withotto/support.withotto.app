@@ -4,7 +4,7 @@ description: Connecting FreeAgent to Otto Capture, what it syncs, and FreeAgent-
 ---
 
 import { Steps, Aside } from "@astrojs/starlight/components";
-import Image from "@components/ZoomableImage.astro";
+import ZoomableImage from "@components/ZoomableImage.astro";
 import practiceClients from "@assets/capture/platforms/freeagent/freeagent-practice-clients.png";
 
 Otto Capture connects to FreeAgent so you can publish bills and sales invoices straight into your client's FreeAgent company. For the connection basics, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
@@ -26,7 +26,7 @@ A Company connection maps one FreeAgent company to one client in Capture. The pe
 
 </Steps>
 
-{/* SCREENSHOT (to add): FreeAgent Company OAuth consent screen. Save to src/assets/capture/platforms/freeagent/freeagent-company-consent.png, import via @assets, render with <Image> */}
+{/* SCREENSHOT (to add): FreeAgent Company OAuth consent screen. Save to src/assets/capture/platforms/freeagent/freeagent-company-consent.png, import via @assets, render with <ZoomableImage> */}
 
 ### Practice
 
@@ -43,9 +43,10 @@ If you're a FreeAgent practice, you connect once and then add any of your manage
 
 Every client you add this way shares the one practice connection, so there's a single sign-in to keep healthy. Adding more later needs no new authorisation, just another visit to the **Add FreeAgent clients** page, where clients you've already added show **Connected** and only the rest can be selected.
 
-<Image
+<ZoomableImage
   src={practiceClients}
   alt="Screenshot of the Add FreeAgent clients page, listing practice clients by entity type with selection checkboxes"
+  label="Add FreeAgent clients page"
   caption="Tick the practice clients to onboard, then click Add selected clients. Clients you've already added show a Connected label and can't be selected again."
 />
 
