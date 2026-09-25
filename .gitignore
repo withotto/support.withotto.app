@@ -30,3 +30,10 @@ pnpm-debug.log*
 /docs-template/
 /.idea/
 /.claude/skills/review-upgrades
+
+# Shared rules rendered from the private shared-rules repo at session start; never committed here
+/.claude/rules/shared/
+# Retired copies that now live in shared-rules; kept ignored so they cannot be committed again
+/.claude/rules/support-withotto-brand-audience.md
+/.claude/rules/support-withotto-voice-common.md
+.claude/worktrees/

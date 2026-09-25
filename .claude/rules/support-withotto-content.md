@@ -99,7 +99,7 @@ Imported from `@astrojs/starlight/components`:
 
 Voice and tone guidance lives in three separate files. Load the ones relevant to the session:
 
-- `.claude/rules/support-withotto-voice-common.md`: shared principles, punctuation, spelling, numbers, banned phrases. Always load when writing or editing content.
+- `.claude/rules/shared/voice-common.md` and `.claude/rules/shared/brand-audience.md`: shared principles, punctuation, spelling, numbers, banned phrases, audience and platform vocabulary, rendered from the shared-rules repo. Always load when writing or editing content. Edit them in shared-rules, not here.
 - `.claude/rules/support-withotto-voice-capture.md`: Capture-specific voice. Load when working under `src/content/docs/capture/`.
 - `.claude/rules/support-withotto-voice-bankrec.md`: Bank Rec-specific voice. Load when working under `src/content/docs/bank-rec/`.
 
