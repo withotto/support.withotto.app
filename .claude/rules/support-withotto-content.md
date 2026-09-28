@@ -59,7 +59,9 @@ import mySettings from "@assets/capture/getting-started/configuring-clients/clie
 [Fixed or uncapped billing](/bank-rec/portal/settings#billing-type)
 ```
 
-Do NOT use relative paths (`../guides/smartmatch`, `./feedback`). Absolute paths are robust against page moves, greppable across the corpus, and consistent with the slug identity. Broken internal links are caught by `astro check` during build.
+Do NOT use relative paths (`../guides/smartmatch`, `./feedback`). Absolute paths are robust against page moves, greppable across the corpus, and consistent with the slug identity.
+
+**Broken links fail the build, fragments included.** `astro check` validates the page a link points at; `starlight-links-validator` (registered in `astro.config.mjs`) validates the `#fragment` too and fails `pnpm build` when a heading has been renamed out from under a link. Without it, a renamed heading leaves a link that only breaks for the reader.
 
 ## Custom Components
 
@@ -127,5 +129,5 @@ Product-specific files cover Otto's role, terminology, page patterns, and before
 ## Build Gotchas
 
 - `pnpm build` runs `astro check` first. Type errors in MDX frontmatter or component props will fail the build.
-- Broken internal links are caught by `astro check`; fix them at source rather than adding redirects.
+- Broken internal links fail the build: `astro check` catches a missing page, and `starlight-links-validator` catches a missing `#fragment`. Fix them at source rather than adding redirects. Renaming a heading means updating every link into it, and the validator names the files.
 - After editing `astro.config.mjs` (sidebar etc.), restart the dev server. HMR doesn't always pick up config changes.
