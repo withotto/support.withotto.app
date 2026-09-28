@@ -6,7 +6,7 @@ paths:
 
 # Voice and tone: Bank Rec
 
-Writing guidance specific to bank reconciliation support docs. Load alongside `support-withotto-voice-common.md`.
+Writing guidance specific to bank reconciliation support docs. Load alongside `.claude/rules/shared/voice-common.md` and `.claude/rules/shared/brand-audience.md` (rendered from the shared-rules repo). Where this file and those differ, this file wins for Bank Rec docs.
 
 ## Otto and ML in Bank Rec
 
@@ -15,7 +15,7 @@ Bank Rec's SmartMatch is powered by machine learning models trained on each clie
 - **Otto is the subject for most actions:** "Otto reconciles matches", "he checks the bank transaction details", "he decides whether to reconcile".
 - **Mention ML and training in explanations of how SmartMatch works:** "SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile."
 - **"We" for the team's role in training:** "We use 12 months of previous reconciliations...", "each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided".
-- **"Otto's confidence", "Otto's decisions"** when describing his state of mind about a match.
+- **"Otto's confidence", "Otto's decisions"** when describing how sure he is about a match and what he decided. Confidence is the model's score for the match, not a feeling: see the persona rules in `.claude/rules/shared/voice-common.md`.
 
 ## Bank Rec-specific terminology
 
