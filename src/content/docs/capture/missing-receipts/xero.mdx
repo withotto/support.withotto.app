@@ -8,7 +8,7 @@ import ZoomableImage from "@components/ZoomableImage.astro";
 import missingReceiptsTab from "@assets/capture/missing-receipts/xero/missing-receipts-tab.png";
 import importPreview from "@assets/capture/missing-receipts/xero/import-preview.png";
 
-[Missing receipts](/capture/missing-receipts) in Otto Capture starts from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet. You export it as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the Xero connection, and needs no extra access in Xero for this.
+[Missing receipts](/capture/missing-receipts/) in Otto Capture starts from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet. You export it as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the Xero connection, and needs no extra access in Xero for this.
 
 <ZoomableImage
   src={missingReceiptsTab}
@@ -53,18 +53,18 @@ Capture checks the file before anything is stored, and shows you what it found o
 
 The file doesn't name the organisation it came from, so the bank accounts are how you tell it's the right client's. Capture refreshes the client's bank accounts from Xero before it checks, and a section for an account it can't match exactly isn't imported. A file exported from Xero's bulk export, across several organisations, carries the organisation's name in its filename, and Capture shows **Check the organisation** if that name isn't this client's.
 
-Click **Store transactions** to keep them, or **Discard import** to throw the file away. Nothing is added to the client's transactions until you store them. Then [prepare the client's list](/capture/missing-receipts#preparing-the-clients-list).
+Click **Store transactions** to keep them, or **Discard import** to throw the file away. Nothing is added to the client's transactions until you store them. Then [prepare the client's list](/capture/missing-receipts/#preparing-the-clients-list).
 
 ## Importing again
 
-Import a fresh export whenever you want to bring the list up to date. Each import replaces the transactions you prepare the list from, and answers and exclusions carry over: see [Importing again](/capture/missing-receipts#importing-again).
+Import a fresh export whenever you want to bring the list up to date. Each import replaces the transactions you prepare the list from, and answers and exclusions carry over: see [Importing again](/capture/missing-receipts/#importing-again).
 
 Capture refuses a file it can't read with confidence, rather than guessing, and tells you which line is at fault where one line is. Export it again from Xero and upload it without opening it.
 
 <Aside type="tip" title="Related pages">
 
-- [Missing receipts](/capture/missing-receipts): Prepare the client's list and see their answers
-- [Client missing receipts page](/capture/missing-receipts/client-page): The page your client answers on, and how to share it
-- [Xero](/capture/platforms/xero): Connecting Xero and what Capture syncs from it
+- [Missing receipts](/capture/missing-receipts/): Prepare the client's list and see their answers
+- [Client missing receipts page](/capture/missing-receipts/client-page/): The page your client answers on, and how to share it
+- [Xero](/capture/platforms/xero/): Connecting Xero and what Capture syncs from it
 
 </Aside>

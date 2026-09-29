@@ -50,13 +50,13 @@ import mySettings from "@assets/capture/getting-started/configuring-clients/clie
 
 ## Internal Links
 
-**Always use absolute, site-root-relative paths** — the slug exactly as it appears under `src/content/docs/`, prefixed with `/`. No `.mdx` extension, no trailing slash, no hard-coded `https://support.withotto.app`.
+**Always use absolute, site-root-relative paths**: the slug exactly as it appears under `src/content/docs/`, prefixed with `/` and ending in `/`, before any `#fragment`. This follows the trailing-slash rule in `.claude/rules/shared/voice-common.md`. No `.mdx` extension, no hard-coded `https://support.withotto.app`.
 
 ```md
-[Connecting Xero](/capture/getting-started/connecting-xero)
-[Feedback](/bank-rec/guides/feedback)
-[SmartMatch confidence](/bank-rec/guides/smartmatch#confidence)
-[Fixed or uncapped billing](/bank-rec/portal/settings#billing-type)
+[Connecting Xero](/capture/getting-started/connecting-xero/)
+[Feedback](/bank-rec/guides/feedback/)
+[SmartMatch confidence](/bank-rec/guides/smartmatch/#confidence)
+[Fixed or uncapped billing](/bank-rec/portal/settings/#billing-type)
 ```
 
 Do NOT use relative paths (`../guides/smartmatch`, `./feedback`). Absolute paths are robust against page moves, greppable across the corpus, and consistent with the slug identity.
