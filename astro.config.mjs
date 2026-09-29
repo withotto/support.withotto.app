@@ -129,7 +129,7 @@ export default defineConfig({
                   slug: "capture/missing-receipts/xero",
                 },
                 {
-                  label: "Fetching from FreeAgent",
+                  label: "Importing from FreeAgent",
                   slug: "capture/missing-receipts/freeagent",
                 },
                 {
