@@ -8,7 +8,7 @@ import ZoomableImage from "@components/ZoomableImage.astro";
 import missingReceiptsTab from "@assets/capture/missing-receipts/xero/missing-receipts-tab.png";
 import importPreview from "@assets/capture/missing-receipts/xero/import-preview.png";
 
-For a Xero client, [Missing receipts](/capture/missing-receipts) in Otto Capture starts from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet. You export it as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the Xero connection, and needs no extra access in Xero for this.
+[Missing receipts](/capture/missing-receipts) in Otto Capture starts from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet. You export it as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the Xero connection, and needs no extra access in Xero for this.
 
 <ZoomableImage
   src={missingReceiptsTab}
@@ -57,7 +57,7 @@ Click **Store transactions** to keep them, or **Discard import** to throw the fi
 
 ## Importing again
 
-Import a fresh export whenever you want to bring the list up to date. Overlapping date ranges don't create duplicates, and answers and exclusions carry over: see [Bringing them in again](/capture/missing-receipts#bringing-them-in-again).
+Import a fresh export whenever you want to bring the list up to date. Each import replaces the transactions you prepare the list from, and answers and exclusions carry over: see [Importing again](/capture/missing-receipts#importing-again).
 
 Capture refuses a file it can't read with confidence, rather than guessing, and tells you which line is at fault where one line is. Export it again from Xero and upload it without opening it.
 

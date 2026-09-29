@@ -1,6 +1,6 @@
 ---
 title: Missing receipts
-description: Bring a client's unreconciled bank transactions into Otto Capture, choose which ones to ask about, and collect receipts and notes from the client
+description: Import a client's unreconciled bank transactions into Otto Capture, choose which ones to ask about, and collect receipts and notes from the client
 ---
 
 import { Aside, Steps } from "@astrojs/starlight/components";
@@ -10,9 +10,9 @@ import updateListDialog from "@assets/capture/missing-receipts/index/update-list
 import answers from "@assets/capture/missing-receipts/index/answers.png";
 import askAgainConfirm from "@assets/capture/missing-receipts/index/ask-again-confirm.png";
 
-Missing receipts in Otto Capture puts the payments you have questions about on one page, where the client answers each one with a receipt, a note, or both. A note stays with the receipt it relates to, so it's there when you review the document. You bring in the bank transactions the client's accounting platform hasn't reconciled yet, choose which ones to ask about, and share the link.
+Missing receipts in Otto Capture puts the payments you have questions about on one page, where the client answers each one with a receipt, a note, or both. A note stays with the receipt it relates to, so it's there when you review the document. You import the bank transactions the client's accounting platform hasn't reconciled yet, choose which ones to ask about, and share the link.
 
-It's available for clients connected to Xero or FreeAgent. Capture doesn't bring in bank transactions for QuickBooks Online clients.
+It's available for clients connected to Xero or FreeAgent. Capture doesn't import bank transactions for QuickBooks Online clients.
 
 ## How it works
 
@@ -20,7 +20,7 @@ It's available for clients connected to Xero or FreeAgent. Capture doesn't bring
 
 1. An admin turns on the client's missing receipts page, which adds a **Missing receipts** tab to that client.
 
-2. You bring the client's unreconciled bank transactions into Capture. For a Xero client, you export them from Xero and upload the file. For a FreeAgent client, Capture fetches them from FreeAgent.
+2. You import the client's unreconciled bank transactions into Capture: from a file you export from Xero, or straight from FreeAgent.
 
 3. You prepare the client's list: exclude anything the client doesn't need to explain, and create the list from the rest.
 
@@ -34,28 +34,28 @@ Files the client sends go through the same [processing pipeline](/capture/guides
 
 Open the client's settings and go to **Client Submission**. In the **Client missing receipts page** area, click **Turn on client missing receipts page**. Only admins can do this, and only for a client connected to Xero or FreeAgent.
 
-Turning the page on creates the client's link and adds the **Missing receipts** tab next to **Documents** on the client's page. The two go together: while the page is off, there's no tab, and nobody can bring in transactions or prepare a list for that client. See [Client missing receipts page](/capture/missing-receipts/client-page) for the link itself, and for rotating it or turning the page off.
+Turning the page on creates the client's link and adds the **Missing receipts** tab next to **Documents** on the client's page. The two go together: while the page is off, there's no tab, and nobody can import transactions or prepare a list for that client. See [Client missing receipts page](/capture/missing-receipts/client-page) for the link itself, and for rotating it or turning the page off.
 
-## Bringing in bank transactions
+## Importing bank transactions
 
 How the transactions reach Capture depends on the client's accounting platform:
 
-| Platform      | How transactions arrive                                                                                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Xero**      | You export Xero's **Uncoded statement lines** report as a CSV and upload it. Capture checks the file before storing anything. See [Importing from Xero](/capture/missing-receipts/xero)                 |
-| **FreeAgent** | You choose a date range and click **Fetch transactions**. Capture reads the unexplained transactions from FreeAgent and stores them. See [Fetching from FreeAgent](/capture/missing-receipts/freeagent) |
+| Platform      | How transactions arrive                                                                                                                                                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Xero**      | You export Xero's **Uncoded statement lines** report as a CSV and upload it. Capture checks the file before storing anything. See [Importing from Xero](/capture/missing-receipts/xero)               |
+| **FreeAgent** | You choose a date range and click **Fetch transactions**, and Capture reads the unexplained transactions straight from FreeAgent. See [Importing from FreeAgent](/capture/missing-receipts/freeagent) |
 
 Either way, the transactions are stored against the client and the client isn't asked about any of them yet. They see only what you put on their list.
 
-### Bringing them in again
+### Importing again
 
-Import or fetch again whenever you want to bring the list up to date. Capture recognises transactions it already holds, so an overlapping date range doesn't create duplicates. Anything you've excluded stays excluded, and anything the client has already answered keeps its answer.
+Import again whenever you want to bring the list up to date. Each import replaces the transactions you prepare the list from: only those in the newest import are offered. A transaction that has dropped out since the last import has usually been reconciled in the accounting platform, so the client isn't asked about it once you update their list.
 
-When you next prepare the list, only the transactions in the newest import or fetch are candidates. A transaction that has dropped out since the last one has usually been reconciled in the accounting platform, so the client isn't asked about it again.
+A transaction that was also in an earlier import keeps what's already been decided about it. Anything you've excluded stays excluded, and anything the client has answered keeps its answer.
 
 ## Preparing the client's list
 
-Click **Prepare list** to choose what the client is asked about. Every transaction in the newest import or fetch is included unless you exclude it, so the job here is taking out what the client doesn't need to explain, such as salaries, transfers between their own accounts, or payments you already have paperwork for.
+Click **Prepare list** to choose what the client is asked about. Every transaction in the newest import is included unless you exclude it, so the job here is taking out what the client doesn't need to explain, such as salaries, transfers between their own accounts, or payments you already have paperwork for.
 
 <ZoomableImage
   src={prepareList}
@@ -66,7 +66,7 @@ Click **Prepare list** to choose what the client is asked about. Every transacti
 
 - **Filters:** search the description, and narrow by direction, amount, or bank account. **Show** switches between **To ask about**, **Excluded**, and **All**.
 - **Excluding:** tick transactions and click **Exclude**, or **Select all N matching** to act on everything the filters match. To put an excluded transaction back, show **Excluded**, tick it, and click **Ask about**.
-- **Creating the list:** click **Create client's list**, or **Update client's list** if the client already has one. Capture shows how many transactions will be on it, and warns you if transactions on the current list aren't in the newest import or fetch, with their dates, so you can check you covered the date range you meant to. Confirm with **Create list** or **Update list**.
+- **Creating the list:** click **Create client's list**, or **Update client's list** if the client already has one. Capture shows how many transactions will be on it, and warns you if transactions on the current list aren't in the newest import, with their dates, so you can check you covered the date range you meant to. Confirm with **Create list** or **Update list**.
 
 <ZoomableImage
   src={updateListDialog}
@@ -125,20 +125,20 @@ If the client changes their answer after you open the page, Capture refuses **As
 
 ## Billing
 
-Files sent from the client's page are documents like any other, and count towards the client's tier only when you publish them. Bringing in transactions and preparing lists are not charged. See [Billing](/capture/faq#billing).
+Files sent from the client's page are documents like any other, and count towards the client's tier only when you publish them. Importing transactions and preparing lists are not charged. See [Billing](/capture/faq#billing).
 
 ## What Missing receipts does not do
 
-- It doesn't bring in bank transactions for QuickBooks Online clients.
+- It doesn't import bank transactions for QuickBooks Online clients.
 - It doesn't read a Xero client's bank transactions through the connection. The file you export is the only way they reach Capture.
-- It doesn't fetch a FreeAgent client's transactions on a schedule. Capture reads them only when you click **Fetch transactions**.
+- It doesn't import a FreeAgent client's transactions on a schedule. Capture reads them only when you click **Fetch transactions**.
 - It doesn't reconcile anything or change anything in the client's accounting platform. A receipt the client sends is published like any other document once you've reviewed it.
 - It doesn't contact the client. You share the link and tell them when there's something to answer.
 
 <Aside type="tip" title="Related pages">
 
 - [Importing from Xero](/capture/missing-receipts/xero): Export a Xero client's uncoded statement lines and upload them
-- [Fetching from FreeAgent](/capture/missing-receipts/freeagent): Fetch a FreeAgent client's unexplained transactions
+- [Importing from FreeAgent](/capture/missing-receipts/freeagent): Import a FreeAgent client's unexplained transactions
 - [Client missing receipts page](/capture/missing-receipts/client-page): The page your client answers on, and how to share, rotate, or turn off its link
 - [Reviewing and publishing](/capture/guides/reviewing): Check the documents clients send before publishing them
 
