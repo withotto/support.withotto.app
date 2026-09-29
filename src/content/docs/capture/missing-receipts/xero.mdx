@@ -1,0 +1,70 @@
+---
+title: Importing from Xero
+description: Export a Xero client's Uncoded statement lines report and upload it to Otto Capture, so you can ask the client about the payments you have no paperwork for
+---
+
+import { Aside, Steps } from "@astrojs/starlight/components";
+import ZoomableImage from "@components/ZoomableImage.astro";
+import missingReceiptsTab from "@assets/capture/missing-receipts/xero/missing-receipts-tab.png";
+import importPreview from "@assets/capture/missing-receipts/xero/import-preview.png";
+
+For a Xero client, [Missing receipts](/capture/missing-receipts) in Otto Capture starts from Xero's **Uncoded statement lines** report, which lists the statement lines that haven't been reconciled yet. You export it as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the Xero connection, and needs no extra access in Xero for this.
+
+<ZoomableImage
+  src={missingReceiptsTab}
+  alt="The Missing receipts tab for a Xero client, with the steps for exporting from Xero and a file picker on the left, and two cards on the right: Stored transactions showing 12, and The client's current list showing 10 with six not answered yet"
+  label="Missing receipts tab"
+  caption="The tab sits next to Documents on the client, and only appears once the client's missing receipts page is on."
+/>
+
+## Exporting from Xero
+
+<Steps>
+
+1. On the client's **Missing receipts** tab, click **Open Uncoded statement lines in Xero**. It opens the report for this client's organisation in a new tab, after you sign in to Xero if you need to, with every bank account and the last six months selected.
+
+   If the link doesn't open the report, go to **Accounting**, then **Bank accounts** in Xero, open the ⋮ menu at the top of the page, and choose **Uncoded statement lines**. Opened that way, the report keeps whatever filters were last used on it, so it may not cover every account.
+
+2. Check the bank accounts and the date range cover the payments you're chasing.
+
+3. Choose **Export**, then **CSV**.
+
+4. Back in Capture, choose the file or drop it on the box, and click **Check file**. Upload it without opening or editing it first: a spreadsheet program can change the dates and amounts when it saves.
+
+</Steps>
+
+If you can't see **Uncoded statement lines** in Xero, check your access to that organisation in Xero.
+
+## Checking the import
+
+Capture checks the file before anything is stored, and shows you what it found on the **Check this import** screen:
+
+- **Newest transaction:** with how many days ago it was, so an old export picked up from a downloads folder stands out
+- **Date range** and **Transactions to import**
+- **Bank accounts in this file:** each account in the file, marked **Recognised** when it matches one of the client's bank accounts in Xero, or **Not imported** when it doesn't
+- **Newest transactions in this file:** a sample, so you can see it's the client you meant
+
+<ZoomableImage
+  src={importPreview}
+  alt="The Check this import screen, listing the newest transaction as 14 September 2026 (yesterday), a date range, 4 of 6 transactions to import, and two bank accounts: Business Current Account marked Recognised, and Deposit Account marked Not imported: no matching bank account in Xero"
+  label="Check this import screen"
+  caption="Transactions on an account Capture can't match are shown greyed out and aren't imported."
+/>
+
+The file doesn't name the organisation it came from, so the bank accounts are how you tell it's the right client's. Capture refreshes the client's bank accounts from Xero before it checks, and a section for an account it can't match exactly isn't imported. A file exported from Xero's bulk export, across several organisations, carries the organisation's name in its filename, and Capture shows **Check the organisation** if that name isn't this client's.
+
+Click **Store transactions** to keep them, or **Discard import** to throw the file away. Nothing is added to the client's transactions until you store them. Then [prepare the client's list](/capture/missing-receipts#preparing-the-clients-list).
+
+## Importing again
+
+Import a fresh export whenever you want to bring the list up to date. Overlapping date ranges don't create duplicates, and answers and exclusions carry over: see [Bringing them in again](/capture/missing-receipts#bringing-them-in-again).
+
+Capture refuses a file it can't read with confidence, rather than guessing, and tells you which line is at fault where one line is. Export it again from Xero and upload it without opening it.
+
+<Aside type="tip" title="Related pages">
+
+- [Missing receipts](/capture/missing-receipts): Prepare the client's list and see their answers
+- [Client missing receipts page](/capture/missing-receipts/client-page): The page your client answers on, and how to share it
+- [Xero](/capture/platforms/xero): Connecting Xero and what Capture syncs from it
+
+</Aside>
