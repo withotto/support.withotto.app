@@ -39,7 +39,7 @@ Capture extracts document data and suggests coding. It is not a compliance tool,
 
 - Otto does not validate or verify VAT numbers, and does not check them against HMRC.
 - Otto does not reason about VAT law or ground tax rates in legislation. He extracts the figures shown on the document; the practice remains responsible for VAT treatment.
-- Account-code suggestions draw on the client's own past coding, not a fixed rulebook, and they are suggestions Otto offers for review, not decisions. Keep the "Otto doesn't always get it right, every field is editable during review" framing. The term in prose is **nominal code**, not "account code": see `.claude/rules/shared/brand-audience.md` for the platform vocabulary mapping and when a vendor's own word is correct instead.
+- Nominal code suggestions draw on how the practice has coded that client's past documents from the same supplier, not a fixed rulebook, and they are suggestions Otto offers for review, not decisions. Keep the "Otto doesn't always get it right, every field is editable during review" framing. The term in prose is **nominal code**, not "account code": see `.claude/rules/shared/brand-audience.md` for the platform vocabulary mapping and when a vendor's own word is correct instead.
 
 Don't put internal extraction-accuracy or eval figures in the docs. The honest framing is that Otto is not infallible and the reader reviews before publishing, which the voice already supports. Where docs describe the evaluation work itself (transparency, security, and data pages), state the opt-in basis: by default no client documents are used, and a document is included only when the practice has specifically given permission for it.
 
