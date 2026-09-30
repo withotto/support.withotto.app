@@ -38,9 +38,14 @@ Bank Rec pages commonly close with a "Related pages" aside. Preserve this conven
 
 ```mdx
 <Aside type="tip" title="Related pages">
-  - [Link text](../path) - short description
+
+- [Link text](/bank-rec/guides/page/) - short description
+- [Another page](/bank-rec/portal/page/)
+
 </Aside>
 ```
+
+One bullet per link, and keep the blank lines inside the `<Aside>`. Without them Prettier treats the body as JSX text and reflows every link into a single run-on bullet.
 
 ## Availability and tone
 

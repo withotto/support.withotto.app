@@ -25,7 +25,7 @@ import importPreview from "@assets/capture/missing-receipts/xero/import-preview.
 
    If the link doesn't open the report, go to **Accounting**, then **Bank accounts** in Xero, open the ⋮ menu at the top of the page, and choose **Uncoded statement lines**. Opened that way, the report keeps whatever filters were last used on it, so it may not cover every account.
 
-2. Check the bank accounts and the date range cover the payments you're chasing.
+2. Check that the bank accounts and the date range cover the payments you're chasing.
 
 3. Choose **Export**, then **CSV**.
 
@@ -51,7 +51,7 @@ Capture checks the file before anything is stored, and shows you what it found o
   caption="Transactions on an account Capture can't match are shown greyed out and aren't imported."
 />
 
-The file doesn't name the organisation it came from, so the bank accounts are how you tell it's the right client's. Capture refreshes the client's bank accounts from Xero before it checks, and a section for an account it can't match exactly isn't imported. A file exported from Xero's bulk export, across several organisations, carries the organisation's name in its filename, and Capture shows **Check the organisation** if that name isn't this client's.
+Nothing inside the file names the organisation it came from, so the bank accounts are how you tell it's the right client's file. Capture refreshes the client's bank accounts from Xero before it checks, and a section for an account it can't match exactly isn't imported. A file exported from Xero's bulk export, across several organisations, carries the organisation's name in its filename, and Capture shows **Check the organisation** if that name isn't this client's.
 
 Click **Store transactions** to keep them, or **Discard import** to throw the file away. Nothing is added to the client's transactions until you store them. Then [prepare the client's list](/capture/missing-receipts/#preparing-the-clients-list).
 

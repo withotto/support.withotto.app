@@ -58,7 +58,9 @@ Every client you add this way shares the one practice connection, so there's a s
 
 ## Permissions
 
-The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs and to publish bills and invoices. The one exception is [Missing receipts](#missing-receipts), which reads a client's bank transactions when you ask it to. For a client connected as a single company, that needs **Banking** access or higher: see [Access FreeAgent needs](/capture/missing-receipts/freeagent/#access-freeagent-needs). If Capture's access isn't high enough, the client moves to **Connection failed**, and someone with the right permission needs to reconnect it before Capture can sync or Otto can publish.
+The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs and to publish bills and invoices. If Capture's access isn't high enough, the client moves to **Connection failed**, and someone with the right permission needs to reconnect it before Capture can sync or Otto can publish.
+
+The one exception is [Missing receipts](#missing-receipts), which reads a client's bank transactions when you ask it to. For a client connected as a single company, that needs **Banking** access or higher. Without it, the fetch is refused, but the client stays connected and Otto carries on publishing. See [Access FreeAgent needs](/capture/missing-receipts/freeagent/#access-freeagent-needs).
 
 ## Synced data
 
