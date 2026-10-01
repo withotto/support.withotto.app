@@ -17,6 +17,7 @@ Go to the client settings and click **Disconnect**. The button names the connect
 - Bills and invoices already published stay in your accounting platform
 - The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories or classes) is deleted from Capture
 - The supplier matches Otto has learned for the client are deleted, and reconnecting doesn't bring them back
+- Otto stops drawing on the bills published before you disconnected when he suggests coding, and reconnecting doesn't change that
 - Bank transactions you imported for [Missing receipts](/capture/missing-receipts) are kept, but the client's missing receipts link stops working until you reconnect
 - You can reconnect at any time to sync the data again and resume publishing
 
@@ -24,7 +25,7 @@ See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounti
 
 ### Can I reconnect after disconnecting?
 
-Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the platform's data again, and you can resume processing and publishing documents. Otto builds up his supplier matches for the client again as you publish.
+Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the platform's data again, and you can resume processing and publishing documents. Otto builds up his supplier matches for the client again as you publish, and draws on the client's coding history only from the bills you publish after reconnecting.
 
 ### A client shows "Disconnected" or "Connection failed". What happened?
 
@@ -48,7 +49,7 @@ Trigger a manual refresh from the client configuration page. The new account wil
 
 ### Does Capture modify anything in my accounting platform?
 
-Capture only **creates** new bills, invoices, contacts, and attachments. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow#what-capture-does-not-modify) for details.
+Capture only **creates** new bills, invoices, contacts, and attachments. On Xero and QuickBooks Online it also adds a currency when you choose to add one during review. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow#what-capture-does-not-modify) for details.
 
 ## Submitting documents
 
