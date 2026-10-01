@@ -93,7 +93,7 @@ This page gives a high-level picture of the data that moves between Otto Capture
     &#x2192;
   </div>
   <div style="flex: 1; background: var(--sl-color-green-low); color: var(--sl-color-green-high); padding: 0.5rem 0.75rem; border-radius: 0.375rem; text-align: center; font-size: 0.9rem; font-weight: 500;">
-    Bills / Invoices
+    Bills, invoices, credit notes
   </div>
 </div>
 
@@ -104,7 +104,7 @@ This page gives a high-level picture of the data that moves between Otto Capture
   </div>
 </div>
 
-The diagram shows the shape that's common to every platform. The detail varies: Xero's chart of accounts is FreeAgent's categories, Xero's tracking categories are classes on QuickBooks Online and don't exist on FreeAgent, attachment support differs, and on QuickBooks Online Otto publishes bills and purchase credit notes only. See the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), and [QuickBooks Online](/capture/platforms/quickbooks) pages for the exact lists.
+The diagram shows the shape that's common to every platform. The detail varies: Xero's chart of accounts is FreeAgent's categories, Xero's tracking categories are classes on QuickBooks Online and don't exist on FreeAgent, attachment support differs, and on QuickBooks Online Otto publishes bills and purchase credit notes only. Capture can add a currency during review on Xero and QuickBooks Online only, so the diagram doesn't show it. See the [Xero](/capture/platforms/xero), [FreeAgent](/capture/platforms/freeagent), and [QuickBooks Online](/capture/platforms/quickbooks) pages for the exact lists.
 
 ## What Capture reads
 
@@ -121,7 +121,7 @@ For Xero clients using [Missing receipts](/capture/missing-receipts), bank trans
 
 ## What Capture publishes
 
-When you publish a document, Capture creates a bill or sales invoice on your platform, carrying the line items, tax, currency, due date, and the matched contact. If you added a new contact during review, that contact is created first. The original document is attached where the platform supports it. Publish states and attachment limits differ by platform: see publishing to [Xero](/capture/platforms/xero#publish-states), [FreeAgent](/capture/platforms/freeagent#publishing), and [QuickBooks Online](/capture/platforms/quickbooks#publishing).
+When you publish a document, Capture creates a bill, sales invoice, or credit note on your platform, carrying the line items, tax, currency, due date, and the matched contact. If you added a new contact during review, that contact is created first. The original document is attached where the platform supports it. Publish states and attachment limits differ by platform: see publishing to [Xero](/capture/platforms/xero#publish-states), [FreeAgent](/capture/platforms/freeagent#publishing), and [QuickBooks Online](/capture/platforms/quickbooks#publishing).
 
 ## What Capture does NOT modify
 
@@ -129,8 +129,8 @@ Capture has a limited scope within your accounting platform. It does **not**:
 
 - Modify or delete existing bills, invoices, or contacts
 - Access payroll or employee data
-- Modify your chart of accounts or categories, tax rates, or any settings
+- Modify your chart of accounts or categories, tax rates, or any settings, other than adding a currency when you choose to add one (see below)
 - Access reports or financial statements
 - Delete any data
 
-Capture only **reads** reference data (contacts, accounts, tax rates) and **creates** new bills, invoices, contacts, and attachments.
+Capture only **reads** reference data (contacts, accounts, tax rates) and **creates** new bills, invoices, credit notes, contacts, and attachments. On Xero and QuickBooks Online, it can also add a currency to the client's organisation or company where the client can use more than one currency, but only when you choose to add one while reviewing a document.
