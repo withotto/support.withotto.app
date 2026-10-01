@@ -18,11 +18,11 @@ import turnOffDialog from "@assets/capture/missing-receipts/client-page/turn-off
 
 The client missing receipts page is where a client answers the questions their accountant or bookkeeper has about their bank payments. It lists the payments on the client's current list, and the client answers each one by sending a receipt or invoice, writing a short note, or both. There's nothing to download and no Otto Capture account to create.
 
-This guide is written for the practice. For importing transactions and choosing what the client is asked about, see [Missing receipts](/capture/missing-receipts).
+This guide is written for the practice. For importing transactions and choosing what the client is asked about, see [Missing receipts](/capture/missing-receipts/).
 
 ## Sharing the link
 
-Each client has its own link, created when an admin turns the page on in the client's settings (see [Turning it on for a client](/capture/missing-receipts#turning-it-on-for-a-client)). Anyone in your organisation can copy it:
+Each client has its own link, created when an admin turns the page on in the client's settings (see [Turning it on for a client](/capture/missing-receipts/#turning-it-on-for-a-client)). Anyone in your organisation can copy it:
 
 - On the client's **Missing receipts** tab, click **See answers**. **The client's link** is at the top, with **Copy link**.
 - In the client's settings, under **Client Submission**, the **Client missing receipts page** area shows the link alongside the admin controls.
@@ -90,7 +90,7 @@ An answered payment stays where it is in the list, dimmed, with a tick beside it
 
 For money going out, the page asks for a receipt or invoice. For money coming in, it asks for the invoice or credit note the payment relates to. Either way, a note on its own is a complete answer for a payment the client has no document for.
 
-The page accepts the same file types and size limit as the [client submission page](/capture/getting-started/client-submission-page), and each file goes through the same [processing pipeline](/capture/guides/processing) as any other document. The document's source shows as **Client missing receipts page**, and the client's note appears with it on the review screen.
+The page accepts the same file types and size limit as the [client submission page](/capture/getting-started/client-submission-page/), and each file goes through the same [processing pipeline](/capture/guides/processing/) as any other document. The document's source shows as **Client missing receipts page**, and the client's note appears with it on the review screen.
 
 ### Files not linked to a payment
 
@@ -114,7 +114,7 @@ A file you've discarded, or one Capture detected as a duplicate, can't go on a p
 
 Anyone holding the link can see the date, amount, description, and bank account of every transaction on the client's current list, and can answer them. There's no login, and the link isn't restricted to an email address or a domain.
 
-That makes this link more sensitive than a [submission link](/capture/getting-started/client-submission-page#treat-the-link-like-a-key), which only lets someone send documents in. Bank descriptions routinely name people, suppliers, and salaries, so treat the link like a key, and use the list to keep off anything the client doesn't need to be asked about.
+That makes this link more sensitive than a [submission link](/capture/getting-started/client-submission-page/#treat-the-link-like-a-key), which only lets someone send documents in. Bank descriptions routinely name people, suppliers, and salaries, so treat the link like a key, and use the list to keep off anything the client doesn't need to be asked about.
 
 Search engines are told not to index the page, and the link isn't passed on to any other site the client might visit next.
 
@@ -123,7 +123,7 @@ Search engines are told not to index the page, and the link isn't passed on to a
 Both actions are in the client's settings under **Client Submission**, both are admin-only, and both ask you to confirm.
 
 - **Rotate link** creates a new link straight away and stops the old one working. The page stays on and the client's list is unchanged, so anyone who should still be answering needs the new link.
-- **Turn off client missing receipts page** leaves the client with no link at all. The **Missing receipts** tab goes too, so nobody can import or prepare a list for that client until an admin turns the page back on. The stored transactions and the client's list are kept.
+- **Turn off client missing receipts page** leaves the client with no link at all. The **Missing receipts** tab goes too, so nobody can import transactions or prepare a list for that client until an admin turns the page back on. The stored transactions and the client's list are kept.
 
 <ZoomableImage
   src={rotateDialog}
@@ -166,8 +166,8 @@ The page shares the client submission page's protection against misuse. If someo
 
 <Aside type="tip" title="Related pages">
 
-- [Missing receipts](/capture/missing-receipts): Import a Xero client's bank transactions and choose what the client is asked about
-- [Client submission page](/capture/getting-started/client-submission-page): A page for clients to send documents in without being asked
-- [Reviewing and publishing](/capture/guides/reviewing): Check the documents clients send before publishing them
+- [Missing receipts](/capture/missing-receipts/): Import a client's bank transactions and choose what the client is asked about
+- [Client submission page](/capture/getting-started/client-submission-page/): A page for clients to send documents in without being asked
+- [Reviewing and publishing](/capture/guides/reviewing/): Check the documents clients send before publishing them
 
 </Aside>

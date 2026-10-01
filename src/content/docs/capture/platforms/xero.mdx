@@ -7,7 +7,7 @@ import { Steps, Aside } from "@astrojs/starlight/components";
 import ZoomableImage from "@components/ZoomableImage.astro";
 import oauthConsent from "@assets/capture/platforms/xero/oauth-consent.png";
 
-Each client in Capture connects to a single Xero organisation. Once connected, Capture syncs the data it needs to process and publish documents. This page covers the Xero-specific parts of connecting and publishing. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
+Each client in Capture connects to a single Xero organisation. Once connected, Capture syncs the data it needs to process and publish documents. This page covers the Xero-specific parts of connecting and publishing. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/).
 
 ## Connecting a client
 
@@ -49,20 +49,20 @@ Capture does not request access to data outside of what's needed for document pr
 
 Once connected, Capture syncs the following data from Xero:
 
-| Data                     | Purpose                                                                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Contacts**             | Match suppliers and customers to extracted document data                                                                          |
-| **Chart of accounts**    | Assign account codes to line items, and recognise the client's bank accounts in a [Missing receipts](/capture/missing-receipts) import |
-| **Tax rates**            | Apply the correct tax treatment to line items                                                                                     |
-| **Currencies**           | Set the document currency                                                                                                         |
-| **Tracking categories**  | Assign tracking categories to line items                                                                                          |
-| **Organisation details** | Determine base currency, multi-currency support, tax registration status, and other details needed to process documents correctly |
+| Data                     | Purpose                                                                                                                                 |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Contacts**             | Match suppliers and customers to extracted document data                                                                                |
+| **Chart of accounts**    | Assign account codes to line items, and recognise the client's bank accounts in a [Missing receipts](/capture/missing-receipts/) import |
+| **Tax rates**            | Apply the correct tax treatment to line items                                                                                           |
+| **Currencies**           | Set the document currency                                                                                                               |
+| **Tracking categories**  | Assign tracking categories to line items                                                                                                |
+| **Organisation details** | Determine base currency, multi-currency support, tax registration status, and other details needed to process documents correctly       |
 
 ## Publishing
 
 ### Publish states
 
-When Otto publishes a bill or sales invoice to Xero, he creates it in one of three states. You choose the default for each client (see [Configuring clients](/capture/getting-started/configuring-clients)), and you can override it for a single document during review.
+When Otto publishes a bill or sales invoice to Xero, he creates it in one of three states. You choose the default for each client (see [Configuring clients](/capture/getting-started/configuring-clients/)), and you can override it for a single document during review.
 
 | State                 | Description               | When to use                                                                           |
 | --------------------- | ------------------------- | ------------------------------------------------------------------------------------- |
@@ -93,7 +93,7 @@ You don't have to work it out from the plan name. Capture asks Xero directly whe
 | **Can use multiple currencies** | Publish in the document currency. If that currency isn't enabled in Xero yet, you can add it during review, or convert the amounts instead |
 | **Is limited to base currency** | Xero keeps everything in the base currency, so the amounts need converting before the document can be published                            |
 
-A currency you add during review takes effect in Xero straight away and stays available to that organisation afterwards. See [Currency and conversion](/capture/guides/reviewing#currency-and-conversion) for how the converter works.
+A currency you add during review takes effect in Xero straight away and stays available to that organisation afterwards. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion) for how the converter works.
 
 ### Why you might convert rather than add the currency
 
@@ -111,21 +111,21 @@ Otto attaches the original document file to both bills and sales invoices in Xer
 
 ## Missing receipts
 
-For Xero clients, you can import the statement lines Xero hasn't matched yet and ask the client about the payments you have no paperwork for. You export the **Uncoded statement lines** report from Xero as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the connection, and needs no extra access in Xero for this. See [Missing receipts](/capture/missing-receipts).
+You can import the statement lines Xero hasn't matched yet and ask the client about the payments you have no paperwork for. You export the **Uncoded statement lines** report from Xero as a CSV and upload it on the client's **Missing receipts** tab. Capture doesn't read bank transactions through the connection, and needs no extra access in Xero for this. See [Importing from Xero](/capture/missing-receipts/xero/).
 
 ## Disconnecting and reconnecting
 
-See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform#connection-status) for the four connection statuses. Two things are specific to Xero:
+See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/#connection-status) for the four connection statuses. Two things are specific to Xero:
 
 - **Disconnecting works from either side.** You can disconnect a client from Xero in Capture, or revoke Capture's access from inside Xero.
 - **Capture mirrors a Xero-side revocation.** Capture checks each client against Xero once a day, so if access is revoked inside Xero the client moves to **Disconnected**. If a sync or publish reaches the revoked connection before that daily check, the client shows **Connection failed** instead.
 
-Either way, organisation admins get a notification with a reconnect link. To reconnect, open the client settings and click **Reconnect to Xero**, or use the **Reconnect** action in the **Needs setup** list on the **Clients** page. Capture syncs the data from Xero again, and Otto resumes publishing. Capture keeps your existing documents throughout, but disconnecting deletes the synced data and the supplier matches Otto has learned for the client (see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting)).
+Either way, organisation admins get a notification with a reconnect link. To reconnect, open the client settings and click **Reconnect to Xero**, or use the **Reconnect** action in the **Needs setup** list on the **Clients** page. Capture syncs the data from Xero again, and Otto resumes publishing. Capture keeps your existing documents throughout, but disconnecting deletes the synced data and the supplier matches Otto has learned for the client (see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting)).
 
 <Aside type="tip" title="Related pages">
 
-- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform): The parts of connecting that are the same on every platform
-- [Configuring clients](/capture/getting-started/configuring-clients): Set defaults and review synced data for each client
-- [Reviewing and publishing](/capture/guides/reviewing): Check extracted data and publish documents
+- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/): The parts of connecting that are the same on every platform
+- [Configuring clients](/capture/getting-started/configuring-clients/): Set defaults and review synced data for each client
+- [Reviewing and publishing](/capture/guides/reviewing/): Check extracted data and publish documents
 
 </Aside>
