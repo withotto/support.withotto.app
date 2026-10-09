@@ -118,16 +118,23 @@ export default defineConfig({
             },
             {
               label: "Missing receipts",
+              badge: "New",
               items: [
                 {
                   label: "Overview",
                   slug: "capture/missing-receipts",
-                  badge: "New",
+                },
+                {
+                  label: "Importing from Xero",
+                  slug: "capture/missing-receipts/xero",
+                },
+                {
+                  label: "Importing from FreeAgent",
+                  slug: "capture/missing-receipts/freeagent",
                 },
                 {
                   label: "Client missing receipts page",
                   slug: "capture/missing-receipts/client-page",
-                  badge: "New",
                 },
               ],
             },

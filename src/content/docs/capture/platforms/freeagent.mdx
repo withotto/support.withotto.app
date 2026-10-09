@@ -60,6 +60,8 @@ Every client you add this way shares the one practice connection, so there's a s
 
 The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs, create contacts that are not yet in FreeAgent, and publish bills, invoices, and credit notes. If Capture's access isn't high enough, the client moves to **Connection failed**, and someone with the right permission needs to reconnect it before Capture can sync or Otto can publish.
 
+The one exception is [Missing receipts](#missing-receipts), which reads a client's bank transactions when you ask it to. For a client connected as a single company, that needs **Banking** access or higher. Without it, the fetch is refused, but the client stays connected and Otto carries on publishing. See [Access FreeAgent needs](/capture/missing-receipts/freeagent#access-freeagent-needs).
+
 ## Synced data
 
 Once connected, Capture syncs the following from FreeAgent:
@@ -101,6 +103,10 @@ FreeAgent supports a fixed set of currencies and applies its own exchange rate, 
 ## Attachments
 
 Otto attaches the original document to **bills** in FreeAgent, up to 5 MB, in PDF, PNG, JPEG, or GIF format. He attaches a document in another format, such as a HEIC photo or a Word file, as the PDF or image Capture made from it. He publishes sales invoices without an attached file. Either way, the original document stays in Capture.
+
+## Missing receipts
+
+You can import the bank transactions FreeAgent hasn't explained yet and ask the client about the payments you have no paperwork for. You choose a date range on the client's **Missing receipts** tab and click **Fetch transactions**. Capture reads the transactions only then, and changes nothing in FreeAgent. See [Importing from FreeAgent](/capture/missing-receipts/freeagent).
 
 ## Disconnecting and reconnecting
 
