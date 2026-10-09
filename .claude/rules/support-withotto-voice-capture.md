@@ -31,7 +31,7 @@ Capture's extraction is powered by a third-party LLM, but the reader rarely need
 
 Avoid "our AI", "the AI", "Otto's AI", "the machine learning model", and "Otto Capture's AI" in running prose. Don't split the persona; Otto does the work.
 
-**Narrow exception: transparency pages.** Security and privacy pages may name the AI provider or routing layer as a fact about how Otto works, e.g. "Otto's extraction runs under a zero-data-retention policy, so your documents are not stored by the provider or used to train a model". Otto stays the subject; any provider name is a disclosure, not a replacement.
+**Security and privacy pages.** A security or privacy page can describe how Otto handles documents, using the wording in "AI providers and data handling" in `.claude/rules/shared/capture-products.md`, for example: "Otto's extraction runs under a zero-data-retention policy, so your documents are not stored by the provider or used to train a model". It names no gateway, provider or model. The gateway is named only in the privacy policy on withotto.app, and the provider and model are named nowhere: they are business sensitive and can change at any time. Otto stays the subject.
 
 ## What Capture does and does not do
 
