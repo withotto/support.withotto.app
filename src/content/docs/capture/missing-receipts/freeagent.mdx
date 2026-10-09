@@ -7,7 +7,7 @@ import { Aside, Steps } from "@astrojs/starlight/components";
 import ZoomableImage from "@components/ZoomableImage.astro";
 import missingReceiptsTab from "@assets/capture/missing-receipts/freeagent/missing-receipts-tab.png";
 
-[Missing receipts](/capture/missing-receipts) in Otto Capture imports the bank transactions FreeAgent hasn't explained yet straight from the client's FreeAgent company, so you can ask the client about the ones you have no paperwork for. You choose a date range on the client's **Missing receipts** tab and click **Fetch transactions**.
+[Missing receipts](/capture/missing-receipts/) in Otto Capture imports the bank transactions FreeAgent hasn't explained yet straight from the client's FreeAgent company, so you can ask the client about the ones you have no paperwork for. You choose a date range on the client's **Missing receipts** tab and click **Fetch transactions**.
 
 ## Access FreeAgent needs
 
@@ -36,7 +36,7 @@ To fix it, a FreeAgent user with Banking access or higher connects the same comp
   caption="The tab sits next to Documents on the client, and only appears once the client's missing receipts page is on."
 />
 
-Capture stores the transactions straight away, and your client isn't asked about any of them until you [prepare their list](/capture/missing-receipts#preparing-the-clients-list).
+Capture stores the transactions straight away, and your client isn't asked about any of them until you [prepare their list](/capture/missing-receipts/#preparing-the-clients-list).
 
 ### What Capture fetches
 
@@ -66,14 +66,14 @@ A fetch stores everything it read, or nothing at all. A partial read would make 
 | FreeAgent's transactions for this client changed while Capture was reading them | Someone was working on the client's bank transactions during the fetch. Fetch again                                                      |
 | Capture is already fetching this client's transactions from FreeAgent           | A fetch for this client is already running. Wait a few minutes, then try again                                                           |
 | We couldn't reach FreeAgent to fetch this client's transactions                 | Try again in a few minutes                                                                                                               |
-| Capture has lost its connection to FreeAgent for this client                    | [Reconnect the client](/capture/platforms/freeagent#disconnecting-and-reconnecting), then fetch again                                    |
+| Capture has lost its connection to FreeAgent for this client                    | [Reconnect the client](/capture/platforms/freeagent/#disconnecting-and-reconnecting), then fetch again                                   |
 
 A message saying something went wrong on our side means we've been notified. If it keeps happening, please contact support.
 
 <Aside type="tip" title="Related pages">
 
-- [Missing receipts](/capture/missing-receipts): Prepare the client's list and see their answers
-- [Client missing receipts page](/capture/missing-receipts/client-page): The page your client answers on, and how to share it
-- [FreeAgent](/capture/platforms/freeagent): Connecting FreeAgent and what Capture syncs from it
+- [Missing receipts](/capture/missing-receipts/): Prepare the client's list and see their answers
+- [Client missing receipts page](/capture/missing-receipts/client-page/): The page your client answers on, and how to share it
+- [FreeAgent](/capture/platforms/freeagent/): Connecting FreeAgent and what Capture syncs from it
 
 </Aside>

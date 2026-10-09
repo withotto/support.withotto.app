@@ -31,7 +31,7 @@ The review screen shows the original document alongside the extracted data. You 
 - An edit history to show which fields have been changed and by whom
 - An event timeline showing processing history
 
-If the sender added a note, such as a WhatsApp caption or a note written on the [client missing receipts page](/capture/missing-receipts/client-page), it appears under the filename as **Note from sender**. Otto reads a WhatsApp caption when he extracts the document. He reads a note from the client missing receipts page too, if the client wrote it before he read the document. When the note was written or changed after that, the review screen says so, and if it was changed, shows what it said before. Check the coding against the current note.
+If the sender added a note, such as a WhatsApp caption or a note written on the [client missing receipts page](/capture/missing-receipts/client-page/), it appears under the filename as **Note from sender**. Otto reads a WhatsApp caption when he extracts the document. He reads a note from the client missing receipts page too, if the client wrote it before he read the document. When the note was written or changed after that, the review screen says so, and if it was changed, shows what it said before. Check the coding against the current note.
 
 ## Editing extracted data
 
@@ -60,12 +60,12 @@ All extracted fields are editable. You can make any changes you need before publ
 
 **Publish state:**
 
-- On platforms that support settable states (Xero), override the default state for this document (see [Xero publish states](/capture/platforms/xero#publish-states))
+- On platforms that support settable states (Xero), override the default state for this document (see [Xero publish states](/capture/platforms/xero/#publish-states))
 
 <Aside type="tip">
   If you need to change the default publish state for all future documents,
   update it in the [client
-  configuration](/capture/getting-started/configuring-clients) instead.
+  configuration](/capture/getting-started/configuring-clients/) instead.
 </Aside>
 
 Changes are saved automatically and tracked in the edit history with before/after values. If you come back to the same document within 30 minutes, your changes are merged into the same edit rather than creating a new revision.
@@ -78,7 +78,7 @@ Otto detects the document currency during extraction and sets it on the **Curren
 
 If the currency isn't one the connected organisation can use, a warning appears under the **Currency** field. What it offers depends on the platform and, on Xero, on the organisation's plan.
 
-- **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the case on Xero where the plan includes multi-currency, and on QuickBooks Online where multi-currency is turned on (see [Xero currencies](/capture/platforms/xero#currencies) and [QuickBooks Online currencies](/capture/platforms/quickbooks#currencies))
+- **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the case on Xero where the plan includes multi-currency, and on QuickBooks Online where multi-currency is turned on (see [Xero currencies](/capture/platforms/xero/#currencies) and [QuickBooks Online currencies](/capture/platforms/quickbooks/#currencies))
 - **The platform's supported list is fixed.** FreeAgent supports a set list that can't be extended, so converting is the only route for a currency outside it
 - **The organisation is limited to its base currency.** The warning names the base currency and converting is the only route
 
@@ -181,9 +181,9 @@ When you publish a document, Capture creates the following in your accounting pl
 
 1. **A bill or invoice:** With all the header fields, line items, and tax information
 2. **A contact:** If you created a new contact during review, it's created first
-3. **An attachment:** The original document file is attached to bills on every platform. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero#attachments), [FreeAgent](/capture/platforms/freeagent#attachments), and [QuickBooks Online](/capture/platforms/quickbooks#attachments))
+3. **An attachment:** The original document file is attached to bills on every platform. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero/#attachments), [FreeAgent](/capture/platforms/freeagent/#attachments), and [QuickBooks Online](/capture/platforms/quickbooks/#attachments))
 
-On Xero, the bill or invoice is created in the state you selected. FreeAgent and QuickBooks Online have no settable state (see publishing to [FreeAgent](/capture/platforms/freeagent#publishing) and [QuickBooks Online](/capture/platforms/quickbooks#publishing)).
+On Xero, the bill or invoice is created in the state you selected. FreeAgent and QuickBooks Online have no settable state (see publishing to [FreeAgent](/capture/platforms/freeagent/#publishing) and [QuickBooks Online](/capture/platforms/quickbooks/#publishing)).
 
 ## Handling publish errors
 

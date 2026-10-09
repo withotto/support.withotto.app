@@ -7,7 +7,7 @@ import { Steps, Aside } from "@astrojs/starlight/components";
 import ZoomableImage from "@components/ZoomableImage.astro";
 import oauthConsent from "@assets/capture/platforms/quickbooks/oauth-consent.png";
 
-Otto Capture connects to QuickBooks Online so you can publish bills and supplier credits straight into your client's QuickBooks Online company. This page covers the QuickBooks Online specifics. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform).
+Otto Capture connects to QuickBooks Online so you can publish bills and supplier credits straight into your client's QuickBooks Online company. This page covers the QuickBooks Online specifics. For the parts that work the same on every platform, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/).
 
 ## Connecting a client
 
@@ -81,7 +81,7 @@ What you can do with a foreign currency document depends on whether the company 
 | **Has multi-currency on**  | Publish in the document currency. If that currency isn't set up in QuickBooks Online yet, you can add it during review, or convert the amounts instead |
 | **Has multi-currency off** | Only the home currency is available, so convert the amounts before publishing                                                                          |
 
-QuickBooks Online uses the exchange rate from the company's own rate table for the document's issue date. A supplier's currency can't be changed once it's set, so add a supplier set up in a different currency again under a different name. See [Currency and conversion](/capture/guides/reviewing#currency-and-conversion) for how the converter works.
+QuickBooks Online uses the exchange rate from the company's own rate table for the document's issue date. A supplier's currency can't be changed once it's set, so add a supplier set up in a different currency again under a different name. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion) for how the converter works.
 
 ## Classes
 
@@ -101,18 +101,18 @@ Otto attaches the original document to both bills and supplier credits, up to 20
 
 ## Disconnecting and reconnecting
 
-See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform#connection-status) for the four connection statuses. Three things are specific to QuickBooks Online:
+See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/#connection-status) for the four connection statuses. Three things are specific to QuickBooks Online:
 
 - **Disconnecting in Capture revokes Otto's access in QuickBooks Online too.** If that step fails, Capture tells you, and you can remove Otto Capture from inside QuickBooks Online.
 - **Capture mirrors a revocation made in QuickBooks Online.** Capture checks each connection once a day, so if access is removed inside QuickBooks Online the client moves to **Disconnected**.
 - **A lost connection stops publishing.** If a publish reaches a connection that no longer works, the client moves to **Connection failed** and the document asks you to reconnect, then publish again.
 
-Disconnecting deletes the data synced from QuickBooks Online and the supplier matches Otto has learned for the client. See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting) for what is kept. To reconnect, open the client settings and click **Reconnect to QuickBooks**.
+Disconnecting deletes the data synced from QuickBooks Online and the supplier matches Otto has learned for the client. See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting) for what is kept. To reconnect, open the client settings and click **Reconnect to QuickBooks**.
 
 <Aside type="tip" title="Related pages">
 
-- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform): The parts of connecting that are the same on every platform
-- [Configuring clients](/capture/getting-started/configuring-clients): Review synced data for each client
-- [Reviewing and publishing](/capture/guides/reviewing): Check extracted data and publish documents
+- [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/): The parts of connecting that are the same on every platform
+- [Configuring clients](/capture/getting-started/configuring-clients/): Review synced data for each client
+- [Reviewing and publishing](/capture/guides/reviewing/): Check extracted data and publish documents
 
 </Aside>

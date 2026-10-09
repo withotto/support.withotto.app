@@ -18,10 +18,10 @@ Go to the client settings and click **Disconnect**. The button names the connect
 - The data synced from the platform (contacts, accounts, tax rates, currencies, and tracking categories or classes) is deleted from Capture
 - The supplier matches Otto has learned for the client are deleted, and reconnecting doesn't bring them back
 - Otto stops using bills published before you disconnected to suggest coding, and reconnecting doesn't change that
-- Bank transactions you imported for [Missing receipts](/capture/missing-receipts) are kept, but the client's missing receipts link stops working until you reconnect
+- Bank transactions you imported for [Missing receipts](/capture/missing-receipts/) are kept, but the client's missing receipts link stops working until you reconnect
 - You can reconnect at any time to sync the data again and resume publishing
 
-See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform#disconnecting-and-reconnecting) for when synced data is kept instead.
+See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting) for when synced data is kept instead.
 
 ### Can I reconnect after disconnecting?
 
@@ -31,13 +31,13 @@ Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the pl
 
 Capture's access to the connected organisation has been removed. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
 
-Otto checks each connection once a day, so access revoked from inside Xero, FreeAgent, or QuickBooks Online is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero#disconnecting-and-reconnecting), [FreeAgent](/capture/platforms/freeagent#disconnecting-and-reconnecting), and [QuickBooks Online](/capture/platforms/quickbooks#disconnecting-and-reconnecting).
+Otto checks each connection once a day, so access revoked from inside Xero, FreeAgent, or QuickBooks Online is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero/#disconnecting-and-reconnecting), [FreeAgent](/capture/platforms/freeagent/#disconnecting-and-reconnecting), and [QuickBooks Online](/capture/platforms/quickbooks/#disconnecting-and-reconnecting).
 
 ## Data sync
 
 ### What data does Capture sync from my accounting platform?
 
-Contacts, account codes or categories, tax rates, currencies, tracking categories (Xero) or classes (QuickBooks Online), and basic organisation details. See [Data flow](/capture/guides/data-flow) for the full list.
+Contacts, account codes or categories, tax rates, currencies, tracking categories (Xero) or classes (QuickBooks Online), and basic organisation details. See [Data flow](/capture/guides/data-flow/) for the full list.
 
 ### How often does data sync?
 
@@ -49,15 +49,15 @@ Trigger a manual refresh from the client configuration page. The new account wil
 
 ### Does Capture modify anything in my accounting platform?
 
-Capture only **creates** new bills, invoices, credit notes, contacts, and attachments. On Xero and QuickBooks Online, it also adds a currency when you choose to add one during review, where the client can use more than one currency. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow#what-capture-does-not-modify) for details.
+Capture only **creates** new bills, invoices, credit notes, contacts, and attachments. On Xero and QuickBooks Online, it also adds a currency when you choose to add one during review, where the client can use more than one currency. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow/#what-capture-does-not-modify) for details.
 
 ## Submitting documents
 
 ### How can client documents be submitted?
 
-Four ways: you upload files yourself in Capture, clients forward or send email to the client's own address, they send photos and PDFs over [WhatsApp](/capture/getting-started/whatsapp-submission), or they use their unique [client submission page](/capture/getting-started/client-submission-page). Everything arrives in the same review queue whichever route it takes.
+Four ways: you upload files yourself in Capture, clients forward or send email to the client's own address, they send photos and PDFs over [WhatsApp](/capture/getting-started/whatsapp-submission/), or they use their unique [client submission page](/capture/getting-started/client-submission-page/). Everything arrives in the same review queue whichever route it takes.
 
-Xero and FreeAgent clients can also send documents in answer to your questions about their bank payments, on their [client missing receipts page](/capture/missing-receipts/client-page).
+Xero and FreeAgent clients can also send documents in answer to your questions about their bank payments, on their [client missing receipts page](/capture/missing-receipts/client-page/).
 
 ### Do the people sending documents need an Otto Capture account?
 
@@ -71,7 +71,7 @@ For WhatsApp, you remove a connected sender to stop that person submitting, and 
 
 For a client submission page, the link is used on every send rather than only to connect, so rotating it stops it working for everyone holding it. You can also turn the page off, which switches the route off for that client rather than replacing the link.
 
-Documents already submitted aren't affected in any of these cases. See [Client submission page](/capture/getting-started/client-submission-page) and [WhatsApp submission](/capture/getting-started/whatsapp-submission).
+Documents already submitted aren't affected in any of these cases. See [Client submission page](/capture/getting-started/client-submission-page/) and [WhatsApp submission](/capture/getting-started/whatsapp-submission/).
 
 ### A client says their submission link isn't working
 
@@ -81,19 +81,19 @@ Usually the link has been rotated or the page turned off, in which case share th
 
 ### Which clients can I use Missing receipts for?
 
-Clients connected to Xero or FreeAgent. For a Xero client, you upload Xero's Uncoded statement lines export. For a FreeAgent client, Capture imports the unexplained transactions straight from FreeAgent. Capture doesn't import bank transactions for QuickBooks Online clients. See [Missing receipts](/capture/missing-receipts).
+Clients connected to Xero or FreeAgent. For a Xero client, you upload Xero's Uncoded statement lines export. For a FreeAgent client, Capture imports the unexplained transactions straight from FreeAgent. Capture doesn't import bank transactions for QuickBooks Online clients. See [Missing receipts](/capture/missing-receipts/).
 
 ### Does Capture read my client's bank transactions from Xero?
 
-No. You export the Uncoded statement lines report from Xero and upload the file, and that file is the only way transactions reach Capture. Capture checks the bank accounts in it against the client's accounts in Xero, and you confirm the import before anything is stored. See [Importing from Xero](/capture/missing-receipts/xero).
+No. You export the Uncoded statement lines report from Xero and upload the file, and that file is the only way transactions reach Capture. Capture checks the bank accounts in it against the client's accounts in Xero, and you confirm the import before anything is stored. See [Importing from Xero](/capture/missing-receipts/xero/).
 
 ### Does Capture read my client's bank transactions from FreeAgent?
 
-Yes, when you click **Fetch transactions** on the client's **Missing receipts** tab, and not otherwise. Capture reads the transactions FreeAgent hasn't explained yet in the date range you choose, and changes nothing in FreeAgent. For a client connected as a single company, the FreeAgent user who authorised the connection needs **Banking** access or higher. See [Importing from FreeAgent](/capture/missing-receipts/freeagent).
+Yes, when you click **Fetch transactions** on the client's **Missing receipts** tab, and not otherwise. Capture reads the transactions FreeAgent hasn't explained yet in the date range you choose, and changes nothing in FreeAgent. For a client connected as a single company, the FreeAgent user who authorised the connection needs **Banking** access or higher. See [Importing from FreeAgent](/capture/missing-receipts/freeagent/).
 
 ### Anyone with a missing receipts link can see the client's transactions. Is that safe?
 
-The link shows the date, amount, description, and bank account of each transaction on the client's current list, to anyone holding it, with no login. That's more than a submission link exposes, so share it with the people who need it, and exclude anything the client doesn't need to be asked about before you create the list. The page shows nothing else about the client's books. Admins can rotate the link or turn the page off at any time. See [What anyone with the link can see](/capture/missing-receipts/client-page#what-anyone-with-the-link-can-see).
+The link shows the date, amount, description, and bank account of each transaction on the client's current list, to anyone holding it, with no login. That's more than a submission link exposes, so share it with the people who need it, and exclude anything the client doesn't need to be asked about before you create the list. The page shows nothing else about the client's books. Admins can rotate the link or turn the page off at any time. See [What anyone with the link can see](/capture/missing-receipts/client-page/#what-anyone-with-the-link-can-see).
 
 ## Processing and extraction
 
@@ -105,7 +105,7 @@ Most documents are processed within a few minutes. Processing time depends on do
 
 Bills and purchase credit notes (accounts payable), and sales invoices and sales credit notes (accounts receivable). Otto classifies each document automatically during processing.
 
-For QuickBooks Online clients, Otto publishes bills and purchase credit notes only. Sales invoices and sales credit notes are not supported there at present. See [QuickBooks Online](/capture/platforms/quickbooks#publishing).
+For QuickBooks Online clients, Otto publishes bills and purchase credit notes only. Sales invoices and sales credit notes are not supported there at present. See [QuickBooks Online](/capture/platforms/quickbooks/#publishing).
 
 ### What file formats are supported?
 
@@ -123,15 +123,15 @@ The document is marked as **Needs classification**. You can set the type (bill o
 
 Capture detects when a file looks like it holds more than one document and marks it as **Needs manual split**. If they really are separate documents, split the file and submit each one separately.
 
-Sometimes the pages all belong to one bill, such as an invoice with the supplier's own expenses attached. In that case, click **Process as one document** on the review screen and Otto extracts the whole file as a single document. If Otto couldn't tell what type of document it is, choose the type first. See [How Capture processes documents](/capture/guides/processing#1-triage).
+Sometimes the pages all belong to one bill, such as an invoice with the supplier's own expenses attached. In that case, click **Process as one document** on the review screen and Otto extracts the whole file as a single document. If Otto couldn't tell what type of document it is, choose the type first. See [How Capture processes documents](/capture/guides/processing/#1-triage).
 
 ### A document is in a currency my client's platform doesn't support
 
-You can restate the amounts during review. On Xero, you may also be able to add the currency to the organisation instead, depending on whether the organisation's plan includes multi-currency. FreeAgent's supported list is fixed, so converting is the only route there. See [Currency and conversion](/capture/guides/reviewing#currency-and-conversion) and [Xero currencies](/capture/platforms/xero#currencies).
+You can restate the amounts during review. On Xero, you may also be able to add the currency to the organisation instead, depending on whether the organisation's plan includes multi-currency. FreeAgent's supported list is fixed, so converting is the only route there. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion) and [Xero currencies](/capture/platforms/xero/#currencies).
 
 ### Why can't I add a currency to a Xero client?
 
-Multi-currency is not part of every Xero plan, and Otto only offers to add a currency where the organisation is permitted to use more than one. Where it isn't, Xero keeps everything in the base currency and the amounts need converting before the document can be published. See [Xero currencies](/capture/platforms/xero#currencies).
+Multi-currency is not part of every Xero plan, and Otto only offers to add a currency where the organisation is permitted to use more than one. Where it isn't, Xero keeps everything in the base currency and the amounts need converting before the document can be published. See [Xero currencies](/capture/platforms/xero/#currencies).
 
 ### Can I record a foreign currency document in my client's base currency?
 
@@ -139,7 +139,7 @@ Yes. Open the converter on the review screen and enter the total your client was
 
 ### The converter says my total is above (or below) the market rate. What does that mean?
 
-Otto compares the total you entered against the market rate for the document's issue date, as a check on the figure rather than a judgement on it. A total can sit outside the usual range in either direction for ordinary reasons: card markup and fixed non-sterling fees push the effective rate above the market one, and the rate can move either way between the date a document was issued and the date it was paid. Check the figure against the statement, and if it is right, press the button again to apply it. The conversion is never blocked, and the timeline records that the rate was confirmed. See [Checking the total against the market rate](/capture/guides/reviewing#checking-the-total-against-the-market-rate).
+Otto compares the total you entered against the market rate for the document's issue date, as a check on the figure rather than a judgement on it. A total can sit outside the usual range in either direction for ordinary reasons: card markup and fixed non-sterling fees push the effective rate above the market one, and the rate can move either way between the date a document was issued and the date it was paid. Check the figure against the statement, and if it is right, press the button again to apply it. The conversion is never blocked, and the timeline records that the rate was confirmed. See [Checking the total against the market rate](/capture/guides/reviewing/#checking-the-total-against-the-market-rate).
 
 ## Multi-organisation
 
