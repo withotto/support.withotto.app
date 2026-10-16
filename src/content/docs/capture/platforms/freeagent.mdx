@@ -6,6 +6,7 @@ description: Connecting FreeAgent to Otto Capture, what it syncs, and FreeAgent-
 import { Steps, Aside } from "@astrojs/starlight/components";
 import ZoomableImage from "@components/ZoomableImage.astro";
 import practiceClients from "@assets/capture/platforms/freeagent/freeagent-practice-clients.png";
+import practicePicker from "@assets/capture/platforms/freeagent/freeagent-practice-picker.png";
 
 Otto Capture connects to FreeAgent so you can publish bills and sales invoices straight into your client's FreeAgent company. For the connection basics, see [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/).
 
@@ -33,21 +34,31 @@ A Company connection maps one FreeAgent company to one client in Capture. The pe
 If you're a FreeAgent practice, you connect once and then add any of your managed clients. You don't authorise each client separately.
 
 <Steps>
-    1. From the **Clients** page in Capture, click **Add client**, then choose the FreeAgent option described as **Add a FreeAgent client from your practice**
+    1. From the **Clients** page in Capture, click **Add client**, then choose the FreeAgent option described as **I'm an accountant or bookkeeper**
 
-    2. Capture shows the **Add FreeAgent clients** page, listing your practice's FreeAgent clients with their entity type
+    2. Sign in to FreeAgent and authorise Capture for your practice
 
-    3. Tick the clients you want and click **Add selected clients**. Capture creates a client for each, with its own inbox and setup
+    3. You'll be redirected back to the **Add FreeAgent clients** page, listing your practice's FreeAgent clients with their entity type
+
+    4. Tick the clients you want and click **Add**. The button counts what you've ticked, for example **Add 1 client**. Capture creates a client for each, with its own inbox and setup
 
 </Steps>
 
-Every client you add this way shares the one practice connection, so there's a single sign-in to keep healthy. Adding more later needs no new authorisation, just another visit to the **Add FreeAgent clients** page, where clients you've already added show **Connected** and only the rest can be selected.
+Every client you add this way shares the one practice connection, so there's a single sign-in to keep healthy.
+
+Adding more later needs no new authorisation. Once your practice is connected, the FreeAgent option under **Add client** reads **Add a FreeAgent client from your practice** instead, and takes you straight to the **Add FreeAgent clients** page. Clients you've already added show **Connected**, and only the rest can be selected.
+
+<ZoomableImage
+  src={practicePicker}
+  alt="The Connect an accounting platform dialog, with the FreeAgent option reading Add a FreeAgent client from your practice"
+  label="Platform picker for a connected practice"
+/>
 
 <ZoomableImage
   src={practiceClients}
   alt="The Add FreeAgent clients page, listing practice clients by entity type with selection checkboxes"
   label="Add FreeAgent clients page"
-  caption="Tick the practice clients to onboard, then click Add selected clients. Clients you've already added show a Connected label and can't be selected again."
+  caption="Tick the practice clients to add, then click the Add button. Clients you've already added show a Connected label and can't be selected again."
 />
 
 <Aside type="caution">
