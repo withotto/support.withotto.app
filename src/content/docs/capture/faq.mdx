@@ -157,6 +157,12 @@ No. Each client's data (documents, contacts, accounting configuration) is comple
 
 Documents are stored in encrypted cloud storage (Amazon S3). Each file is organised by organisation and client, with access controlled through signed URLs that expire after a short period.
 
+### Where does Otto read my documents, and are they used to train AI?
+
+Otto reads your documents with third-party LLMs hosted in the UK or the EU. The AI providers we use must not use what we send to train any model, and must not log, store or review it. Every model has to meet a strict set of rules before Capture uses it. The [privacy policy](https://withotto.app/privacy-policy/#how-we-process-your-documents) sets them out in full.
+
+Documents your clients send by WhatsApp pass through Meta first, which may hold them outside the UK and the EU.
+
 ### Are documents scanned for malware?
 
 Yes. Every uploaded document is scanned for malware before processing. If a threat is detected, the document is quarantined and won't be processed.
@@ -171,7 +177,7 @@ The link is the credential, so treat it like a key and share it with the people 
 
 ### Who can access my data?
 
-Only users in your organisation can access your documents and client data. Your data is kept completely separate from other organisations, and we enforce this separation at multiple layers, from the application through to the database, to prevent data from being accidentally exposed to the wrong organisation.
+In Capture, only users in your organisation can access your documents and client data. Your data is kept completely separate from other organisations, and we enforce this separation at multiple layers, from the application through to the database, to prevent data from being accidentally exposed to the wrong organisation.
 
 ## Errors and troubleshooting
 
