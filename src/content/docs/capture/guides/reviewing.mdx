@@ -134,13 +134,17 @@ Where there is no published rate for a currency pair on that date, no market rat
 
 ### How rounding is handled
 
-Converting line by line at a four decimal place rate rarely adds up to the total you entered, so Otto reconciles the difference rather than leaving the document out of balance.
+Each converted unit price is rounded to the penny, so the converted lines rarely add up exactly to the total you entered. Otto reconciles the difference rather than leaving the document out of balance.
 
-The residual is spread across the line net amounts, largest lines first, so it lands where the proportional effect is smallest. Tax amounts are never adjusted for rounding. Any line that has been adjusted carries an amber marker showing the amount moved onto it, and a note under the preview says how many lines were touched and by how much.
+He moves it onto line net amounts, never onto tax, and only onto a line that still adds up afterwards, with its quantity times its unit price equal to its total:
+
+- Lines with a quantity of one or less take it first, shared by size so it lands where the proportional effect is smallest
+- If there are none, it all goes on the largest line whose quantity still allows a unit price in whole pence
+- If no line can take it that way, the largest line becomes quantity one at its converted total, with the count moved into its description, for example "2 x Deck oven baking stone". The preview shows the new description before you apply
+
+Any line that has been adjusted carries an amber marker showing the amount moved onto it, and a note under the preview says how many lines were touched and by how much.
 
 Tax follows the line it belongs to. Where a line has a tax rate, tax is recalculated from the converted net so the rate still holds. Where the tax amount was entered by hand, left to the platform, or is zero, it's scaled by the same rate so the figure you set is preserved in proportion.
-
-On a line with a quantity above one, the converted unit price is shown to two decimal places while the line total is the figure that publishes, so the two can differ by a penny.
 
 ### After converting
 
