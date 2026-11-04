@@ -82,6 +82,12 @@ Reconnecting a client you disconnected doesn't bring back its coding history eit
 
 How a connection comes to be revoked, and whether revoking it inside the platform is mirrored back into Capture, depends on the platform. See the [Xero](/capture/platforms/xero/), [FreeAgent](/capture/platforms/freeagent/), and [QuickBooks Online](/capture/platforms/quickbooks/) pages for the details.
 
+### When Capture ends a Xero connection
+
+Xero recommends that connected apps don't hold on to connections they no longer use, so Capture disconnects a Xero client after 97 days with no activity. Activity means publishing a document for the client or refreshing its synced data. After 90 days with neither, organisation admins get a notification naming the date the connection will be removed. To keep it, publish a document for the client, or click **Refresh all** on the client's **Accounting platform** tab.
+
+The client keeps its synced data and coding history, and you reconnect it in the usual way.
+
 <Aside type="tip" title="Related pages">
 
 - [Connecting Xero](/capture/platforms/xero/): Xero-specific connection and publishing details

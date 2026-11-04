@@ -152,7 +152,6 @@ export default defineConfig({
                 {
                   label: "QuickBooks Online",
                   slug: "capture/platforms/quickbooks",
-                  badge: "New",
                 },
                 {
                   label: "FreeAgent",

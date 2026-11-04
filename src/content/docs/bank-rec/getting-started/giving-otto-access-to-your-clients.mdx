@@ -31,18 +31,21 @@ Otto is like another employee (except he doesn't need a computer, a branded note
   only to their relevant clients before adding your practice account.
 </Aside>
 
-It's not possible to assign users access to a practice Xero account via Xero HQ. Here's what you need to do instead:
+It's not possible to assign users access to a practice Xero account via Xero HQ. Instead, invite Otto from your practice's own Xero organisation:
 
-1. Visit your practice Xero account
-2. Click the menu on the top left of the page
-3. Select "Settings"
-4. Select "Users"
-5. Click the three dots on Otto's row, and select "Change permissions"
-6. Make sure the permissions match the screenshot
+1. Log in to your practice Xero organisation
+2. Click your organisation name on the top left of the page
+3. Select **Settings**, then **Users**
+4. Click **Invite a user**
+5. Enter the email address shown on the [Add new clients](https://portal.withotto.app/dashboard/clients/add/) page in the portal, and the name "With Otto".
+6. Check **Business and accounting** and make sure the other sections are unchecked
+7. Select **Standard** and uncheck any checkboxes in the **Business and accounting** section
+8. Click **Send invite**
 
 <ZoomableImage
   src={xeroUserSettings}
-  alt="The permissions that Otto should be given for your practice"
+  alt="Xero user permissions with Business and accounting checked, the Standard role selected, and the section's checkboxes unchecked"
+  label="Otto's Xero permissions"
 />
 
 ### Assigning clients where you don't have manage users access
@@ -56,24 +59,36 @@ Your clients can invite Otto from their Xero organisation. We will need to accep
 
 Here are the steps for your client to follow:
 
-1. Visit your Xero account
-2. Click the menu on the top left of the page
-3. Select "Settings"
-4. Select "Users"
-5. Click "Invite a user"
-6. Enter your accountant or bookkeeper's Otto email address. It will be something like practicename@works.withotto.app
-7. Check "Business and accounting" but make sure the others are unchecked
-8. Make sure the permissions match the screenshot
-9. Click "Send invite"
+1. Log in to your Xero organisation
+2. Click your organisation name on the top left of the page
+3. Select **Settings**, then **Users**
+4. Click **Invite a user**
+5. Enter your accountant or bookkeeper's Otto email address, and the name "With Otto"
+6. Check **Business and accounting** and make sure the other sections are unchecked
+7. Select **Standard** and uncheck any checkboxes in the **Business and accounting** section
+8. Click **Send invite**
 
-<ZoomableImage
-  src={xeroUserSettings}
-  alt="The permissions that Otto should be given when invited by a client"
-/>
+Otto's email address is shown on the [Add new clients](https://portal.withotto.app/dashboard/clients/add/) page in the portal. Choose "A client's organisation, and I don't have Manage users access" there, and click **Copy steps for your client** to copy these steps with the address filled in, ready to send to your client.
+
+## Updating your client list in the portal
+
+The client list in the portal updates each time Otto reconciles your practice, so clients you assign to him appear after his next scheduled reconciliation. To see them sooner:
+
+1. Go to the [clients list](https://portal.withotto.app/dashboard/clients/) in the portal and click **Add new clients**
+2. Once you've finished the steps in Xero, click **Update client list**
+3. Wait for the update to finish. It should take no more than five minutes, and you don't need to stay on the page.
+4. Refresh the clients list to see the new clients
+
+New clients have a "New" badge for 48 hours.
+
+The Add new clients page also shows the steps for each way of giving Otto access, depending on whose organisation it is and whether you have Manage users access to it.
 
 ## Checking Otto has the correct access
 
-Like Goldilocks and her porridge, it is important that Otto has neither too much nor too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/dashboard/clients/) in the portal. Any of your clients where Otto doesn't have the correct access will display a red padlock symbol.
+Like Goldilocks and her porridge, it is important that Otto has neither too much nor too little access to your clients. You can check he has just the right role by viewing the [clients list](https://portal.withotto.app/dashboard/clients/) in the portal. The **Xero role** column shows Otto's role for each client:
+
+- A red padlock means Otto has too little access to reconcile that client.
+- An amber triangle means Otto has more access than he needs. For most clients, Standard (No Reports) is enough. For a client on a Ledger or Cashbook plan, he needs Adviser.
 
 <ZoomableImage
   src={clientListImage}

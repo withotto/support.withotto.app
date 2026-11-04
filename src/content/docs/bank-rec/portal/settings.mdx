@@ -59,8 +59,8 @@ You have a bit more flexibility with this setting for individual clients. The mi
 ### Bank account filtering
 
 <Aside>
-  Bank account filtering is available on request. Start a chat in the With Otto
-  portal and we'll enable it for you.
+  Bank account filtering is available on request. Open the help launcher in the
+  portal, choose **Chat with support**, and we'll enable it for you.
 </Aside>
 
 There may be bank accounts for some clients that you want Otto to skip. Perhaps you already have a process for cash coding certain accounts, a member of staff needs to handle specific reconciliations, or you give clients a window to send documents before reconciling as spend money.
@@ -71,10 +71,11 @@ Bank account filtering gives you per-account control over what Otto does. For ea
 - Enable or disable bank rule reconciliations
 - Enable or disable SmartMatch reconciliations
 
-Each dropdown has three options:
+Each dropdown has these options:
 
-- **Default** follows whatever you've set for the client and will automatically follow any future changes. If you change the client or practice setting later, accounts set to Default will follow the change automatically.
+- **Same as client** follows whatever you've set for the client, which is shown in brackets. If you change the client or practice setting later, accounts set to Same as client will follow the change automatically.
 - **Enabled** turns reconciliation on for this account, regardless of the setting above.
+- **Monitor** (SmartMatch only) records Otto's SmartMatch decisions for this account without reconciling them, regardless of the setting above.
 - **Disabled** turns reconciliation off for this account, regardless of the setting above.
 
 <Aside type="caution">
@@ -137,17 +138,25 @@ Need different timing for particular clients? You can override the practice sche
 
 ### Billing type
 
-Each plan comes with a certain number of included credits. These are used up when Otto reconciles matches in Xero. There are two billing types that give you control over your With Otto bill.
+Each plan comes with a certain number of included credits. These are used up when Otto reconciles matches in Xero. Your credits for a billing period are your plan's included credits, plus any credits carried over from earlier periods, plus any adjustments. There are two billing types that give you control over your With Otto bill.
 
 #### Uncapped
 
-If Otto uses up all the included credits before the month ends, he will continue his work, and you'll be billed for the extra credit usage on your next bill. You will just pay the per-credit amount for your plan in this case.
+When your credits run out, Otto keeps reconciling. The extra credits he uses are billed on your next invoice at your plan's per-credit price.
 
 #### Fixed
 
-Ensure you never pay more than you have planned. Otto will stop further reconciliations once he has used the number of credits you have specified. He'll start again when the next billing period starts, and you get the next batch of included credits.
+Ensure you never pay more than you have planned. Otto won't start a reconciliation that would take you past your credits and the extra credits limit you set. He starts again when your next billing period begins.
 
-You can let Otto reconcile more than your included credits by specifying an extra credits limit. For example, if your plan includes 500 credits, and you allow 100 extra credits, Otto will stop until the next billing period if he consumes 600 credits.
+GuidedMatches and reconciliations in your practice's own Xero are free, so he keeps doing those after reaching the limit.
+
+The extra credits limit lets Otto reconcile beyond your credits. Set it to 0 if you don't want him to use any extra credits. Any extra credits he uses are billed on your next invoice at your plan's per-credit price.
+
+For example, say your plan includes 500 credits, you have 50 credits carried over, and you allow 100 extra credits. Otto won't start a reconciliation that would take you past 650 credits in that billing period. If he uses 620 credits, the 70 extra credits are on your next invoice.
+
+### Billing country
+
+Your billing country is required. It determines which taxes, such as VAT in the UK, we add to your bill.
 
 <Aside type="tip" title="Related pages">
 

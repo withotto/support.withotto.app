@@ -61,7 +61,7 @@ For Xero and FreeAgent clients, you can import the bank transactions the account
 Every document goes through the same processing pipeline:
 
 1. **Malware scan:** Checked for security threats. Infected files are quarantined and won't be processed
-2. **Triage:** Otto classifies the document type (bill or sales invoice) and verifies it's a genuine financial document. Documents that can't be classified need manual classification
+2. **Triage:** Otto classifies the document type (bill, purchase credit note, sales invoice, or sales credit note) and verifies it's a genuine financial document. Documents that can't be classified need manual classification
 3. **Extraction:** Otto extracts structured data: supplier name, invoice number, dates, amounts, line items, tax, and currency
 4. **Validation:** Line item amounts are checked against totals for arithmetic consistency. Mismatches are flagged for review but don't prevent processing
 5. **Contact matching:** The extracted supplier or customer name is matched against your existing contacts (exact match first, then fuzzy matching)
@@ -76,19 +76,22 @@ Every document goes through the same processing pipeline:
 
 ## Document statuses
 
-| Status                   | Meaning                                                 |
-| ------------------------ | ------------------------------------------------------- |
-| **Pending scan**         | Waiting for malware scan to complete                    |
-| **Queued**               | In the processing queue                                 |
-| **Processing**           | Otto is working on it                                   |
-| **Triage failed**        | Otto couldn't confirm it's a genuine financial document |
-| **Extraction failed**    | Otto couldn't extract data from the document            |
-| **Needs review**         | Extraction complete, ready for you to check             |
-| **Needs classification** | Otto couldn't determine the document type               |
-| **Needs manual split**   | Multiple documents detected in one image                |
-| **Reviewed**             | You've reviewed and confirmed the data                  |
-| **Publishing**           | Being sent to your accounting platform                  |
-| **Published**            | Successfully published to your accounting platform      |
-| **Publish failed**       | Failed to publish. Check the error and retry            |
-| **Quarantined**          | Malware detected, file has been quarantined             |
-| **Discarded**            | Manually discarded by a user                            |
+| Status                   | Meaning                                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| **Pending upload**       | The file is still uploading                                                                                         |
+| **Pending scan**         | Waiting for malware scan to complete                                                                                |
+| **Scan failed**          | The malware scan didn't finish, or Capture couldn't prepare the file for processing. Discard it and upload it again |
+| **Queued**               | In the processing queue                                                                                             |
+| **Processing**           | Otto is working on it                                                                                               |
+| **Triage failed**        | Otto couldn't confirm it's a genuine financial document                                                             |
+| **Extraction failed**    | Otto couldn't extract data from the document                                                                        |
+| **Needs review**         | Extraction complete, ready for you to check                                                                         |
+| **Needs classification** | Otto couldn't determine the document type                                                                           |
+| **Needs manual split**   | Multiple documents detected in one image                                                                            |
+| **Reviewed**             | You've reviewed and confirmed the data                                                                              |
+| **Publishing**           | Being sent to your accounting platform                                                                              |
+| **Published**            | Successfully published to your accounting platform                                                                  |
+| **Publish failed**       | Failed to publish. Check the error and retry                                                                        |
+| **Quarantined**          | Malware detected, file has been quarantined                                                                         |
+| **Discarded**            | Manually discarded by a user                                                                                        |
+| **Duplicate detected**   | The same file has already been sent in for this client. Click **Process anyway** if it should be captured again     |

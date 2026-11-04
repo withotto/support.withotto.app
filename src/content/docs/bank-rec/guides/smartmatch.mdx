@@ -12,7 +12,7 @@ Otto uses the green matches Xero suggests as a starting point when deciding whet
 
 SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile.
 
-Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training, and each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal.
+Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training, and each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal. We check after each of Otto's reconciliation runs, and retrain him once 14 days have passed since his last training. He learns from the last 18 months of reconciliations at most, so the oldest examples drop out as new ones come in.
 
 ## Confidence
 
@@ -52,7 +52,7 @@ Any time Otto makes a SmartMatch prediction, whether he reconciles the transacti
 
 Otto will perform better with more data but requires a minimum of 100 bill or invoice reconciliation examples to be trained. A reconciliation in this case is a bill or sales invoice that has been reconciled against a bank transaction.
 
-Any clients that don't have enough examples will still be able to use bank rule reconciliations, and we'll check each month to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto, and he'll start to use SmartMatch.
+Any clients that don't have enough examples will still be able to use bank rule reconciliations, and we'll check after each of Otto's reconciliation runs to see if that client now has enough data to train with. As soon as they hit the magic 100 examples, we'll train Otto, and he'll start to use SmartMatch.
 
 <Aside type="tip" title="Related pages">
 

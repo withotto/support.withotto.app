@@ -46,11 +46,7 @@ Although Otto wasn't confident enough to match this himself, you told him it was
 
 #### Skipped: Confidence too low
 
-Otto didn't think the bank statement transaction and the bill or invoice were a match.
-
-#### Skipped: Multiple possible matches but confidence too low
-
-None of the bills or invoices seemed like they matched the bank statement transaction
+Otto didn't think the bank statement transaction and the bill or invoice were a match, or he wasn't confident enough to reconcile it. Where there was more than one possible match, none of them was a match he was confident enough in.
 
 #### Skipped: Feedback given to not reconcile this transaction
 
@@ -59,6 +55,10 @@ You told Otto that he incorrectly reconciled this transaction in the past, so he
 #### Skipped: Bank transaction is not reconciled but match from feedback was not present in Xero
 
 Otto was told to reconcile this bank statement transaction with a particular bill or invoice, but the bill or invoice had been deleted or reconciled against another transaction when he checked next time.
+
+### Messages instead of a decision
+
+Some transactions show a message in place of Otto's decision. **The statement date is before the date of the transaction. Otto will not consider reconciling this transaction.** means every possible match was dated after the bank statement transaction, and a bill or invoice can't have been paid before it was issued.
 
 ## Giving feedback
 

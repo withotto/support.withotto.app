@@ -53,7 +53,7 @@ import mySettings from "@assets/capture/getting-started/configuring-clients/clie
 **Always use absolute, site-root-relative paths**: the slug exactly as it appears under `src/content/docs/`, prefixed with `/` and ending in `/`, before any `#fragment`. This follows the trailing-slash rule in `.claude/rules/shared/voice-common.md`. No `.mdx` extension, no hard-coded `https://support.withotto.app`.
 
 ```md
-[Connecting Xero](/capture/getting-started/connecting-xero/)
+[Connecting Xero](/capture/platforms/xero/)
 [Feedback](/bank-rec/guides/feedback/)
 [SmartMatch confidence](/bank-rec/guides/smartmatch/#confidence)
 [Fixed or uncapped billing](/bank-rec/portal/settings/#billing-type)

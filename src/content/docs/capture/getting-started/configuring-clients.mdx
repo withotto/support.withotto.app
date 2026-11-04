@@ -13,7 +13,7 @@ Each client in Capture represents a single accounting platform organisation. Aft
 
 ## Email prefix
 
-Each client has a unique email address for receiving documents by email. You set the prefix here in **General**, and the finished address is shown on the **Client Submission** tab alongside the client's other submission routes. The address follows the format:
+Each client has a unique email address for receiving documents by email. You set the prefix here in **General**, and the finished address is shown on the **Client submission** tab alongside the client's other submission routes. The address follows the format:
 
 ```
 {prefix}@{your-organisation}.ottocapture.email
@@ -25,6 +25,7 @@ Email prefixes:
 
 - Must start with a letter or number
 - Can contain lowercase letters, numbers, hyphens, dots, and underscores
+- Can't end with a dot or have two dots in a row
 - Must be unique within your organisation
 
 <Aside>
@@ -41,11 +42,11 @@ If your organisation has a [custom email domain](/capture/guides/custom-email-do
 
 The prefix also forms part of the address of the [client submission page](/capture/getting-started/client-submission-page/) for this client. Changing it doesn't break a link you've already shared: the page redirects to the new address on its own.
 
-The **Client Submission** tab lists both prefixes and the addresses they produce, with a link through to wherever each prefix is edited.
+The **Client submission** tab lists both prefixes and the addresses they produce, with a link through to wherever each prefix is edited.
 
 <ZoomableImage
   src={submissionAddresses}
-  alt="The Addresses section of the Client Submission tab, listing the organisation prefix, the client prefix, the client's email address, and the submission page link"
+  alt="The Addresses section of the Client submission tab, listing the organisation prefix, the client prefix, the client's email address, and the submission page link"
   label="Submission addresses"
 />
 

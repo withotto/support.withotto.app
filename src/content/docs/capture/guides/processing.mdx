@@ -36,6 +36,7 @@ Otto reads the document and extracts structured data. This is where he does most
 
 - Supplier or customer name
 - Invoice number
+- Reference, where the document has a second identifier for the transaction alongside the invoice number, such as a purchase order or job number
 - Issue date and due date
 - Currency
 
@@ -72,7 +73,8 @@ Validation uses a small tolerance to account for rounding differences. Mismatche
 The extracted supplier or customer name is matched against your existing contacts:
 
 1. **Exact match:** A case-insensitive comparison against existing contact names
-2. **Fuzzy match:** Otto will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
+2. **Your previous picks:** If you've published documents for this client with the same supplier or customer name, Otto picks the contact you chose for them. The review screen shows **Auto-matched from your previous picks**, and lists any other contacts you've chosen for that name
+3. **Fuzzy match:** Otto will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
 
 ### 5. Finalise
 
@@ -90,17 +92,18 @@ If any stage encounters a temporary error (such as a service being briefly unava
 
 Here's a complete list of the data Otto extracts from each document:
 
-| Field                      | Description                                                                                                                                     |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Supplier/customer name** | The name of the company or individual on the document                                                                                           |
-| **Invoice number**         | The invoice or receipt reference number                                                                                                         |
-| **Issue date**             | When the document was issued                                                                                                                    |
-| **Due date**               | When payment is due                                                                                                                             |
-| **Currency**               | The currency code (e.g., GBP, USD, EUR)                                                                                                         |
-| **Net amount**             | Total before tax                                                                                                                                |
-| **Tax amount**             | Total tax                                                                                                                                       |
-| **Total amount**           | Grand total including tax                                                                                                                       |
-| **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code (or nominal code, depending on your platform) |
+| Field                      | Description                                                                                                                                              |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier/customer name** | The name of the company or individual on the document                                                                                                    |
+| **Invoice number**         | The invoice or receipt reference number                                                                                                                  |
+| **Reference**              | A second reference for the transaction, such as a purchase order or job number, where the document has one. Shown for Xero and QuickBooks Online clients |
+| **Issue date**             | When the document was issued                                                                                                                             |
+| **Due date**               | When payment is due                                                                                                                                      |
+| **Currency**               | The currency code (e.g., GBP, USD, EUR)                                                                                                                  |
+| **Net amount**             | Total before tax                                                                                                                                         |
+| **Tax amount**             | Total tax                                                                                                                                                |
+| **Total amount**           | Grand total including tax                                                                                                                                |
+| **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code (or nominal code, depending on your platform)          |
 
 ## Processing time
 

@@ -13,27 +13,27 @@ Organisation settings control how your Capture organisation appears, who has acc
 
 Your organisation name is displayed throughout the Capture interface.
 
-### Organisation slug
+### Organisation prefix
 
-The slug is used in your default email addresses:
+The organisation prefix is used in your default email addresses:
 
 ```
-{prefix}@{slug}.ottocapture.email
+{prefix}@{organisation-prefix}.ottocapture.email
 ```
 
 It's also the first part of the web address of every [client submission page](/capture/getting-started/client-submission-page/):
 
 ```
-{slug}.capture.withotto.app/{prefix}/{code}
+{organisation-prefix}.capture.withotto.app/{prefix}/{code}
 ```
 
-Changing the slug updates all default email addresses and all client submission page addresses.
+Changing the organisation prefix updates all default email addresses and all client submission page addresses.
 
 <Aside type="caution">
-  If you change your slug, the previous email addresses and submission page
-  links stop working, and there's no redirect from the old ones. Update any
-  email forwarding rules that use the old addresses, and share the new link with
-  anyone using a client submission page.
+  If you change your organisation prefix, the previous email addresses and
+  submission page links stop working, and there's no redirect from the old ones.
+  Update any email forwarding rules that use the old addresses, and share the
+  new link with anyone using a client submission page.
 </Aside>
 
 ## Team
@@ -56,6 +56,14 @@ Invite new team members by entering their email address from the **Settings → 
 Admins can turn a team member's access off at any time from the **Settings → Team** page. Click **Turn off access** on their row, then **Confirm?**. It takes effect straight away: they can no longer open anything in your organisation, and see an **Access turned off** page if they try.
 
 The person stays on the team list with a **No access** label rather than being deleted, so you keep a record of who has had access. To restore it, click **Turn on access** on their row. Turning off someone's access here doesn't affect any other organisations they belong to.
+
+## Billing
+
+Admins can see the organisation's billing from **Settings → Billing**. The page shows the state of your subscription, how many documents each client has published in the current period and which tier that puts it on, and a **Billing history** list of past periods. Click a period to see its breakdown by client, or download that period's invoice.
+
+Click **Manage billing** to open the Stripe billing portal, where you update your payment method and billing address and view your invoices.
+
+Capture sets the VAT on each invoice from the billing address recorded in Stripe. Organisations in the UK and the Isle of Man are charged VAT at 20%. Organisations elsewhere aren't charged VAT, and the reverse charge applies. See [Billing](/capture/faq/#billing) in the FAQ for how pricing works.
 
 ## Email
 

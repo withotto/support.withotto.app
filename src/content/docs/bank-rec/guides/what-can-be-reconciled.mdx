@@ -14,9 +14,16 @@ Otto will reconcile any bank rules you have set up as soon as he starts working 
 
 There is no way for Otto to make sure that the rule has been set up correctly, so please make sure any rules you create only match the transactions you want him to reconcile.
 
-## Transactions with a bill or invoice
+## Transactions with a bill, invoice, expense claim, or transfer
 
-Otto supports these types of possible matches in Xero
+With SmartMatch, Otto can reconcile a bank transaction against a possible match in Xero that is a:
+
+- Bill
+- Sales invoice
+- Expense claim
+- Bank transfer
+
+He looks at these types of possible matches in Xero:
 
 ### A single possible match
 
@@ -35,6 +42,16 @@ Otto compares the details from the bank statement and the Xero match to decide i
 />
 
 Otto compares the details from the bank statement to each of the possible matches and decides which could relate to the bank transaction. If there is more than one match that looks like it could be correct, he chooses the one which is the best match.
+
+## What Otto skips
+
+Otto leaves these for you to reconcile in Xero:
+
+- Batch payments, where one payment covers several bills or invoices
+- Overpayments
+- Possible matches dated after the bank transaction
+
+A bill or invoice can't have been paid before it was issued, so Otto doesn't consider a possible match dated after the bank transaction. If every possible match is dated after it, he skips the transaction.
 
 <Aside type="tip" title="Related pages">
 

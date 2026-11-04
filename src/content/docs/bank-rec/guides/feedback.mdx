@@ -30,9 +30,10 @@ Sorry. We do what we can to avoid this, but Otto isn't infallible. Here's what h
 We don't want to make the situation worse, so Otto now won't touch that bank statement transaction, even if another bill or invoice becomes available in the future. You will need to reconcile the match yourself in Xero.
 
 <Aside>
-  Incorrect SmartMatch reconciliations are not charged and do not count against
-  your included credits. We only want you to pay when Otto is doing what you
-  want him to.
+  An incorrect SmartMatch you report isn't charged if Otto made it at 90%
+  confidence or above. We only want you to pay when Otto is doing what you want
+  him to. If you lowered the required confidence and he reconciled a match below
+  90%, it stays charged whatever feedback you give.
 </Aside>
 
 #### Otto skipped, but he should have reconciled
@@ -43,7 +44,7 @@ Let Otto know that he should have reconciled the bank transaction and the bill o
 
 This does two things:
 
-1. Otto will see that you said he should have reconciled this transaction the next time he reconciles that client and will perform a [GuidedMatch](/bank-rec/guides/guidedmatch/)
+1. The next time Otto reconciles that client, he'll see that you said he should have reconciled this transaction and will perform a [GuidedMatch](/bank-rec/guides/guidedmatch/). He only does this where SmartMatch is enabled for the bank account, not in monitoring mode.
 2. The feedback will be used to improve Otto's decisions when he is next retrained
 
 <Aside>There is no charge for GuidedMatch reconciliations.</Aside>

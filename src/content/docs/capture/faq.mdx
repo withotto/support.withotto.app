@@ -29,7 +29,9 @@ Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the pl
 
 ### A client shows "Disconnected" or "Connection failed". What happened?
 
-Capture's access to the connected organisation has been removed. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
+Capture can no longer use the connection to the client's organisation. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
+
+A Xero client is also disconnected after 97 days with nothing published or refreshed. See [When Capture ends a Xero connection](/capture/platforms/connecting-your-accounting-platform/#when-capture-ends-a-xero-connection).
 
 Otto checks each connection once a day, so access revoked from inside Xero, FreeAgent, or QuickBooks Online is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero/#disconnecting-and-reconnecting), [FreeAgent](/capture/platforms/freeagent/#disconnecting-and-reconnecting), and [QuickBooks Online](/capture/platforms/quickbooks/#disconnecting-and-reconnecting).
 
@@ -75,7 +77,7 @@ Documents already submitted aren't affected in any of these cases. See [Client s
 
 ### A client says their submission link isn't working
 
-Usually the link has been rotated or the page turned off, in which case share the current one from the client's **Client Submission** settings. A link also stops working while the client is disconnected from its accounting platform, and every submission page link changes if you change your organisation prefix.
+Usually the link has been rotated or the page turned off, in which case share the current one from the client's **Client submission** settings. A link also stops working while the client is disconnected from its accounting platform, and every submission page link changes if you change your organisation prefix.
 
 ## Missing receipts
 
@@ -105,11 +107,15 @@ Most documents are processed within a few minutes. Processing time depends on do
 
 Bills and purchase credit notes (accounts payable), and sales invoices and sales credit notes (accounts receivable). Otto classifies each document automatically during processing.
 
-For QuickBooks Online clients, Otto publishes bills and purchase credit notes only. Sales invoices and sales credit notes are not supported there at present. See [QuickBooks Online](/capture/platforms/quickbooks/#publishing).
+For QuickBooks Online clients, Capture publishes only bills and supplier credits, not sales invoices or sales credit notes. See [QuickBooks Online](/capture/platforms/quickbooks/#publishing).
 
 ### What file formats are supported?
 
 PDF, common image formats (JPEG, PNG, HEIC, HEIF, WebP, TIFF, GIF, BMP, AVIF), Office documents (DOC, DOCX, XLS, XLSX, ODT, ODS), and HTML.
+
+### Is there a size or page limit?
+
+Each file you upload in Capture, or a client sends by WhatsApp or through their submission or missing receipts page, can be up to 25 MB. Otto reads documents of up to 50 pages, so split anything longer into smaller files and upload those. See [Supported file types](/capture/getting-started/#supported-file-types).
 
 ### What if Otto extracts the wrong data?
 
@@ -117,7 +123,7 @@ Otto doesn't always get it right, especially with unfamiliar suppliers. Every fi
 
 ### What if Otto can't determine the document type?
 
-The document is marked as **Needs classification**. You can set the type (bill or sales invoice) manually, and Otto continues processing from there.
+The document is marked as **Needs classification**. You can set the type (bill, purchase credit note, sales invoice, or sales credit note) manually, and Otto continues processing from there. For a QuickBooks Online client, you choose between bill and supplier credit, since those are the only types Capture publishes there.
 
 ### What if there are multiple receipts in one image?
 
@@ -236,7 +242,7 @@ A client with no documents published in a month is not charged. Billing follows 
 
 ### What happens if a client publishes more than its tier's included documents?
 
-There's no price cliff. As a client's published volume grows, it simply moves to whichever tier is cheapest for that volume, so rising usage is smooth rather than a sudden jump between prices.
+There's no price cliff. Each document over a tier's included number is charged individually at that tier's per-document rate, until the next tier up becomes the cheaper option, and from then on the client sits on that tier. Either way the client lands on whichever is cheapest for its volume, so rising usage is smooth rather than a sudden jump between prices.
 
 ### How am I billed, and is there a minimum commitment?
 
