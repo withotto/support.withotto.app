@@ -15,7 +15,7 @@ Bank Rec's SmartMatch is powered by machine learning models trained on each clie
 - **Otto is the subject for most actions:** "Otto reconciles matches", "he checks the bank transaction details", "he decides whether to reconcile".
 - **Mention ML and training in explanations of how SmartMatch works:** "SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile."
 - **"We" for the team's role in training:** "We use 12 months of previous reconciliations...", "each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided".
-- **"Otto's confidence", "Otto's decisions"** when describing how sure he is about a match and what he decided. Confidence is the model's score for the match, not a feeling: see the persona rules in `.claude/rules/shared/voice-common.md`.
+- **"Otto's score", "Otto's decisions"** when describing the figure on a SmartMatch card and what he decided. The portal shows "Otto's score: 98% (needs 90%)": the score is for the item being the match, whichever decision he made, so a non-match always scores 50% or less. It is the model's output, not a feeling and not a measured chance, so don't call it a probability or the chance he is right. "Confidence" stays for the required level, the "Minimum SmartMatch confidence" setting: see the persona rules in `.claude/rules/shared/voice-common.md`.
 
 ## Bank Rec-specific terminology
 
@@ -27,7 +27,8 @@ Bank Rec's SmartMatch is powered by machine learning models trained on each clie
 | `reconcile`, `reconciliation`      | The core action. Use precisely.                                                              |
 | `match` / `non-match`              | Paired terms for Otto's decisions.                                                           |
 | `monitor mode` / `monitoring mode` | SmartMatch state where decisions are recorded but not applied.                               |
-| `confidence`                       | Otto's confidence score. Used with percentage values.                                        |
+| `confidence`                       | The required level: the "Minimum SmartMatch confidence" setting. Used with percentages.      |
+| `Otto's score`                     | The figure on a SmartMatch card, as the portal shows it.                                     |
 | `credits`                          | Billing unit. Reconciliations consume credits.                                               |
 | `practice-wide` / `client-level`   | Settings scopes. Hyphenated.                                                                 |
 | `machine learning (ML)`            | Acceptable in explanations of how SmartMatch works. Introduce the abbreviation on first use. |
