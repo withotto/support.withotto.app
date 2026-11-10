@@ -8,6 +8,8 @@ import ZoomableImage from "@components/ZoomableImage.astro";
 import reviewInterface from "@assets/capture/guides/reviewing/review-interface.png";
 import currencyConverter from "@assets/capture/guides/reviewing/currency-converter.png";
 import currencyRateWarning from "@assets/capture/guides/reviewing/currency-rate-warning.png";
+import discardReasons from "@assets/capture/guides/reviewing/discard-reasons.png";
+import discardedTab from "@assets/capture/guides/reviewing/discarded-tab.png";
 
 After Otto processes a document, it lands in your review queue. This guide covers the review interface, editing extracted data, and publishing to your accounting platform.
 
@@ -204,6 +206,31 @@ After fixing the issue, you can retry publishing from the review screen.
 
 ## Discarding documents
 
-If a document shouldn't be published (duplicate, irrelevant, or too poor quality), you can discard it. Discarded documents are kept in Capture and can be restored at any time.
+If a document shouldn't be published, you can discard it. Click **Discard** on the review screen; on a document you're still reviewing, it's in the **More actions** menu beside **Publish**. Capture then asks why, and choosing a reason discards the document:
 
-On the **Needs attention** and **Ready** tabs, you can discard in bulk: select the documents with their checkboxes, click **Discard selected**, then confirm. This clears a batch of duplicates or test uploads in one go.
+- **Already in Capture:** sent more than once
+- **Already in Xero**, **Already in FreeAgent**, or **Already in QuickBooks**, naming the client's platform: entered there another way
+- **Not a bill or invoice:** a statement, quote, remittance, or delivery note
+- **Unreadable or incomplete:** blurred, cut off, or missing pages
+- **For a different client**
+- **Something else**
+
+Click **Cancel** to close the list without discarding anything.
+
+<ZoomableImage
+  src={discardReasons}
+  alt="The list Capture shows after Discard is clicked, headed Why discard this document?, with six reasons and a short hint under four of them, and Cancel at the foot"
+  label="Discard reasons"
+/>
+
+The reason you choose appears in the document's timeline and on its review screen. On the **Discarded** tab it sits under the contact name, so you can see why each document was discarded without opening it. Documents discarded before Capture asked for a reason show none.
+
+<ZoomableImage
+  src={discardedTab}
+  alt="A client's Discarded tab, with a discarded receipt from Millstone Flour Supplies showing Unreadable or incomplete under the contact name"
+  label="Discarded tab"
+/>
+
+Discarded documents are kept in Capture. To restore one, open it from the **Discarded** tab and click **Restore**.
+
+On the **Needs attention** and **Ready** tabs, you can discard in bulk: select the documents with their checkboxes, click **Discard selected**, and choose one reason for all of them. This clears a batch of duplicates or test uploads in one go.

@@ -76,22 +76,22 @@ Every document goes through the same processing pipeline:
 
 ## Document statuses
 
-| Status                   | Meaning                                                                                                             |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| **Pending upload**       | The file is still uploading                                                                                         |
-| **Pending scan**         | Waiting for malware scan to complete                                                                                |
-| **Scan failed**          | The malware scan didn't finish, or Capture couldn't prepare the file for processing. Discard it and upload it again |
-| **Queued**               | In the processing queue                                                                                             |
-| **Processing**           | Otto is working on it                                                                                               |
-| **Triage failed**        | Otto couldn't confirm it's a genuine financial document                                                             |
-| **Extraction failed**    | Otto couldn't extract data from the document                                                                        |
-| **Needs review**         | Extraction complete, ready for you to check                                                                         |
-| **Needs classification** | Otto couldn't determine the document type                                                                           |
-| **Needs manual split**   | Multiple documents detected in one image                                                                            |
-| **Reviewed**             | You've reviewed and confirmed the data                                                                              |
-| **Publishing**           | Being sent to your accounting platform                                                                              |
-| **Published**            | Successfully published to your accounting platform                                                                  |
-| **Publish failed**       | Failed to publish. Check the error and retry                                                                        |
-| **Quarantined**          | Malware detected, file has been quarantined                                                                         |
-| **Discarded**            | Manually discarded by a user                                                                                        |
-| **Duplicate detected**   | The same file has already been sent in for this client. Click **Process anyway** if it should be captured again     |
+| Status                   | Meaning                                                                                                                    |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| **Pending upload**       | The file is still uploading                                                                                                |
+| **Pending scan**         | Waiting for malware scan to complete                                                                                       |
+| **Scan failed**          | The malware scan didn't finish, or Capture couldn't prepare the file for processing. Discard it and upload it again        |
+| **Queued**               | In the processing queue                                                                                                    |
+| **Processing**           | Otto is working on it                                                                                                      |
+| **Triage failed**        | Otto couldn't confirm it's a genuine financial document                                                                    |
+| **Extraction failed**    | Otto couldn't extract data from the document                                                                               |
+| **Needs review**         | Extraction complete, ready for you to check                                                                                |
+| **Needs classification** | Otto couldn't determine the document type                                                                                  |
+| **Needs manual split**   | Multiple documents detected in one image                                                                                   |
+| **Reviewed**             | You've reviewed and confirmed the data                                                                                     |
+| **Publishing**           | Being sent to your accounting platform                                                                                     |
+| **Published**            | Successfully published to your accounting platform                                                                         |
+| **Publish failed**       | Failed to publish. Check the error and retry                                                                               |
+| **Quarantined**          | Malware detected, file has been quarantined                                                                                |
+| **Discarded**            | Discarded by a user. The [reason they chose](/capture/guides/reviewing/#discarding-documents) shows under the contact name |
+| **Duplicate detected**   | The same file has already been sent in for this client. Click **Process anyway** if it should be captured again            |
