@@ -16,9 +16,9 @@ Otto requires lots of examples of correct and incorrect bill and invoice reconci
 
 ## Confidence
 
-One of the key components of SmartMatch is Otto's score. For each possible match Otto sees, he decides whether the two are a match or a non-match, and scores how strongly they look like a match, from 0% to 100%.
+One of the key components of SmartMatch is Otto's score. For each possible match Otto sees, he scores how strongly the two look like a match, from 0% to 100%.
 
-By default, we require Otto to be at least 90% sure that the transaction is a match before he is allowed to reconcile it. You can change the required confidence level in the [settings](/bank-rec/portal/settings/). You can be more strict by requiring higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
+By default, Otto reconciles a transaction only when his score for it is at least 90%. You can change the required confidence level in the [settings](/bank-rec/portal/settings/). You can be more strict by requiring higher confidence, or risk more incorrect reconciliations by reducing the required confidence.
 
 <Aside>
   You will not be charged for an incorrect SmartMatch reconciliation where Otto
@@ -43,7 +43,7 @@ Any time Otto makes a SmartMatch prediction, whether he reconciles the transacti
 - The top part of the card shows a summary of the information you see in Xero when reviewing potential matches
 - The bottom part is where you can see information from Otto and provide feedback
 - The bold text ("Reconciled" in this case) is the action Otto took
-- Underneath that shows whether Otto thought the transaction was a match or non-match, and his score for it being the match. The figure after "needs" is the score he must reach to reconcile it
+- Underneath that is Otto's score for it being the match. The figure after "needs" is the score he must reach to reconcile it
 - The buttons allow you to provide feedback. Read more about [feedback](/bank-rec/guides/feedback/) in our separate guide
 
 ## FAQs
