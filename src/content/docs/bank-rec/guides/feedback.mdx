@@ -4,6 +4,8 @@ description: Helping Otto get better and better over time
 ---
 
 import { Aside } from "@astrojs/starlight/components";
+import ZoomableImage from "@components/ZoomableImage.astro";
+import possibleMatchesImage from "@assets/bank-rec/guides/feedback/possible-matches.png";
 
 Otto doesn't know your clients as well as you do (and he's naturally very cautious), so it's likely he won't be confident enough to reconcile all the transactions he could, particularly at the start of his time with you.
 
@@ -42,11 +44,13 @@ Thanks for confirming. Otto will learn from it when he is next retrained.
 
 He also won't touch that bank statement transaction again, even if another bill or invoice becomes available later. When the right match is there, reconcile it yourself in Xero.
 
+If Xero offered [several possible matches](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) and the right one is in the list, mark it as a match there instead, and Otto will reconcile it for you.
+
 #### Otto skipped, but he should have reconciled
 
 There will always be a few tricky matches that Otto might get tripped up by, but your feedback will help him improve over time.
 
-Let Otto know that he should have reconciled the bank transaction and the bill or invoice by clicking the "This is a match" button.
+Let Otto know that he should have reconciled the bank transaction and the bill or invoice by clicking the "This is a match" button. If Xero offered several possible matches and a different one is right, mark that one in the [list of possible matches](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) instead.
 
 This does two things:
 
@@ -54,3 +58,19 @@ This does two things:
 2. The feedback will be used to improve Otto's decisions when he is next retrained
 
 <Aside>There is no charge for GuidedMatch reconciliations.</Aside>
+
+## When Xero offers several possible matches
+
+When Xero offers more than one possible match for a bank transaction, Otto leaves it for you to check. Under the card, open "Xero offered … possible matches for this line" to see them all. The list shows each one with Otto's score for it, and highlights the one the card shows.
+
+<ZoomableImage
+  src={possibleMatchesImage}
+  alt="A SmartMatch card Otto left for you, with its list of three possible matches open: three bills from the same supplier for the same amount, each with Otto's score and Match and Not a match buttons"
+  label="Possible matches"
+/>
+
+Each possible match has its own buttons:
+
+- **Match:** Otto reconciles that one on his next run as a free [GuidedMatch](/bank-rec/guides/guidedmatch/). A transaction has only one right match, so marking another one moves your "Match" to it. This works even if you've marked something on the line as not a match.
+- **Not a match, on the one the card shows:** this is the same as clicking "This is not a match" on the card. Otto leaves the transaction for you from then on.
+- **Not a match, on any of the others:** this rules out that one only. Otto won't reconcile it, but he can still reconcile a different one.
