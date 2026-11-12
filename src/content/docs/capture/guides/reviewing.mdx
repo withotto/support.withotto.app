@@ -10,6 +10,7 @@ import currencyConverter from "@assets/capture/guides/reviewing/currency-convert
 import currencyRateWarning from "@assets/capture/guides/reviewing/currency-rate-warning.png";
 import discardReasons from "@assets/capture/guides/reviewing/discard-reasons.png";
 import discardedTab from "@assets/capture/guides/reviewing/discarded-tab.png";
+import copiesNote from "@assets/capture/guides/reviewing/copies-note.png";
 
 After Otto processes a document, it lands in your review queue. This guide covers the review interface, editing extracted data, and publishing to your accounting platform.
 
@@ -32,6 +33,7 @@ The review screen shows the original document alongside the extracted data. You 
 - The publish state that will be used, where your platform supports one
 - An edit history to show which fields have been changed and by whom
 - An event timeline showing processing history
+- A note naming any [other copies of the document](/capture/guides/reviewing/#other-copies-of-a-document)
 
 If the sender added a note, such as a WhatsApp caption or a note written on the [client missing receipts page](/capture/missing-receipts/client-page/), it appears under the filename as **Note from sender**. Otto reads a WhatsApp caption when he extracts the document. He reads a note from the client missing receipts page too, if the client wrote it before he read the document. When the note was written or changed after that, the review screen says so, and if it was changed, shows what it said before. Check the coding against the current note.
 
@@ -192,6 +194,20 @@ When you publish a document, Capture creates the following in your accounting pl
 3. **An attachment:** The original document file is attached to bills on every platform. On FreeAgent, sales invoices have no attachment field, so only Xero invoices keep the source file (see [Xero](/capture/platforms/xero/#attachments), [FreeAgent](/capture/platforms/freeagent/#attachments), and [QuickBooks Online](/capture/platforms/quickbooks/#attachments))
 
 On Xero, the bill or invoice is created in the state you selected. FreeAgent and QuickBooks Online have no settable state (see publishing to [FreeAgent](/capture/platforms/freeagent/#publishing) and [QuickBooks Online](/capture/platforms/quickbooks/#publishing)).
+
+### Other copies of a document
+
+The same document sometimes reaches Capture twice, such as an invoice and a receipt for one purchase. Capture treats another document as a copy when it's for the same client, has the same document type, contact and invoice number, and hasn't been discarded. The review screen names any copies in a note.
+
+<ZoomableImage
+  src={copiesNote}
+  alt="The note on the review screen headed This may already be in Xero, linking a published copy of the receipt and offering Discard this document"
+  label="Note about a copy"
+/>
+
+Publishing a document that has a copy asks you to confirm first, and the document's timeline records the copies you were shown.
+
+This is separate from **Duplicate detected**, which catches the same file sent in twice before Otto reads it.
 
 ## Handling publish errors
 
