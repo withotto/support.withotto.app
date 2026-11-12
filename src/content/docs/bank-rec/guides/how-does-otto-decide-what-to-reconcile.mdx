@@ -13,57 +13,63 @@ This initial training only helps Otto understand what makes a correct match, but
 
 ## Understanding Otto's decisions
 
+Each line Otto looked at has a card on the client's [reconciliation report](/bank-rec/portal/reconciliation-report/).
+
 <ZoomableImage
   src={reconciliationMatchImage}
-  alt="Example of a reconciliation match"
+  alt="A reconciled card: the Reconciled status at the top, the bank statement transaction beside the possible match from Xero, and Otto's score of 98% against the 90% needed"
+  label="Reconciled card"
 />
 
-The top part of the summary shows the information from the Xero bank reconciliation page. The bottom-left part shows Otto's decision and is made of two parts.
+The table compares the bank statement transaction with the possible match from Xero. Otto's decision is in two places:
 
-1. The overall action taken. In this case "Reconciled"
+1. The status at the top of the card, "Reconciled" in this case. Where there's a reason, it follows the status.
 2. Otto's score for the item being the match: 98% in this case. The figure after "needs" is the score he must reach to reconcile it.
 
 ### What actions can Otto take?
 
-Otto can currently take the following actions:
+Each heading below shows a card's status, then its reason.
 
 #### Reconciled
 
 There was a single possible match and it matches the bank statement transaction.
 
-There is also "Testing: Would reconcile" where Otto records his decision but doesn't reconcile the transactions because he is in monitoring mode.
+When SmartMatch is in monitoring mode, the card shows "Monitoring: Would reconcile" instead. Otto records his decision but doesn't reconcile the transaction.
 
 #### Skipped: Multiple possible matches, left for you to check
 
-Xero offered more than one possible match, so Otto left the transaction for you to check, whatever his confidence. The portal shows the match he thinks is right. If it is, click "This is a match" and he'll reconcile it on his next run as a free [GuidedMatch](/bank-rec/guides/guidedmatch/). If another match is right, reconcile it in Xero.
+Xero offered more than one possible match, so Otto left the transaction for you to check, whatever his score. The card shows the match he thinks is right. Mark it as a match and he'll reconcile it on his next run as a free [GuidedMatch](/bank-rec/guides/guidedmatch/). From December 2026, the list under the card shows [every possible match](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) Xero offered, so you can mark a different one.
 
-There is also "Testing: Would leave multiple possible matches for you to check" where Otto records his decision because he is in monitoring mode.
+When SmartMatch is in monitoring mode, the card shows "Monitoring: Would leave multiple possible matches for you to check" instead. Marking a match there records it for his next training, but he doesn't reconcile it while he's in monitoring mode. If the transaction is still unreconciled when monitoring mode ends, he reconciles your match on his next run, as long as Xero still offers it.
 
 Until 9 November 2026, Otto reconciled these himself when he was confident enough, so older reports can show "Reconciled: Multiple possible matches".
 
 #### Reconciled: GuidedMatch
 
-Although Otto wasn't confident enough to match this himself, you told him it was a match in the portal, so he reconciled the transaction.
+You marked this as a match in the portal, so Otto reconciled it on his next run.
 
-#### Skipped: Confidence too low
+#### Skipped: Score below the required level
 
-Otto didn't think the bank statement transaction and the bill or invoice were a match, or he wasn't confident enough to reconcile it. Where there was more than one possible match, none of them was a match he was confident enough in.
+Otto's score for the possible match was below the [confidence](/bank-rec/guides/smartmatch/#confidence) the client requires, so he didn't reconcile it. Reports from before 9 November 2026 can also show "Skipped: Multiple possible matches, score below the required level", where Xero offered more than one and none reached it.
 
-#### Skipped: Feedback given to not reconcile this transaction
+#### Skipped: Left for you after “Not a match”
 
-You marked what Otto reconciled for this transaction, or the match he showed for it, as not a match. He leaves the transaction for you from then on, to avoid making a mistake.
+You marked what Otto reconciled for this transaction, or a match he picked for it, as not a match. He leaves the transaction for you from then on, to avoid making a mistake. If the card now shows a different match and it's the right one, you can still mark it as a match. From December 2026, this also covers a possible match you ruled out in the [list of possible matches](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) that later became his pick, and you can mark the right one as a match in the list.
 
-#### Skipped: Bank transaction is not reconciled but match from feedback was not present in Xero
+#### Skipped: Your match is no longer available in Xero
 
-Otto was told to reconcile this bank statement transaction with a particular bill or invoice, but the bill or invoice had been deleted or reconciled against another transaction when he checked next time.
+You marked a match for this transaction, but when Otto next checked, Xero no longer offered it, so he couldn't reconcile it. That usually means it had been reconciled against another transaction or deleted. When a colleague marked the match, the card names them instead of "Your".
 
-### Messages instead of a decision
+### Lines with nothing to answer
 
-Some transactions show a message in place of Otto's decision. **The statement date is before the date of the transaction. Otto will not consider reconciling this transaction.** means every possible match was dated after the bank statement transaction, and a bill or invoice can't have been paid before it was issued.
+Some lines show as a single row under the cards, with the reason in place of Otto's decision:
+
+- **Possible match dated after the bank transaction:** every possible match Xero offered is dated after the bank statement transaction, so Otto didn't score them. One can still be right, so check it and reconcile it in Xero yourself if it is.
+- **Batch payment:** one payment covers several bills or invoices, which Otto doesn't reconcile.
 
 ## Giving feedback
 
-You can tell Otto whether the items are a match or not using the buttons. This is always used to improve his performance when he is next trained but can also cause other things to happen. See [feedback](/bank-rec/guides/feedback/) for more information.
+You can tell Otto whether the items are a match or not using the buttons on the card and, from December 2026, on each possible match in the list under it. This is always used to improve his performance when he is next trained but can also cause other things to happen. See [feedback](/bank-rec/guides/feedback/) for more information.
 
 <Aside type="tip" title="Related pages">
 

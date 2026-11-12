@@ -252,6 +252,10 @@ export default defineConfig({
                   slug: "bank-rec/portal/clients",
                 },
                 {
+                  label: "Reconciliation report",
+                  slug: "bank-rec/portal/reconciliation-report",
+                },
+                {
                   label: "Practice and client settings",
                   slug: "bank-rec/portal/settings",
                 },

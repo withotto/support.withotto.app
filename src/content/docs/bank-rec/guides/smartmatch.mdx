@@ -8,7 +8,7 @@ import ZoomableImage from "@components/ZoomableImage.astro";
 
 import smartMatchDetailsImage from "@assets/bank-rec/guides/smartmatch/smartmatch-details.png";
 
-Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct, he checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches, he runs through the same process for each one and shows you the one he thinks is right, but leaves the transaction for you to check rather than reconciling it himself.
+Otto uses the green matches Xero suggests as a starting point when deciding whether to reconcile a transaction. He doesn't just assume the one Xero suggests is correct. He checks the bank transaction details against the bill or invoice and decides if they relate to the same transaction. If there are multiple possible matches, he runs through the same process for each one and shows you each one with his score, but leaves the transaction for you to check rather than reconciling it himself.
 
 SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile.
 
@@ -29,22 +29,25 @@ By default, Otto reconciles a transaction only when his score for it is at least
 
 All practices will have SmartMatch set to "monitor" mode when their trial starts. This allows you to see Otto's decisions without him actually clicking the "OK" button. This gives you the opportunity to make sure you are confident he will do the right thing when SmartMatch is enabled.
 
+Any match you mark during monitoring mode waits. Once SmartMatch is enabled, Otto reconciles it on his next run as a free [GuidedMatch](/bank-rec/guides/guidedmatch/), as long as the transaction is still unreconciled and Xero still offers the match.
+
 You have complete control of which clients SmartMatch is enabled for and can make changes across your practice, or for individual clients.
 
 ## Reviewing Otto's predictions and decisions
 
-Any time Otto makes a SmartMatch prediction, whether he reconciles the transaction, you will be able to see more information by clicking the "View" icon from the dashboard or client page. The page shows each potential matching transaction that Otto was presented with and details of his decision, and any action taken.
+Every SmartMatch decision Otto makes, whether or not he reconciles the transaction, appears on the client's [reconciliation report](/bank-rec/portal/reconciliation-report/). Its card shows the possible match Otto was presented with, his decision and any action taken.
 
 <ZoomableImage
   src={smartMatchDetailsImage}
-  alt="An example of a SmartMatch decision"
+  alt="A SmartMatch card: the Reconciled status, the bank statement transaction beside the possible match from Xero, Otto's score of 100% against the 90% needed, and the feedback buttons"
+  label="SmartMatch card"
 />
 
-- The top part of the card shows a summary of the information you see in Xero when reviewing potential matches
-- The bottom part is where you can see information from Otto and provide feedback
-- The bold text ("Reconciled" in this case) is the action Otto took
-- Underneath that is Otto's score for it being the match. The figure after "needs" is the score he must reach to reconcile it
+- The status at the top ("Reconciled" in this case) is the action Otto took. Where there's a reason, it follows the status
+- The table compares the bank statement transaction with the possible match you see in Xero
+- Beside it is Otto's score for it being the match. The figure after "needs" is the score he must reach to reconcile it
 - The buttons allow you to provide feedback. Read more about [feedback](/bank-rec/guides/feedback/) in our separate guide
+- From December 2026, where Xero offered more than one possible match, the [list under the card](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) shows each one, with Otto's score and its own feedback buttons
 
 ## FAQs
 
