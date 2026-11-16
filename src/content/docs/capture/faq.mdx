@@ -9,7 +9,7 @@ import { Aside } from "@astrojs/starlight/components";
 
 ### How do I disconnect a client?
 
-Go to the client settings and click **Disconnect**. The button includes the platform's name, for example **Disconnect from Xero** or **Disconnect from QuickBooks**. Capture shows what will be deleted and what stays, and asks you to confirm. Disconnecting stops all syncing and prevents new documents from being published. Documents already in Capture are kept, and anything already published to your accounting platform remains unchanged.
+In the client settings, click **Disconnect**. Capture shows what will be deleted and what stays before you confirm.
 
 ### What happens to my data if I disconnect?
 
@@ -25,15 +25,11 @@ See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounti
 
 ### Can I reconnect after disconnecting?
 
-Yes. Open the client settings and click **Reconnect**. Reconnecting syncs the platform's data again, and you can resume processing and publishing documents. Otto builds up his supplier matches for the client again as you publish, and draws on the client's coding history only from the bills you publish after reconnecting.
+Yes. Open the client settings and click **Reconnect**. Capture syncs the platform's data again and Otto resumes publishing.
 
 ### A client shows "Disconnected" or "Connection failed". What happened?
 
-Capture can no longer use the connection to the client's organisation. You'll see **Disconnected** when the connection was removed cleanly, or **Connection failed** when a sync or publish hit a connection that no longer works. Either way, organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**, or using the **Reconnect** action in the **Needs setup** list on the **Clients** page.
-
-A Xero client is also disconnected after 97 days with nothing published or refreshed. See [When Capture ends a Xero connection](/capture/platforms/connecting-your-accounting-platform/#when-capture-ends-a-xero-connection).
-
-Otto checks each connection once a day, so access revoked from inside Xero, FreeAgent, or QuickBooks Online is mirrored back into Capture and the client moves to **Disconnected**. What disconnecting in Capture does on the platform's side differs: see [Xero](/capture/platforms/xero/#disconnecting-and-reconnecting), [FreeAgent](/capture/platforms/freeagent/#disconnecting-and-reconnecting), and [QuickBooks Online](/capture/platforms/quickbooks/#disconnecting-and-reconnecting).
+Capture can no longer use the connection to the client's organisation. Usually someone revoked access inside the platform, or, for a Xero client, nothing was published or refreshed for 97 days (see [When Capture ends a Xero connection](/capture/platforms/connecting-your-accounting-platform/#when-capture-ends-a-xero-connection)). Organisation admins get a notification, and you fix it by opening the client settings and clicking **Reconnect**.
 
 ## Data sync
 
@@ -43,23 +39,21 @@ Contacts, account codes or categories, tax rates, currencies, tracking categorie
 
 ### How often does data sync?
 
-A full sync runs when you first connect a client. After that, you can trigger a manual sync from the client configuration page at any time.
+A full sync runs when you first connect a client. After that, you refresh it yourself whenever something changes in the platform.
 
 ### I added a new account or category, but it's not showing in Capture
 
-Trigger a manual refresh from the client configuration page. The new account will be available once the sync completes.
+Click **Refresh all** on the client's **Accounting platform** tab. The new account is available once the refresh completes.
 
 ### Does Capture modify anything in my accounting platform?
 
-Capture only **creates** new bills, invoices, credit notes, contacts, and attachments. On Xero and QuickBooks Online, it also adds a currency when you choose to add one during review, where the client can use more than one currency. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow/#what-capture-does-not-modify) for details.
+Capture only **creates** new bills, invoices, credit notes, contacts, and attachments, and on Xero and QuickBooks Online adds a currency if you choose to during review. It never modifies or deletes existing data. See [what Capture does not modify](/capture/guides/data-flow/#what-capture-does-not-modify).
 
 ## Submitting documents
 
 ### How can client documents be submitted?
 
-Four ways: you upload files yourself in Capture, clients forward or send email to the client's own address, they send photos and PDFs over [WhatsApp](/capture/getting-started/whatsapp-submission/), or they use their unique [client submission page](/capture/getting-started/client-submission-page/). Everything arrives in the same review queue whichever route it takes.
-
-Xero and FreeAgent clients can also send documents in answer to your questions about their bank payments, on their [client missing receipts page](/capture/missing-receipts/client-page/).
+You upload files yourself, or the client emails them to their own address, sends them over [WhatsApp](/capture/getting-started/whatsapp-submission/), or uses their [client submission page](/capture/getting-started/client-submission-page/). Xero and FreeAgent clients can also send them in answer to your questions on their [client missing receipts page](/capture/missing-receipts/client-page/). Everything arrives in the same review queue.
 
 ### Do the people sending documents need an Otto Capture account?
 
@@ -67,13 +61,10 @@ No. WhatsApp submission, the client submission page, and the client missing rece
 
 ### Can I stop a submission link working?
 
-Yes, and organisation admins can do it at any time, though the two routes work differently.
+Yes. Admins can do it at any time, and documents already submitted aren't affected.
 
-For WhatsApp, you remove a connected sender to stop that person submitting, and you rotate the invite link to stop anyone new joining with it. Removing someone doesn't invalidate the code, so if they still have the current invite they could reconnect. To keep someone out for good, remove them and then rotate the link.
-
-For a client submission page, the link is used on every send rather than only to connect, so rotating it stops it working for everyone holding it. You can also turn the page off, which switches the route off for that client rather than replacing the link.
-
-Documents already submitted aren't affected in any of these cases. See [Client submission page](/capture/getting-started/client-submission-page/) and [WhatsApp submission](/capture/getting-started/whatsapp-submission/).
+- **WhatsApp:** remove the sender, then rotate the invite link, or they can reconnect with the old one. See [Managing who's connected](/capture/getting-started/whatsapp-submission/#managing-whos-connected).
+- **Client submission page:** rotating the link stops it working for everyone holding it. You can also turn the page off. See [Rotating and turning the page off](/capture/getting-started/client-submission-page/#rotating-and-turning-the-page-off).
 
 ### A client says their submission link isn't working
 
@@ -87,7 +78,7 @@ Clients connected to Xero or FreeAgent. For a Xero client, you upload Xero's Unc
 
 ### Does Capture read my client's bank transactions from Xero?
 
-No. You export the Uncoded statement lines report from Xero and upload the file, and that file is the only way transactions reach Capture. Capture checks the bank accounts in it against the client's accounts in Xero, and you confirm the import before anything is stored. See [Importing from Xero](/capture/missing-receipts/xero/).
+No. You export the Uncoded statement lines report from Xero and upload the file, and that file is the only way transactions reach Capture. See [Importing from Xero](/capture/missing-receipts/xero/).
 
 ### Does Capture read my client's bank transactions from FreeAgent?
 
@@ -95,19 +86,17 @@ Yes, when you click **Fetch transactions** on the client's **Missing receipts** 
 
 ### Anyone with a missing receipts link can see the client's transactions. Is that safe?
 
-The link shows the date, amount, description, and bank account of each transaction on the client's current list, to anyone holding it, with no login. That's more than a submission link exposes, so share it with the people who need it, and exclude anything the client doesn't need to be asked about before you create the list. The page shows nothing else about the client's books. Admins can rotate the link or turn the page off at any time. See [What anyone with the link can see](/capture/missing-receipts/client-page/#what-anyone-with-the-link-can-see).
+The link shows the date, amount, description, and bank account of each transaction on the client's current list, to anyone holding it, with no login. Share it only with the people who need it, and exclude anything the client doesn't need to be asked about. Admins can rotate the link or turn the page off at any time. See [What anyone with the link can see](/capture/missing-receipts/client-page/#what-anyone-with-the-link-can-see).
 
 ## Processing and extraction
 
 ### How long does processing take?
 
-Most documents are processed within a few minutes. Processing time depends on document complexity, image quality, and current queue volume.
+Most documents are processed within a few minutes. Long documents, poor images, and busy periods can take longer.
 
 ### What document types can Capture process?
 
-Bills and purchase credit notes (accounts payable), and sales invoices and sales credit notes (accounts receivable). Otto classifies each document automatically during processing.
-
-For QuickBooks Online clients, Capture publishes only bills and supplier credits, not sales invoices or sales credit notes. See [QuickBooks Online](/capture/platforms/quickbooks/#publishing).
+Bills and purchase credit notes, and sales invoices and sales credit notes. Otto works out the type himself. On QuickBooks Online, Capture publishes only bills and supplier credits (see [QuickBooks Online](/capture/platforms/quickbooks/#publishing)).
 
 ### What file formats are supported?
 
@@ -123,29 +112,27 @@ Otto doesn't always get it right, especially with unfamiliar suppliers. Every fi
 
 ### What if Otto can't determine the document type?
 
-The document is marked as **Needs classification**. You can set the type (bill, purchase credit note, sales invoice, or sales credit note) manually, and Otto continues processing from there. For a QuickBooks Online client, you choose between bill and supplier credit, since those are the only types Capture publishes there.
+The document is marked **Needs classification**. Set the type on the review screen, and Otto carries on from there.
 
 ### What if there are multiple receipts in one image?
 
-Capture detects when a file looks like it holds more than one document and marks it as **Needs manual split**. If they really are separate documents, split the file and submit each one separately.
-
-Sometimes the pages all belong to one bill, such as an invoice with the supplier's own expenses attached. In that case, click **Process as one document** on the review screen and Otto extracts the whole file as a single document. If Otto couldn't tell what type of document it is, choose the type first. See [How Capture processes documents](/capture/guides/processing/#1-triage).
+Capture marks the file **Needs manual split**. If they're separate documents, split the file and send each one. If the pages all belong to one bill, such as an invoice with the supplier's own expenses attached, click **Process as one document** on the review screen. See [How Capture processes documents](/capture/guides/processing/#1-triage).
 
 ### A document is in a currency my client's platform doesn't support
 
-You can restate the amounts during review. On Xero, you may also be able to add the currency to the organisation instead, depending on whether the organisation's plan includes multi-currency. FreeAgent's supported list is fixed, so converting is the only route there. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion) and [Xero currencies](/capture/platforms/xero/#currencies).
+Convert the amounts during review. On Xero and QuickBooks Online, you may be able to add the currency to the organisation instead. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion).
 
 ### Why can't I add a currency to a Xero client?
 
-Multi-currency is not part of every Xero plan, and Otto only offers to add a currency where the organisation is permitted to use more than one. Where it isn't, Xero keeps everything in the base currency and the amounts need converting before the document can be published. See [Xero currencies](/capture/platforms/xero/#currencies).
+Multi-currency isn't part of every Xero plan, and Otto only offers to add a currency where the organisation can use more than one. Otherwise, convert the amounts before publishing. See [Xero currencies](/capture/platforms/xero/#currencies).
 
 ### Can I record a foreign currency document in my client's base currency?
 
-Yes. Open the converter on the review screen and enter the total your client was actually charged in the base currency. Otto derives the rate from that figure, restates every line, and reconciles the rounding so the lines still add up to the total. You might want to do this even where the client could publish in the document currency, since recording at the rate actually charged means the document agrees with the bank line. The original amounts are kept and can be restored at any point before publishing.
+Yes. Open the converter on the review screen and enter the total your client was actually charged in the base currency, and Otto works out the rate from it. Recording at the rate actually charged means the document agrees with the bank line. You can restore the original amounts at any point before publishing.
 
 ### The converter says my total is above (or below) the market rate. What does that mean?
 
-Otto compares the total you entered against the market rate for the document's issue date, as a check on the figure rather than a judgement on it. A total can sit outside the usual range in either direction for ordinary reasons: card markup and fixed non-sterling fees push the effective rate above the market one, and the rate can move either way between the date a document was issued and the date it was paid. Check the figure against the statement, and if it is right, press the button again to apply it. The conversion is never blocked, and the timeline records that the rate was confirmed. See [Checking the total against the market rate](/capture/guides/reviewing/#checking-the-total-against-the-market-rate).
+It's a check for a mistyped total, not a judgement on it. Card fees and a gap between the issue and payment dates can both move the rate. If the total matches the statement, click **Apply anyway**. See [Checking the total against the market rate](/capture/guides/reviewing/#checking-the-total-against-the-market-rate).
 
 ## Multi-organisation
 
@@ -155,7 +142,7 @@ Yes. Each accounting platform organisation is represented as a separate client i
 
 ### Do clients share any data?
 
-No. Each client's data (documents, contacts, accounting configuration) is completely separate. Changes to one client don't affect any others.
+No. Each client's documents, contacts, and accounting data are kept separate.
 
 ## Security
 
@@ -179,7 +166,7 @@ Access tokens are encrypted at rest using symmetric encryption with support for 
 
 ### Anyone with a submission link can send documents. Is that safe?
 
-The link is the credential, so treat it like a key and share it with the people who need it rather than posting it somewhere open. Sending a document is all it allows: there's no way to see anything already in Capture, no way to reach any other client, and nothing reaches your accounting platform until someone in your organisation has reviewed it. Every file is scanned for malware like any other submission, and measures are in place to stop a link being used to flood your queue. Admins can rotate the link at any time, which replaces it for everyone using it.
+Sending a document is all it allows: there's no way to see anything already in Capture or reach any other client, and nothing reaches your accounting platform until someone in your organisation has reviewed it. Every file is scanned for malware, and there's a limit to stop a link flooding your queue. Treat the link like a key, and rotate it if it leaks.
 
 ### Who can access my data?
 
@@ -189,13 +176,7 @@ In Capture, only users in your organisation can access your documents and client
 
 ### A document failed to publish. What should I do?
 
-Check the error message on the document. Common causes include:
-
-- **Invalid account code:** The account may have been deactivated in your accounting platform. Refresh your synced data and update the line item.
-- **Invalid tax rate:** The tax rate may no longer be valid. Refresh your synced data and select a different rate.
-- **Authentication error:** The connection has been lost, usually because access was revoked. Reconnect your accounting platform and retry.
-
-After fixing the issue, click **Publish** again to retry.
+Check the error message on the document. Most often, an account code or tax rate has changed in the accounting platform since Capture last synced it: refresh the client's synced data, update the line, then publish again. If the client shows **Connection failed**, reconnect it first.
 
 ### A document is stuck in "Processing"
 
@@ -203,7 +184,7 @@ Documents occasionally take longer to process if the queue is busy. If a documen
 
 ### Why was my document quarantined?
 
-The malware scan detected a potential threat in the file. Quarantined files cannot be processed. We recommend notifying the sender so they can perform a full security scan of their device. They should then re-send the document once confirmed that any viruses or malware are removed. Please contact support if you believe the scanner has incorrectly marked the document as having a virus, and we will investigate.
+The malware scan found a potential threat, so the file won't be processed. Let the sender know so they can scan their device, then send the document again. If you think the scan got it wrong, please contact support.
 
 ## Billing
 
