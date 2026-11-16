@@ -66,15 +66,19 @@ Defined in `tsconfig.json`, used throughout MDX:
 
 ## Development Commands
 
-| Task             | Command             | Notes                                       |
-| ---------------- | ------------------- | ------------------------------------------- |
-| Install          | `pnpm install`      | Never use `npm install`                     |
-| Dev server       | `pnpm dev`          | Starts at `http://localhost:4321`           |
-| Build            | `pnpm build`        | Runs `astro check && astro build` → `dist/` |
-| Preview build    | `pnpm preview`      |                                             |
-| Format all       | `pnpm format`       | Writes via Prettier                         |
-| Check formatting | `pnpm format:check` |                                             |
-| Astro CLI        | `pnpm astro <cmd>`  | e.g. `pnpm astro check`                     |
+| Task             | Command             | Notes                                                          |
+| ---------------- | ------------------- | -------------------------------------------------------------- |
+| Install          | `pnpm install`      | Never use `npm install`                                        |
+| Dev server       | `pnpm dev`          | Starts at `http://localhost:4321`                              |
+| Build            | `pnpm build`        | Runs `check:copy`, then `astro check && astro build` → `dist/` |
+| Check copy       | `pnpm check:copy`   | The writing rules a script can check (see below)               |
+| Test scripts     | `pnpm test:scripts` | Unit tests for `scripts/`                                      |
+| Preview build    | `pnpm preview`      |                                                                |
+| Format all       | `pnpm format`       | Writes via Prettier                                            |
+| Check formatting | `pnpm format:check` |                                                                |
+| Astro CLI        | `pnpm astro <cmd>`  | e.g. `pnpm astro check`                                        |
+
+**Copy check.** `scripts/check-copy.mjs` fails the build on "names" used as a verb for shows or says, phrases from the shared voice rules' list to avoid, em dashes and spaced hyphens in sentences, and internal links without a trailing `/`. It warns on digits zero to nine before a word, which a person has to judge against the numbers rule. The voice rules stay the authority: when the list to avoid changes, update `TELLS` in the script to match.
 
 **Note:** `README.md` still shows `npm run ...` commands from the Starlight starter template. Prefer `pnpm` per the `engines` field.
 

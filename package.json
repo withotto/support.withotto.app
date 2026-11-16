@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "node scripts/check-copy.mjs && astro check && astro build",
+    "check:copy": "node scripts/check-copy.mjs",
+    "test:scripts": "node --test \"scripts/**/*.test.mjs\"",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
