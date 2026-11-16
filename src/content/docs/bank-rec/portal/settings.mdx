@@ -50,7 +50,7 @@ This is the score Otto must reach before he will reconcile a match. Practice-wid
   alt="The reconciliation settings for a client"
 />
 
-These settings are very similar to the practice-wide settings. By default, clients will inherit the same settings that you apply practice-wide. For any clients that should have different settings, simply make the necessary changes. You can see what setting has been specified practice-wide.
+By default, clients follow the practice-wide settings. Change any setting here for a client that should work differently.
 
 #### Minimum SmartMatch confidence
 
@@ -71,12 +71,7 @@ Bank account filtering gives you per-account control over what Otto does. For ea
 - Enable or disable bank rule reconciliations
 - Enable or disable SmartMatch reconciliations
 
-Each dropdown has these options:
-
-- **Same as client** follows whatever you've set for the client, which is shown in brackets. If you change the client or practice setting later, accounts set to Same as client will follow the change automatically.
-- **Enabled** turns reconciliation on for this account, regardless of the setting above.
-- **Monitor** (SmartMatch only) records Otto's SmartMatch decisions for this account without reconciling them, regardless of the setting above.
-- **Disabled** turns reconciliation off for this account, regardless of the setting above.
+An account set to **Same as client** follows the client's setting, including any later change to it. **Enabled**, **Monitor** (SmartMatch only), and **Disabled** apply to that account whatever the client's setting.
 
 <Aside type="caution">
     Otto only finds out which bank accounts are present when he logs in each day. Any new accounts will be reconciled by
@@ -102,13 +97,9 @@ Otto needs to make sure he's working when you expect him to, and your staff need
 
 ### Time
 
-This is the hour of the day that Otto will perform reconciliations for you. Otto can start any time within the period and should finish before the end. We have monitoring in place to alert us if anything stops him from meeting this commitment so we can put fixes in place.
+This is the hour of the day that Otto will perform reconciliations for you. He can start any time within the hour and should finish before the end of it.
 
-You can also see when Otto is next due to reconcile.
-
-Otto keeps a watchful eye on your reconciliation schedule. If you change your preferred reconciliation time, he'll check each hour to make sure no reconciliations have been missed.
-
-Let's say at 09:45 you change your daily reconciliation time from late evening (22:00–23:00) to early morning (06:00–07:00). When Otto does his hourly check at 10:00, he'll notice this gap and promptly catch up on any missed reconciliations. This ensures your books stay up to date, even when schedules change.
+If you move the time so that today's run would be missed, Otto notices within the hour and catches up, so no day is skipped.
 
 <Aside type="caution" title="Please note">
   Otto will reconcile a maximum of once per day
