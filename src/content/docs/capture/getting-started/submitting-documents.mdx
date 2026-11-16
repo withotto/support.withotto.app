@@ -9,9 +9,11 @@ import processingTab from "@assets/capture/getting-started/submitting-documents/
 
 There are four ways to submit documents to Capture: uploading through the web interface, forwarding them by email, sending them over WhatsApp, or using a client submission page. Documents also arrive when a Xero or FreeAgent client answers your questions about their bank payments on their client missing receipts page.
 
+Whichever route a document takes, Otto usually has it ready in the client's review queue within a few minutes.
+
 ## Upload via the web
 
-From your client's document inbox, you can upload files by dragging and dropping them onto the page, or by clicking the upload button and selecting files.
+From your client's document inbox, drag files onto the page, or click the upload button and choose them.
 
 <ZoomableImage
   src={processingTab}
@@ -19,24 +21,9 @@ From your client's document inbox, you can upload files by dragging and dropping
   label="Document list"
 />
 
-After uploading:
-
-1. The file is scanned for malware
-2. Once the scan passes, the document enters the processing queue
-3. Otto processes the document (typically within a few minutes)
-4. The document appears in your review queue
-
 ## Email submission
 
-Each client has a unique email address (set up in [client configuration](/capture/getting-started/configuring-clients/)). Forward receipts and invoices to this address, and Capture will automatically extract and process the attachments.
-
-How email submission works:
-
-- Capture processes all supported file attachments from the email
-- For emails without attachments, Capture will use the email contents
-- Otto reads the email body to understand special cases, such as where the client has provided details of what the purchase was for
-- Duplicate emails are automatically detected and skipped
-- Each attachment becomes a separate document in Capture
+Forward receipts and invoices to the client's email address (set up in [client configuration](/capture/getting-started/configuring-clients/)). Each attachment becomes a separate document, and an email with no attachments is read as a document itself. Otto also reads the email body, so a note about what a purchase was for helps him code it. The same email sent twice is only processed once.
 
 <Aside type="tip">
   Email submission is particularly useful when your clients can forward receipts
@@ -46,35 +33,19 @@ How email submission works:
 
 ## WhatsApp submission
 
-Clients can also send receipts and invoices over WhatsApp, with no app to download and nothing to sign in to. This is set up per client, and the people who send documents connect by tapping an invite link you share with them. See [WhatsApp submission](/capture/getting-started/whatsapp-submission/) for how to share the invite and manage who's connected.
+The people who hold a client's receipts can send them over WhatsApp, with no app to download and nothing to sign in to. They connect by tapping an invite link you share. See [WhatsApp submission](/capture/getting-started/whatsapp-submission/).
 
 ## Client submission page
 
-Each client has its own submission page: a web address you share with whoever sends their receipts and invoices. They open it, take a photo or choose files they already have, and the documents arrive in that client's review queue, with nothing to download and no account to create. See [Client submission page](/capture/getting-started/client-submission-page/) for how to share the link and how to rotate or switch it off.
+Each client has its own submission page: a link you share with whoever sends their receipts and invoices, who can then take a photo or choose files to send. See [Client submission page](/capture/getting-started/client-submission-page/).
 
 ## Client missing receipts page
 
-For Xero and FreeAgent clients, you can import the bank transactions the accounting platform hasn't reconciled yet and ask the client about the ones you have no paperwork for. The client answers each payment on their own page, and a receipt or invoice they send arrives in the review queue like any other document, with their note attached. See [Missing receipts](/capture/missing-receipts/).
-
-## What happens after submission
-
-Every document goes through the same processing pipeline:
-
-1. **Malware scan:** Checked for security threats. Infected files are quarantined and won't be processed
-2. **Triage:** Otto classifies the document type (bill, purchase credit note, sales invoice, or sales credit note) and verifies it's a genuine financial document. Documents that can't be classified need manual classification
-3. **Extraction:** Otto extracts structured data: supplier name, invoice number, dates, amounts, line items, tax, and currency
-4. **Validation:** Line item amounts are checked against totals for arithmetic consistency. Mismatches are flagged for review but don't prevent processing
-5. **Contact matching:** The extracted supplier or customer name is matched against your existing contacts (exact match first, then fuzzy matching)
-6. **Ready for review:** The document appears in your review queue with its extracted data
-
-<Aside>
-  If Otto detects multiple documents in a single image (for example, two
-  receipts photographed together), the document is marked **Needs manual
-  split**. Submit the documents separately, or, if the pages all belong to one
-  bill, click **Process as one document** on the review screen.
-</Aside>
+For Xero and FreeAgent clients, you can ask about the bank payments you have no paperwork for. The client answers each one on their own page, and a receipt they send arrives in the review queue with their note attached. See [Missing receipts](/capture/missing-receipts/).
 
 ## Document statuses
+
+Every document is scanned for malware, then Otto works out what kind of document it is, extracts its data, and matches its contact. [How Capture processes documents](/capture/guides/processing/) covers each stage.
 
 | Status                   | Meaning                                                                                                                    |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
@@ -87,7 +58,7 @@ Every document goes through the same processing pipeline:
 | **Extraction failed**    | Otto couldn't extract data from the document                                                                               |
 | **Needs review**         | Extraction complete, ready for you to check                                                                                |
 | **Needs classification** | Otto couldn't determine the document type                                                                                  |
-| **Needs manual split**   | Multiple documents detected in one image                                                                                   |
+| **Needs manual split**   | Several documents in one image. Send them separately, or click **Process as one document** if they belong together         |
 | **Reviewed**             | You've reviewed and confirmed the data                                                                                     |
 | **Publishing**           | Being sent to your accounting platform                                                                                     |
 | **Published**            | Successfully published to your accounting platform                                                                         |

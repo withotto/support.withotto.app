@@ -5,46 +5,28 @@ description: What Otto Capture does, who it's for, and how to get up and running
 
 import { Steps, Aside } from "@astrojs/starlight/components";
 
-Otto Capture uses AI to extract structured data from receipts, bills, and invoices. Once extracted, you review the data and publish it to your accounting platform.
+Otto reads your clients' receipts, bills, and invoices and extracts their data. You review what he found and publish it to the client's accounting platform.
 
 ## Creating your account
 
 You can sign up for Otto Capture directly. If you use Xero, you can also install Capture from the Xero App Store, which signs you in with your Xero login and prefills what it can (see [Xero](/capture/platforms/xero/)). During sign-up you name your organisation and choose the email address your clients will use to send in documents.
 
+When you sign in, Otto shows you what to do next: a short setup checklist at first, then the clients with documents waiting on you.
+
 ## Setup steps
 
 <Steps>
-    1. **Connect your accounting platform:** Authorise Capture to access your client's accounting data, on Xero, FreeAgent, or QuickBooks Online. This syncs contacts, account codes or categories, tax rates, and currencies.
+    1. **Connect your accounting platform:** Authorise Capture to access your client's Xero, FreeAgent, or QuickBooks Online data. See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/).
 
-    2. **Configure your client:** Set an email prefix for email submissions, choose default publish states if your platform supports them, and review the synced accounting data.
+    2. **Configure your client:** Set an email prefix for email submissions and, on Xero, a default publish state. See [Configuring clients](/capture/getting-started/configuring-clients/).
 
-    3. **Submit documents:** Upload files through the web interface, forward emails to your client's unique email address, or share a WhatsApp invite or client submission page link with the people who hold the receipts.
+    3. **Submit documents:** Upload files, forward emails, or share a WhatsApp invite or submission page link with the people who hold the receipts. See [Submitting documents](/capture/getting-started/submitting-documents/).
 
-    4. **Review and publish:** Check the extracted data, make corrections if needed, and publish to your accounting platform.
+    4. **Review and publish:** Check what Otto extracted, correct anything he got wrong, and publish. See [Reviewing and publishing](/capture/guides/reviewing/).
 
 </Steps>
 
-## Your dashboard
-
-When you sign in, Otto shows you what to do next. A new organisation sees a short setup checklist:
-
-- **Add a client:** connect a client's accounting platform so Otto can publish to it.
-- **Invite a teammate:** give a colleague access to review and publish documents.
-- **Set up a custom email domain:** let clients submit to an address on your own domain instead of `ottocapture.email`.
-
-Once you've added a client and documents start arriving, the dashboard switches to a **Needs attention** list showing the clients with documents waiting on you. When nothing is outstanding, Otto lets you know you're all caught up.
-
-## Submission methods
-
-- **Web upload:** Drag and drop files or use the file picker in the Capture interface
-- **Email:** Forward receipts and invoices to your client's dedicated email address
-- **WhatsApp:** Share a client's invite link so their people can send receipts and invoices over WhatsApp. See [WhatsApp submission](/capture/getting-started/whatsapp-submission/)
-- **Client submission page:** Share a client's link so their people can submit documents to a client-specific web page, with no account to create. See [Client submission page](/capture/getting-started/client-submission-page/)
-- **Client missing receipts page:** For Xero and FreeAgent clients, ask about the bank payments you have no paperwork for, and the client sends the receipts in answer. See [Missing receipts](/capture/missing-receipts/)
-
 ## Supported file types
-
-Capture accepts the following file formats:
 
 | Category         | Formats                                           |
 | ---------------- | ------------------------------------------------- |
@@ -53,23 +35,16 @@ Capture accepts the following file formats:
 | Office documents | DOC, DOCX, XLS, XLSX, ODT, ODS                    |
 | Web pages        | HTML                                              |
 
-Each file you upload in Capture, or a client sends by WhatsApp or through their submission or missing receipts page, can be up to 25 MB.
-
-Otto reads documents of up to 50 pages, so split anything longer into smaller files.
+Each file you upload, or a client sends by WhatsApp or through one of their pages, can be up to 25 MB. Otto reads documents of up to 50 pages, so split anything longer into smaller files.
 
 <Aside type="tip">
   For best results, submit clear, high-resolution images or native PDFs rather
   than scanned documents.
 </Aside>
 
-## What happens after submission
-
-See [Submitting documents](/capture/getting-started/submitting-documents/) for full details on the processing pipeline and document statuses. In summary, every document goes through a malware scan, AI classification and extraction, validation, and contact matching before appearing in your [review queue](/capture/guides/reviewing/).
-
 ## Next steps
 
 - [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/): Set up your integration, with platform-specific steps for [Xero](/capture/platforms/xero/), [FreeAgent](/capture/platforms/freeagent/), and [QuickBooks Online](/capture/platforms/quickbooks/)
 - [Configuring clients](/capture/getting-started/configuring-clients/): Customise how each client works
 - [Submitting documents](/capture/getting-started/submitting-documents/): Start sending documents to Capture
-- [Client submission page](/capture/getting-started/client-submission-page/): Give each client their own page for sending documents in
 - [Missing receipts](/capture/missing-receipts/): Ask a Xero or FreeAgent client about the bank payments you have no paperwork for
