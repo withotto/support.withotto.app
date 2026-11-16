@@ -5,29 +5,16 @@ description: Managing your organisation's name, team, and email configuration
 
 import { Aside } from "@astrojs/starlight/components";
 
-Organisation settings control how your Capture organisation appears, who has access, and how email is configured. Access these from **Settings** in the navigation.
+Organisation settings control how your Capture organisation appears, who has access, and how email is configured. Open them from **Settings** in the navigation.
 
-## General
+## Organisation prefix
 
-### Organisation name
-
-Your organisation name is displayed throughout the Capture interface.
-
-### Organisation prefix
-
-The organisation prefix is used in your default email addresses:
+The organisation prefix is part of every client's default email address and [client submission page](/capture/getting-started/client-submission-page/) address:
 
 ```
 {prefix}@{organisation-prefix}.ottocapture.email
-```
-
-It's also the first part of the web address of every [client submission page](/capture/getting-started/client-submission-page/):
-
-```
 {organisation-prefix}.capture.withotto.app/{prefix}/{code}
 ```
-
-Changing the organisation prefix updates all default email addresses and all client submission page addresses.
 
 <Aside type="caution">
   If you change your organisation prefix, the previous email addresses and
@@ -38,35 +25,21 @@ Changing the organisation prefix updates all default email addresses and all cli
 
 ## Team
 
-You can invite team members to your organisation and manage their access from **Settings → Team**.
-
-### Roles
+Invite team members from **Settings → Team** by entering their email address. An invitation expires if it isn't accepted.
 
 | Role       | Description                                                                               |
 | ---------- | ----------------------------------------------------------------------------------------- |
 | **Admin**  | Full access to all settings, clients, and team management                                 |
 | **Member** | Can review and publish documents, but cannot manage organisation settings or team members |
 
-### Inviting team members
-
-Invite new team members by entering their email address from the **Settings → Team** page. Invitations expire if not accepted.
-
-### Turning a team member's access off and on
-
-Admins can turn a team member's access off at any time from the **Settings → Team** page. Click **Turn off access** on their row, then **Confirm?**. It takes effect straight away: they can no longer open anything in your organisation, and see an **Access turned off** page if they try.
-
-The person stays on the team list with a **No access** label rather than being deleted, so you keep a record of who has had access. To restore it, click **Turn on access** on their row. Turning off someone's access here doesn't affect any other organisations they belong to.
+An admin can turn a team member's access off on the same page. It takes effect straight away, and the person stays on the list marked **No access**, so you keep a record of who has had access. Turn it back on from their row at any time. It doesn't affect any other organisations they belong to.
 
 ## Billing
 
-Admins can see the organisation's billing from **Settings → Billing**. The page shows the state of your subscription, how many documents each client has published in the current period and which tier that puts it on, and a **Billing history** list of past periods. Click a period to see its breakdown by client, or download that period's invoice.
-
-Click **Manage billing** to open the Stripe billing portal, where you update your payment method and billing address and view your invoices.
+Admins can see the organisation's billing from **Settings → Billing**, including each client's tier for the current period and past invoices. Click **Manage billing** to update your payment method and billing address in Stripe.
 
 Capture sets the VAT on each invoice from the billing address recorded in Stripe. Organisations in the UK and the Isle of Man are charged VAT at 20%. Organisations elsewhere aren't charged VAT, and the reverse charge applies. See [Billing](/capture/faq/#billing) in the FAQ for how pricing works.
 
 ## Email
 
-You can configure a custom email domain for your organisation. This lets clients receive documents at addresses on your own domain instead of the default `ottocapture.email` addresses.
-
-See [Custom email domain](/capture/guides/custom-email-domain/) for setup instructions.
+To have clients send documents to addresses on your own domain, see [Custom email domain](/capture/guides/custom-email-domain/).

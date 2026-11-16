@@ -3,94 +3,35 @@ title: How Capture processes documents
 description: The stages a document passes through before it reaches your review queue, and what Otto extracts
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-When you submit a document to Capture, it passes through a multi-stage pipeline before landing in your review queue. This guide explains each stage and what Otto extracts.
+When you submit a document to Capture, it passes through a few stages before landing in your review queue. Most documents are ready within a few minutes. Long documents, poor images, and busy periods can take longer.
 
 ## Pipeline stages
 
 ### 1. Triage
 
-The first stage classifies the document and checks it's suitable for processing.
+Otto checks the document is a genuine financial document and works out which type it is: a bill or receipt, purchase credit note, sales invoice, or sales credit note.
 
-Otto determines:
-
-- **Document type:** which of the four document types this is:
-  - Bill or receipt
-  - Purchase credit note
-  - Sales invoice
-  - Sales credit note
-- **Document validity:** Is this a genuine financial document?
-- **Rotation:** Is the document upside down or rotated?
-- **Multiple documents:** Does the image contain more than one document?
-
-For a QuickBooks Online client, Otto publishes bills and purchase credit notes only, so a document read as a sales invoice or sales credit note is marked **Triage failed** with a message saying why. If the type is wrong, change it on the review screen (see [QuickBooks Online](/capture/platforms/quickbooks/#publishing)).
-
-If the document can't be classified, it's marked as **Needs classification** for you to set the type manually. If multiple documents are detected, it's marked as **Needs manual split**. Where they really are separate documents, split the file and submit each one. Where the pages all belong to one bill, such as an invoice with the supplier's own expenses attached, click **Process as one document** on the review screen and Otto carries on with the whole file as a single document.
+- If he can't tell the type, the document is marked **Needs classification** for you to set it.
+- If the file holds more than one document, it's marked **Needs manual split**. Split the file and send each one, or, if the pages all belong to one bill (such as an invoice with the supplier's own expenses attached), click **Process as one document** on the review screen.
+- On QuickBooks Online, Otto publishes bills and purchase credit notes only, so a sales invoice or sales credit note is marked **Triage failed**. If he got the type wrong, change it on the review screen (see [QuickBooks Online](/capture/platforms/quickbooks/#publishing)).
 
 ### 2. Extraction
 
-Otto reads the document and extracts structured data. This is where he does most of his thinking.
+Otto reads the document and extracts the fields listed [below](#what-otto-extracts). This is where he does most of his thinking. He suggests an account code and tax rate for each line from the client's synced data, and on a bill from a supplier whose bills you've published for this client before, he draws on how you coded them, so his suggestions get sharper over time.
 
-**Header fields:**
-
-- Supplier or customer name
-- Invoice number
-- Reference, where the document has a second identifier for the transaction alongside the invoice number, such as a purchase order or job number
-- Issue date and due date
-- Currency
-
-**Financial data:**
-
-- Net amount, tax amount, and total amount
-- Line items with description, quantity, unit amount, and line amount
-- Tax rate and account code for each line item
-
-Otto provides reasoning for each extracted field, explaining where he found the data on the document and why he chose specific values. This reasoning is preserved and available during review.
-
-On a bill from a supplier whose bills you've published for this client before, he also draws on how you coded them, so his account-code suggestions get sharper over time.
-
-<Aside>
-  Account codes and tax rates are suggested based on your client's accounts (the
-  chart of accounts on Xero and QuickBooks Online, or categories on FreeAgent)
-  and tax rates synced from their accounting platform. Otto filters these based
-  on the document type: expense, asset, liability, and equity accounts for bills
-  (admin expenses and cost of sales categories on FreeAgent), revenue accounts
-  for sales invoices.
-</Aside>
+The review screen shows Otto's reasoning for each field, so you can see where he found a value and why he chose it.
 
 ### 3. Validation
 
-Extracted amounts are checked for arithmetic consistency:
-
-- Do line item amounts add up correctly?
-- Does the sum of line items match the header totals (net, tax, total)?
-
-Validation uses a small tolerance to account for rounding differences. Mismatches are flagged for your attention during review but don't prevent the document from being processed.
+Capture checks that the line items add up to the document's totals. A mismatch is flagged for you to check during review, but doesn't stop the document reaching your queue.
 
 ### 4. Contact matching
 
-The extracted supplier or customer name is matched against your existing contacts:
+Otto matches the supplier or customer against the client's contacts, allowing for variations such as Amazon, Amazon.co.uk, and Amazon.com. Where you've published documents for this client under the same name before, he picks the contact you chose then, and the review screen shows **Auto-matched from your previous picks**.
 
-1. **Exact match:** A case-insensitive comparison against existing contact names
-2. **Your previous picks:** If you've published documents for this client with the same supplier or customer name, Otto picks the contact you chose for them. The review screen shows **Auto-matched from your previous picks**, and lists any other contacts you've chosen for that name
-3. **Fuzzy match:** Otto will try to find a similar match to account for different formats, such as Amazon, Amazon.co.uk, Amazon.com
-
-### 5. Finalise
-
-The final stage sets the document's review status based on the processing outcome:
-
-- **Needs review:** Everything processed successfully, ready for you to check
-- **Needs classification:** Document type couldn't be determined
-- **Needs manual split:** Multiple documents detected in one image
-- **Triage failed:** Document was rejected during triage (not a financial document)
-- **Extraction failed:** Otto couldn't extract data from the document
-
-If any stage encounters a temporary error (such as a service being briefly unavailable), the error is translated into a clear message explaining what happened.
+Once these stages are done, the document is ready for you to [review](/capture/guides/reviewing/). For what each status means, see [document statuses](/capture/getting-started/submitting-documents/#document-statuses).
 
 ## What Otto extracts
-
-Here's a complete list of the data Otto extracts from each document:
 
 | Field                      | Description                                                                                                                                              |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -104,11 +45,3 @@ Here's a complete list of the data Otto extracts from each document:
 | **Tax amount**             | Total tax                                                                                                                                                |
 | **Total amount**           | Grand total including tax                                                                                                                                |
 | **Line items**             | Individual items with description, quantity, unit amount, line amount, tax rate, and account code (or nominal code, depending on your platform)          |
-
-## Processing time
-
-Most documents are processed within a few minutes of submission. Processing time can vary depending on:
-
-- Document complexity (number of line items)
-- Image quality and clarity
-- Current queue volume
