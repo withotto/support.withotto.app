@@ -12,7 +12,7 @@ Otto uses the green matches Xero suggests as a starting point when deciding whet
 
 SmartMatch is our intelligent reconciliation feature. It is powered by machine learning (ML) models that are trained on each of your clients to ensure Otto understands what he should _and_ **should not** reconcile.
 
-Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training, and each fortnight we add to this by incorporating the latest reconciliations as well as feedback that you have provided in the portal. We check after each of Otto's reconciliation runs, and retrain him once 14 days have passed since his last training. He learns from the last 18 months of reconciliations at most, so the oldest examples drop out as new ones come in.
+Otto requires lots of examples of correct and incorrect bill and invoice reconciliations to pick out the patterns that will help him tell if future transactions should be reconciled. We use 12 months of previous reconciliations from your client's Xero account as his baseline training, and retrain him every fortnight with the latest reconciliations and the feedback you've given in the portal. He learns from the last 18 months of reconciliations at most.
 
 ## Confidence
 
@@ -35,7 +35,7 @@ You have complete control of which clients SmartMatch is enabled for and can mak
 
 ## Reviewing Otto's predictions and decisions
 
-Every SmartMatch decision Otto makes, whether or not he reconciles the transaction, appears on the client's [reconciliation report](/bank-rec/portal/reconciliation-report/). Its card shows the possible match Otto was presented with, his decision and any action taken.
+Every SmartMatch decision Otto makes, whether or not he reconciles the transaction, appears as a card on the client's [reconciliation report](/bank-rec/portal/reconciliation-report/). [How does Otto decide what to reconcile?](/bank-rec/guides/how-does-otto-decide-what-to-reconcile/#understanding-ottos-decisions) explains what a card shows.
 
 <ZoomableImage
   src={smartMatchDetailsImage}
@@ -43,9 +43,6 @@ Every SmartMatch decision Otto makes, whether or not he reconciles the transacti
   label="SmartMatch card"
 />
 
-- The status at the top ("Reconciled" in this case) is the action Otto took. Where there's a reason, it follows the status
-- The table compares the bank statement transaction with the possible match you see in Xero
-- Beside it is Otto's score for it being the match. The figure after "needs" is the score he must reach to reconcile it
 - The buttons allow you to provide feedback. Read more about [feedback](/bank-rec/guides/feedback/) in our separate guide
 - From December 2026, where Xero offered more than one possible match, the [list under the card](/bank-rec/guides/feedback/#when-xero-offers-several-possible-matches) shows each one, with Otto's score and its own feedback buttons
 
