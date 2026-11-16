@@ -113,6 +113,8 @@ Leave out:
 
 The test for each sentence: would someone on the happy path be stuck, surprised or wrong without it? A convenience or a safeguard usually needs a sentence or two and a screenshot, not a section.
 
+**FAQ pages take a different test.** A question earns its place if readers ask it or search for it, even when a guide already covers the answer: the question is how they find it. Answer with the short version and link to the guide section that holds the detail, rather than repeating it, so the answer can't drift from the guide when the product changes.
+
 Avoid:
 
 > When a document has a copy, a note at the top of the review screen's right-hand column names it, with a link to the copy, its status and the date it arrived. The note is headed **This may be a copy**, or **This may already be in Xero** when a copy has been published. It updates as you edit, so changing the contact or invoice number shows or clears it.
