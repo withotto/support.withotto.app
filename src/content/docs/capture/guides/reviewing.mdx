@@ -33,7 +33,7 @@ The review screen shows the original document alongside the extracted data. You 
 - The publish state that will be used, where your platform supports one
 - An edit history to show which fields have been changed and by whom
 - An event timeline showing processing history
-- A note naming any [other copies of the document](/capture/guides/reviewing/#other-copies-of-a-document)
+- A note listing any [other copies of the document](/capture/guides/reviewing/#other-copies-of-a-document)
 
 If the sender added a note, such as a WhatsApp caption or a note written on the [client missing receipts page](/capture/missing-receipts/client-page/), it appears under the filename as **Note from sender**. Otto reads a WhatsApp caption when he extracts the document. He reads a note from the client missing receipts page too, if the client wrote it before he read the document. When the note was written or changed after that, the review screen says so, and if it was changed, shows what it said before. Check the coding against the current note.
 
@@ -85,7 +85,7 @@ If the currency isn't one the connected organisation can use, a warning appears 
 
 - **The organisation can use multiple currencies, and the platform allows currencies to be added.** The warning offers to add the currency, or to convert the amounts to the base currency instead. This is the case on Xero where the plan includes multi-currency, and on QuickBooks Online where multi-currency is turned on (see [Xero currencies](/capture/platforms/xero/#currencies) and [QuickBooks Online currencies](/capture/platforms/quickbooks/#currencies))
 - **The platform's supported list is fixed.** FreeAgent supports a set list that can't be extended, so converting is the only route for a currency outside it
-- **The organisation is limited to its base currency.** The warning names the base currency and converting is the only route
+- **The organisation is limited to its base currency.** The warning shows the base currency, and converting is the only route
 
 ### Converting the amounts
 
@@ -197,7 +197,7 @@ On Xero, the bill or invoice is created in the state you selected. FreeAgent and
 
 ### Other copies of a document
 
-The same document sometimes reaches Capture twice, such as an invoice and a receipt for one purchase. Capture treats another document as a copy when it's for the same client, has the same document type, contact and invoice number, and hasn't been discarded. The review screen names any copies in a note.
+The same document sometimes reaches Capture twice, such as an invoice and a receipt for one purchase. Capture treats another document as a copy when it's for the same client, has the same document type, contact and invoice number, and hasn't been discarded. The review screen shows any copies in a note.
 
 <ZoomableImage
   src={copiesNote}
@@ -225,7 +225,7 @@ After fixing the issue, you can retry publishing from the review screen.
 If a document shouldn't be published, you can discard it. Click **Discard** on the review screen; on a document you're still reviewing, it's in the **More actions** menu beside **Publish**. Capture then asks why, and choosing a reason discards the document:
 
 - **Already in Capture:** sent more than once
-- **Already in Xero**, **Already in FreeAgent**, or **Already in QuickBooks**, naming the client's platform: entered there another way
+- **Already in Xero**, **Already in FreeAgent**, or **Already in QuickBooks**, whichever is the client's platform: entered there another way
 - **Not a bill or invoice:** a statement, quote, remittance, or delivery note
 - **Unreadable or incomplete:** blurred, cut off, or missing pages
 - **For a different client**
