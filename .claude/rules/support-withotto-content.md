@@ -97,6 +97,32 @@ Imported from `@astrojs/starlight/components`:
   - Emphasised caveats: `<Aside type="caution" title="Please note">`
   - Explanatory tip: `<Aside type="tip" title="Why use a custom schedule?">` (custom titles ok)
 
+## What earns a place on a page
+
+Every line on a support page earns its place. Lead with the happy path: what the reader does, in order, and what they get. Then add only:
+
+- Edge cases a meaningful share of readers will hit
+- What the reader can't see or might get wrong: the rule behind a result, a consequence that isn't shown before they act, a limit they'd otherwise assume isn't there
+
+Leave out:
+
+- What the screen already says: headings, labels, button sequences, confirmation dialogs, and the options a screenshot shows
+- Errors and states that come with their own message and fix
+- How Otto works internally, unless it changes what the reader should do
+- Cases few readers will meet
+
+The test for each sentence: would someone on the happy path be stuck, surprised or wrong without it? A convenience or a safeguard usually needs a sentence or two and a screenshot, not a section.
+
+Avoid:
+
+> When a document has a copy, a note at the top of the review screen's right-hand column names it, with a link to the copy, its status and the date it arrived. The note is headed **This may be a copy**, or **This may already be in Xero** when a copy has been published. It updates as you edit, so changing the contact or invoice number shows or clears it.
+
+Prefer:
+
+> The review screen shows a note when a document may be a copy of another.
+
+followed by the screenshot. The reader sees the headings, link, status and date for themselves.
+
 ## Voice and spelling
 
 Voice and tone guidance lives in three separate files. Load the ones relevant to the session:

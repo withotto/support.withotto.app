@@ -74,7 +74,7 @@ Proper-noun UI states are capitalised: `Draft`, `Submitted`, `Authorised`, `Need
 1. One sentence prose intro.
 2. Tables for enumerated data (fields, formats, statuses) with concise explanations.
 3. Minimal prose between tables. Keep warmth to a minimum here; readers are scanning for specifics.
-4. Include a "what Capture does NOT do" section where relevant. Honest limits are part of the page, not a disclaimer.
+4. Include a "what Capture does NOT do" section for limits a reader would otherwise assume aren't there. Honest limits are part of the page, not a disclaimer.
 
 ### Conceptual guides (how-it-works pages)
 
