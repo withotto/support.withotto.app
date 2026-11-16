@@ -45,15 +45,15 @@ Capture asks for access to the company's accounting data. It uses that access to
 
 ## Synced data
 
-| Data                  | Purpose                                                                                                                                                                                       |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Suppliers**         | Match the supplier on each document                                                                                                                                                           |
-| **Customers**         | Not used on documents. Synced so Capture knows which names are already taken (see [Contacts](#contacts))                                                                                      |
-| **Chart of accounts** | Fill the **Category** options on each line. Where the company uses account numbers, each option shows the number first. System accounts such as accounts payable and VAT control are left out |
-| **VAT codes**         | Apply the correct VAT treatment to each line                                                                                                                                                  |
-| **Currencies**        | Set the document currency. With multi-currency off, only the home currency is available                                                                                                       |
-| **Classes**           | Assign a class to each line, where the company tracks classes on each line (see [Classes](#classes))                                                                                          |
-| **Company details**   | Home currency, whether the company charges VAT, and its country                                                                                                                               |
+| Data                  | Purpose                                                                                                           |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Suppliers**         | Match the supplier on each document                                                                               |
+| **Customers**         | Not used on documents. Synced so Capture knows which names are already taken (see [Contacts](#contacts))          |
+| **Chart of accounts** | Fill the **Category** options on each line. System accounts such as accounts payable and VAT control are left out |
+| **VAT codes**         | Apply the correct VAT treatment to each line                                                                      |
+| **Currencies**        | Set the document currency. With multi-currency off, only the home currency is available                           |
+| **Classes**           | Assign a class to each line, where the company tracks classes on each line (see [Classes](#classes))              |
+| **Company details**   | Home currency, whether the company charges VAT, and its country                                                   |
 
 ## Publishing
 
@@ -62,40 +62,25 @@ Otto publishes purchases to QuickBooks Online:
 - **Bills:** he creates these as QuickBooks Online bills
 - **Purchase credit notes:** he creates these as supplier credits, which is the name you'll see in the document type picker for these clients
 
-Capture doesn't publish sales invoices or sales credit notes to QuickBooks Online. If Otto reads a document as a sales invoice or credit note, Capture marks it **Triage failed** with a message saying so. If Otto got the type wrong, change it to bill or supplier credit on the review screen and Otto carries on from there.
-
-QuickBooks Online has no publish state to choose, so there's no default to set for these clients.
+Capture doesn't publish sales invoices or sales credit notes to QuickBooks Online, so they're marked **Triage failed**. If Otto got the type wrong, change it on the review screen. QuickBooks Online has no publish state to choose.
 
 ## VAT
 
-Otto sends the VAT figures from the document, so QuickBooks Online records the VAT the supplier actually charged. Where QuickBooks Online would work out the VAT itself and reach a different figure, Otto doesn't publish. The review screen points to the line and says how to fix it. For example:
-
-- A line has no VAT amount. Enter the VAT, or 0 if there is none.
-- The VAT code's rates haven't synced yet. Refresh tax rates, then publish.
-- The VAT code has more than one rate. Remove the VAT amount, choose a different code, or change the VAT to the figure QuickBooks Online will record.
+Otto sends the VAT figures from the document, so QuickBooks Online records the VAT the supplier actually charged. Where QuickBooks Online would work out the VAT itself and reach a different figure, Otto doesn't publish, and the review screen says which line to fix and how.
 
 ## Currencies
 
-What you can do with a foreign currency document depends on whether the company has multi-currency turned on.
+With multi-currency turned on, you can publish in the document's currency, adding it to the company during review if needed. With it off, convert the amounts to the home currency first (see [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion)).
 
-| The company                | What Otto offers on a foreign document                                                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Has multi-currency on**  | Publish in the document currency. If that currency isn't set up in QuickBooks Online yet, you can add it during review, or convert the amounts instead |
-| **Has multi-currency off** | Only the home currency is available, so convert the amounts before publishing                                                                          |
-
-QuickBooks Online uses the exchange rate from the company's own rate table for the document's issue date. A supplier's currency can't be changed once it's set, so add a supplier set up in a different currency again under a different name. See [Currency and conversion](/capture/guides/reviewing/#currency-and-conversion) for how the converter works.
+QuickBooks Online uses the exchange rate from the company's own rate table for the document's issue date. A supplier's currency can't be changed once it's set, so add a supplier set up in a different currency again under a different name.
 
 ## Classes
 
 Capture syncs classes only where the company tracks classes on each line. If it tracks them on the whole transaction instead, no classes sync and the review screen doesn't offer a class selector.
 
-Where classes do sync, the selector on each line is headed **Classes**. If a class has been removed from QuickBooks Online since you chose it, refresh classes and choose another before publishing.
-
 ## Contacts
 
-QuickBooks Online keeps suppliers and customers as separate lists, and Otto publishes to suppliers only. A customer can't be the supplier on a document, and the review screen asks you to choose a supplier instead.
-
-A name can only be used once across suppliers, customers, and employees in QuickBooks Online. If you create a supplier during review whose name is already taken, Capture asks for a different **Name in QuickBooks**. The contact keeps the name on the document in Capture, so Otto still recognises it.
+QuickBooks Online keeps suppliers and customers as separate lists, and Otto publishes to suppliers only. A name can only be used once across suppliers, customers, and employees in QuickBooks Online. If you create a supplier during review whose name is already taken, Capture asks for a different **Name in QuickBooks**. The contact keeps the name on the document in Capture, so Otto still recognises it.
 
 ## Attachments
 
@@ -103,13 +88,7 @@ Otto attaches the original document to both bills and supplier credits, up to 20
 
 ## Disconnecting and reconnecting
 
-See [Connecting your accounting platform](/capture/platforms/connecting-your-accounting-platform/#connection-status) for the four connection statuses. Three things are specific to QuickBooks Online:
-
-- **Disconnecting in Capture revokes Otto's access in QuickBooks Online too.** If that step fails, Capture tells you, and you can remove Otto Capture from inside QuickBooks Online.
-- **Capture mirrors a revocation made in QuickBooks Online.** Capture checks each connection once a day, so if access is removed inside QuickBooks Online the client moves to **Disconnected**.
-- **A lost connection stops publishing.** If a publish reaches a connection that no longer works, the client moves to **Connection failed** and the document asks you to reconnect, then publish again.
-
-Disconnecting deletes the data synced from QuickBooks Online and the supplier matches Otto has learned for the client. See [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting) for what is kept. To reconnect, open the client settings and click **Reconnect to QuickBooks**.
+Disconnecting in Capture revokes Otto's access in QuickBooks Online too. You can also remove Otto Capture from inside QuickBooks Online: Capture checks each connection once a day and moves the client to **Disconnected**. For what disconnecting deletes and how to reconnect, see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting).
 
 <Aside type="tip" title="Related pages">
 

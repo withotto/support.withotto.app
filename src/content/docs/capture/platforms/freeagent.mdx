@@ -40,13 +40,13 @@ If you're a FreeAgent practice, you connect once and then add any of your manage
 
     3. You'll be redirected back to the **Add FreeAgent clients** page, listing your practice's FreeAgent clients with their entity type
 
-    4. Tick the clients you want and click **Add**. The button counts what you've ticked, for example **Add 1 client**. Capture creates a client for each, with its own inbox and setup
+    4. Tick the clients you want and click **Add**. Capture creates a client for each, with its own inbox and setup
 
 </Steps>
 
 Every client you add this way shares the one practice connection, so there's a single sign-in to keep healthy.
 
-Adding more later needs no new authorisation. Once your practice is connected, the FreeAgent option under **Add client** reads **Add a FreeAgent client from your practice** instead, and takes you straight to the **Add FreeAgent clients** page. Clients you've already added show **Connected**, and only the rest can be selected.
+To add more clients later, choose **Add a FreeAgent client from your practice** under **Add client**. No new authorisation is needed.
 
 <ZoomableImage
   src={practicePicker}
@@ -58,7 +58,6 @@ Adding more later needs no new authorisation. Once your practice is connected, t
   src={practiceClients}
   alt="The Add FreeAgent clients page, listing practice clients by entity type with selection checkboxes"
   label="Add FreeAgent clients page"
-  caption="Tick the practice clients to add, then click the Add button. Clients you've already added show a Connected label and can't be selected again."
 />
 
 <Aside type="caution">
@@ -69,7 +68,7 @@ Adding more later needs no new authorisation. Once your practice is connected, t
 
 ## Permissions
 
-The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs, create contacts that are not yet in FreeAgent, and publish bills, invoices, and credit notes. If Capture's access isn't high enough, the client moves to **Connection failed**, and someone with the right permission needs to reconnect it before Capture can sync or Otto can publish.
+The authorising user needs permission to manage Bills in FreeAgent. Capture uses this access only to read the reference data it needs, create contacts that are not yet in FreeAgent, and publish bills, invoices, and credit notes.
 
 The one exception is [Missing receipts](#missing-receipts), which reads a client's bank transactions when you ask it to. For a client connected as a single company, that needs **Banking** access or higher. Without it, the fetch is refused, but the client stays connected and Otto carries on publishing. See [Access FreeAgent needs](/capture/missing-receipts/freeagent/#access-freeagent-needs).
 
@@ -121,9 +120,7 @@ You can import the bank transactions FreeAgent hasn't explained yet and ask the 
 
 ## Disconnecting and reconnecting
 
-Disconnecting a client in Capture stops syncing and publishing on Capture's side, and deletes the data synced from FreeAgent along with the supplier matches Otto has learned for the client (see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting)). FreeAgent gives Capture no way to revoke its own access, so to remove it completely, do that inside FreeAgent's own settings.
-
-Capture checks each FreeAgent connection once a day, so if access is removed inside FreeAgent the client moves to **Disconnected**. Reconnecting from the client settings syncs the data again and resumes publishing.
+Disconnecting a client in Capture stops syncing and publishing on Capture's side (see [Disconnecting and reconnecting](/capture/platforms/connecting-your-accounting-platform/#disconnecting-and-reconnecting)). FreeAgent gives Capture no way to revoke its own access, so to remove it completely, do that in FreeAgent's own settings. Capture checks each connection once a day, so if access is removed inside FreeAgent, the client moves to **Disconnected**.
 
 <Aside type="tip" title="Related pages">
 
