@@ -1,6 +1,6 @@
 # Project: support.withotto.app
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-11-17
 
 ## Overview
 
@@ -13,14 +13,16 @@ Deployed at https://support.withotto.app (Netlify, static output).
 
 ## Technology Stack
 
-- **Framework:** Astro 7 + Starlight 0.41 (docs theme)
-- **Styling:** Tailwind CSS 4 via `@tailwindcss/vite` plugin (configured in `astro.config.mjs` → `vite.plugins`)
+Versions live in `package.json` (dependencies, `engines`, `packageManager`) and `.mise.toml`. Check them there rather than recording them here.
+
+- **Framework:** Astro + Starlight (docs theme)
+- **Styling:** Tailwind CSS via `@tailwindcss/vite` plugin (configured in `astro.config.mjs` → `vite.plugins`)
 - **Content:** MDX files under `src/content/docs/` using Starlight's `docsSchema`
 - **Adapter:** `@astrojs/netlify` (static site, `output: "static"`)
 - **Image zoom:** `starlight-image-zoom` plugin
-- **Package manager:** pnpm 10 (enforced in `package.json` `engines`). **Never run `npm install`**.
-- **Runtime:** Node 24 (enforced in `package.json` `engines`), managed via `mise` (see `.mise.toml`)
-- **Formatter:** Prettier 3 with `prettier-plugin-astro` + `prettier-plugin-tailwindcss`
+- **Package manager:** pnpm (enforced in `package.json` `engines`). **Never run `npm install`**.
+- **Runtime:** Node (enforced in `package.json` `engines`), managed via `mise` (see `.mise.toml`)
+- **Formatter:** Prettier with `prettier-plugin-astro` + `prettier-plugin-tailwindcss`
 - **Pre-commit:** Husky + lint-staged, auto-formats staged files
 
 ## Directory Structure

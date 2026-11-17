@@ -144,7 +144,7 @@ Product-specific files cover Otto's role, terminology, page patterns, and before
 ## Styling
 
 - Custom CSS is loaded via Starlight's `customCss: ["./src/styles/global.css", "./src/styles/brand.css"]` in `astro.config.mjs`. Add new global styles to one of those two files.
-- Tailwind 4 is available inside `.astro` components via the `@tailwindcss/vite` plugin. Use utility classes directly; no `@apply` import needed.
+- Tailwind is available inside `.astro` components via the `@tailwindcss/vite` plugin. Use utility classes directly; no `@apply` import needed.
 - `prettier-plugin-tailwindcss` will auto-sort class lists on format/commit.
 
 ## Formatting
