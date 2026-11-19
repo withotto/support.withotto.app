@@ -6,6 +6,7 @@ description: See what is left to check across your clients
 import ZoomableImage from "@components/ZoomableImage.astro";
 import { Aside } from "@astrojs/starlight/components";
 import dashboardImage from "@assets/bank-rec/portal/dashboard/dashboard.png";
+import dashboardToCheckGroupsImage from "@assets/bank-rec/portal/dashboard/dashboard-to-check-groups.png";
 
 The dashboard shows what is left for you to check across your clients: the lines Otto reconciled that nobody has given feedback on yet, and the ones where your feedback would help him.
 
@@ -44,6 +45,12 @@ Work through **To check** from the top:
 1. **Reconciliations without feedback.** These come first, because a wrong reconciliation is a mistake in Xero that you'll need to undo there.
 2. **Would reconcile in monitor mode.** These show whether Otto is ready for SmartMatch to be enabled for the client.
 3. **Feedback that would help Otto.** Answer these as time allows. Otto left these transactions for you, so nothing in Xero needs fixing if you don't. Each answer helps him learn, and where SmartMatch is enabled, a match lets him reconcile the transaction for you as a free [GuidedMatch](/bank-rec/guides/guidedmatch/).
+
+<ZoomableImage
+  src={dashboardToCheckGroupsImage}
+  alt="The To check view over 7 days: days under Reconciliations without feedback, Would reconcile in monitor mode and Feedback that would help Otto, then one line for the days with nothing to check"
+  label="To check groups"
+/>
 
 Choose the period to suit how often you check: **7 days** if you check most days, **30 days** or **60 days** if you check now and then. A day drops off the list once it is older than the period, even with lines left on it, but it stays on the [client's page](/bank-rec/portal/clients/#details).
 
