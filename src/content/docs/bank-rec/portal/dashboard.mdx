@@ -1,22 +1,62 @@
 ---
 title: Portal dashboard
-description: Get an overview of what Otto has been up to
+description: See what is left to check across your clients
 ---
 
 import ZoomableImage from "@components/ZoomableImage.astro";
 import { Aside } from "@astrojs/starlight/components";
 import dashboardImage from "@assets/bank-rec/portal/dashboard/dashboard.png";
+import dashboardToCheckGroupsImage from "@assets/bank-rec/portal/dashboard/dashboard-to-check-groups.png";
 
-The dashboard should be your first stop when checking what Otto's been up to recently.
+The dashboard shows what is left for you to check across your clients: the lines Otto reconciled that nobody has given feedback on yet, and the ones where your feedback would help him.
 
-<ZoomableImage src={dashboardImage} alt="The dashboard page" />
+<ZoomableImage
+  src={dashboardImage}
+  alt="The dashboard: the practice summary, then What to check in the To check view, with totals for the last 30 days and the first days with reconciliations without feedback"
+  label="Dashboard"
+/>
 
-## Recent reconciliations
+## The two views
 
-For each client you will see up to ten rows, for the ten most recent days in the last two months when Otto reconciled something or made a SmartMatch decision. For older days, go to the client's page. Click **View** on a row to open that day's [report](/bank-rec/portal/reconciliation-report/).
+- **To check** lists each day with lines left to check, in three groups, newest first. Days with nothing left fold into one line at the bottom.
+- **By client** shows each client's days in a table.
+
+The dashboard remembers your view, period, and **Show days with nothing to check** switch, so it opens the same way next time.
+
+## What the counts mean
+
+Each day shows how many of its lines are left to check at each level:
+
+- **Reconciled:** Otto reconciled them, and nobody has said yet whether he was right.
+- **Would reconcile:** Otto would have reconciled them, but SmartMatch is in monitoring mode.
+- **Worth a look:** Otto skipped them, but his pick is likely right: his score was close to the required level, or Xero offered only that one possible match.
+- **Skipped:** the other lines Otto skipped.
+
+## When a line is checked
+
+A line stays on the list until someone gives feedback on it. One answer from anyone in your practice clears it for everyone. A line Otto didn't reconcile is also cleared when someone marks one of its possible matches as a match, or when Otto reconciles the transaction on a later run.
+
+Opening a report doesn't clear anything. It only removes the dot that marks days you haven't opened since Otto last added to them. The dot is yours alone: a colleague opening the day doesn't remove it for you.
+
+## A routine that works
+
+Work through **To check** from the top:
+
+1. **Reconciliations without feedback.** These come first, because a wrong reconciliation is a mistake in Xero that you'll need to undo there.
+2. **Would reconcile in monitor mode.** These show whether Otto is ready for SmartMatch to be enabled for the client.
+3. **Feedback that would help Otto.** Answer these as time allows. Otto left these transactions for you, so nothing in Xero needs fixing if you don't. Each answer helps him learn, and where SmartMatch is enabled, a match lets him reconcile the transaction for you as a free [GuidedMatch](/bank-rec/guides/guidedmatch/).
+
+<ZoomableImage
+  src={dashboardToCheckGroupsImage}
+  alt="The To check view over 7 days: days under Reconciliations without feedback, Would reconcile in monitor mode, and Feedback that would help Otto, then one line for the days with nothing to check"
+  label="To check groups"
+/>
+
+Choose the period to suit how often you check: **7 days** if you check most days, **30 days** or **60 days** if you check now and then. A day drops off the list once it is older than the period, even with lines left on it, but it stays on the [client's page](/bank-rec/portal/clients/#details).
 
 <Aside type="tip" title="Related pages">
 
-- [Feedback](/bank-rec/guides/feedback/) - Review what Otto did that day for the client and let him know how he did
+- [Reconciliation report](/bank-rec/portal/reconciliation-report/) - Answering the lines on a day's report
+- [Feedback](/bank-rec/guides/feedback/) - What happens when you tell Otto he was right or wrong
 
 </Aside>
