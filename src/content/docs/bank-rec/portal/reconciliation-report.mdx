@@ -7,11 +7,11 @@ import { Aside } from "@astrojs/starlight/components";
 import ZoomableImage from "@components/ZoomableImage.astro";
 import reportOverviewImage from "@assets/bank-rec/portal/reconciliation-report/report-overview.png";
 
-Each day Otto reconciles a client, he writes a report of what he did. Open one by selecting its date, or the eye icon beside it, on the [dashboard](/bank-rec/portal/dashboard/) or a client's page.
+Each day Otto reconciles a client, he writes a report of what he did. Open one by selecting its row on the [dashboard](/bank-rec/portal/dashboard/) or a client's page.
 
 <ZoomableImage
   src={reportOverviewImage}
-  alt="A reconciliation report: the heading with the previous and next report, bank rule activity, and a bank account with one line to check and two reconciled lines"
+  alt="A reconciliation report: the heading with the previous and next report, bank rule activity, and a bank account counting two reconciled lines with no feedback yet and one skipped line"
   label="Reconciliation report"
 />
 
@@ -19,7 +19,7 @@ Each day Otto reconciles a client, he writes a report of what he did. Open one b
 
 - **The heading** shows the client and the day. The buttons beside it open the client's previous and next reports.
 - **Bank rule activity** lists the [bank rules](/bank-rec/guides/bank-rules/) Otto reconciled that day, with the number of transactions for each.
-- **Each bank account** follows, with a count of its lines: how many are left for you to check, how many Otto reconciled, how many he recorded in monitoring mode, and how many he skipped. Once you've answered every line left for you, the count reads "All checked".
+- **Each bank account** follows, with how many of its lines are left to check at each level, counted as on the [dashboard](/bank-rec/portal/dashboard/#what-the-counts-mean). Once you've answered them all, it reads "Nothing left to check".
 - **Cards** show the lines you can answer, with the ones Otto left for you first. Each card has Otto's decision at the top, then the bank statement transaction and the possible match from Xero side by side, Otto's score, why he did what he did, and the feedback buttons.
 - **Single rows** at the end of each account hold the lines there's nothing to answer on, such as a transaction whose possible match is dated after it. Select a row to see its details.
 
