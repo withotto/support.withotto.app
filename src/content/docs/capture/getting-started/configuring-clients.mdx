@@ -23,7 +23,7 @@ For example, if your organisation is "smith-accounting" and you set the prefix t
 
 <ZoomableImage
   src={generalSettings}
-  alt="The General tab of a client's settings, with the client name, the email prefix that forms its Capture address, and the VAT registration setting"
+  alt="The General tab of a client's settings, with the client prefix that forms its Capture address and the display name"
   label="General tab"
 />
 
@@ -50,6 +50,8 @@ On Xero, you choose the state Otto creates new bills and sales invoices in when 
 ## Synced accounting data
 
 Capture syncs the client's accounts, tax rates, currencies, and tracking categories (classes on QuickBooks Online), and Otto uses them when he suggests the coding. On a bill from a supplier whose bills you've published for this client before, he also draws on how you coded them. See what syncs from [Xero](/capture/platforms/xero/#synced-data), [FreeAgent](/capture/platforms/freeagent/#synced-data), and [QuickBooks Online](/capture/platforms/quickbooks/#synced-data).
+
+Capture also syncs whether the client is VAT-registered. If it isn't, Otto records no VAT on its documents, even when the supplier charges VAT.
 
 <ZoomableImage
   src={accountingPlatformSettings}
