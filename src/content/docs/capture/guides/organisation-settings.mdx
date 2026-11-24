@@ -1,11 +1,13 @@
 ---
 title: Organisation settings
-description: Managing your organisation's name, team, and email configuration
+description: Managing your organisation's name, team, billing, VAT on receipts, and email configuration
 ---
 
 import { Aside } from "@astrojs/starlight/components";
+import ZoomableImage from "@components/ZoomableImage.astro";
+import vatOnReceipts from "@assets/capture/guides/organisation-settings/vat-on-receipts.png";
 
-Organisation settings control how your Capture organisation appears, who has access, and how email is configured. Open them from **Settings** in the navigation.
+Organisation settings control how your Capture organisation appears, who has access, when Otto records VAT on receipts, and how email is configured. Open them from **Settings** in the navigation.
 
 ## Organisation prefix
 
@@ -39,6 +41,18 @@ An admin can turn a team member's access off on the same page. It takes effect s
 Admins can see the organisation's billing from **Settings → Billing**, including each client's tier for the current period and past invoices. Click **Manage billing** to update your payment method and billing address in Stripe.
 
 Capture sets the VAT on each invoice from the billing address recorded in Stripe. Organisations in the UK and the Isle of Man are charged VAT at 20%. Organisations elsewhere aren't charged VAT, and the reverse charge applies. See [Billing](/capture/faq/#billing) in the FAQ for how pricing works.
+
+## VAT on receipts
+
+Practices take different approaches to input VAT on a receipt that prints only VAT-inclusive prices. Some record it only when the receipt shows the supplier's VAT number. Others also record it when the supplier is clearly VAT-registered, such as a large, well-known business. **VAT on receipts** tells Otto which approach your organisation takes, for every client.
+
+<ZoomableImage
+  src={vatOnReceipts}
+  alt="The VAT on receipts section of organisation settings, with its two choices: VAT number or a large supplier, and Supplier's VAT number only"
+  label="VAT on receipts"
+/>
+
+Otto checks that a receipt shows a VAT number, not that the number is valid. Whichever you choose, the VAT on each document is yours to confirm during review.
 
 ## Email
 
